@@ -6,50 +6,46 @@ import research from "../assets/Images/Research.JPG";
 import outreach from "../assets/Images/Outreach.JPG";
 import policy from "../assets/Images/Policy_advocacy.JPG";
 
-const OurTeam = () => {
+const Events = () => {
 
-    const programs = [
+    const events = [
   {
     id: 1,
-    title: "Mr. William Chadza",
+    title: "MALAWI NATIONAL FOOD SYSTEMS TECHNICAL WORKING GROUP MEETING",
     description:
       "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
+      date: "17 JAN 2026",
     image: capacity,
   },
   {
     id: 2,
-    title: "Prof. Levison Chiwaula",
+    title: "Dissemination Workshop for Two Food Systems Policy Briefs",
     description:
       "Conducting evidence-based research to influence agricultural and development policies.",
+      date: "07 FEB 2026",
     image: research,
   },
   {
     id: 3,
-    title: "Ms. Mercy Chirwa",
+    title: "LEAP4YOUTH Project Conducts District Youth Engagement Meetings",
     description:
       "Improving market systems and access for farmers and agribusiness stakeholders.",
+      date: "17 JAN 2026",
    image: outreach, 
-  },
-  {
-    id: 4,
-    title: "Dr. Maggie Munthali",
-    description:
-      "Providing short courses and specialized training programs for professionals.",
-   image: policy,
-  },
+  }
+
 ];
 
   return (
     <section className="py-12 px-6 lg:px-22">
-      <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-orange">Our Team</h1>
-      <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
+      
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <motion.h4
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.99, ease: "easeInOut" }}
-                className="lg:text-[48px] text-[32px] oswald max-w-4xl lg:leading-[52px] uppercase font-semibold text-grey ">
-                <span className="text-orange">MEET</span> OUR TEAM.
+                className="lg:text-[48px] text-[32px] oswald max-w-3xl lg:leading-[52px] uppercase font-semibold text-grey ">
+                <span className="text-orange">OUR</span> EVENTS OF INFLUENCE <span className="text-orange">AND </span>INSPIRATION.
               </motion.h4>
 
               <div className="flex flex-col items-start lg:items-end">
@@ -65,25 +61,36 @@ const OurTeam = () => {
                   className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
               </div>
       </div>
-        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 auto-rows-[470px]">
-          {programs.map((program) => (
-            <div className="relative z-0 shadow-3xl" style={{backgroundImage: `url(${program.image})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+
+
+       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 auto-rows-[480px]">
+          {events.map(ev => (
+            <div
+              key={ev.id}
+              className="relative rounded-[4px] z-0 shadow-3xl"
+              style={{
+                backgroundImage: `url(${ev.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
               {/* overlay to apply blend mode */}
-               <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
-             <div className="absolute bg-orange z-10 flex flex-row items-center justify-between bottom-0 p-4 w-full">
-              <h4 className="barlow font-semibold white uppercase text-[22px]">{program.title}</h4>
-              <RightArrow size={28} color="#fffced" />
+              <div className="absolute rounded-[4px] inset-0 bg-green hover:opacity-85 opacity-60 mix-blend-multiply"></div>
+
+              <div className="absolute bg-transparent z-10 flex flex-col items-start gap-3 justify-between bottom-0 p-8 w-full">
+                <h4 className="barlow font-semibold white uppercase text-[22px]">
+                  {ev.title}
+                </h4>
+                <div className="bg-[#ac6133] mt-4 px-4 rounded-[4px]">
+                  <h4 className="white font-semibold text-[18px] ">{ev.date}</h4>
+                </div>
               </div>
-               <h1 className="absolute p-2 -bottom-15 text-grey font-semibold">Finance and Administration Manager</h1>
-            </div> 
-                    
-        ))}
-      
-        
+            </div>
+          ))}
        </div>
           
     </section>
   );
 };
 
-export default OurTeam;
+export default Events;

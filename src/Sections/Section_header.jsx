@@ -10,7 +10,7 @@ const Section_header = () => {
 
 
   return (
-    <section className="h-screen">
+    <section className="">
        <div className="relative h-66 z-0 w-full flex flex-col items-start lg:px-22 justify-center" style={{backgroundImage: `url(${header})`, backgroundSize: "cover", backgroundPosition: "center"}}>
                 {/* overlay to apply blend mode */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#C95B19] via-[#EA8548] to-transparent opacity-90 "></div>

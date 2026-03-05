@@ -10,8 +10,22 @@ import Vision from "./Icons/Vision";
 
 const About_Us = () => {
 
-  const aboutcontent = [
-   
+
+ const mission_vision = [
+  {
+    id: 1,
+    title: "Mission",
+    description:
+      "We conduct independent, objective and empirical high-quality research aimed at generating innovative agricultural policy recommendations that improve decision-making and livelihoods in Malawi.",
+    icon: <Mission size={40} color="#fffced" />,
+  },
+  {
+    id: 2,
+    title: "Vision",
+    description:
+      "A Malawi with evidence-based agricultural policies that drive sustainable development, food security, and improved livelihoods.",
+    icon: <Vision size={40} color="#fffced" />,
+  }
 
 ];
 
@@ -24,16 +38,23 @@ const About_Us = () => {
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.99, ease: "easeInOut" }}
-                className="lg:text-[48px] text-[32px] max-w-[600px]  max-w-3xl lg:leading-[56px] uppercase font-bold text-grey ">
+                className="lg:text-[48px] text-[32px] oswald max-w-[550px]  max-w-3xl lg:leading-[56px] uppercase font-bold text-grey ">
                 <span className="text-orange">An independent</span> agricultural policy think tank in <span className="text-orange">Malawi</span>.
               </motion.h4>
                
 
 
-            <div className="flex flex-col lg:mt-18 mt-10 lg:flex-row">
+            <div className="flex flex-col lg:mt-28 mt-10 lg:flex-row">
 
-              <div className="flex lg:w-1/2">
-              <h4>Who We Are</h4>
+              <div className="flex flex-col gap-8 lg:w-1/2">
+              <h4 className="font-bold text-[26px] uppercase text-orange oswald">Who We Are</h4>
+              <p className="lg:text-[18px] text-grey text-[16px] lg:w-[470px] leading-relaxed">
+                We are a team of <span className="text-green font-semibold">dedicated researchers</span> and policy experts committed to advancing agricultural development in Malawi through rigorous analysis and evidence-based recommendations.
+              </p>
+
+              <div className="px-14 mt-12 py-4 w-[280px] bg-green">
+                <h4 className="font-bold text-[26px] uppercase white oswald">What We Do</h4>   
+              </div>
               </div>
 
                 <div className="relative flex lg:w-1/2">
@@ -46,37 +67,25 @@ const About_Us = () => {
 
        </div>   
       
-        <div className="flex flex-col lg:h-[600px] lg:flex-row  lg:mt-18 bg-[#ac6133] mt-10">
+        <div className="flex flex-col lg:h-[620px] lg:flex-row  lg:mt-28 bg-[#ac6133] mt-10">
             <div className="relative flex lg:w-1/2">
                 <img src={capacity} alt="research" className="w-full h-full object-cover"/>
                  <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
             </div>
 
-            <div className="flex p-6 lg:p-18  lg:gap-8 flex-col items-start  lg:w-1/2">
-
-            <div className="">
-            
-                 <Mission size={40} color="#fffced" />
-              
-                
-                  <h4 className="white mt-3 text-2xl mb-4 font-bold uppercase barlow ">Our Mision</h4>
-                 <p className="lg:text-[18px] text-[16px] white lg:w-[470px] leading-relaxed">
-                   We conduct independent, objective and empirical high-quality research aimed at generating 
-                   innovative agricultural policy recommendations that improve decision-making and livelihoods in Malawi.
-                </p>
+          <div className="flex p-6 lg:p-18  lg:gap-8 flex-col items-start  lg:w-1/2">
+          {mission_vision.map((item, index) => (
+            <div key={item.id} className={index === 0 ? "" : "mt-8"}>
+              <div className="p-6 ">{item.icon}</div>
+              <h4 className="white mt-3 text-2xl mb-4 font-bold uppercase barlow ">
+                {`Our ${item.title}`}
+              </h4>
+              <p className="lg:text-[18px] text-[16px] white lg:w-[470px] leading-relaxed">
+                {item.description}
+              </p>
             </div>
-
-            <div className="mt-8">
-                  <Vision size={40} color="#fffced" />
-                    <h4 className="white mt-3 text-2xl mb-4 font-bold uppercase barlow ">Our Vision</h4>
-                 <p className="lg:text-[18px] text-[16px] white lg:w-[470px] leading-relaxed">
-              A Malawi with evidence-based agricultural policies that drive 
-              sustainable development, food security, and improved livelihoods.
-            </p>
-            </div>
-            
-           
-            </div>
+          ))}
+        </div>
 
            
 
