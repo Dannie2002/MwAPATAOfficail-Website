@@ -10,10 +10,13 @@ const Section_header = () => {
 
 
   return (
-    <section className="py-12 px-6 lg:px-22">
-       <div className="relative z-0 h-44 w-full" style={{backgroundImage: `url(${header})`, backgroundSize: "cover", backgroundPosition: "center"}}>
-        
-        
+    <section className="h-screen">
+       <div className="relative h-66 z-0 w-full flex flex-col items-start lg:px-22 justify-center" style={{backgroundImage: `url(${header})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+                {/* overlay to apply blend mode */}
+                <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
+                <div className="z-10">
+                  <h1 className="text-[#fffced] barlow font-bold text-8xl">EVENTS</h1>
+                </div>
       </div>
     </section>
   );
