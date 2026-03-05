@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import "tailwindcss";
+
+
+:root {
+  --primary-color: #EA8548;
+  --secondary-color: #3A9B3D;
+  --background-color: #F7FFF7;
+  --text-color: #4a4a4a;
+  --text-colour: #fffced;
+  --font-dmsans: 'DM Sans', sans-serif;
+  --font-barlow: 'Barlow Semi Condensed', sans-serif;
+  --font-oswald: 'Oswald', sans-serif;
+}
+
+
+html, body {
+  font-family: var(--font-dmsans);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.barlow {
+  font-family: var(--font-barlow);
+}
+.oswald {
+  font-family: var(--font-oswald);
+}
+
+
+@layer utilities {
+  .text-orange {
+    color: var(--primary-color);
+  }
+  .bg-orange {
+    background-color: var(--primary-color);
+  }
+  .text-green {
+    color: var(--secondary-color);
+  }
+  .bg-green {
+    background-color: var(--secondary-color);
+  }
+  .text-grey {
+    color: var(--text-color);
+  }
+  .white {
+    color: var(--text-colour);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply  font-bold py-2 px-4 rounded;
+  }
+
+}
