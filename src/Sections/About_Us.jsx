@@ -10,42 +10,66 @@ import Vision from "./Icons/Vision";
 
 const About_Us = () => {
 
+  const aboutcontent = [
+   
 
+];
 
   return (
-    <section className="py-12 px-6 lg:px-22 min-h-screen">
+    <section className="min-h-screen">
       <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-orange">ABOUT US</h1>
       <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
+      <div className="flex flex-col  lg:items-start lg:justify-between py-0 px-6 lg:px-22  mt-10 lg:mt-18">
               <motion.h4
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.99, ease: "easeInOut" }}
-                className="lg:text-[48px] text-[32px] oswald max-w-3xl lg:leading-[56px] uppercase font-semibold text-grey ">
+                className="lg:text-[48px] text-[32px] max-w-[600px]  max-w-3xl lg:leading-[56px] uppercase font-bold text-grey ">
                 <span className="text-orange">An independent</span> agricultural policy think tank in <span className="text-orange">Malawi</span>.
               </motion.h4>
+               
+
+
+            <div className="flex flex-col lg:mt-18 mt-10 lg:flex-row">
+
+              <div className="flex lg:w-1/2">
+              <h4>Who We Are</h4>
+              </div>
+
+                <div className="relative flex lg:w-1/2">
+                <img src={capacity} alt="research" className="w-full h-full rounded-3xl object-cover"/>
+                 <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply rounded-3xl"></div>
+                </div>
+            
+            </div>
+               
 
        </div>   
       
-        <div className="flex flex-col lg:h-[600px] lg:flex-row w-full lg:mt-22 bg-orange mt-10">
-            <div className="flex lg:w-1/2">
-                <img src={capacity} alt="capacity building" className="w-full h-full object-cover"/>
+        <div className="flex flex-col lg:h-[600px] lg:flex-row  lg:mt-18 bg-[#ac6133] mt-10">
+            <div className="relative flex lg:w-1/2">
+                <img src={capacity} alt="research" className="w-full h-full object-cover"/>
+                 <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
             </div>
 
-            <div className="flex p-6 lg:p-12  flex-col items-start  lg:w-1/2">
-            <div>
-                <Mission size={40} color="#fffced" />
-                    <h4 className="white mt-3 text-2xl mb-4 font-bold uppercase barlow ">Our Mision</h4>
-                 <p className="lg:text-[18px] text-[16px] white lg:w-[500px] leading-relaxed">
-              We conduct independent, objective and empirical high-quality research aimed at generating 
-              innovative agricultural policy recommendations that improve decision-making and livelihoods in Malawi.
-            </p>
+            <div className="flex p-6 lg:p-18  lg:gap-8 flex-col items-start  lg:w-1/2">
+
+            <div className="">
+            
+                 <Mission size={40} color="#fffced" />
+              
+                
+                  <h4 className="white mt-3 text-2xl mb-4 font-bold uppercase barlow ">Our Mision</h4>
+                 <p className="lg:text-[18px] text-[16px] white lg:w-[470px] leading-relaxed">
+                   We conduct independent, objective and empirical high-quality research aimed at generating 
+                   innovative agricultural policy recommendations that improve decision-making and livelihoods in Malawi.
+                </p>
             </div>
 
             <div className="mt-8">
                   <Vision size={40} color="#fffced" />
                     <h4 className="white mt-3 text-2xl mb-4 font-bold uppercase barlow ">Our Vision</h4>
-                 <p className="lg:text-[18px] text-[16px] white lg:w-[500px] leading-relaxed">
+                 <p className="lg:text-[18px] text-[16px] white lg:w-[470px] leading-relaxed">
               A Malawi with evidence-based agricultural policies that drive 
               sustainable development, food security, and improved livelihoods.
             </p>
