@@ -8,7 +8,7 @@ import policy from "../assets/Images/Policy_advocacy.JPG";
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
 
-const About_Us = () => {
+const Newsletter = () => {
 
 
  const mission_vision = [
@@ -67,27 +67,19 @@ const About_Us = () => {
 
        </div>   
       
-        <div className="flex flex-col lg:h-[690px] lg:flex-row  lg:mt-28 bg-[#ac6133] mt-10">
-            <div className="relative flex lg:w-1/2">
-                <img src={capacity} alt="research" className="w-full h-full object-cover"/>
+        <div className="flex relative  flex-col items-start justify-center lg:h-[500px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+            
+               
                  <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
-            </div>
+                    <div className="flex z-10  p-6 lg:px-22 barlow  lg:gap-4 flex-col items-start">
+                    <h4 className="white font-bold w-[500px] leading-[48px] text-[48px] uppercase">STAY INFORMED AND SUBSCRIBE TO OUR NEWSLETTER</h4>
+                    <div className="mt-12 flex flex-col lg:flex-row gap-4">
+                    <input type="email" placeholder="Enter your email" className="p-4 border-2 border-[#fffced] rounded-l-[4px] w-[250px]"/>
+                    <button className="bg-orange p-4 rounded-r-[4px] text-white">Subscribe</button>
+                    </div>
+                    </div>
+            
 
-          <div className="flex p-6 lg:p-18  lg:gap-4 flex-col items-start  lg:w-1/2">
-          {mission_vision.map((item, index) => (
-            <div key={item.id} className={index === 0 ? "" : "mt-8"}>
-              <div className="p-6 ">{item.icon}</div>
-              <h4 className="white mt-3 text-2xl mb-4 font-bold uppercase barlow ">
-                {`Our ${item.title}`}
-              </h4>
-              <p className="lg:text-[18px] text-[16px] white lg:w-[470px] leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-           
 
             
         </div>
@@ -100,4 +92,4 @@ const About_Us = () => {
   );
 };
 
-export default About_Us;
+export default Newsletter;

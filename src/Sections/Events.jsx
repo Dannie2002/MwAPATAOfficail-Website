@@ -88,6 +88,16 @@ const Events = () => {
             </div>
           ))}
        </div>
+                <div className="flex flex-row gap-6 lg:mt-12">
+                    <div className="bg-orange items-center justify-center size-20 p-6 rounded-full">
+                     <h2 className="white">t</h2>
+                    </div>
+                    
+                    <div className="bg-orange items-center justify-center size-20 p-6 rounded-full">
+                     <h2 className="white">t</h2>
+                    </div>
+                 
+                </div>
           
     </section>
   );
