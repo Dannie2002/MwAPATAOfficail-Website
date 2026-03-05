@@ -31,36 +31,52 @@ const Newsletter = () => {
 
   return (
     <section className="min-h-screen">
-      <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-orange">ABOUT US</h1>
-      <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
+      
       <div className="flex flex-col  lg:items-start lg:justify-between py-0 px-6 lg:px-22  mt-10 lg:mt-18">
               <motion.h4
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.99, ease: "easeInOut" }}
-                className="lg:text-[48px] text-[32px] oswald max-w-[550px]  max-w-3xl lg:leading-[56px] uppercase font-bold text-grey ">
+                className="lg:text-[48px] text-[32px] oswald max-w-[650px]  max-w-3xl lg:leading-[56px] uppercase font-bold text-grey ">
                 <span className="text-orange">An independent</span> agricultural policy think tank in <span className="text-orange">Malawi</span>.
               </motion.h4>
                
 
 
-            <div className="flex flex-col lg:mt-28 mt-10 lg:flex-row">
+            <div className="flex flex-col lg:mt-28 gap-8 mt-10 lg:flex-row">
+
+             <div className="relative flex lg:w-1/2">
+               
+                <img src={capacity} alt="research" className="w-full h-[400px] rounded-3xl object-cover"/>
+                 
+                
+            </div>
+
+
 
               <div className="flex flex-col gap-8 lg:w-1/2">
-              <h4 className="font-bold text-[26px] uppercase text-orange oswald">Who We Are</h4>
-              <p className="lg:text-[18px] text-grey text-[16px] lg:w-[470px] leading-relaxed">
-                We are a team of <span className="text-green font-semibold">dedicated researchers</span> and policy experts committed to advancing agricultural development in Malawi through rigorous analysis and evidence-based recommendations.
-              </p>
-
-              <div className="px-14 mt-12 py-4 w-[280px] bg-green">
-                <h4 className="font-bold text-[26px] uppercase white oswald">What We Do</h4>   
-              </div>
+              <div className="bg-green flex flex-col rounded-2xl p-6">
+                <h2 className="white uppercase font-bold oswald text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
+                <h4 className="mt-2 barlow font-semibold uppercase white ">Download</h4>
               </div>
 
-                <div className="relative flex lg:w-1/2">
-                <img src={capacity} alt="research" className="w-full h-full rounded-3xl object-cover"/>
-                 <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply rounded-3xl"></div>
-                </div>
+               <div className="bg-transparent border-[0.8px] border-[#4a4a4a] flex flex-col rounded-2xl p-6">
+                <h2 className="text-grey uppercase font-bold oswald text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
+                <h4 className="mt-2 barlow font-semibold uppercase text-green">Download</h4>
+              </div>
+
+              <div className="bg-transparent border-[0.8px] border-[#4a4a4a] flex flex-col rounded-2xl p-6">
+                <h2 className="text-grey uppercase font-bold oswald text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
+                <h4 className="mt-2 barlow font-semibold uppercase text-green">Download</h4>
+              </div>
+              <div className="bg-transparent border-[0.8px] border-[#4a4a4a] flex flex-col rounded-2xl p-6">
+                <h2 className="text-grey uppercase font-bold oswald text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
+                <h4 className="mt-2 barlow font-semibold uppercase text-green">Download</h4>
+              </div>
+             
+              </div>
+
+               
             
             </div>
                
@@ -70,12 +86,12 @@ const Newsletter = () => {
         <div className="flex relative  flex-col items-start justify-center lg:h-[500px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             
                
-                 <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
-                    <div className="flex z-10  p-6 lg:px-22 barlow  lg:gap-4 flex-col items-start">
-                    <h4 className="white font-bold w-[500px] leading-[48px] text-[48px] uppercase">STAY INFORMED AND SUBSCRIBE TO OUR NEWSLETTER</h4>
-                    <div className="mt-12 flex flex-col lg:flex-row gap-4">
-                    <input type="email" placeholder="Enter your email" className="p-4 border-2 border-[#fffced] rounded-l-[4px] w-[250px]"/>
-                    <button className="bg-orange p-4 rounded-r-[4px] text-white">Subscribe</button>
+                 <div className="absolute inset-0 bg-green opacity-60 "></div>
+                    <div className="flex z-10  p-6 lg:px-22 barlow  lg:gap-6 flex-col items-start">
+                    <h4 className="white font-bold w-[500px] leading-[48px] text-[48px] uppercase"> <span className="text-[#AC6133]">STAY </span>INFORMED AND SUBSCRIBE TO OUR NEWSLETTER<span className="text-orange">.</span></h4>
+                    <div className="mt-12 flex flex-row  gap-6">
+                    <input type="email" placeholder="Enter your email" className="p-4 border-[0.8px]   border-[#fffced] rounded-l-[4px] w-[600px]"/>
+                    <button className="bg-[#ac6133] px-14 text-2xl  border-[#AC6133] uppercase barlow font-semibold white">Subscribe</button>
                     </div>
                     </div>
             
