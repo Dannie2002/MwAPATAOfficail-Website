@@ -5,6 +5,7 @@ import Section_header from './Sections/Section_header'
 import OurTeam from './Sections/OurTeam'
 import Events from './Sections/Events'
 import Newsletter from './Sections/Newsletter'
+import EventDetailed from './Sections/SubSections/EventDetailed'
 
 
 
@@ -19,8 +20,10 @@ function App() {
     <Section_header />
     <Events />
     <Newsletter />
+    <EventDetailed />   
     </>
   )
 }
+
 
 export default App

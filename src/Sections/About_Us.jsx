@@ -38,7 +38,7 @@ const About_Us = () => {
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.99, ease: "easeInOut" }}
-                className="lg:text-[48px] text-[32px] oswald max-w-[550px]  max-w-3xl lg:leading-[56px] uppercase font-bold text-grey ">
+                className="lg:text-[48px] text-[32px] oswald max-w-[650px]  max-w-3xl lg:leading-[56px] uppercase font-bold text-grey ">
                 <span className="text-orange">An independent</span> agricultural policy think tank in <span className="text-orange">Malawi</span>.
               </motion.h4>
                
@@ -52,8 +52,8 @@ const About_Us = () => {
                 We are a team of <span className="text-green font-semibold">dedicated researchers</span> and policy experts committed to advancing agricultural development in Malawi through rigorous analysis and evidence-based recommendations.
               </p>
 
-              <div className="px-14 mt-12 py-4 w-[280px] bg-green">
-                <h4 className="font-bold text-[26px] uppercase white oswald">What We Do</h4>   
+              <div className="flex items-center justify-center px-3 mt-12 py-3 w-[180px] bg-orange">
+                <h4 className="font-bold text-[18px] uppercase white oswald">What We Do</h4>   
               </div>
               </div>
 

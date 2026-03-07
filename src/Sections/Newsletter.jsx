@@ -7,9 +7,24 @@ import outreach from "../assets/Images/Outreach.JPG";
 import policy from "../assets/Images/Policy_advocacy.JPG";
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import SplitText from "gsap/SplitText";
+ gsap.registerPlugin(useGSAP, SplitText);
 
 const Newsletter = () => {
 
+useGSAP(() => {
+  const heroSplit = new SplitText(".head", { type: "lines, words, chars" });
+  gsap.from(heroSplit.chars, {
+    opacity: 0,
+    y: 50,
+    ease: "power4.out",
+    duration: 1,
+    stagger: 0.05,
+    delay: 0.5
+  });
+}, []);
 
  const mission_vision = [
   {
@@ -43,18 +58,18 @@ const Newsletter = () => {
                
 
 
-            <div className="flex flex-col lg:mt-28 gap-8 mt-10 lg:flex-row">
+            <div className="flex flex-col lg:mt-28 w-full gap-8 mt-10 lg:flex-row">
 
-             <div className="relative flex lg:w-1/2">
+             <div className="relative flex h-88 lg:w-1/2">
                
-                <img src={capacity} alt="research" className="w-full h-[400px] rounded-3xl object-cover"/>
+                <img src={capacity} alt="research" className="w-full h-full rounded-3xl object-cover"/>
                  
                 
             </div>
 
 
 
-              <div className="flex flex-col gap-8 lg:w-1/2">
+              <div className="flex flex-col gap-6 lg:gap-8 lg:w-1/2">
               <div className="bg-green flex flex-col rounded-2xl p-6">
                 <h2 className="white uppercase font-bold oswald text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
                 <h4 className="mt-2 barlow font-semibold uppercase white ">Download</h4>
@@ -83,14 +98,15 @@ const Newsletter = () => {
 
        </div>   
       
-        <div className="flex relative  flex-col items-start justify-center lg:h-[500px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+        <div className="flex relative  flex-col items-start justify-center lg:h-[550px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             
                
                  <div className="absolute inset-0 bg-green opacity-60 "></div>
                     <div className="flex z-10  p-6 lg:px-22 barlow  lg:gap-6 flex-col items-start">
-                    <h4 className="white font-bold w-[500px] leading-[48px] text-[48px] uppercase"> <span className="text-[#AC6133]">STAY </span>INFORMED AND SUBSCRIBE TO OUR NEWSLETTER<span className="text-orange">.</span></h4>
+                      <p className="white">We always have most recent information on reseach</p>
+                    <h4 className="head white oswald font-bold w-[500px] leading-[88px] text-[88px] uppercase">SUBSCRIBE NOW</h4>
                     <div className="mt-12 flex flex-row  gap-6">
-                    <input type="email" placeholder="Enter your email" className="p-4 border-[0.8px]   border-[#fffced] rounded-l-[4px] w-[600px]"/>
+                    <input type="email" placeholder="Enter your email" className="px-6 py-4 border-[0.8px]   border-[#fffced] rounded-l-[4px] w-[470px]"/>
                     <button className="bg-[#ac6133] px-14 text-2xl  border-[#AC6133] uppercase barlow font-semibold white">Subscribe</button>
                     </div>
                     </div>

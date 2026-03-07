@@ -56,5 +56,9 @@ html, body {
   .btn-primary {
     @apply  font-bold py-2 px-4 rounded;
   }
+  
+.flex-center{
+  @apply flex items-center justify-center;
+}
 
 }

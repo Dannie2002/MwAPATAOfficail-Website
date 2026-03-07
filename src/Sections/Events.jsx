@@ -4,9 +4,27 @@ import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.JPG";
 import research from "../assets/Images/Research.JPG";
 import outreach from "../assets/Images/Outreach.JPG";
-import policy from "../assets/Images/Policy_advocacy.JPG";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Events = () => {
+  useGSAP(() => {
+  gsap.from(".head", {
+    y: 100,
+    opacity: 0,
+    duration: 0.95,
+    scrollTrigger: {
+      trigger: ".head",
+      start: "top 80%",
+      end: "bottom top",
+      scrub: true,
+      ease: "power1.inOut",
+    }
+  });
+});
 
     const events = [
   {
@@ -14,7 +32,7 @@ const Events = () => {
     title: "MALAWI NATIONAL FOOD SYSTEMS TECHNICAL WORKING GROUP MEETING",
     description:
       "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
-      date: "17 JAN 2026",
+      date: "17 Jan 2026",
     image: capacity,
   },
   {
@@ -40,13 +58,10 @@ const Events = () => {
     <section className="py-12 px-6 lg:px-22">
       
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
-              <motion.h4
-                initial={{ opacity: 0, y: 80 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.99, ease: "easeInOut" }}
-                className="lg:text-[48px] text-[32px] oswald max-w-3xl lg:leading-[52px] uppercase font-semibold text-grey ">
+              <h4 
+                className="head lg:text-[48px] text-[32px] oswald max-w-3xl lg:leading-[52px] uppercase font-semibold text-grey ">
                 <span className="text-orange">OUR</span> EVENTS OF INFLUENCE <span className="text-orange">AND </span>INSPIRATION.
-              </motion.h4>
+              </h4>
 
               <div className="flex flex-col items-start lg:items-end">
                   <motion.div
@@ -67,33 +82,31 @@ const Events = () => {
           {events.map(ev => (
             <div
               key={ev.id}
-              className="relative rounded-[4px] z-0 shadow-3xl"
-              style={{
-                backgroundImage: `url(${ev.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
+              className="relative rounded-[14px] z-0 shadow-3xl"
             >
+               <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
+                <img src={ev.image} alt={ev.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
               {/* overlay to apply blend mode */}
-              <div className="absolute rounded-[4px] inset-0 bg-green hover:opacity-85 opacity-60 mix-blend-multiply"></div>
+               <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
 
+               </div>
               <div className="absolute bg-transparent z-10 flex flex-col items-start gap-3 justify-between bottom-0 p-8 w-full">
-                <h4 className="barlow font-semibold white uppercase text-[22px]">
+                <h4 className="barlow font-bold white uppercase text-[24px] leading-[28px]">
                   {ev.title}
                 </h4>
-                <div className="bg-[#ac6133] mt-4 px-4 rounded-[4px]">
-                  <h4 className="white font-semibold text-[18px] ">{ev.date}</h4>
+                <div className="bg-[#ac6133] mt-4 px-4 py-1 rounded-[4px]">
+                  <h4 className="white font-semibold text-[16px] ">{ev.date}</h4>
                 </div>
               </div>
             </div>
           ))}
        </div>
-                <div className="flex flex-row gap-6 lg:mt-12">
-                    <div className="bg-orange items-center justify-center size-20 p-6 rounded-full">
-                     <h2 className="white">t</h2>
+                <div className="flex items-center justify-start flex-row gap-4 lg:mt-10">
+                    <div className="bg-orange flex-center size-10 p-4 rounded-full">
+                     <h2 className="white">A</h2>
                     </div>
                     
-                    <div className="bg-orange items-center justify-center size-20 p-6 rounded-full">
+                    <div className="bg-orange flex-center size-10 p-4 rounded-full">
                      <h2 className="white">t</h2>
                     </div>
                  
