@@ -103,12 +103,12 @@ const Newsletter = () => {
 
        </div>   
       
-        <div className="flex relative rounded-2xl flex-col items-start justify-center h-full lg:h-[550px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+        <div className="flex relative rounded-2xl flex-col items-start justify-center h-full lg:h-[650px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             
                
-                 <div className="absolute rounded-2xl  inset-0 bg-gradient-to-r from-[#0b0b0d] via-[#323232] to-[#ab5e10]/50 opacity-90 "></div>
+                 <div className="absolute rounded-2xl  inset-0 bg-gradient-to-r from-[#3A9B3D] via-[#0b0b0d]/60 to-[#323232]/50 opacity-90 "></div>
                     <div className="flex z-10  p-8 lg:px-22 barlow  lg:gap-6 flex-col items-start">
-                      <p className="white text-[20px] lg:text-[18px] w-[220px] lg:w-[450px]"><span className="text-green font-bold">Subscribe </span>to our newsletter to receive valuable resources,
+                      <p className="white text-[20px] lg:text-[18px] w-[220px] lg:w-[450px]"><span className="text-[#a2f901] font-bold">Subscribe </span>to our newsletter to receive valuable resources,
                          event announcements, and expert perspectives 
                         delivered straight to your inbox.</p>
                     <h4 className="head white oswald font-extrabold mt-6 text-[48px] w-[200px] leading-[48px] lg:w-[500px] lg:leading-[98px] lg:text-[98px] uppercase">SUBSCRIBE NOW</h4>
@@ -120,7 +120,7 @@ const Newsletter = () => {
                    
                     <div className="mt-12 flex flex-row  gap-6">
                     <input type="email" placeholder="Enter your email" className="px-6 py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px] max-w-[480px] lg:w-[470px]"/>
-                    <button className="bg-green lg:px-14 text-2xl px-6 text-[18px] border-[#AC6133] uppercase barlow font-semibold white">Subscribe</button>
+                    <button className="bg-green clip lg:px-14 text-2xl px-6 text-[18px] border-[#AC6133] uppercase barlow font-semibold white">Subscribe</button>
                     </div>
                     </div>
             

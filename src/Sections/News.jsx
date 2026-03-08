@@ -12,7 +12,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const Events = () => {
+const News = () => {
   useGSAP(() => {
   gsap.from(".head", {
     y: 100,
@@ -31,7 +31,7 @@ const Events = () => {
     const events = [
   {
     id: 1,
-    title: "MALAWI NATIONAL FOOD SYSTEMS TECHNICAL WORKING GROUP MEETING",
+    title: "MwAPATA Institute urges Malawi Parliament to address policy gaps",
     description:
       "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
       date: "17 Jan 2026",
@@ -39,31 +39,23 @@ const Events = () => {
   },
   {
     id: 2,
-    title: "Dissemination Workshop for Two Food Systems Policy Briefs",
+    title: "Stakeholders Strategize on Future of Smallholder Farming in Malawi",
     description:
       "Conducting evidence-based research to influence agricultural and development policies.",
-      date: "07 FEB 2026",
+      date: "21 FEB 2021",
     image: research,
   },
   {
     id: 3,
-    title: "LEAP4YOUTH Project Conducts District Youth Engagement Meetings",
+    title: "Minister Calls for Homegrown Agricultural Policy Research",
     description:
       "Improving market systems and access for farmers and agribusiness stakeholders.",
-      date: "17 JAN 2026",
+      date: "17 OCT 2020",
    image: outreach, 
   }
 
 ];
 
-  const [activeTab, setActiveTab] = useState("Recent Events");
-
-  const tabs = [
-    "Recent Events",
-    "MAAPC",
-    "Seminal Series",
-    "Past Events",
-  ];
 
   return (
     <section className="py-12 px-6 lg:px-22">
@@ -71,7 +63,7 @@ const Events = () => {
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
                 className="head lg:text-[48px] text-[32px] oswald max-w-3xl lg:leading-[52px] uppercase font-semibold text-grey ">
-                <span className="text-orange">OUR</span> EVENTS OF INFLUENCE <span className="text-orange">AND </span>INSPIRATION.
+                <span className="text-orange">OUR</span> LATEST NEWS.
               </h4>
 
               <div className="flex flex-col items-start lg:items-end">
@@ -88,22 +80,7 @@ const Events = () => {
               </div>
       </div>
 
-<div className="flex gap-4 lg:mt-10">
-      {tabs.map((tab) => (
-        <button
-          key={tab}
-          onClick={() => setActiveTab(tab)}
-          className={`px-6 py-2 rounded-full border barlow uppercase  transition-all duration-200
-          ${
-            activeTab === tab
-              ? "bg-orange white font-semibold  border-orange-500"
-              : "text-grey border-gray-300 hover:bg-gray-100"
-          }`}
-        >
-          {tab}
-        </button>
-      ))}
-    </div>
+
 
        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 auto-rows-[480px]">
           {events.map(ev => (
@@ -118,7 +95,7 @@ const Events = () => {
 
                </div>
               <div className="absolute bg-transparent z-10 flex flex-col items-start gap-3 justify-between bottom-0 p-8 w-full">
-                <h4 className="barlow font-bold white uppercase text-[24px] leading-[28px]">
+                <h4 className="barlow font-bold hover:text-[#EA8548] transition-colors duration-300 ease-in-out white uppercase text-[24px] leading-[28px]">
                   {ev.title}
                 </h4>
                 <div className="bg-green mt-4 px-4 py-1 rounded-full">
@@ -143,4 +120,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default News;

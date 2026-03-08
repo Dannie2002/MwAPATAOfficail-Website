@@ -6,6 +6,8 @@ import OurTeam from './Sections/OurTeam'
 import Events from './Sections/Events'
 import Newsletter from './Sections/Newsletter'
 import EventDetailed from './Sections/SubSections/EventDetailed'
+import News from './Sections/News'
+import YouTube from './Sections/YouTube'
 
 
 
@@ -20,7 +22,9 @@ function App() {
     <Section_header />
     <Events />
     <Newsletter />
-    <EventDetailed />   
+    <EventDetailed /> 
+    <News />  
+    <YouTube />
     </>
   )
 }

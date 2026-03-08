@@ -52,14 +52,14 @@ const About_Us = () => {
                 We are a team of <span className="text-green font-semibold">dedicated researchers</span> and policy experts committed to advancing agricultural development in Malawi through rigorous analysis and evidence-based recommendations.
               </p>
 
-              <div className="flex items-center justify-center px-3 mt-12 py-3 w-[180px] bg-orange">
-                <h4 className="font-bold text-[18px] uppercase white oswald">What We Do</h4>   
+              <div className="flex items-center justify-start px-3 mt-12 py-3">
+                <button className="bg-green clip lg:px-14  py-3 text-2xl px-6 text-[18px] border-[#AC6133] uppercase barlow font-semibold white">LEARN MORE</button>  
               </div>
               </div>
 
                 <div className="relative flex lg:w-1/2">
-                <img src={capacity} alt="research" className="w-full h-full rounded-3xl object-cover"/>
-                 <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply rounded-3xl"></div>
+                <img src={capacity} alt="research" className="w-full clip h-full object-cover"/>
+                 <div className="absolute clip inset-0 bg-green opacity-60 mix-blend-multiply "></div>
                 </div>
             
             </div>

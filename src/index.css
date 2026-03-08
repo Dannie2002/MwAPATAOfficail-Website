@@ -30,8 +30,11 @@ html, body {
   font-family: var(--font-oswald);
 }
 
+.clip{
+  clip-path: polygon(0 0, 90% 0, 100% 25%, 100% 100%, 0 100%);
+}
 
-@layer utilities {
+@layer utilities {CD 
   .text-orange {
     color: var(--primary-color);
   }
