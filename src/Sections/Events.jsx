@@ -68,9 +68,9 @@ const Events = () => {
   return (
     <section className="py-12 px-6 lg:px-22">
       
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
-                className="head lg:text-[48px] text-[32px] oswald max-w-3xl lg:leading-[52px] uppercase font-semibold text-grey ">
+                className="head lg:text-[48px] text-[42px] oswald max-w-[580px] lg:leading-[52px] uppercase font-semibold text-grey ">
                 <span className="text-orange">OUR</span> EVENTS OF INFLUENCE <span className="text-orange">AND </span>INSPIRATION.
               </h4>
 
@@ -88,15 +88,15 @@ const Events = () => {
               </div>
       </div>
 
-<div className="flex gap-4 lg:mt-10">
+<div className="flex gap-6 mt-10 flex-wrap lg:mt-10">
       {tabs.map((tab) => (
         <button
           key={tab}
           onClick={() => setActiveTab(tab)}
-          className={`px-6 py-2 rounded-full border barlow uppercase  transition-all duration-200
+          className={`lg:px-6 py-2 text-[16px] px-4 rounded-full border barlow uppercase  transition-all duration-200
           ${
             activeTab === tab
-              ? "bg-orange white font-semibold  border-orange-500"
+              ? "bg-orange  white font-semibold  border-orange-500"
               : "text-grey border-gray-300 hover:bg-gray-100"
           }`}
         >
@@ -105,7 +105,7 @@ const Events = () => {
       ))}
     </div>
 
-       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 auto-rows-[480px]">
+       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:auto-rows-[480px]">
           {events.map(ev => (
             <div
               key={ev.id}
@@ -128,7 +128,7 @@ const Events = () => {
             </div>
           ))}
        </div>
-                <div className="flex items-center justify-start flex-row gap-4 lg:mt-10">
+                <div className="flex items-center justify-start flex-row mt-6 gap-4 lg:mt-10">
                     <div className="bg-orange flex-center  p-2 rounded-full">
                      <ChevronLeft className="white size-6" />
                     </div>

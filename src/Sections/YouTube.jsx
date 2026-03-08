@@ -53,11 +53,11 @@ const YouTube= () => {
         <div className="flex relative rounded-2xl flex-col items-start justify-center h-full lg:h-[650px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             
                
-                 <div className="absolute rounded-2xl  inset-0 bg-gradient-to-r from-[#000000] via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-90 "></div>
+                 <div className="absolute rounded-2xl  inset-0 bg-gradient-to-r from-[#000000] via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95 "></div>
                     <div className="flex z-10  p-8 lg:px-22 barlow  lg:gap-6 flex-col items-start">
                       <div className="flex gap-4 flex-center">
-                            <div className="h-full w-[0.9px] bg-white "></div>
-                      <p className="white text-[20px] lg:text-[18px] w-[220px] lg:w-[450px]"><span className="text-[#a2f901] font-bold">Watch </span>videos of our various activities and research dissemination events.
+                            <div className="h-full w-[1.6px] bg-green"></div>
+                      <p className="white text-[20px] barlow lg:text-[18px] w-[220px] lg:w-[450px]"><span className="text-[#f08000] font-bold">Watch </span>videos of our various activities and research dissemination events.
  </p>
                       </div>
                       
@@ -69,9 +69,9 @@ const YouTube= () => {
                
                 
                    
-                    <div className="mt-12 flex flex-row  gap-6">
+                    <div className="mt-16 flex flex-row  gap-6">
                     
-                    <button className="bg-[#ff0000] clip lg:px-14 text-2xl py-4 px-6 text-[18px]  border-[#fffced] uppercase barlow font-semibold white">YOUTUBE CHANNEL</button>
+                    <button className="bg-green clip lg:px-14 text-2xl py-4 px-6 text-[18px]  border-[#fffced] uppercase barlow font-semibold white">YOUTUBE CHANNEL</button>
                     </div>
                     </div>
             

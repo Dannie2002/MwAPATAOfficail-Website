@@ -82,7 +82,7 @@ const News = () => {
 
 
 
-       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 auto-rows-[480px]">
+       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:auto-rows-[480px]">
           {events.map(ev => (
             <div
               key={ev.id}
@@ -94,18 +94,18 @@ const News = () => {
                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0d] via-[#323232] to-[#3A9B3D]/50  rounded-[4px] opacity-90 mix-blend-multiply"></div>
 
                </div>
-              <div className="absolute bg-transparent z-10 flex flex-col items-start gap-3 justify-between bottom-0 p-8 w-full">
-                <h4 className="barlow font-bold hover:text-[#EA8548] transition-colors duration-300 ease-in-out white uppercase text-[24px] leading-[28px]">
+              <div className="absolute bg-transparent z-10 flex flex-col items-start gap-2 lg:gap-3 justify-between bottom-0 p-4 lg:p-8 w-full">
+                <h4 className="barlow font-bold hover:text-[#EA8548] transition-colors duration-300 ease-in-out white uppercase text-[16px] lg:text-[24px] leading-[28px]">
                   {ev.title}
                 </h4>
-                <div className="bg-green mt-4 px-4 py-1 rounded-full">
+                <div className="bg-green clip mt-2 lg:mt-4 px-4 py-1 ">
                   <h4 className="white font-semibold text-[14px] ">{ev.date}</h4>
                 </div>
               </div>
             </div>
           ))}
        </div>
-                <div className="flex items-center justify-start flex-row gap-4 lg:mt-10">
+                <div className="flex items-center mt-6 justify-start flex-row gap-4 lg:mt-10">
                     <div className="bg-orange flex-center  p-2 rounded-full">
                      <ChevronLeft className="white size-6" />
                     </div>

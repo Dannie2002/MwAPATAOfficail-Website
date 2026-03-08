@@ -8,6 +8,7 @@ import Newsletter from './Sections/Newsletter'
 import EventDetailed from './Sections/SubSections/EventDetailed'
 import News from './Sections/News'
 import YouTube from './Sections/YouTube'
+import Publications from './Sections/Publications'
 
 
 
@@ -25,6 +26,7 @@ function App() {
     <EventDetailed /> 
     <News />  
     <YouTube />
+    <Publications />
     </>
   )
 }
