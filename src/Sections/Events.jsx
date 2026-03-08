@@ -7,6 +7,7 @@ import outreach from "../assets/Images/Outreach.JPG";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -102,12 +103,12 @@ const Events = () => {
           ))}
        </div>
                 <div className="flex items-center justify-start flex-row gap-4 lg:mt-10">
-                    <div className="bg-orange flex-center size-10 p-4 rounded-full">
-                     <h2 className="white">A</h2>
+                    <div className="bg-orange flex-center  p-2 rounded-full">
+                     <ChevronLeft className="white size-6" />
                     </div>
                     
-                    <div className="bg-orange flex-center size-10 p-4 rounded-full">
-                     <h2 className="white">t</h2>
+                    <div className="bg-orange flex-center  p-2 rounded-full">
+                     <ChevronRight className="white size-6" />
                     </div>
                  
                 </div>

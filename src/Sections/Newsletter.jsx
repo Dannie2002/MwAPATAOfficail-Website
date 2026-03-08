@@ -1,30 +1,35 @@
 import React from "react";
 import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
-import capacity from "../assets/Images/Capacity_building.JPG";
+import capacity from "../assets/Images/Newsletter.jpg";
 import research from "../assets/Images/Research.JPG";
 import outreach from "../assets/Images/Outreach.JPG";
 import policy from "../assets/Images/Policy_advocacy.JPG";
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
+import DottedArrow from "./Icons/DottedArrow";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import SplitText from "gsap/SplitText";
- gsap.registerPlugin(useGSAP, SplitText);
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Newsletter = () => {
 
-useGSAP(() => {
-  const heroSplit = new SplitText(".head", { type: "lines, words, chars" });
-  gsap.from(heroSplit.chars, {
+  useGSAP(() => {
+  gsap.from(".head", {
+    y: 100,
     opacity: 0,
-    y: 50,
-    ease: "power4.out",
-    duration: 1,
-    stagger: 0.05,
-    delay: 0.5
+    duration: 0.95,
+    scrollTrigger: {
+      trigger: ".head",
+      start: "top 80%",
+      end: "bottom top",
+      scrub: true,
+      ease: "power1.inOut",
+    }
   });
-}, []);
+});
 
  const mission_vision = [
   {
@@ -71,21 +76,21 @@ useGSAP(() => {
 
               <div className="flex flex-col gap-6 lg:gap-8 lg:w-1/2">
               <div className="bg-green flex flex-col rounded-2xl p-6">
-                <h2 className="white uppercase font-bold oswald text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
+                <h2 className="white uppercase font-bold oswald text-[24px] lg:text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
                 <h4 className="mt-2 barlow font-semibold uppercase white ">Download</h4>
               </div>
 
                <div className="bg-transparent border-[0.8px] border-[#4a4a4a] flex flex-col rounded-2xl p-6">
-                <h2 className="text-grey uppercase font-bold oswald text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
+                <h2 className="text-grey uppercase font-bold oswald text-[24px] lg:text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
                 <h4 className="mt-2 barlow font-semibold uppercase text-green">Download</h4>
               </div>
 
               <div className="bg-transparent border-[0.8px] border-[#4a4a4a] flex flex-col rounded-2xl p-6">
-                <h2 className="text-grey uppercase font-bold oswald text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
+                <h2 className="text-grey uppercase font-bold oswald text-[24px] lg:text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
                 <h4 className="mt-2 barlow font-semibold uppercase text-green">Download</h4>
               </div>
               <div className="bg-transparent border-[0.8px] border-[#4a4a4a] flex flex-col rounded-2xl p-6">
-                <h2 className="text-grey uppercase font-bold oswald text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
+                <h2 className="text-grey uppercase font-bold oswald text-[24px] lg:text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
                 <h4 className="mt-2 barlow font-semibold uppercase text-green">Download</h4>
               </div>
              
@@ -98,16 +103,24 @@ useGSAP(() => {
 
        </div>   
       
-        <div className="flex relative  flex-col items-start justify-center lg:h-[550px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+        <div className="flex relative rounded-2xl flex-col items-start justify-center lg:h-[550px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             
                
-                 <div className="absolute inset-0 bg-green opacity-60 "></div>
-                    <div className="flex z-10  p-6 lg:px-22 barlow  lg:gap-6 flex-col items-start">
-                      <p className="white">We always have most recent information on reseach</p>
-                    <h4 className="head white oswald font-bold w-[500px] leading-[88px] text-[88px] uppercase">SUBSCRIBE NOW</h4>
+                 <div className="absolute rounded-2xl  inset-0 bg-gradient-to-r from-[#000000] via-[#323232] to-[#ab5e10]/40 opacity-90 "></div>
+                    <div className="flex z-10  p-8 lg:px-22 barlow  lg:gap-6 flex-col items-start">
+                      <p className="white text-[18px] w-[250px] lg:w-[450px]"><span className="text-green font-bold">Subscribe </span>to our newsletter to receive valuable resources,
+                         event announcements, and expert perspectives 
+                        delivered straight to your inbox.</p>
+                    <h4 className="head white oswald font-extrabold mt-6 text-[48px] w-[200px] leading-[48px] lg:w-[500px] lg:leading-[98px] lg:text-[98px] uppercase">SUBSCRIBE NOW</h4>
+               <div className="relative">
+<DottedArrow color="#fffced" size={70} className="absolute top-0 left-0"  />
+               </div>
+               
+                
+                   
                     <div className="mt-12 flex flex-row  gap-6">
-                    <input type="email" placeholder="Enter your email" className="px-6 py-4 border-[0.8px]   border-[#fffced] rounded-l-[4px] w-[470px]"/>
-                    <button className="bg-[#ac6133] px-14 text-2xl  border-[#AC6133] uppercase barlow font-semibold white">Subscribe</button>
+                    <input type="email" placeholder="Enter your email" className="px-6 py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px] max-w-[480px] lg:w-[470px]"/>
+                    <button className="bg-green lg:px-14 text-2xl px-6 text-[18px] border-[#AC6133] uppercase barlow font-semibold white">Subscribe</button>
                     </div>
                     </div>
             

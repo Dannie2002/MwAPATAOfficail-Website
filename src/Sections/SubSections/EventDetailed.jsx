@@ -2,6 +2,7 @@ import React from "react";
 import {motion} from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import capacity from "../../assets/Images/Capacity_building.JPG";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -48,22 +49,33 @@ const EventDetailed = () => {
       </div>
 
 
-       <div className="flex flex-row items-center justify-start gap-12 mt-10">
+       <div className="flex oswald flex-row items-center justify-start gap-12 mt-10">
          <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-orange  ">DATE:</span> 17 JAN 2026</h4>
          <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-orange  ">LOCATION:</span> CROSSROADS, BLANTYRE</h4>
        </div>
             
-            <div className="bg-[#4a4a4a] lg:mt-4  w-full h-[0.3px]"></div>
+            <div className="bg-[#4a4a4a] lg:mt-6  w-full h-[0.2px]"></div>
 
 
-                <div className="flex items-center justify-start flex-row gap-4 lg:mt-10">
-                    <div className="bg-orange flex-center size-10 p-4 rounded-full">
-                     <h2 className="white">A</h2>
-                    </div>
-                    
-                    <div className="bg-orange flex-center size-10 p-4 rounded-full">
-                     <h2 className="white">t</h2>
-                    </div>
+                <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 auto-rows-[480px]">
+
+            <div className="flex flex-col gap-8">
+              <h4 className="font-bold text-[48px] uppercase text-orange oswald">ABOUT THIS EVENT</h4>
+              <p className="lg:text-[18px] text-grey text-[16px] lg:w-[470px] leading-relaxed">
+                As part of the process of institutionalizing youth-led agri-food systems platforms in the LEAP4YOUTH Project, 
+                MwAPATA, in partnership with the National Youth Council of Malawi (NYCOM), with support from AGRA, conducted a 
+                district policy clinic with youth networks in Mchinji and an Agri-Skills Lab for youths in Zomba. The Mchinji Policy 
+                Clinic was held at Mchinji Community Hall from 2nd to 3rd February 2026, while the Zomba
+                 Agri-Skills Lab was held at Zomba Community Stadium Hall from 6th to 7th February 2026.
+              </p>
+              
+                <h4 className="font-bold text-[32px] uppercase text-grey oswald">WATCH THE HIGHLIFGHTS OF THE WORKSHOP HERE</h4>
+              </div>
+
+               <div className="relative flex">
+                <img src={capacity} alt="research" className="w-full h-full rounded-3xl object-cover"/>
+                 <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply rounded-3xl"></div>
+                </div>
                  
                 </div>
           
