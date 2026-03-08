@@ -1,5 +1,6 @@
 import React from "react";
 import {motion} from "framer-motion";
+import { useState } from "react";
 import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.JPG";
 import research from "../assets/Images/Research.JPG";
@@ -55,6 +56,15 @@ const Events = () => {
 
 ];
 
+  const [activeTab, setActiveTab] = useState("Recent Events");
+
+  const tabs = [
+    "Recent Events",
+    "MAAPC",
+    "Seminal Series",
+    "Past Events",
+  ];
+
   return (
     <section className="py-12 px-6 lg:px-22">
       
@@ -78,6 +88,22 @@ const Events = () => {
               </div>
       </div>
 
+<div className="flex gap-4 lg:mt-10">
+      {tabs.map((tab) => (
+        <button
+          key={tab}
+          onClick={() => setActiveTab(tab)}
+          className={`px-6 py-2 rounded-full border transition-all duration-200
+          ${
+            activeTab === tab
+              ? "bg-orange white border-orange-500"
+              : "text-grey border-gray-300 hover:bg-gray-100"
+          }`}
+        >
+          {tab}
+        </button>
+      ))}
+    </div>
 
        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 auto-rows-[480px]">
           {events.map(ev => (
@@ -88,15 +114,15 @@ const Events = () => {
                <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
                 <img src={ev.image} alt={ev.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
               {/* overlay to apply blend mode */}
-               <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
+               <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0d] via-[#323232] to-[#3A9B3D]/50  rounded-[4px] opacity-90 mix-blend-multiply"></div>
 
                </div>
               <div className="absolute bg-transparent z-10 flex flex-col items-start gap-3 justify-between bottom-0 p-8 w-full">
                 <h4 className="barlow font-bold white uppercase text-[24px] leading-[28px]">
                   {ev.title}
                 </h4>
-                <div className="bg-[#ac6133] mt-4 px-4 py-1 rounded-[4px]">
-                  <h4 className="white font-semibold text-[16px] ">{ev.date}</h4>
+                <div className="bg-green mt-4 px-4 py-1 rounded-full">
+                  <h4 className="white font-semibold text-[14px] ">{ev.date}</h4>
                 </div>
               </div>
             </div>

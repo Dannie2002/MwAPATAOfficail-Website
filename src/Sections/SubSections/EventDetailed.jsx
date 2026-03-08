@@ -51,16 +51,16 @@ const EventDetailed = () => {
 
        <div className="flex oswald flex-row items-center justify-start gap-12 mt-10">
          <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-orange  ">DATE:</span> 17 JAN 2026</h4>
-         <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-orange  ">LOCATION:</span> CROSSROADS, BLANTYRE</h4>
+         <h4 className="uppercase text-grey text-[16px] "> <span className="text-orange font-semibold ">LOCATION:</span> CROSSROADS, BLANTYRE</h4>
        </div>
             
-            <div className="bg-[#4a4a4a] lg:mt-6  w-full h-[0.2px]"></div>
+            <div className="bg-[#4a4a4a] lg:mt-6 mt-6 w-full h-[0.2px]"></div>
 
 
                 <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 auto-rows-[480px]">
 
             <div className="flex flex-col gap-8">
-              <h4 className="font-bold text-[48px] uppercase text-orange oswald">ABOUT THIS EVENT</h4>
+              <h4 className="font-bold lg:text-[48px] text-[32px] uppercase text-orange oswald">ABOUT THIS EVENT</h4>
               <p className="lg:text-[18px] text-grey text-[16px] lg:w-[470px] leading-relaxed">
                 As part of the process of institutionalizing youth-led agri-food systems platforms in the LEAP4YOUTH Project, 
                 MwAPATA, in partnership with the National Youth Council of Malawi (NYCOM), with support from AGRA, conducted a 

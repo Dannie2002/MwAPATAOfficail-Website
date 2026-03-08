@@ -103,17 +103,17 @@ const Newsletter = () => {
 
        </div>   
       
-        <div className="flex relative rounded-2xl flex-col items-start justify-center lg:h-[550px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+        <div className="flex relative rounded-2xl flex-col items-start justify-center h-full lg:h-[550px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             
                
-                 <div className="absolute rounded-2xl  inset-0 bg-gradient-to-r from-[#000000] via-[#323232] to-[#ab5e10]/40 opacity-90 "></div>
+                 <div className="absolute rounded-2xl  inset-0 bg-gradient-to-r from-[#0b0b0d] via-[#323232] to-[#ab5e10]/50 opacity-90 "></div>
                     <div className="flex z-10  p-8 lg:px-22 barlow  lg:gap-6 flex-col items-start">
-                      <p className="white text-[18px] w-[250px] lg:w-[450px]"><span className="text-green font-bold">Subscribe </span>to our newsletter to receive valuable resources,
+                      <p className="white text-[20px] lg:text-[18px] w-[220px] lg:w-[450px]"><span className="text-green font-bold">Subscribe </span>to our newsletter to receive valuable resources,
                          event announcements, and expert perspectives 
                         delivered straight to your inbox.</p>
                     <h4 className="head white oswald font-extrabold mt-6 text-[48px] w-[200px] leading-[48px] lg:w-[500px] lg:leading-[98px] lg:text-[98px] uppercase">SUBSCRIBE NOW</h4>
                <div className="relative">
-<DottedArrow color="#fffced" size={70} className="absolute top-0 left-0"  />
+<DottedArrow color="#fffced" size={70} className="absolute lg:top-0 lg:left-0 left-52 bottom-0"  />
                </div>
                
                 
