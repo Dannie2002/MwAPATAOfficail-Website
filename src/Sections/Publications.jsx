@@ -55,9 +55,34 @@ const Publications = () => {
 
 ];
 
+    const extraprograms = [
+  {
+    id: 1,
+    title: "Peer Reviewed",
+    description:
+      "Our goal is to produce world-class, rigorous research.",
+   
+  },
+  {
+    id: 2,
+    title: "Presentations",
+    description:
+      "Circulating our findings to stakeholders to provoke informed discussions.",
+    
+  },
+  {
+    id: 3,
+    title: "Data",
+    description:
+      " We will work to collect and share data for key indicators like agricultural production, welfare, food security and more.",
+    
+  },
+
+];
+
   return (
     <section className="py-22 mt-12 min-h-screen px-6 lg:px-22">
-      <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-orange">Publications</h1>
+      <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-grey">Publications</h1>
       <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4
@@ -110,23 +135,16 @@ const Publications = () => {
        
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 lg:mt-0 auto-rows-[400px]">
-          <div className="bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[4px]">
-            <h4 className="barlow font-bold white uppercase text-[22px]">Peer Reviewed</h4>
-            <p className=" white font-semibold">Our goal is to produce world-class, rigorous research.</p>
-          </div>
-            <div className="bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[4px]">
-            <h4 className="barlow white font-bold uppercase text-[22px]">Presentations</h4>
-            <p className="mt-4 white font-semibold">Circulating our findings to stakeholders to provoke informed discussions.</p>
-          </div>
-             <div className="bg-[#91c66e] p-6 flex flex-col items-start justify-between rounded-[4px]">
-              <di className="flex items-center gap-3 flex-col">
-                <Data size={48} color="#fffced" />
-                  <h4 className="barlow white font-bold uppercase text-[24px]">Data</h4>
-              </di>
-           
-            <p className="mt-4 white font-semibold"> We will work to collect and share data for key indicators like agricultural production, welfare, food security and more.</p>
+          {extraprograms.map((extraprogram,index) => (
+                  <div
+              className={`bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[14px] ${index === 2 ? "col-span-2" : ""}`}
+            >
+            <h4 className="barlow font-bold white uppercase text-[22px]">{extraprogram.title}</h4>
+            <p className=" white font-semibold">{extraprogram.description}</p>
           </div>
 
+          ))}
+         
         </div>
 
        </div>

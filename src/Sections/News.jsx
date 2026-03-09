@@ -95,7 +95,7 @@ const News = () => {
 
                </div>
               <div className="absolute bg-transparent z-10 flex flex-col items-start gap-2 lg:gap-3 justify-between bottom-0 p-4 lg:p-8 w-full">
-                <h4 className="barlow font-bold hover:text-[#EA8548] transition-colors duration-300 ease-in-out white uppercase text-[16px] lg:text-[24px] leading-[28px]">
+                <h4 className="bebas  hover:text-[#EA8548] transition-colors duration-300 ease-in-out white uppercase text-[16px] lg:text-[24px] leading-[28px]">
                   {ev.title}
                 </h4>
                 <div className="bg-green clip mt-2 lg:mt-4 px-4 py-1 ">
