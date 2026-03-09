@@ -73,7 +73,7 @@ const Newsletter = () => {
                
               <div className="bg-green flex flex-row items-center justify-between rounded-2xl p-6">
                  <div className="size-48">
-                  <img src={capacity} className="h-full w-full bg-no-repeat bg-cover bg-center" />
+                  <img src={capacity} className="h-full w-full bg-no-repeat object-cover bg-center" />
                 </div>
                 <div>
                    <h2 className="white uppercase font-bold oswald text-[24px] lg:text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
