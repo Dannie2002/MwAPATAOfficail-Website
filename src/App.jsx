@@ -9,6 +9,7 @@ import EventDetailed from './Sections/SubSections/EventDetailed'
 import News from './Sections/News'
 import YouTube from './Sections/YouTube'
 import Publications from './Sections/Publications'
+import LandingPage from './Sections/LandingPage'
 
 
 
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <>
+    <LandingPage />
     <About_Us />
     <OurTeam />
     <Programmes />
