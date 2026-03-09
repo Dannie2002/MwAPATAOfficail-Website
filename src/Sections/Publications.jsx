@@ -79,6 +79,7 @@ const Publications = () => {
                   className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
               </div>
       </div>
+          {/* Grid for publications card */}
         <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 auto-rows-[400px]">
           {programs.map((program, index) => (
             <div
@@ -99,16 +100,16 @@ const Publications = () => {
         ))}
        </div>
 
-       <div className="lg:mt-18 flex flex-col lg:flex-row "> 
+       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 "> 
 
-        <div className="w-1/2">
+        <div className="">
         <h4 className="head lg:text-[48px] text-[32px] bebas w-[520px] lg:leading-[52px] uppercase font-semibold text-grey ">
                 In addition to our own publications, we offer the following resources
               </h4>
         </div>
        
 
-        <div className="w-1/2 grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 lg:mt-0 auto-rows-[290px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 lg:mt-0 auto-rows-[400px]">
           <div className="bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[4px]">
             <h4 className="barlow font-bold white uppercase text-[22px]">Peer Reviewed</h4>
             <p className=" white font-semibold">Our goal is to produce world-class, rigorous research.</p>
