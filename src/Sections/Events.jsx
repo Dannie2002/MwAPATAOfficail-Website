@@ -70,7 +70,7 @@ const Events = () => {
       
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
-                className="head lg:text-[48px] text-[42px] oswald max-w-[580px] lg:leading-[52px] uppercase font-semibold text-grey ">
+                className="head lg:text-[48px] text-[32px] bebas max-w-3xl lg:leading-[52px] uppercase font-bold text-grey ">
                 <span className="text-orange">OUR</span> EVENTS OF INFLUENCE <span className="text-orange">AND </span>INSPIRATION.
               </h4>
 
@@ -93,10 +93,10 @@ const Events = () => {
         <button
           key={tab}
           onClick={() => setActiveTab(tab)}
-          className={`lg:px-6 py-2 text-[16px] px-4 rounded-full border barlow uppercase  transition-all duration-200
+          className={`lg:px-6 py-2 text-[16px] px-4 rounded-full border bebas uppercase  transition-all duration-200
           ${
             activeTab === tab
-              ? "bg-orange  white font-semibold  border-orange-500"
+              ? "bg-orange  white   border-orange-500"
               : "text-grey border-gray-300 hover:bg-gray-100"
           }`}
         >
@@ -118,7 +118,7 @@ const Events = () => {
 
                </div>
               <div className="absolute bg-transparent z-10 flex flex-col items-start gap-3 justify-between bottom-0 p-8 w-full">
-                <h4 className="barlow font-bold white uppercase text-[24px] leading-[28px]">
+                <h4 className="bebas  white uppercase text-[24px] leading-[28px]">
                   {ev.title}
                 </h4>
                 <div className="bg-green mt-4 px-4 py-1 rounded-full">

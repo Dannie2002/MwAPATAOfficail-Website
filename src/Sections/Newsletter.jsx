@@ -57,27 +57,29 @@ const Newsletter = () => {
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.99, ease: "easeInOut" }}
-                className="lg:text-[48px] text-[32px] oswald max-w-[650px]  max-w-3xl lg:leading-[56px] uppercase font-bold text-grey ">
+                className="lg:text-[48px] lg:w-[600px] text-[32px] bebas max-w-3xl lg:leading-[52px] uppercase font-bold text-grey">
                 <span className="text-orange">An independent</span> agricultural policy think tank in <span className="text-orange">Malawi</span>.
               </motion.h4>
                
 
 
-            <div className="flex flex-col lg:mt-28 w-full gap-8 mt-10 lg:flex-row">
+            <div className="flex flex-col lg:mt-28 w-full gap-8 mt-10 ">
 
-             <div className="relative flex h-88 lg:w-1/2">
+          
+
+
+
+              <div className="flex flex-col gap-6 lg:gap-8">
                
-                <img src={capacity} alt="research" className="w-full h-full rounded-3xl object-cover"/>
-                 
-                
-            </div>
-
-
-
-              <div className="flex flex-col gap-6 lg:gap-8 lg:w-1/2">
-              <div className="bg-green flex flex-col rounded-2xl p-6">
-                <h2 className="white uppercase font-bold oswald text-[24px] lg:text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
+              <div className="bg-green flex flex-row items-center justify-between rounded-2xl p-6">
+                 <div className="size-48">
+                  <img src={capacity} className="h-full w-full bg-no-repeat bg-cover bg-center" />
+                </div>
+                <div>
+                   <h2 className="white uppercase font-bold oswald text-[24px] lg:text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
                 <h4 className="mt-2 barlow font-semibold uppercase white ">Download</h4>
+                </div>
+               
               </div>
 
                <div className="bg-transparent border-[0.8px] border-[#4a4a4a] flex flex-col rounded-2xl p-6">
@@ -106,15 +108,15 @@ const Newsletter = () => {
         <div className="flex relative rounded-2xl flex-col items-start justify-center h-full lg:h-[650px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             
                
-                 <div className="absolute rounded-2xl  inset-0 bg-gradient-to-r from-[#3A9B3D] via-[#0b0b0d]/60 to-[#323232]/50 opacity-90 "></div>
+                  <div className="absolute rounded-2xl  inset-0 bg-gradient-to-r from-[#000000] via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95 "></div>
                     <div className="flex z-10  p-8 lg:px-22 barlow  lg:gap-6 flex-col items-start">
                       <div className="flex gap-4 flex-center">
-                            <div className="h-full w-[1.6px] bg-[#fffced]"></div>
-                      <p className="white text-[20px] lg:text-[18px] w-[220px] lg:w-[450px]"><span className="text-[#a2f901] font-bold">Subscribe </span>to our newsletter to receive valuable resources,
+                            <div className="h-full w-[2.6px] bg-green"></div>
+                      <p className="white text-[20px] lg:text-[18px] w-[220px] lg:w-[450px]"><span className="text-[#EA8548] font-bold">Subscribe </span>to our newsletter to receive valuable resources,
                          event announcements, and expert perspectives 
                         delivered straight to your inbox.</p>
                         </div>
-                    <h4 className="head white oswald font-extrabold mt-6 text-[48px] w-[200px] leading-[48px] lg:w-[500px] lg:leading-[98px] lg:text-[98px] uppercase">SUBSCRIBE NOW</h4>
+                    <h4 className="head white bebas font-extrabold mt-6 text-[48px] w-[200px] leading-[48px] lg:w-[500px] lg:leading-[98px] lg:text-[98px] uppercase">SUBSCRIBE <br></br>NOW</h4>
                <div className="relative">
 <DottedArrow color="#fffced" size={70} className="absolute lg:top-0 lg:left-0 left-52 bottom-0"  />
                </div>

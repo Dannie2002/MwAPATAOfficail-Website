@@ -5,6 +5,7 @@ import capacity from "../assets/Images/Capacity_building.JPG";
 import research from "../assets/Images/Research.JPG";
 import outreach from "../assets/Images/Outreach.JPG";
 import policy from "../assets/Images/Policy_advocacy.JPG";
+import Data from "./Icons/Data";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -61,7 +62,7 @@ const Publications = () => {
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4
            
-                className="head lg:text-[48px] text-[32px] bebas max-w-4xl lg:leading-[52px] uppercase font-semibold text-grey ">
+                className="head lg:text-[48px] text-[32px] bebas max-w-3xl lg:leading-[52px] uppercase font-bold text-grey ">
                 MwAPATA's three main publication lines offer distinct options to meet the reader's needs
               </h4>
 
@@ -107,18 +108,22 @@ const Publications = () => {
         </div>
        
 
-        <div className="w-1/2 grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 lg:mt-0 auto-rows-[280px]">
-          <div className="bg-green p-6 flex flex-col items-start justify-between rounded-[4px]">
+        <div className="w-1/2 grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 lg:mt-0 auto-rows-[290px]">
+          <div className="bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[4px]">
             <h4 className="barlow font-bold white uppercase text-[22px]">Peer Reviewed</h4>
             <p className=" white font-semibold">Our goal is to produce world-class, rigorous research.</p>
           </div>
-            <div className="bg-green p-6 flex flex-col items-start justify-between rounded-[4px]">
-            <h4 className="barlow font-bold text-grey uppercase text-[22px]">Presentations</h4>
-            <p className="mt-4 text-grey font-semibold">A curated selection of publications from external sources that align with our mission and values.</p>
+            <div className="bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[4px]">
+            <h4 className="barlow white font-bold uppercase text-[22px]">Presentations</h4>
+            <p className="mt-4 white font-semibold">Circulating our findings to stakeholders to provoke informed discussions.</p>
           </div>
-             <div className="bg-orange p-6 flex flex-col items-start justify-between rounded-[4px]">
-            <h4 className="barlow font-bold text-grey uppercase text-[22px]">Data</h4>
-            <p className="mt-4 text-grey font-semibold">A curated selection of publications from external sources that align with our mission and values.</p>
+             <div className="bg-[#91c66e] p-6 flex flex-col items-start justify-between rounded-[4px]">
+              <di className="flex items-center gap-3 flex-col">
+                <Data size={48} color="#fffced" />
+                  <h4 className="barlow white font-bold uppercase text-[24px]">Data</h4>
+              </di>
+           
+            <p className="mt-4 white font-semibold"> We will work to collect and share data for key indicators like agricultural production, welfare, food security and more.</p>
           </div>
 
         </div>

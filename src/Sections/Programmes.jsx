@@ -67,7 +67,7 @@ const Programmes = () => {
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4
            
-                className="head lg:text-[48px] text-[32px] oswald max-w-4xl lg:leading-[52px] uppercase font-semibold text-grey ">
+                className="head lg:text-[48px] text-[32px] bebas max-w-3xl lg:leading-[52px] uppercase font-bold text-grey ">
                 <span className="text-orange">RECOGNIZING </span>THE ENORMITY OF THE CHALLENGES <span className="text-orange">OUR </span>SOCIETY FACES.
               </h4>
 

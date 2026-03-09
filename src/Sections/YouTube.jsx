@@ -41,7 +41,7 @@ const YouTube= () => {
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.99, ease: "easeInOut" }}
-                className="lg:text-[48px] text-[32px] oswald max-w-[650px]  max-w-3xl lg:leading-[56px] uppercase font-bold text-grey ">
+                className="lg:text-[48px] text-[32px] bebas max-w-[650px]  max-w-3xl lg:leading-[56px] uppercase font-bold text-grey ">
                 <span className="text-orange">An independent</span> agricultural policy think tank in <span className="text-orange">Malawi</span>.
               </motion.h4>
                
@@ -62,7 +62,7 @@ const YouTube= () => {
                       </div>
                       
                         
-                    <h4 className=" white oswald font-extrabold mt-6 text-[48px] w-[200px] leading-[48px] lg:w-[500px] lg:leading-[98px] lg:text-[98px] uppercase">SUBSCRIBE TO OUR</h4>
+                    <h4 className=" white bebas font-extrabold mt-6 text-[48px] w-[200px] leading-[48px] lg:w-[500px] lg:leading-[98px] lg:text-[98px] uppercase">SUBSCRIBE TO OUR</h4>
                <div className="relative">
 <DottedArrow color="#fffced" size={70} className="absolute lg:top-0 lg:left-0 left-52 bottom-0"  />
                </div>
