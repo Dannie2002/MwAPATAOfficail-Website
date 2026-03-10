@@ -28,16 +28,20 @@ useGSAP(() => {
 
   return (
     <section className="min-h-screen">
-      <header className="w-full border-b bg-white sticky top-0 z-50">
-      <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <header className="w-full bg-[#f08000] sticky top-0 z-50">
+      <nav className=" mx-auto flex items-center justify-between px-22 py-3">
 
         {/* Logo */}
-        <div className="text-xl font-bold text-green-800">
-          MwAPATA
-        </div>
+        <button
+          className="white font-light text-[18px] barlow"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+         +265 887 403 004/005 info@mwapata.mw
+
+        </button>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+        <ul className="hidden barlow uppercase md:flex items-center gap-8 white font-medium">
           <li className="hover:text-green-700 cursor-pointer">Home</li>
           <li className="hover:text-green-700 cursor-pointer">About</li>
           <li className="hover:text-green-700 cursor-pointer">Events</li>
@@ -46,8 +50,8 @@ useGSAP(() => {
         </ul>
 
         {/* CTA */}
-        <button className="hidden md:block bg-green-700 text-white px-5 py-2 rounded-lg hover:bg-green-800 transition">
-          Subscribe
+        <button className="hidden md:block bebas text-[18px] white border-[#fffced] border-[0.7px] uppercase bg-transparent px-5 py-2   transition">
+            more
         </button>
 
         {/* Mobile Menu Button */}
@@ -69,7 +73,7 @@ useGSAP(() => {
             <li className="hover:text-green-700 cursor-pointer">Events</li>
             <li className="hover:text-green-700 cursor-pointer">Publications & Resources</li>
             <li className="hover:text-green-700 cursor-pointer">More</li>
-            <button className="mt-2 bg-green-700 text-white py-2 rounded-lg">
+            <button className="mt-2 bebas bg-green uppercase white py-2 clip">
               Subscribe
             </button>
           </ul>
@@ -77,13 +81,13 @@ useGSAP(() => {
       )}
     </header>
       
-        <div className="flex relative rounded-2xl flex-col items-start justify-center h-full lg:h-[650px] lg:mt-8 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+        <div className="flex relative rounded-2xl flex-col items-start justify-center h-full lg:h-[650px] lg:mt-0 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             
                
                  <div className="absolute rounded-2xl  inset-0 bg-gradient-to-r from-[#000000] via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95 "></div>
                     <div className="flex z-10  p-8 lg:px-22 barlow  lg:gap-6 flex-col items-start">
                       <div className="flex gap-4 flex-center">
-                            <div className="h-full w-[1.6px] bg-[#fffced]"></div>
+                            <div className="h-full w-[2.6px] bg-green"></div>
                       <p className="white text-[20px] lg:text-[18px] w-[220px] lg:w-[450px]"><span className="text-[#f08000] font-bold">Evidence</span> for Transformation
  </p>
                       </div>
