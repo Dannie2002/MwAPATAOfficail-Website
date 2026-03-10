@@ -28,29 +28,30 @@ useGSAP(() => {
 
   return (
     <section className="min-h-screen">
-      <header className="w-full bg-[#f08000] sticky top-0 z-50">
-      <nav className=" mx-auto flex items-center justify-between px-22 py-3">
+      <header className="w-full bg-[#f08000] rounded-[4px] sticky top-0 z-50">
+      <nav className="relative mx-auto flex items-center justify-between px-22 py-3">
 
         {/* Logo */}
         <button
-          className="white font-light text-[18px] barlow"
-          onClick={() => setIsOpen(!isOpen)}
+          className="white flex gap-3 uppercase text-[18px] barlow"
+          
         >
-         +265 887 403 004/005 info@mwapata.mw
-
+         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
         </button>
 
         {/* Desktop Menu */}
-        <ul className="hidden barlow uppercase md:flex items-center gap-8 white font-medium">
-          <li className="hover:text-green-700 cursor-pointer">Home</li>
+        <ul className="hidden  barlow uppercase md:flex items-center gap-8 white font-medium">
+          <li className="hover:text-green cursor-pointer">Home</li>
           <li className="hover:text-green-700 cursor-pointer">About</li>
           <li className="hover:text-green-700 cursor-pointer">Events</li>
           <li className="hover:text-green-700 cursor-pointer">Publications & Resources</li>
-          <li className="hover:text-green-700 cursor-pointer">More</li>
+          <li className="hover:text-green-700 cursor-pointer">Eminent Speaker Series</li>
         </ul>
 
         {/* CTA */}
-        <button className="hidden md:block bebas text-[18px] white border-[#fffced] border-[0.7px] uppercase bg-transparent px-5 py-2   transition">
+        <button className="hidden md:block bebas text-[18px] white border-[#fffced] border-[0.7px] uppercase bg-transparent px-8 py-2   transition-all duration-500 ease-in-out"
+        onClick={() => setIsOpen(!isOpen)}>
             more
         </button>
 
@@ -62,6 +63,21 @@ useGSAP(() => {
           ☰
         </button>
 
+   {isOpen && (
+  <div className="absolute clip right-0 top-full mt-0 w-3xl h-[400px] p-8
+  backdrop-blur-4xl bg-[#eee]/70 z-0
+
+  transform transition-all duration-300 ease-out
+  animate-[dropdown_0.6s_ease-out]"
+  >
+
+    <p className="text-green bebas text-[24px]">About MwAPATA</p>
+    <p className="text-green bebas text-[24px]">Our Management</p>
+    <p className="text-green bebas text-[24px]">Our Background</p>
+    <p>Team</p>
+
+  </div>
+)}
       </nav>
 
       {/* Mobile Menu */}
@@ -81,7 +97,7 @@ useGSAP(() => {
       )}
     </header>
       
-        <div className="flex relative rounded-2xl flex-col items-start justify-center h-full lg:h-[650px] lg:mt-0 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+        <div className="flex relative rounded-[4px] flex-col items-start justify-center h-full lg:h-[650px] lg:mt-0 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             
                
                  <div className="absolute rounded-2xl  inset-0 bg-gradient-to-r from-[#000000] via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95 "></div>
@@ -100,9 +116,9 @@ useGSAP(() => {
 MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan 
 State University, and continues with the support of various strategic partners. 
                 </p>
-                <div className="hidden relative">
-<DottedArrow color="#fffced" size={70} className=" absolute lg:top-0 lg:left-0 left-52 bottom-0"  />
-               </div>
+              <div className=" relative">
+               <DottedArrow color="#fffced" size={70} className=" absolute lg:top-0 lg:left-0 left-52 bottom-20"  />
+              </div>
                
                 
                    
