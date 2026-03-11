@@ -64,17 +64,28 @@ useGSAP(() => {
         </button>
 
    {isOpen && (
-  <div className="absolute clip right-0 top-full mt-0 w-3xl h-[400px] p-8
+  <div className="flex flex-col gap-6 absolute right-0 top-full mt-0 w-4xl h-[400px] p-8
   backdrop-blur-4xl bg-[#eee]/70 z-0
 
   transform transition-all duration-300 ease-out
   animate-[dropdown_0.6s_ease-out]"
   >
-
-    <p className="text-green bebas text-[24px]">About MwAPATA</p>
-    <p className="text-green bebas text-[24px]">Our Management</p>
-    <p className="text-green bebas text-[24px]">Our Background</p>
-    <p>Team</p>
+     <div className="w-full mb-4">
+      <input
+        type="text"
+        placeholder="Search ..."
+        className="w-full bg-transparent border-b border-[#4a4a4a] outline-none py-2 text-[18px] placeholder-[#4a4a4a] text-grey focus:border-green transition-all duration-300"
+      />
+    </div>
+    <div className="flex gap-6">
+<p className="text-[#f08000] bebas text-[24px]">About MwAPATA</p>
+    <p className="text-green bebas text-[24px]">Contact Us</p>
+    <p className="text-green bebas text-[24px]">Job Listing</p>
+    <p className="text-green bebas text-[24px]">YouTube channel</p>
+    <p className="text-green bebas text-[24px]">Follow Us</p>
+    </div>
+    
+    
 
   </div>
 )}
