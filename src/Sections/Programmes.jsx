@@ -84,6 +84,8 @@ const Programmes = () => {
                   className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
               </div>
       </div>
+
+      {/* Grid for programmes */}
         <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 auto-rows-[480px]">
           {programs.map((program) => (
             <div className="relative z-0 shadow-3xl">

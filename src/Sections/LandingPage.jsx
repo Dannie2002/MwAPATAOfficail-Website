@@ -64,25 +64,56 @@ useGSAP(() => {
         </button>
 
    {isOpen && (
-  <div className="flex flex-col gap-6 absolute right-0 top-full mt-0 w-4xl h-[400px] p-8
-  backdrop-blur-4xl bg-[#eee]/70 z-0
+  <div className="flex flex-col gap-6 absolute right-0 top-full mt-0 w-full h-[400px] p-8
+  backdrop-blur-4xl bg-[#eee] z-0
 
   transform transition-all duration-300 ease-out
   animate-[dropdown_0.6s_ease-out]"
   >
-     <div className="w-full mb-4">
+     <div className="w-1/4 mb-4">
       <input
         type="text"
         placeholder="Search ..."
         className="w-full bg-transparent border-b border-[#4a4a4a] outline-none py-2 text-[18px] placeholder-[#4a4a4a] text-grey focus:border-green transition-all duration-300"
       />
     </div>
-    <div className="flex gap-6">
-<p className="text-[#f08000] bebas text-[24px]">About MwAPATA</p>
-    <p className="text-green bebas text-[24px]">Contact Us</p>
-    <p className="text-green bebas text-[24px]">Job Listing</p>
-    <p className="text-green bebas text-[24px]">YouTube channel</p>
-    <p className="text-green bebas text-[24px]">Follow Us</p>
+
+     <div className="grid grid-cols-3 w-4xl gap-0">
+
+      {/* About MwAPATA */}
+      <div>
+        <h4 className="text-green bebas text-[24px] mb-3">About MwAPATA</h4>
+        <ul className="space-y-2 text-gray-700">
+          <li>Our Team</li>
+          <li>Strategic Plan</li>
+          <li>Governance</li>
+          <li>Partners</li>
+        </ul>
+      </div>
+
+      {/* Management */}
+      <div>
+        <h4 className="text-green bebas text-[24px] mb-3">Management</h4>
+        <ul className="space-y-2 text-gray-700">
+          <li>Executive Team</li>
+          <li>Board of Directors</li>
+          <li>Advisory Committee</li>
+          <li>Leadership</li>
+        </ul>
+      </div>
+
+      {/* Background */}
+      <div>
+        <h4 className="text-green bebas text-[24px] mb-3">Background</h4>
+        <ul className="space-y-2 text-gray-700">
+          <li>Research Focus</li>
+          <li>Programs</li>
+          <li>Publications</li>
+          <li>Policy Engagement</li>
+          <li>Impact Stories</li>
+        </ul>
+      </div>
+
     </div>
     
     
@@ -128,14 +159,14 @@ MwAPATA was established with a grant from the Foundation for a Smoke-Free World 
 State University, and continues with the support of various strategic partners. 
                 </p>
               <div className=" relative">
-               <DottedArrow color="#fffced" size={70} className=" absolute lg:top-0 lg:left-0 left-52 bottom-20"  />
+               <DottedArrow color="#fffced" size={70} className=" absolute lg:-top-5 lg:left-0 left-52 bottom-20"  />
               </div>
                
                 
                    
                     <div className="mt-6 flex flex-row  gap-6">
                     
-                    <button className="bg-green clip lg:px-14 text-2xl py-4 px-6 text-[18px]  border-[#fffced] uppercase barlow font-semibold white">ABOUT MWAPATA</button>
+                    <button className="bg-green clip lg:px-8 text-2xl py-4 px-6 text-[18px]  border-[#fffced]  font-semibold white">Discover the Research</button>
                     </div>
                     </div>
             

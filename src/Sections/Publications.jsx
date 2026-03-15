@@ -87,7 +87,7 @@ const Publications = () => {
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4
            
-                className="head lg:text-[48px] text-[32px] bebas max-w-3xl lg:leading-[52px] uppercase font-bold text-grey ">
+                className="lg:text-[48px] text-[32px] bebas max-w-3xl lg:leading-[52px] uppercase font-bold text-grey ">
                 MwAPATA's three main publication lines offer distinct options to meet the reader's needs
               </h4>
 
@@ -128,7 +128,7 @@ const Publications = () => {
        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 "> 
 
         <div className="">
-        <h4 className="head lg:text-[48px] text-[32px] bebas w-[520px] lg:leading-[52px] uppercase font-semibold text-grey ">
+        <h4 className=" lg:text-[48px] text-[32px] bebas w-[520px] lg:leading-[52px] uppercase font-semibold text-grey ">
                 In addition to our own publications, we offer the following resources
               </h4>
         </div>

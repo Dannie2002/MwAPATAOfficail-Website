@@ -91,16 +91,16 @@ const News = () => {
                <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
                 <img src={ev.image} alt={ev.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
               {/* overlay to apply blend mode */}
-               <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0d] via-[#323232] to-[#3A9B3D]/50  rounded-[4px] opacity-90 mix-blend-multiply"></div>
+               <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0d]/90 via-[#323232] to-[#3A9B3D]/5  rounded-[4px] opacity-90 mix-blend-multiply"></div>
 
                </div>
               <div className="absolute bg-transparent z-10 flex flex-col items-start gap-2 lg:gap-3 justify-between bottom-0 p-4 lg:p-8 w-full">
-                <h4 className="bebas  hover:text-[#EA8548] transition-colors duration-300 ease-in-out white uppercase text-[16px] lg:text-[24px] leading-[28px]">
+             <div className="mt-0  py-1 rounded-full">
+                  <h4 className="text-[#65cd16] font-semibold text-[16px] ">{ev.date}</h4>
+                </div>
+                <h4 className="bebas white uppercase text-[28px] leading-[30px]">
                   {ev.title}
                 </h4>
-                <div className="bg-green clip mt-2 lg:mt-4 px-4 py-1 ">
-                  <h4 className="white font-semibold text-[14px] ">{ev.date}</h4>
-                </div>
               </div>
             </div>
           ))}

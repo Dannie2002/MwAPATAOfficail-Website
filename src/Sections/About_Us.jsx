@@ -2,6 +2,7 @@ import React from "react";
 import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.JPG";
+import noise from "../assets/Images/Noise.png";
 import research from "../assets/Images/Research.JPG";
 import outreach from "../assets/Images/Outreach.JPG";
 import policy from "../assets/Images/Policy_advocacy.JPG";
@@ -31,11 +32,11 @@ const About_Us = () => {
 
   return (
     <section className="min-h-screen">
-      <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-orange">ABOUT US</h1>
-      <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
+      
       <div className="flex flex-col  lg:items-start lg:justify-between py-0 px-6 lg:px-22  mt-10 lg:mt-18">
           
-               
+               <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-grey">ABOUT US</h1>
+      <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
 
 
             <div className="flex flex-col lg:mt-28 mt-10 lg:flex-row">
@@ -47,13 +48,14 @@ const About_Us = () => {
               </p>
 
               <div className="flex items-center justify-start px-3 mt-12 py-3">
-                <button className="bg-green clip lg:px-14  py-3 text-2xl px-6 text-[18px] border-[#AC6133] uppercase barlow font-semibold white">LEARN MORE</button>  
+                <button className="bg-green clip lg:px-14  py-3 text-2xl px-6 text-[18px] border-[#AC6133] barlow font-semibold white">Learn More</button>  
               </div>
               </div>
 
                 <div className="relative flex lg:w-1/2">
                 <img src={capacity} alt="research" className="w-full clip h-full object-cover"/>
-                 <div className="absolute clip inset-0 bg-green opacity-60 mix-blend-multiply "></div>
+               <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+                 <div className="absolute clip inset-0 bg-green opacity-20 mix-blend-multiply "></div>
                 </div>
             
             </div>

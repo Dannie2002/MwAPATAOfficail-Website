@@ -42,7 +42,7 @@ const Events = () => {
     title: "Dissemination Workshop for Two Food Systems Policy Briefs",
     description:
       "Conducting evidence-based research to influence agricultural and development policies.",
-      date: "07 FEB 2026",
+      date: "07 Feb 2026",
     image: research,
   },
   {
@@ -50,7 +50,7 @@ const Events = () => {
     title: "LEAP4YOUTH Project Conducts District Youth Engagement Meetings",
     description:
       "Improving market systems and access for farmers and agribusiness stakeholders.",
-      date: "17 JAN 2026",
+      date: "17 Mar 2026",
    image: outreach, 
   }
 
@@ -118,12 +118,13 @@ const Events = () => {
 
                </div>
               <div className="absolute bg-transparent z-10 flex flex-col items-start gap-3 justify-between bottom-0 p-8 w-full">
-                <h4 className="bebas  white uppercase text-[24px] leading-[28px]">
+                <div className="mt-0  py-1 rounded-full">
+                  <h4 className="text-[#65cd16] font-semibold text-[16px] ">{ev.date}</h4>
+                </div>
+                <h4 className="bebas white uppercase text-[28px] leading-[30px]">
                   {ev.title}
                 </h4>
-                <div className="bg-green mt-4 px-4 py-1 rounded-full">
-                  <h4 className="white font-semibold text-[14px] ">{ev.date}</h4>
-                </div>
+                
               </div>
             </div>
           ))}
