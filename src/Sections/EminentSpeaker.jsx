@@ -12,7 +12,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const Publications = () => {
+const EminentSpeaker = () => {
 
       useGSAP(() => {
   gsap.from(".head", {
@@ -33,21 +33,29 @@ const Publications = () => {
     const programs = [
   {
     id: 1,
-    title: "Working Papers",
+    title: "Promoting Neglected and Under-Utilized Food Crops: A Pathway to Diversified and Resilient Food Systems",
     description:
       "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
     image: capacity,
   },
   {
     id: 2,
-    title: "Policy Briefs",
+    title: "Unlocking Wealth Creation through Enhanced Agro-Processing of Priority Value Chains for Nutrition and Diets",
     description:
       "Conducting evidence-based research to influence agricultural and development policies.",
     image: research,
   },
   {
     id: 3,
-    title: "Policy Perspective",
+    title: "Building 21st Century Agricultural Research and Extension Capacity in Africa",
+    description:
+      "Improving market systems and access for farmers and agribusiness stakeholders.",
+   image: outreach, 
+  },
+    {
+    id: 4,
+    name:"Mr Limbani Katundulu",
+    title: "From Envisioning to Action: Practical Interventions Catalyzing Agricultural Productivity for Transformation and Wealth Creation",
     description:
       "Improving market systems and access for farmers and agribusiness stakeholders.",
    image: outreach, 
@@ -55,40 +63,18 @@ const Publications = () => {
 
 ];
 
-    const extraprograms = [
-  {
-    id: 1,
-    title: "Peer Reviewed",
-    description:
-      "Our goal is to produce world-class, rigorous research.",
    
-  },
-  {
-    id: 2,
-    title: "Presentations",
-    description:
-      "Circulating our findings to stakeholders to provoke informed discussions.",
-    
-  },
-  {
-    id: 3,
-    title: "Data",
-    description:
-      " We will work to collect and share data for key indicators like agricultural production, welfare, food security and more.",
-    
-  },
-
-];
-
   return (
     <section className="py-22 mt-12 min-h-screen px-6 lg:px-22">
-      <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-grey">Publications</h1>
-      <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
+     
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4
            
                 className="lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">
-                MwAPATA's three main publication lines offer distinct options to meet the reader's needs
+                
+
+Ndizotheka
+Eminent Speaker Series
               </h4>
 
               <div className="flex flex-col items-start lg:items-end">
@@ -105,52 +91,30 @@ const Publications = () => {
               </div>
       </div>
           {/* Grid for publications card */}
-        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 auto-rows-[400px]">
-          {programs.map((program, index) => (
-            <div
-              className={`relative z-0 shadow-3xl ${index === 0 ? "col-span-2" : ""}`}
-            >
-               <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
+        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-6">
+          {programs.map((program) => (
+            <div className="">
+              <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
                 <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
               {/* overlay to apply blend mode */}
                <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
 
                </div>
-
-             <div className="absolute  z-10 flex flex-row items-center gap-3 justify-start bottom-0 p-4 w-full">
-              <h4 className="barlow font-bold white uppercase text-[24px]">{program.title}</h4>
-              <RightArrow size={28} color="#fffced" />
-              </div>
-            </div>
+             <div className="mt-6">
+              <h4 className="bebas text-grey uppercase text-[24px]">{program.name}</h4>
+               <h1 className="p-0 mt-3 text-grey uppecase font-semibold">{program.title}</h1>
+                </div>
+            </div> 
+                    
         ))}
+      
+        
        </div>
 
-       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 "> 
-
-        <div className="">
-        <h4 className=" lg:text-[48px] text-[32px] bebas w-[520px] lg:leading-[52px] uppercase font-semibold text-grey ">
-                In addition to our own publications, we offer the following resources
-              </h4>
-        </div>
-       
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 lg:mt-0 auto-rows-[400px]">
-          {extraprograms.map((extraprogram,index) => (
-                  <div
-              className={`bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[14px] ${index === 2 ? "col-span-2" : ""}`}
-            >
-            <h4 className="barlow font-bold white uppercase text-[22px]">{extraprogram.title}</h4>
-            <p className=" white font-semibold">{extraprogram.description}</p>
-          </div>
-
-          ))}
-         
-        </div>
-
-       </div>
+      
           
     </section>
   );
 };
 
-export default Publications;
+export default EminentSpeaker;

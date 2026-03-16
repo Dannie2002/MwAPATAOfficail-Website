@@ -10,6 +10,7 @@ import YouTube from './Sections/YouTube'
 import Publications from './Sections/Publications'
 import LandingPage from './Sections/LandingPage'
 import NewsDetailed from './Sections/SubSections/NewsDetailed'
+import EminentSpeaker from './Sections/EminentSpeaker'
 
 
 
@@ -30,6 +31,7 @@ function App() {
     <News />  
     <YouTube />
     <Publications />
+    <EminentSpeaker />
     </>
   )
 }

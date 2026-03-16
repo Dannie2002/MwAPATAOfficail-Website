@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import capacity from "../../assets/Images/Capacity_building.JPG";
 import { useGSAP } from "@gsap/react";
 import noise from "../../assets/Images/Noise.png";
+import { Share2,ThumbsUp,ThumbsDown,MessageCircleMore } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -81,11 +82,11 @@ const NewsDetailed = () => {
                   </div>
 
                 <div className="flex flex-row items-center justify-between gap-4">
-                    <div className="flex gap-6  text-bold">
-                        <div>Comments</div>
-                        <div>Shares</div>
-                        <div>Likes</div>
-                        <div>Dislikes</div>
+                    <div className="flex gap-8  text-bold">
+                        <div><MessageCircleMore className="text-grey" /></div>
+                        <div><Share2 className="text-grey"/></div>
+                        <div><ThumbsUp className="text-grey"/></div>
+                        <div><ThumbsDown className="text-grey"/></div>
                     </div>
                     <div className="flex gap-6">
                         <div className="text-green">Share:</div>
@@ -107,7 +108,8 @@ const NewsDetailed = () => {
                     
 
                     <input type="email" placeholder="Enter your Name" className="px-6 py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
-                    <input type="email" placeholder="Enter your Phone Number" className="px-6 py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter your Phone Number" className="px-6 py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
+                    <textarea placeholder="Enter your Comment" rows="4" className="px-6 py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
                     <button className="bg-orange clip lg:px-6 text-2xl px-6 py-6 text-[18px] w-[220px]  border-[#AC6133] uppercase barlow font-semibold white">Submit Comment</button>
                     </div>
                    

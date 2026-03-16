@@ -96,7 +96,7 @@ const News = () => {
                </div>
               <div className="absolute bg-transparent z-10 flex flex-col items-start gap-2 lg:gap-3 justify-between bottom-0 p-4 lg:p-8 w-full">
              <div className="mt-0  py-1 rounded-full">
-                  <h4 className="text-[#65cd16] font-semibold text-[16px] ">{ev.date}</h4>
+                  <h4 className="text-green font-semibold text-[16px] ">{ev.date}</h4>
                 </div>
                 <h4 className="bebas white uppercase text-[28px] leading-[30px]">
                   {ev.title}
