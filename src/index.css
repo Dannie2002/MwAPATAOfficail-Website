@@ -36,9 +36,7 @@ html, body {
   font-family: var(--font-bebas);
 }
 
-.clip{
-  clip-path: polygon(0 0, 90% 0, 100% 25%, 100% 100%, 0 100%);
-}
+
   
 @keyframes dropdown {
   from {

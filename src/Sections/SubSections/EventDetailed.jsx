@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import capacity from "../../assets/Images/Capacity_building.JPG";
 import { useGSAP } from "@gsap/react";
+import noise from "../../assets/Images/Noise.png";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -23,14 +24,23 @@ const EventDetailed = () => {
   });
 });
 
+const images = [
+  capacity,
+  capacity,
+  capacity,
+  capacity,
+  capacity,
+  capacity,
+  capacity,
 
+];
 
   return (
     <section className="py-12 px-6 lg:px-22">
       
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
-                className="head lg:text-[48px] text-[32px] bebas max-w-3xl lg:leading-[52px] uppercase font-bold text-grey ">
+                className="head lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">
                 Conducting evidence-based research to influence agricultural and development policies.
               </h4>
 
@@ -60,7 +70,7 @@ const EventDetailed = () => {
                 <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 auto-rows-[480px]">
 
             <div className="flex flex-col gap-8">
-              <h4 className="font-bold lg:text-[32px] text-[32px] uppercase text-grey oswald">ABOUT THIS EVENT</h4>
+              <h4 className="font-bold lg:text-[32px] text-[32px] uppercase text-[#EA8548] oswald">ABOUT THIS EVENT</h4>
               <p className="lg:text-[18px] text-grey text-[16px] lg:w-[470px] leading-relaxed">
                 As part of the process of institutionalizing youth-led agri-food systems platforms in the LEAP4YOUTH Project, 
                 MwAPATA, in partnership with the National Youth Council of Malawi (NYCOM), with support from AGRA, conducted a 
@@ -69,14 +79,33 @@ const EventDetailed = () => {
                  Agri-Skills Lab was held at Zomba Community Stadium Hall from 6th to 7th February 2026.
               </p>
               
-                <h4 className="font-bold lg:text-[32px] text-[32px] uppercase text-grey oswald">WATCH THE HIGHLIFGHTS OF THE WORKSHOP HERE</h4>
+                <h4 className="font-bold lg:text-[22px] text-[32px] uppercase text-grey oswald">WATCH THE FULL EVENT <span className="text-[#EA8548]">HERE</span></h4>
               </div>
 
                <div className="relative flex">
-                <img src={capacity} alt="research" className="w-full h-full rounded-3xl object-cover"/>
-                 <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply rounded-3xl"></div>
+                <img src={capacity} alt="research" className="w-full h-full rounded-[4px] object-cover"/>
+                 <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+                  <div className="absolute clip inset-0 bg-green opacity-20 mix-blend-multiply "></div>
                 </div>
                  
+                </div>
+                <div className="mt-12">
+                 <h4 className="font-bold lg:text-[32px] text-[32px] uppercase text-[#EA8548] oswald">Event in pictures</h4>
+
+                   <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 mt-12 space-y-6">
+          {images.map((img, index) => (
+            <div
+              key={index}
+              className="overflow-hidden rounded-xl shadow-md group cursor-pointer"
+            >
+              <img
+                src={img}
+                alt="Event"
+                className="w-full object-cover group-hover:scale-105 transition duration-500"
+              />
+            </div>
+          ))}
+        </div>
                 </div>
           
     </section>
