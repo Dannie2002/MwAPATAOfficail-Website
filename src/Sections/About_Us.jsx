@@ -39,17 +39,25 @@ const About_Us = () => {
       <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
 
 
-            <div className="flex flex-col lg:mt-28 mt-10 lg:flex-row">
+            <div className="flex flex-col gap-12 lg:mt-28 mt-10 lg:flex-row">
 
-              <div className="flex flex-col gap-8 lg:w-1/2">
-              <h4 className="lg:text-[48px] text-[32px] bebas max-w-3xl lg:leading-[52px] uppercase font-bold text-grey ">Who We Are</h4>
-              <p className="lg:text-[18px] text-grey text-[16px] lg:w-[470px] leading-relaxed">
-                We are a team of <span className="text-green font-semibold">dedicated researchers</span> and policy experts committed to advancing agricultural development in Malawi through rigorous analysis and evidence-based recommendations.
-              </p>
-
-              <div className="flex items-center justify-start px-3 mt-12 py-3">
-                <button className="bg-green clip lg:px-14  py-3 text-2xl px-6 text-[18px] border-[#AC6133] barlow font-semibold white">Learn More</button>  
+              <div className="flex flex-col gap-4 lg:w-1/2">
+              <h4 className="lg:text-[48px] text-[32px] bebas max-w-3xl lg:leading-[48px] uppercase font-bold text-grey ">Who We Are</h4>
+              <div className="flex flex-col mt-0 gap-6 lg:flex-row">
+                <h4 className="lg:w-1/2 font-bold oswald text-grey text-2xl">
+                   An independent agricultural policy think tank in Malawi
+                </h4>
+                <div className="flex flex-col gap-4">
+                      <p className="lg:text-[18px] text-grey text-[16px] lg:w-[320px] leading-relaxed">
+                         We are a team of <span className="text-green font-semibold">dedicated researchers</span> and policy experts committed to advancing agricultural development in Malawi through rigorous analysis and evidence-based recommendations.
+                      </p>
+                      <h2>Learn More</h2>
+                </div>
+                 
               </div>
+             
+
+             
               </div>
 
                 <div className="relative flex lg:w-1/2">

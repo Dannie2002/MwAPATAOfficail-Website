@@ -70,7 +70,7 @@ const EminentSpeaker = () => {
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4
            
-                className="lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">
+                className="section-title">
                 
 
 Ndizotheka
