@@ -27,8 +27,11 @@ useGSAP(() => {
 
 
   return (
-    <section className="min-h-screen">
-      <header className="w-full bg-[#f08000] rounded-[4px] sticky top-0 z-50">
+    <section className="min-h-screen relative" style={{backgroundImage: `url(${capacity})`,backgroundAttachment:"fixed", backgroundSize: "cover", backgroundPosition: "center"}}>
+      <div className="absolute  z-0  inset-0 bg-gradient-to-r from-[#000000] via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95 "></div>
+
+     {/* This is a navigation bar */} 
+    <header className="w-full bg-[#f08000] rounded-[4px] sticky top-0 z-50">
       <nav className="relative mx-auto flex items-center justify-between px-22 py-3">
 
         {/* Logo */}
@@ -139,45 +142,36 @@ useGSAP(() => {
       )}
     </header>
       
-        <div className="flex relative clip rounded-[4px] flex-col items-start justify-center h-full lg:h-[650px] lg:mt-0 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
-            
-               
-                 <div className="absolute rounded-2xl  inset-0 bg-gradient-to-r from-[#000000] via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95 "></div>
-                    <div className="flex z-10  p-8 lg:px-22 barlow  lg:gap-6 flex-col items-start">
-                      <div className="flex gap-4 flex-center">
-                            <div className="h-full w-[2.6px] bg-green"></div>
-                      <p className="white text-[20px] lg:text-[18px] w-[220px] lg:w-[450px]"><span className="text-[#f08000] font-bold">Evidence</span> for Transformation
- </p>
-                      </div>
-                      
-                        
-                    <h4 className="white bebas font-extrabold mt-6 text-[48px] w-[200px] leading-[48px] lg:w-[600px] lg:leading-[78px] lg:text-[78px] uppercase"><span className="text-[#f08000]">RESEARCH </span> THAT IMPROVES LIVELIHOOD IN MALAWI</h4>
-               
-                <p className="white text-[16px] lg:w-[500px]">
 
-MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan 
-State University, and continues with the support of various strategic partners. 
-                </p>
+      {/* These are hero_contents */}
+    <div className="flex clip lg:rounded-[4px] justify-center flex-col lg:mt-0  mt-0" >
+
+      <div className="flex z-10  p-8 lg:px-22  lg:gap-4 flex-col items-center lg:items-start">
+          <div className="flex gap-4 flex-center">
+            <div className="h-full w-[2.6px] bg-green"></div>
+            <p className="white text-[20px] lg:text-[18px] lg:text-left text-center w-full lg:w-[450px]"><span className="text-[#f08000] font-bold">Evidence</span> for Transformation</p>
+          </div>
+                                             
+          <h4 className="white bebas font-extrabold mt-6 text-[58px] w-full leading-[58px] lg:w-[660px] lg:leading-[88px] text-center lg:text-start lg:text-[88px] uppercase">
+            <span className="text-[#f08000]">RESEARCH </span> THAT IMPROVES LIVELIHOOD IN MALAWI.
+          </h4>
+               
+          <p className="white w-[430px]  mt-6 lg:text-left text-center text-[16px] lg:w-[500px]">MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan 
+                  State University, and continues with the support of various strategic partners. 
+          </p>
               <div className=" relative">
-               <DottedArrow color="#fffced" size={70} className=" absolute lg:-top-5 lg:left-0 left-52 bottom-20"  />
+               <DottedArrow color="#fffced" size={70} className=" absolute lg:-top-5 lg:left-0 left-26 rotate-90 bottom-20"  />
               </div>
                
                 
                    
-                    <div className="mt-6 flex flex-row  gap-6">
-                    
-                    <button className="bg-green clip lg:px-8 text-2xl py-4 px-6 text-[18px]  border-[#fffced]  font-semibold white">Discover the Research</button>
-                    </div>
-                    </div>
-            
+          <div className="mt-6 flex flex-row  gap-6">
+            <button className="bg-green clip lg:px-8 text-2xl py-4 px-6 text-[18px]  border-[#fffced]  font-semibold white">Discover the Research</button>
+          </div>
+      </div>
 
 
-            
-        </div>
-
-
-
-
+    </div>
 
     </section>
   );
