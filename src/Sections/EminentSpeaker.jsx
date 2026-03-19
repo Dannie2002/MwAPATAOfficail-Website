@@ -6,6 +6,7 @@ import research from "../assets/Images/Research.JPG";
 import outreach from "../assets/Images/Outreach.JPG";
 import policy from "../assets/Images/Policy_advocacy.JPG";
 import Data from "./Icons/Data";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -33,6 +34,7 @@ const EminentSpeaker = () => {
     const programs = [
   {
     id: 1,
+    name:"Prof. Moses Maliro",
     title: "Promoting Neglected and Under-Utilized Food Crops: A Pathway to Diversified and Resilient Food Systems",
     description:
       "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
@@ -40,22 +42,24 @@ const EminentSpeaker = () => {
   },
   {
     id: 2,
-    title: "Unlocking Wealth Creation through Enhanced Agro-Processing of Priority Value Chains for Nutrition and Diets",
+    name:"Dr. Greenwell Matchaya",
+    title: "Leveraging Food System Transformation to Achieve Resilient Livelihoods, Nutrition Security and Environmental Sustainability in Malawi",
     description:
       "Conducting evidence-based research to influence agricultural and development policies.",
     image: research,
   },
   {
     id: 3,
-    title: "Building 21st Century Agricultural Research and Extension Capacity in Africa",
+    name:"Mr. Zwide Jere",
+    title: "Leveraging Carbon Markets and Climate Finance to Accelerate Sustainable Development in Malawi",
     description:
       "Improving market systems and access for farmers and agribusiness stakeholders.",
    image: outreach, 
   },
     {
     id: 4,
-    name:"Mr Limbani Katundulu",
-    title: "From Envisioning to Action: Practical Interventions Catalyzing Agricultural Productivity for Transformation and Wealth Creation",
+    name:"Prof. Andy Dougill",
+    title: "Unlocking Wealth Creation through Enhanced Agro-Processing of Priority Value Chains for Nutrition and Diets",
     description:
       "Improving market systems and access for farmers and agribusiness stakeholders.",
    image: outreach, 
@@ -65,32 +69,30 @@ const EminentSpeaker = () => {
 
    
   return (
-    <section className="py-22 mt-12 min-h-screen px-6 lg:px-22">
-     
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
-              <h4
-           
-                className="section-title">
-                
+    <section className="min-h-screen">
 
-Ndizotheka
-Eminent Speaker Series
-              </h4>
+    <div className="py-22 mt-12 px-6 lg:px-22">
 
-              <div className="flex flex-col items-start lg:items-end">
-                  <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.3, ease: "easeInOut" }}
-                  className="mt-2 w-[90px] h-[4px] bg-green "></motion.div>
-                  <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.99, ease: "easeInOut" }}
-                  className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
-              </div>
-      </div>
-          {/* Grid for publications card */}
+      
+          {/* section heading*/}        
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
+                  <h4 className=" lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">Ndizotheka Eminent Speaker Series</h4>
+
+                  <div className="flex flex-col items-start lg:items-end">
+                      <motion.div
+                      initial={{ opacity: 0, x: 80 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 1.3, ease: "easeInOut" }}
+                      className="mt-2 w-[90px] h-[4px] bg-green "></motion.div>
+                      <motion.div
+                      initial={{ opacity: 0, x: 80 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 1.99, ease: "easeInOut" }}
+                      className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
+                  </div>
+        </div>
+
+          {/* Grid for EminentSpeaker card */}
         <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-6">
           {programs.map((program) => (
             <div className="">
@@ -102,17 +104,30 @@ Eminent Speaker Series
                </div>
              <div className="mt-6">
               <h4 className="bebas text-grey uppercase text-[24px]">{program.name}</h4>
-               <h1 className="p-0 mt-3 text-grey uppecase font-semibold">{program.title}</h1>
+               <p className="p-0 mt-3 text-grey uppecase font-semibold line-clamp-2">{program.title}</p>
                 </div>
             </div> 
-                    
-        ))}
-      
-        
-       </div>
+           ))} 
+        </div>
 
-      
+        <div className="flex items-start flex-row overflow-hidden gap-3 lg:mt-12 group transition-all ">
+          <div className="p-2 size-12 flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
+            <ChevronLeft className="text-grey size-6 group-hover:text-white" />
+          </div>
+          <div className="p-2 size-12 flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
+            1
+          </div>
+          <div className="p-2 size-12 flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
+            2
+          </div>
+          <div className="p-2 size-12 flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
+            3
+          </div>
           
+
+        </div>
+      
+    </div>      
     </section>
   );
 };

@@ -11,6 +11,7 @@ import Publications from './Sections/Publications'
 import LandingPage from './Sections/LandingPage'
 import NewsDetailed from './Sections/SubSections/NewsDetailed'
 import EminentSpeaker from './Sections/EminentSpeaker'
+import Footer from './Sections/Footer'
 
 
 
@@ -32,6 +33,7 @@ function App() {
     <YouTube />
     <Publications />
     <EminentSpeaker />
+    <Footer />
     </>
   )
 }

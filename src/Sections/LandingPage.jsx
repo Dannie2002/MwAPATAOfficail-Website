@@ -7,6 +7,7 @@ import DottedArrow from "./Icons/DottedArrow";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import SplitText from "gsap/SplitText";
+import noise from "../assets/Images/Noise.png";
 gsap.registerPlugin(useGSAP, SplitText);
 
 const LandingPage= () => {
@@ -28,16 +29,16 @@ useGSAP(() => {
 
   return (
     <section className="min-h-screen relative" style={{backgroundImage: `url(${capacity})`,backgroundAttachment:"fixed", backgroundSize: "cover", backgroundPosition: "center"}}>
+      <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
       <div className="absolute  z-0  inset-0 bg-gradient-to-r from-[#000000] via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95 "></div>
 
      {/* This is a navigation bar */} 
     <header className="w-full bg-[#f08000] rounded-[4px] sticky top-0 z-50">
-      <nav className="relative mx-auto flex items-center justify-between px-22 py-3">
+      <nav className="relative mx-auto flex items-center justify-between px-4 lg:px-22 py-3">
 
         {/* Logo */}
         <button
-          className="white flex gap-3 uppercase text-[18px] barlow"
-          
+          className="white flex gap-3 uppercase text-[18px] barlow"     
         >
          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
@@ -148,7 +149,7 @@ useGSAP(() => {
 
       <div className="flex z-10  p-8 lg:px-22  lg:gap-4 flex-col items-center lg:items-start">
           <div className="flex gap-4 flex-center">
-            <div className="h-full w-[2.6px] bg-green"></div>
+            <div className="h-[25px] w-[2.6px] bg-green"></div>
             <p className="white text-[20px] lg:text-[18px] lg:text-left text-center w-full lg:w-[450px]"><span className="text-[#f08000] font-bold">Evidence</span> for Transformation</p>
           </div>
                                              

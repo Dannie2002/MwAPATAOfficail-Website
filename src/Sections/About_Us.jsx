@@ -35,23 +35,23 @@ const About_Us = () => {
       
       <div className="flex flex-col  lg:items-start lg:justify-between py-0 px-6 lg:px-22  mt-10 lg:mt-18">
           
-               <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-grey">ABOUT US</h1>
-      <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
+        <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-grey">ABOUT US</h1>
+          <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
 
 
-            <div className="flex flex-col gap-12 lg:mt-28 mt-10 lg:flex-row">
+            <div className="flex flex-col gap-12 lg:mt-18 mt-10 lg:flex-row">
 
               <div className="flex flex-col gap-4 lg:w-1/2">
-              <h4 className="lg:text-[48px] text-[32px] bebas max-w-3xl lg:leading-[48px] uppercase font-bold text-grey ">Who We Are</h4>
-              <div className="flex flex-col mt-0 gap-6 lg:flex-row">
-                <h4 className="lg:w-1/2 font-bold oswald text-grey text-2xl">
+              <h4 className="lg:text-[48px] text-[32px] bebas max-w-3xl lg:leading-[48px] uppercase font-bold text-[#EA8548] ">Who We Are</h4>
+              <div className="flex flex-col mt-6 gap-6 lg:flex-row">
+                <h4 className="lg:w-1/2 bebas text-grey text-3xl">
                    An independent agricultural policy think tank in Malawi
                 </h4>
                 <div className="flex flex-col gap-4">
-                      <p className="lg:text-[18px] text-grey text-[16px] lg:w-[320px] leading-relaxed">
+                      <p className="text-wrap lg:text-[18px] text-grey text-[16px] lg:w-[320px] leading-relaxed">
                          We are a team of <span className="text-green font-semibold">dedicated researchers</span> and policy experts committed to advancing agricultural development in Malawi through rigorous analysis and evidence-based recommendations.
                       </p>
-                      <h2>Learn More</h2>
+                      <h2 className="text-green font-semibold">Learn More</h2>
                 </div>
                  
               </div>

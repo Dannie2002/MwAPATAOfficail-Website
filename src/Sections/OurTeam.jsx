@@ -64,7 +64,8 @@ useGSAP(() => {
 ];
 
   return (
-    <section className="py-12 min-h-screen px-6 lg:px-22">
+    <section className="py-12 min-h-screen">
+      <div className="section-wrapper px-6 lg:px-12">
       <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-orange">Our Team</h1>
       <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
@@ -86,26 +87,24 @@ useGSAP(() => {
                   className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
               </div>
       </div>
-        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-6">
+             {/* This is a grid for empployees card */} 
+        <div className="lg:mt-18 mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {programs.map((program) => (
-            <div className="">
+            <div key={program} className="">
               <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
                 <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
-              {/* overlay to apply blend mode */}
-               <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
+                   {/* overlay to apply blend mode */}
+                <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
 
-               </div>
-             <div className="mt-6">
-              <h4 className="barlow font-bold text-grey uppercase text-[22px]">{program.name}</h4>
-               <h1 className="p-0 mt-3 text-grey font-semibold">{program.title}</h1>
+              </div>
+                <div className="mt-6">
+                      <h4 className="barlow font-bold text-grey uppercase text-[22px]">{program.name}</h4>
+                      <h1 className="p-0 mt-3 text-grey font-semibold">{program.title}</h1>
                 </div>
             </div> 
-                    
-        ))}
-      
-        
-       </div>
-          
+             ))}
+        </div>
+    </div>
     </section>
   );
 };
