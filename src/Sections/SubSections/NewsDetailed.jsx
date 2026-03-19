@@ -77,7 +77,7 @@ const NewsDetailed = () => {
                  Agri-Skills Lab was held at Zomba Community Stadium Hall from 6th to 7th February 2026.
               </p>
               
-                <h4 className="font-bold lg:text-[22px] text-[32px] uppercase text-grey oswald">BY <span className="text-[#EA8548]">EDWIN BANDA</span></h4>
+                <h4 className="font-bold lg:text-[22px] text-[32px] uppercase text-grey oswald">BY EDWIN BANDA</h4>
                 
                   </div>
 

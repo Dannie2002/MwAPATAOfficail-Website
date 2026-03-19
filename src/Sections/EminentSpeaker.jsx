@@ -110,18 +110,14 @@ const EminentSpeaker = () => {
            ))} 
         </div>
 
+          {/* Grid for EminentSpeaker card */}
         <div className="flex items-start flex-row overflow-hidden gap-3 lg:mt-12 group transition-all ">
           <div className="p-2 size-12 flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
             <ChevronLeft className="text-grey size-6 group-hover:text-white" />
           </div>
+         
           <div className="p-2 size-12 flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
-            1
-          </div>
-          <div className="p-2 size-12 flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
-            2
-          </div>
-          <div className="p-2 size-12 flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
-            3
+            <ChevronRight className="text-grey size-6 group-hover:text-white" />
           </div>
           
 
