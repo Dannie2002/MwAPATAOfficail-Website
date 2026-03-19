@@ -36,8 +36,9 @@ const images = [
 ];
 
   return (
-    <section className="py-12 px-6 lg:px-22">
-      
+    <section className="min-h-screen">
+    <div className="py-12 px-6 lg:px-22">
+       
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
                 className="head lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">
@@ -58,56 +59,53 @@ const images = [
               </div>
       </div>
 
-
+           {/* EVENT LOCATION AND DATE*/}
        <div className="flex oswald flex-row items-center justify-start gap-12 mt-10">
          <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
          <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-green font-bold ">LOCATION:</span> CROSSROADS, BLANTYRE</h4>
        </div>
             
-            <div className="bg-[#4a4a4a] lg:mt-6 mt-6 w-full h-[0.2px]"></div>
+          <div className="bg-[#4a4a4a] lg:mt-6 mt-6 w-full h-[0.2px]"></div>
 
-
-                <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 auto-rows-[480px]">
-
+            {/* a grid left and right event image*/}
+          <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="flex flex-col gap-8">
               <h4 className="font-bold lg:text-[32px] text-[32px] uppercase text-[#EA8548] oswald">ABOUT THIS EVENT</h4>
               <p className="lg:text-[18px] text-grey text-[16px] lg:w-[470px] leading-relaxed">
                 As part of the process of institutionalizing youth-led agri-food systems platforms in the LEAP4YOUTH Project, 
                 MwAPATA, in partnership with the National Youth Council of Malawi (NYCOM), with support from AGRA, conducted a 
                 district policy clinic with youth networks in Mchinji and an Agri-Skills Lab for youths in Zomba. The Mchinji Policy 
-                Clinic was held at Mchinji Community Hall from 2nd to 3rd February 2026, while the Zomba
-                 Agri-Skills Lab was held at Zomba Community Stadium Hall from 6th to 7th February 2026.
-              </p>
+                Clinic was held at Mchinji Community Hall from 2nd to 3rd February 2026, while the Zomba Agri-Skills Lab was held at Zomba Community Stadium Hall from 6th to 7th February 2026.</p>
               
                 <h4 className="font-bold lg:text-[22px] text-[32px] uppercase text-grey oswald">WATCH THE FULL EVENT <span className="text-[#EA8548]">HERE</span></h4>
-              </div>
-
-               <div className="relative flex">
-                <img src={capacity} alt="research" className="w-full h-full rounded-[4px] object-cover"/>
-                 <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-                  <div className="absolute clip inset-0 bg-green opacity-20 mix-blend-multiply "></div>
-                </div>
-                 
-                </div>
-                <div className="mt-12">
-                 <h4 className="font-bold lg:text-[32px] text-[32px] uppercase text-[#EA8548] oswald">Event in pictures</h4>
-
-                   <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 mt-12 space-y-6">
-          {images.map((img, index) => (
-            <div
-              key={index}
-              className="overflow-hidden rounded-xl shadow-md group cursor-pointer"
-            >
-              <img
-                src={img}
-                alt="Event"
-                className="w-full object-cover group-hover:scale-105 transition duration-500"
-              />
             </div>
-          ))}
-        </div>
-                </div>
-          
+               {/* an image side*/}
+              <div className="relative flex">
+                <img src={capacity} alt="research" className="w-full h-full rounded-[4px] object-cover"/>
+                  <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+                  <div className="absolute clip inset-0 bg-green opacity-20 mix-blend-multiply "></div>
+              </div>
+                 
+          </div>
+
+                {/* event gallery section*/}
+          <div className="mt-12">
+            <h4 className="font-bold lg:text-[32px] text-[32px] uppercase text-[#EA8548] oswald">Event in pictures</h4>
+
+            {/* pictures gallery*/}
+            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 mt-12 space-y-6">
+              {images.map((img, index) => (
+              <div key={index} className="overflow-hidden rounded-xl shadow-md group cursor-pointer">
+                <img
+                  src={img}
+                  alt="Event"
+                  className="w-full object-cover group-hover:scale-105 transition duration-500"
+                />
+              </div>
+              ))}
+            </div>
+          </div>
+    </div>       
     </section>
   );
 };

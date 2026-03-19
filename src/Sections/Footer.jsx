@@ -58,14 +58,47 @@ const Footer = () => {
 
 
   return (
-    <section className="py-12 px-6 bg-green lg:px-22">
-      
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
-          <div>
-            <h1 className="white">About</h1>
-          </div>
-        </div>  
-    </section>
+   <footer className="bg-base-200 mih-h-[60vh] bg-green text-base-content p-10">
+    <div className="flex items-start justify-between gap-12">
+
+    
+  <nav className="flex flex-col">
+    <h6 className="footer-title uppercase white barlow font-bold">Services</h6>
+    <a className="link link-hover">Branding</a>
+    <a className="link link-hover">Design</a>
+    <a className="link link-hover">Marketing</a>
+    <a className="link link-hover">Advertisement</a>
+  </nav>
+  <nav className="flex flex-col">
+    <h6 className="footer- white barlow uppercase white font-bold">Company</h6>
+    <a className="link link-hover">About us</a>
+    <a className="link link-hover">Contact</a>
+    <a className="link link-hover">Jobs</a>
+    <a className="link link-hover">Press kit</a>
+  </nav>
+  <nav className="flex flex-col">
+    <h6 className="footer-title barlow uppercase white font-bold">Legal</h6>
+    <a className="link link-hover">Terms of use</a>
+    <a className="link link-hover">Privacy policy</a>
+    <a className="link link-hover">Cookie policy</a>
+  </nav>
+   <form>
+    <h6 className="footer-title barlow uppercase white font-bold">Newsletter</h6>
+    <fieldset className="w-4xl">
+      <label>Enter your email address</label>
+      <div className="join">
+        <input
+          type="text"
+          placeholder="username@site.com"
+          className="px-6 py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]" />
+        <button className="btn btn-primary join-item">Subscribe</button>
+      </div>
+    </fieldset>
+  </form>
+  </div>
+</footer>
+
+
   );
 };
 
