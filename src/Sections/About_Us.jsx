@@ -24,7 +24,7 @@ const About_Us = () => {
     id: 2,
     title: "Vision",
     description:
-      "A Malawi with evidence-based agricultural policies that drive sustainable development, food security, and improved livelihoods.",
+      "To be a sustainable, world-class, Malawian agriculture policy research think-tank.",
     icon: <Vision size={40} color="#fffced" />,
   }
 
@@ -77,19 +77,45 @@ const About_Us = () => {
                  <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
             </div>
 
-          <div className="flex p-6 lg:p-18  lg:gap-4 flex-col items-start  lg:w-1/2">
+          <div className="grid p-6 lg:p-8  lg:gap-4 grid-cols-1 lg:grid-cols-2  lg:w-1/2">
           {mission_vision.map((item, index) => (
-            <div key={item.id} className={index === 0 ? "" : "mt-8"}>
-              <div className="p-6 ">{item.icon}</div>
-              <h4 className="white mt-3 text-2xl mb-4 font-bold uppercase barlow ">
+            <div key={item.id} className="flex flex-col gap-4">
+              <div className="">{item.icon}</div>
+              <h4 className="white  text-2xl  font-bold uppercase barlow ">
                 {`Our ${item.title}`}
               </h4>
-              <p className="lg:text-[18px] text-[16px] white lg:w-[470px] leading-relaxed">
+              <p className="lg:text-[18px] text-[16px] white leading-relaxed">
                 {item.description}
               </p>
             </div>
-          ))}
-        </div>
+              ))}
+              <div>
+  <h4 className="white text-2xl font-bold uppercase barlow mb-4">
+    core values
+  </h4>
+
+  <ul className="space-y-3">
+    <li className="white text-[16px] lg:text-[18px] leading-relaxed">
+      • Integrity
+    </li>
+    <li className="white text-[16px] lg:text-[18px] leading-relaxed">
+      • Excellence
+    </li>
+    <li className="white text-[16px] lg:text-[18px] leading-relaxed">
+      • Independence
+    </li>
+    <li className="white text-[16px] lg:text-[18px] leading-relaxed">
+      • Collaboration 
+    </li>
+    <li className="white text-[16px] lg:text-[18px] leading-relaxed">
+      • Innovation 
+    </li>
+    <li className="white text-[16px] lg:text-[18px] leading-relaxed">
+      • Impact 
+    </li>
+  </ul>
+              </div>
+            </div>
 
            
 
