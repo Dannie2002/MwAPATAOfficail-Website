@@ -5,8 +5,10 @@ import capacity from "../assets/Images/Newsletter.jpg";
 import research from "../assets/Images/Research.JPG";
 import outreach from "../assets/Images/Outreach.JPG";
 import policy from "../assets/Images/Policy_advocacy.JPG";
+import noise from "../assets/Images/Noise.png"
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
+import { Download } from "lucide-react";
 import DottedArrow from "./Icons/DottedArrow";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -71,14 +73,28 @@ const Newsletter = () => {
 
               <div className="flex flex-col gap-6 lg:gap-8">
                
-              <div className="bg-green flex flex-row items-center justify-between rounded-2xl p-6">
-                 <div className="size-48">
-                  <img src={capacity} className="h-full w-full bg-no-repeat object-cover bg-center" />
-                </div>
-                <div>
+              <div className="bg-green relative flex flex-row items-center justify-between rounded-2xl p-6">
+                <img src={noise} alt="research" className="absolute z-0 inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+                   <div className="absolute clip inset-0 bg-green opacity-20 mix-blend-multiply "></div>
+                 <div className=" flex gap-12 z-20">
+                  
+                  <img src={capacity} className="size-48 bg-no-repeat object-cover bg-center" />
+                  <div className="flex z-20 gap-12 items-center">
                    <h2 className="white uppercase font-bold oswald text-[24px] lg:text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
-                <h4 className="mt-2 barlow font-semibold uppercase white ">Download</h4>
+                   </div>
+                  
                 </div>
+                 
+                 <div className="border z-20 bg-transparent hover:bg-[var(--secondary-color)] flex transition-colors duration-500  mt-8 border-[#fffced]">
+                                   <div className="white flex items-center justify-center pr-6  gap-4 ">
+                                     <div className="bg-green p-4">
+                                       <Download className="white"/>
+                                     </div>
+                                    <h5 className="white">Download</h5> 
+                                   </div>
+                                </div>
+                
+                
                
               </div>
 
