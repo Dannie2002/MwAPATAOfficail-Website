@@ -8,6 +8,7 @@ import outreach from "../assets/Images/Outreach.JPG";
 import policy from "../assets/Images/Policy_advocacy.JPG";
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
+import { Download } from "lucide-react";
 
 const About_Us = () => {
 
@@ -71,46 +72,75 @@ const About_Us = () => {
 
        </div>   
       
-        <div className="flex flex-col lg:h-[690px] lg:flex-row  lg:mt-28 bg-[#ac6133] mt-10">
-            <div className="relative flex lg:w-1/2">
-                <img src={capacity} alt="research" className="w-full h-full object-cover"/>
+        <div className="flex flex-col  lg:h-[690px] lg:flex-row  lg:mt-28 bg-[#eee] mt-10">
+            <div className="relative bg-green flex lg:w-1/2">
+            <div className="flex lg:px-18 py-12 flex-col gap-4 z-20">
+                 <h4 className="bebas z-20 white mb-4 text-3xl">
+                   STRATEGIC PLAN
+                </h4>
+                <p className="white text-[16px] lg:text-[18px]">In our 2026 - 2030 Strategic Plan, we are committing ourselves to 
+                  conducting policy research with a view to guide agriculture productivity and 
+                  commercialization now and in the future, and support the development of the National 
+                  Transformation 2063 document.</p>
+
+                  <p className="white text-[16px] lg:text-[18px]">The Strategic Plan defines the direction to be taken in the short, medium and long 
+                    terms and it provides direction on the Institutional and Research Development Agendas of MwAPATA.
+                     Download the full document 
+                    to learn more about our mission and how we go about making the changes we want to see.</p>
+
+               <div className="border flex  mt-8 border-[#fffced]">
+                  <div className="white flex items-center justify-center  gap-4 ">
+                    <div className="bg-green p-4">
+                      <Download className="white"/>
+                    </div>
+                   <h5 className="white">Download Our Strategic Plan</h5> 
+                  </div>
+               </div>
+            </div>
+
+            
+            
+                
+                <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
                  <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
             </div>
 
-          <div className="grid p-6 lg:p-8  lg:gap-4 grid-cols-1 lg:grid-cols-2  lg:w-1/2">
+          <div className="grid p-6 lg:p-8  lg:gap-6 grid-cols-1 lg:grid-cols-2  lg:w-1/2">
           {mission_vision.map((item, index) => (
             <div key={item.id} className="flex flex-col gap-4">
-              <div className="">{item.icon}</div>
-              <h4 className="white  text-2xl  font-bold uppercase barlow ">
+                <div className="bg-orange p-3 flex">
+                  {item.icon}
+                </div>
+              <h4 className="text-green  text-2xl  font-bold uppercase barlow ">
                 {`Our ${item.title}`}
               </h4>
-              <p className="lg:text-[18px] text-[16px] white leading-relaxed">
+              <p className="lg:text-[18px] text-[16px] text-grey leading-relaxed">
                 {item.description}
               </p>
             </div>
               ))}
               <div>
-  <h4 className="white text-2xl font-bold uppercase barlow mb-4">
+  <h4 className="text-green text-2xl font-bold uppercase barlow mb-4">
     core values
   </h4>
 
-  <ul className="space-y-3">
-    <li className="white text-[16px] lg:text-[18px] leading-relaxed">
+  <ul className="space-y-3 text-grey">
+    <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">
       • Integrity
     </li>
-    <li className="white text-[16px] lg:text-[18px] leading-relaxed">
+    <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">
       • Excellence
     </li>
-    <li className="white text-[16px] lg:text-[18px] leading-relaxed">
+    <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">
       • Independence
     </li>
-    <li className="white text-[16px] lg:text-[18px] leading-relaxed">
+    <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">
       • Collaboration 
     </li>
-    <li className="white text-[16px] lg:text-[18px] leading-relaxed">
+    <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">
       • Innovation 
     </li>
-    <li className="white text-[16px] lg:text-[18px] leading-relaxed">
+    <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">
       • Impact 
     </li>
   </ul>

@@ -4,7 +4,7 @@ import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.JPG";
 import research from "../assets/Images/Research.JPG";
 import employee1 from "../assets/Images/Employee1.jpg";
-import policy from "../assets/Images/Policy_advocacy.JPG";
+import employee2 from "../assets/Images/Employee2.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -55,11 +55,11 @@ useGSAP(() => {
   },
   {
     id: 4,
-    name: "Dr. Maggie Munthali",
-    title: "Policy Advisor",
+    name: "Mrs. Joyce Minofu",
+    title: "Research Analyst",
     description:
       "Providing short courses and specialized training programs for professionals.",
-   image: policy,
+   image: employee2,
   },
 ];
 
