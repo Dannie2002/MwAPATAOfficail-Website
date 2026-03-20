@@ -2,9 +2,6 @@ import React from "react";
 import {motion} from "framer-motion";
 import { useState } from "react";
 import RightArrow from "./Icons/RightArrow";
-import capacity from "../assets/Images/Capacity_building.JPG";
-import research from "../assets/Images/Research.JPG";
-import outreach from "../assets/Images/Outreach.JPG";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -28,33 +25,7 @@ const Footer = () => {
   });
 });
 
-    const events = [
-  {
-    id: 1,
-    title: "MwAPATA Institute urges Malawi Parliament to address policy gaps",
-    description:
-      "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
-      date: "17 Jan 2026",
-    image: capacity,
-  },
-  {
-    id: 2,
-    title: "Stakeholders Strategize on Future of Smallholder Farming in Malawi",
-    description:
-      "Conducting evidence-based research to influence agricultural and development policies.",
-      date: "21 FEB 2021",
-    image: research,
-  },
-  {
-    id: 3,
-    title: "Minister Calls for Homegrown Agricultural Policy Research",
-    description:
-      "Improving market systems and access for farmers and agribusiness stakeholders.",
-      date: "17 OCT 2020",
-   image: outreach, 
-  }
 
-];
 
 
   return (

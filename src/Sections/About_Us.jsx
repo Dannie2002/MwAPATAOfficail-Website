@@ -8,7 +8,7 @@ import outreach from "../assets/Images/Outreach.JPG";
 import policy from "../assets/Images/Policy_advocacy.JPG";
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
-import { Download } from "lucide-react";
+import { Download, Gem } from "lucide-react";
 
 const About_Us = () => {
 
@@ -19,14 +19,14 @@ const About_Us = () => {
     title: "Mission",
     description:
       "We conduct independent, objective and empirical high-quality research aimed at generating innovative agricultural policy recommendations that improve decision-making and livelihoods in Malawi.",
-    icon: <Mission size={40} color="#fffced" />,
+    icon: <Mission className="size-12"  color="#fffced" />,
   },
   {
     id: 2,
     title: "Vision",
     description:
       "To be a sustainable, world-class, Malawian agriculture policy research think-tank.",
-    icon: <Vision size={40} color="#fffced" />,
+    icon: <Vision className="size-12"   color="#fffced" />,
   }
 
 ];
@@ -72,9 +72,9 @@ const About_Us = () => {
 
        </div>   
       
-        <div className="flex flex-col  lg:h-[690px] lg:flex-row  lg:mt-28 bg-[#eee] mt-10">
-            <div className="relative bg-green flex lg:w-1/2">
-            <div className="flex lg:px-18 py-12 flex-col gap-4 z-20">
+        <div className="flex flex-col flex-col-reverse  lg:h-[790px] lg:flex-row  lg:mt-28 bg-[#eee] mt-10">
+            <div className="relative bg-orange flex lg:w-1/2">
+            <div className="flex lg:px-18 px-6 py-8 lg:py-12 flex-col gap-4 z-20">
                  <h4 className="bebas z-20 white mb-4 text-3xl">
                    STRATEGIC PLAN
                 </h4>
@@ -88,9 +88,9 @@ const About_Us = () => {
                      Download the full document 
                     to learn more about our mission and how we go about making the changes we want to see.</p>
 
-               <div className="border flex  mt-8 border-[#fffced]">
+               <div className="border bg-transparent hover:bg-[var(--secondary-color)] flex transition-colors duration-500  mt-8 border-[#fffced]">
                   <div className="white flex items-center justify-center  gap-4 ">
-                    <div className="bg-green p-4">
+                    <div className="bg-orange p-4">
                       <Download className="white"/>
                     </div>
                    <h5 className="white">Download Our Strategic Plan</h5> 
@@ -105,10 +105,10 @@ const About_Us = () => {
                  <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
             </div>
 
-          <div className="grid p-6 lg:p-8  lg:gap-6 grid-cols-1 lg:grid-cols-2  lg:w-1/2">
+          <div className="grid p-6 lg:p-8 gap-6 lg:gap-6 grid-cols-1 lg:grid-cols-2  lg:w-1/2">
           {mission_vision.map((item, index) => (
-            <div key={item.id} className="flex flex-col gap-4">
-                <div className="bg-orange p-3 flex">
+            <div key={item.id} className="flex items-start flex-col gap-4">
+                <div className="bg-green p-4 rounded-[14px] flex-center">
                   {item.icon}
                 </div>
               <h4 className="text-green  text-2xl  font-bold uppercase barlow ">
@@ -119,29 +119,32 @@ const About_Us = () => {
               </p>
             </div>
               ))}
-              <div>
-  <h4 className="text-green text-2xl font-bold uppercase barlow mb-4">
+              <div className="flex items-start flex-col">
+                <div className="bg-green p-4 rounded-[14px] flex-center">
+                  <Gem className="size-12 white"/>
+                </div>
+  <h4 className="text-green text-2xl font-bold uppercase mt-6 barlow mb-4">
     core values
   </h4>
 
   <ul className="space-y-3 text-grey">
     <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">
-      • Integrity
+      • Professionalism
     </li>
     <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">
-      • Excellence
+      • Relevance
     </li>
     <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">
       • Independence
     </li>
     <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">
-      • Collaboration 
+      • Mutual Respect 
     </li>
     <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">
-      • Innovation 
+      • Excellence
     </li>
     <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">
-      • Impact 
+      • Sustainability
     </li>
   </ul>
               </div>

@@ -64,7 +64,7 @@ const NewsDetailed = () => {
         
                <div className="relative flex">
                 <img src={capacity} alt="research" className="w-full h-[500px] rounded-[4px] object-cover"/>
-                 <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+                 <img src={noise} alt="research" className="absolute z-0 inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
                   <div className="absolute clip inset-0 bg-green opacity-20 mix-blend-multiply "></div>
                 </div>
 
@@ -96,20 +96,22 @@ const NewsDetailed = () => {
                     </div>
                 </div>
 
-                <div className="bg-green flex flex-col lg:flex-row p-8 gap-8">
-                    <div className="w-1/2">
+                <div className="bg-green relative flex flex-col lg:flex-row p-8 gap-8">
+                  <img src={noise} alt="research" className="absolute z-0 inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+                                   <div className="absolute clip inset-0 bg-green opacity-20 mix-blend-multiply "></div>
+                    <div className="w-1/2 z-20">
                         <h4 className="white text-2xl">Comments (0)</h4>
-                        <p>No comments yet. Be the first to comment!</p>
+                        <p className="white mt-2">No comments yet. Be the first to comment!</p>
 
                     </div>
 
-                    <div className="flex flex-col gap-6">
+                    <div className="flex z-20 flex-col gap-6">
                        <h4 className="white text-2xl">Leave a Comment</h4>
                     
 
-                    <input type="email" placeholder="Enter your Name" className="px-6 py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter your Phone Number" className="px-6 py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
-                    <textarea placeholder="Enter your Comment" rows="4" className="px-6 py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
+                    <input type="email" placeholder="Enter your Name" className="px-6 py-3 outline-none border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter your Phone Number" className="px-6 focus:border-green focus:shadow-[0_2px_0_0_rgba(211,107,84,0.5)] transition duration-300 placeholder:text-[#fffced]/60 outline-none py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
+                    <textarea placeholder="Enter your Comment" rows="4" className="px-6 outline-none py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
                     <button className="bg-orange clip lg:px-6 text-2xl px-6 py-6 text-[18px] w-[220px]  border-[#AC6133] uppercase barlow font-semibold white">Submit Comment</button>
                     </div>
                    
