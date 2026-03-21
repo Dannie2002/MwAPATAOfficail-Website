@@ -60,9 +60,10 @@ const images = [
       </div>
 
            {/* EVENT LOCATION AND DATE*/}
-       <div className="flex oswald flex-row items-center justify-start gap-12 mt-10">
-         <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
-         <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-green font-bold ">LOCATION:</span> CROSSROADS, BLANTYRE</h4>
+       <div className="flex flex-wrap oswald  lg:flex-row items-center justify-start gap-2 lg:gap-12 mt-10">
+         <h4 className="uppercase text-grey text-[14px] font-semibold"> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
+         <h4 className="uppercase text-grey text-[14px] font-semibold"> <span className="text-green font-bold ">TIME:</span> 17 JAN 2026</h4>
+         <h4 className="uppercase text-grey text-[14px] font-semibold"> <span className="text-green font-bold ">LOCATION:</span> CROSSROADS, BLANTYRE</h4>
        </div>
             
           <div className="bg-[#4a4a4a] lg:mt-6 mt-6 w-full h-[0.2px]"></div>

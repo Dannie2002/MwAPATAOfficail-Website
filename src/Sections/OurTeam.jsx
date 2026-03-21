@@ -66,11 +66,11 @@ useGSAP(() => {
   return (
     <section className="py-12 min-h-screen">
       <div className="section-wrapper px-6 lg:px-12">
-      <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-orange">Our Team</h1>
+      <h1 className="lg:text-[22px] text-[18px] uppercase vietnam font-semibold text-orange">Our Team</h1>
       <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4            
-                className="heading lg:text-[48px] text-[32px] oswald max-w-4xl lg:leading-[52px] uppercase font-semibold text-grey ">
+                className="heading Section_title">
                 <span className="text-orange">MEET</span> OUR TEAM.
               </h4>
                {/* Two Lines on the right */} 
@@ -88,10 +88,10 @@ useGSAP(() => {
               </div>
       </div>
              {/* This is a grid for empployees card */} 
-        <div className="lg:mt-18 mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="lg:mt-18 mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {programs.map((program) => (
             <div key={program} className="">
-              <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
+              <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
                 <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                    {/* overlay to apply blend mode */}
                 <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>

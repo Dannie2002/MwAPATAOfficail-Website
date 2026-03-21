@@ -71,7 +71,7 @@ const Governance = () => {
   return (
     <section className="min-h-screen">
 
-    <div className="lg:px-12">
+    <div className="lg:px-12 px-6">
          
       
         <div className="flex flex-col lg:flex-row  lg:mt-28 bg-[#eee] mt-10">
@@ -128,15 +128,15 @@ const Governance = () => {
 
             
         </div>
-        <div className="mt-6">
-          <h4 className="heading lg:text-[48px] text-[32px] oswald max-w-4xl lg:leading-[52px] uppercase font-semibold text-grey ">
+        <div className="lg:mt-18 mt-8">
+          <h4 className="heading Section_title">
             Directors & Advisory Board Members</h4>
         </div>
               {/* This is a grid for empployees card */} 
-        <div className="lg:mt-18 mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="lg:mt-18 mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {programs.map((program) => (
             <div key={program} className="">
-              <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
+              <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
                 <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                    {/* overlay to apply blend mode */}
                 <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>

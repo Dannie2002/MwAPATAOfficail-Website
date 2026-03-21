@@ -81,7 +81,7 @@ const NewsDetailed = () => {
                 
                   </div>
 
-                <div className="flex flex-row items-center justify-between gap-4">
+                <div className="flex flex-col lg:flex-row items-start  lg:items-center lg:justify-between gap-8">
                     <div className="flex gap-8  text-bold">
                         <div><MessageCircleMore className="text-grey" /></div>
                         <div><Share2 className="text-grey"/></div>

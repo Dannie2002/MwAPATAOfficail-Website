@@ -29,8 +29,8 @@ const Footer = () => {
 
 
   return (
-   <footer className="bg-base-200 mih-h-[60vh] bg-green text-base-content p-10">
-    <div className="flex items-start justify-between gap-12">
+   <footer className=" mih-h-[60vh] bg-green p-10">
+    <div className="flex flex-col lg:items-start lg:justify-between gap-12">
 
     
   <nav className="flex flex-col">
@@ -57,12 +57,12 @@ const Footer = () => {
     <h6 className="footer-title barlow uppercase white font-bold">Newsletter</h6>
     <fieldset className="w-4xl">
       <label>Enter your email address</label>
-      <div className="join">
+      <div className="">
         <input
           type="text"
           placeholder="username@site.com"
-          className="px-6 py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]" />
-        <button className="btn btn-primary join-item">Subscribe</button>
+          className="px-6 py-3 border-b-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]" />
+        <button className="">Subscribe</button>
       </div>
     </fieldset>
   </form>

@@ -62,10 +62,11 @@ const images = [
       </div>
 
 
-       <div className="flex oswald flex-row items-center justify-start gap-12 mt-10">
-         <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-green font-bold ">DATE:</span> 2ND JAN 2026</h4>
-         <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-green font-bold ">LOCATION:</span> CROSSROADS, BLANTYRE & Virtual via Zoom </h4>
-         <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-green font-bold ">TIME:</span> 17:00hr </h4>
+       <div className="flex flex-wrap oswald  lg:flex-row items-center justify-start gap-6 lg:gap-12 mt-10">
+         <h4 className="uppercase text-grey text-[14px] font-semibold"> <span className="text-green font-bold ">DATE:</span> 2ND JAN 2026</h4>
+         <h4 className="uppercase text-grey text-[14px] font-semibold"> <span className="text-green font-bold ">TIME:</span> 17:00hr </h4>
+         <h4 className="uppercase text-grey text-[14px] font-semibold"> <span className="text-green font-bold ">LOCATION:</span> CROSSROADS, BLANTYRE & Virtual via Zoom </h4>
+         
        </div>
             
             <div className="bg-[#4a4a4a] lg:mt-6 mt-6 w-full h-[0.2px]"></div>
@@ -76,7 +77,7 @@ const images = [
 
             <div className="flex flex-col gap-6">
               <h4 className="font-bold lg:text-[32px] text-[32px] uppercase text-[#EA8548] oswald">Theme:</h4>
-              <p className="lg:text-[28px] text-grey uppercase font-bold text-[16px] lg:w-[470px]">
+              <p className="lg:text-[28px] text-[28px] text-grey uppercase font-bold text-[16px] lg:w-[470px]">
                 Surmounting Soil Health Challenges:  Practical Solutions for Enhancing Agricultural Productivity in line with MW2063 Aspirations.
               </p>
               
@@ -91,12 +92,12 @@ const images = [
               </div>
 
                <div className=" flex lg:flex-row flex-col lg:gap-8">
-                <div className="relative w-1/2">
+                <div className="relative lg:w-1/2">
                   <img src={capacity} alt="research" className="w-full h-full rounded-[14px] object-cover"/>
                   <img src={noise} alt="research" className="absolute inset-0 w-full rounded-[14px] mix-blend-overlay opacity-30  clip h-full object-cover"/>
                   <div className="absolute clip rounded-[14px] inset-0 bg-green opacity-20 mix-blend-multiply "></div>
                 </div>
-                  <div className="flex flex-col gap-3 w-1/2">
+                  <div className="flex mt-6 lg:mt-0 flex-col gap-3 lg:w-1/2">
                     <h4 className="font-bold lg:text-[22px] text-[22px] uppercase text-[#EA8548] oswald">SPEAKER:</h4>
                     <h4 className="font-bold lg:text-[18px] text-[22px] uppercase text-green oswald">Mr JONATHAN SAID</h4>
                     <p className="text-grey font-semibold">Research Professor of Tropical Soils, Soil and Water Sciences Department, University of Florida</p>

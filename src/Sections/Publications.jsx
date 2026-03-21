@@ -108,7 +108,7 @@ const Publications = () => {
         <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 auto-rows-[400px]">
           {programs.map((program, index) => (
             <div
-              className={`relative z-0 shadow-3xl ${index === 0 ? "col-span-2" : ""}`}
+              className={`relative z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`}
             >
                <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
                 <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
@@ -128,16 +128,16 @@ const Publications = () => {
        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 "> 
 
         <div className="">
-        <h4 className=" lg:text-[48px] text-[32px] bebas w-[520px] lg:leading-[52px] uppercase font-semibold text-grey ">
+        <h4 className=" lg:text-[48px] text-[32px] bebas lg:leading-[52px] uppercase font-semibold text-grey ">
                 In addition to our own publications, we offer the following resources
               </h4>
         </div>
        
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 lg:mt-0 auto-rows-[400px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 lg:mt-0 auto-rows-[230px] lg:auto-rows-[430px]">
           {extraprograms.map((extraprogram,index) => (
                   <div
-              className={`bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[14px] ${index === 2 ? "col-span-2" : ""}`}
+              className={`bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[14px] ${index === 2 ? "lg:col-span-2" : ""}`}
             >
             <h4 className="barlow font-bold white uppercase text-[22px]">{extraprogram.title}</h4>
             <p className=" white font-semibold">{extraprogram.description}</p>

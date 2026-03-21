@@ -51,6 +51,21 @@ const Newsletter = () => {
 
 ];
 
+const Newsletter = [
+  {
+    id:1,
+    title: "APRIL - JULY 2025 NEWSLETTER",
+    image: capacity,
+    file: "/newsletters/april-july-2025.pdf",
+  },
+   {
+    id:2,
+    title: "APRIL - JULY 2025 NEWSLETTER",
+    image: capacity,
+    file: "/newsletters/april-july-2025.pdf",
+  }
+];
+
   return (
     <section className="min-h-screen">
       
@@ -59,7 +74,7 @@ const Newsletter = () => {
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.99, ease: "easeInOut" }}
-                className="lg:text-[48px] lg:w-[600px] text-[32px] bebas max-w-3xl lg:leading-[52px] uppercase font-bold text-grey">
+                className="Section_title">
                 <span className="text-orange">An independent</span> agricultural policy think tank in <span className="text-orange">Malawi</span>.
               </motion.h4>
                
@@ -67,51 +82,34 @@ const Newsletter = () => {
 
             <div className="flex flex-col lg:mt-28 w-full gap-8 mt-10 ">
 
-          
-
-
-
               <div className="flex flex-col gap-6 lg:gap-8">
-               
-              <div className="bg-green relative flex flex-row items-center justify-between rounded-2xl p-6">
-                <img src={noise} alt="research" className="absolute z-0 inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-                   <div className="absolute clip inset-0 bg-green opacity-20 mix-blend-multiply "></div>
+               {Newsletter.map((news,index) => (
+                <div key={index} className="bg-green relative flex flex-row items-center justify-between rounded-2xl p-6">
+                <img src={noise} alt="research" className="noise"/>
+                   <div className="overlay"></div>
                  <div className=" flex gap-12 z-20">
                   
-                  <img src={capacity} className="size-48 bg-no-repeat object-cover bg-center" />
+                  <img src={capacity} className="size-48 z-20 bg-no-repeat rounded-[14px] object-cover bg-center" />
                   <div className="flex z-20 gap-12 items-center">
-                   <h2 className="white uppercase font-bold oswald text-[24px] lg:text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
+                   <h2 className="white uppercase font-bold oswald text-[24px] lg:text-[36px]">{news.title}</h2>
                    </div>
                   
                 </div>
                  
-                 <div className="border z-20 bg-transparent hover:bg-[var(--secondary-color)] flex transition-colors duration-500  mt-8 border-[#fffced]">
+                 <div className="border lg:w-[320px] z-20 bg-transparent hover:bg-[var(--secondary-color)] flex transition-colors duration-500  mt-8 border-[#fffced]">
                                    <div className="white flex items-center justify-center pr-6  gap-4 ">
                                      <div className="bg-green p-4">
                                        <Download className="white"/>
                                      </div>
                                     <h5 className="white">Download</h5> 
                                    </div>
-                                </div>
-                
-                
-               
-              </div>
+                 </div>
 
-               <div className="bg-transparent border-[0.8px] border-[#4a4a4a] flex flex-col rounded-2xl p-6">
-                <h2 className="text-grey uppercase font-bold oswald text-[24px] lg:text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
-                <h4 className="mt-2 barlow font-semibold uppercase text-green">Download</h4>
-              </div>
+                 </div>
 
-              <div className="bg-transparent border-[0.8px] border-[#4a4a4a] flex flex-col rounded-2xl p-6">
-                <h2 className="text-grey uppercase font-bold oswald text-[24px] lg:text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
-                <h4 className="mt-2 barlow font-semibold uppercase text-green">Download</h4>
-              </div>
-              <div className="bg-transparent border-[0.8px] border-[#4a4a4a] flex flex-col rounded-2xl p-6">
-                <h2 className="text-grey uppercase font-bold oswald text-[24px] lg:text-[36px]">APRIL - JULY 2025 NEWSLETTER</h2>
-                <h4 className="mt-2 barlow font-semibold uppercase text-green">Download</h4>
-              </div>
-             
+               ))}
+                 
+
               </div>
 
                
