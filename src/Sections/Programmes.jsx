@@ -86,7 +86,7 @@ const Programmes = () => {
       </div>
 
       {/* Grid for programmes */}
-        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 auto-rows-[480px]">
+        <div className="lg:mt-18 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 lg:auto-rows-[430px]">
           {programs.map((program) => (
             <div className="relative z-0 shadow-3xl">
                <div className="relative h-full overflow-hidden z-0 group shadow-3xl">

@@ -41,7 +41,7 @@ const images = [
       
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
-                className="head lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">
+                className="lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">
                 
                     ESS Icon_orange.png
                     The 7th Nd   zotheka Eminent Speaker Series:
@@ -63,9 +63,9 @@ const images = [
 
 
        <div className="flex flex-wrap oswald  lg:flex-row items-center justify-start gap-6 lg:gap-12 mt-10">
-         <h4 className="uppercase text-grey text-[14px] font-semibold"> <span className="text-green font-bold ">DATE:</span> 2ND JAN 2026</h4>
-         <h4 className="uppercase text-grey text-[14px] font-semibold"> <span className="text-green font-bold ">TIME:</span> 17:00hr </h4>
-         <h4 className="uppercase text-grey text-[14px] font-semibold"> <span className="text-green font-bold ">LOCATION:</span> CROSSROADS, BLANTYRE & Virtual via Zoom </h4>
+         <h4 className="uppercase text-grey text-[14px] font-light"> <span className="text-green font-bold ">DATE:</span> 2ND JAN 2026</h4>
+         <h4 className="uppercase text-grey text-[14px] font-light"> <span className="text-green font-bold ">TIME:</span> 17:00hr </h4>
+         <h4 className="uppercase text-grey text-[14px] font-light"> <span className="text-green font-bold ">LOCATION:</span> CROSSROADS, BLANTYRE & Virtual via Zoom </h4>
          
        </div>
             
@@ -73,13 +73,14 @@ const images = [
 
 
         
-          <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 ">
+          <div className="lg:mt-22 mt-12 flex lg:flex-row flex-col gap-8">
 
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 lg:w-1/2">
               <h4 className="font-bold lg:text-[32px] text-[32px] uppercase text-[#EA8548] oswald">Theme:</h4>
-              <p className="lg:text-[28px] text-[28px] text-grey uppercase font-bold text-[16px] lg:w-[470px]">
+              <p className="lg:text-[28px] text-[28px] text-grey uppercase font-normal oswald text-[16px] lg:w-[470px]">
                 Surmounting Soil Health Challenges:  Practical Solutions for Enhancing Agricultural Productivity in line with MW2063 Aspirations.
               </p>
+              
               
                  <motion.div
                    initial={{ opacity: 0, x: 80 }}
@@ -89,15 +90,20 @@ const images = [
                 <p className="lg:text-[18px] text-grey text-[16px] lg:w-[470px]">
                 Surmounting Soil Health Challenges:  Practical Solutions for Enhancing Agricultural Productivity in line with MW2063 Aspirations.
               </p>
+              <p className="lg:text-[18px] text-grey text-[16px] lg:w-[470px]">
+                Surmounting Soil Health Challenges:  Practical Solutions for Enhancing Agricultural Productivity in line with MW2063 Aspirations.
+              </p>
+              
+              
               </div>
 
-               <div className=" flex lg:flex-row flex-col lg:gap-8">
+               <div className=" flex lg:flex-row lg:w-1/2 flex-col lg:gap-8">
                 <div className="relative lg:w-1/2">
                   <img src={capacity} alt="research" className="w-full h-full rounded-[14px] object-cover"/>
                   <img src={noise} alt="research" className="absolute inset-0 w-full rounded-[14px] mix-blend-overlay opacity-30  clip h-full object-cover"/>
                   <div className="absolute clip rounded-[14px] inset-0 bg-green opacity-20 mix-blend-multiply "></div>
                 </div>
-                  <div className="flex mt-6 lg:mt-0 flex-col gap-3 lg:w-1/2">
+                  <div className="flex mt-6 lg:mt-0 flex-col gap-4 lg:w-1/2">
                     <h4 className="font-bold lg:text-[22px] text-[22px] uppercase text-[#EA8548] oswald">SPEAKER:</h4>
                     <h4 className="font-bold lg:text-[18px] text-[22px] uppercase text-green oswald">Mr JONATHAN SAID</h4>
                     <p className="text-grey font-semibold">Research Professor of Tropical Soils, Soil and Water Sciences Department, University of Florida</p>

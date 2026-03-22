@@ -10,6 +10,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Section_header from '../Sections/Section_header'
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -70,6 +71,15 @@ const EminentSpeaker = () => {
    
   return (
     <section className="min-h-screen">
+
+            <Section_header
+  title="Emminent Speaker"
+  bgImage={research}
+  breadcrumbs={[
+    { label: "Home", link: "/" },
+    { label: "/ Eminent speaker" }
+  ]}
+/>
 
     <div className="py-22 mt-12 px-6 lg:px-22">
 

@@ -9,6 +9,7 @@ import Data from "./Icons/Data";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Section_header from "./Section_header";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -81,10 +82,18 @@ const Publications = () => {
 ];
 
   return (
-    <section className="py-22 mt-12 min-h-screen px-6 lg:px-22">
-      <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-grey">Publications</h1>
-      <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
+    <section className=" min-h-screen">
+      <Section_header
+  title="Publications"
+  bgImage={outreach}
+  breadcrumbs={[
+    { label: "Home", link: "/" },
+    { label: "Events" }
+  ]}
+/>
+      <div className=" lg:py-22 py-4 px-6 lg:px-22">
+      
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-6">
               <h4
            
                 className="lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">
@@ -105,7 +114,7 @@ const Publications = () => {
               </div>
       </div>
           {/* Grid for publications card */}
-        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 auto-rows-[400px]">
+        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 auto-rows-[230px] lg:auto-rows-[430px]">
           {programs.map((program, index) => (
             <div
               className={`relative z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`}
@@ -125,19 +134,19 @@ const Publications = () => {
         ))}
        </div>
 
-       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 "> 
+       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 "> 
 
         <div className="">
-        <h4 className=" lg:text-[48px] text-[32px] bebas lg:leading-[52px] uppercase font-semibold text-grey ">
+        <h4 className=" lg:text-[28px] text-[32px] font-semibold text-grey ">
                 In addition to our own publications, we offer the following resources
               </h4>
         </div>
        
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 lg:mt-0 auto-rows-[230px] lg:auto-rows-[430px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 col-span-3 gap-6 mt-6 lg:mt-0 auto-rows-[210px] lg:auto-rows-[430px]">
           {extraprograms.map((extraprogram,index) => (
                   <div
-              className={`bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[14px] ${index === 2 ? "lg:col-span-2" : ""}`}
+              className={`bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[14px] ${index === 2 ? "" : ""}`}
             >
             <h4 className="barlow font-bold white uppercase text-[22px]">{extraprogram.title}</h4>
             <p className=" white font-semibold">{extraprogram.description}</p>
@@ -148,7 +157,7 @@ const Publications = () => {
         </div>
 
        </div>
-          
+  </div>        
     </section>
   );
 };

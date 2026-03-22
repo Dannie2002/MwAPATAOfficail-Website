@@ -52,7 +52,16 @@ const News = () => {
       "Improving market systems and access for farmers and agribusiness stakeholders.",
       date: "17 OCT 2020",
    image: outreach, 
+  },
+    {
+    id: 4,
+    title: "MwAPATA Institute urges Malawi Parliament to address policy gaps",
+    description:
+      "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
+      date: "17 Jan 2026",
+    image: capacity,
   }
+
 
 ];
 
@@ -82,31 +91,39 @@ const News = () => {
 
 
         {/* This is a grid for news card */} 
-       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:auto-rows-[480px]">``
+          <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 lg:auto-rows-[430px]">
           {events.map(ev => (
-            <div key={ev.id}className="relative rounded-[14px] z-0 shadow-3xl">
-              <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
+            <div key={ev.id} className="relative rounded-[14px] z-0 shadow-3xl">
+               <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
                 <img src={ev.image} alt={ev.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
-                  {/* overlay to apply blend mode */}
-                   <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0d]/90 via-[#323232] to-[#3A9B3D]/5  rounded-[4px] opacity-90 mix-blend-multiply"></div>
-              </div>
-              <div className="absolute bg-transparent z-10 flex flex-col items-start gap-2 lg:gap-3 justify-between bottom-0 p-4 lg:p-8 w-full">
-                  <h4 className="text-green font-semibold text-[16px] ">{ev.date}</h4> 
-                  <h4 className="bebas white uppercase text-[28px] leading-[30px]"> {ev.title}</h4>   
+                 {/* overlay to apply blend mode */}
+                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0d] via-[#323232] to-[#3A9B3D]/50  rounded-[4px] opacity-90 mix-blend-multiply"></div>
+                </div>
+
+              <div className="absolute bg-transparent z-10 flex flex-col items-start gap-3 justify-between bottom-0 p-8 w-full">
+                <div className="mt-0  py-1 rounded-full">
+                  <h4 className="white font-light barlow text-[16px] ">{ev.date}</h4>
+                </div>
+                <h4 className="bebas white line-clamp-2 uppercase text-[28px] leading-[30px]">
+                  {ev.title}
+                </h4>
+                
               </div>
             </div>
           ))}
        </div>
-                <div className="flex items-center mt-6 justify-start flex-row gap-4 lg:mt-10">
-                    <div className="bg-orange flex-center  p-2 rounded-full">
-                     <ChevronLeft className="white size-6" />
-                    </div>
-                    
-                    <div className="bg-orange flex-center  p-2 rounded-full">
-                     <ChevronRight className="white size-6" />
-                    </div>
-                 
-                </div>
+        
+                <div className="flex items-start flex-wrap overflow-hidden  gap-3 lg:mt-12  transition ">
+                                        <div className="p-2 size-12 group flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-470">
+                                          <ChevronLeft className="text-grey size-6 group-hover:text-white" />
+                                        </div>
+                                       
+                                        <div className="p-2 size-12 flex-center group bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
+                                          <ChevronRight className="text-grey size-6 group-hover:text-white" />
+                                        </div>
+                                        
+                              
+                                      </div>
           
     </section>
   );

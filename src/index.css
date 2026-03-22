@@ -92,9 +92,12 @@ html, body {
   @apply absolute rounded-[14px] inset-0 bg-[var(--secondary-color)] opacity-20 mix-blend-multiply;
 }
 
+
 .noise{
   @apply absolute rounded-[14px] z-0 inset-0 mix-blend-overlay opacity-30  size-full object-cover;
 }
 
-
+.paragraph{
+  @apply 
+}
 }

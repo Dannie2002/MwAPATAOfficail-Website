@@ -61,9 +61,9 @@ const images = [
 
            {/* EVENT LOCATION AND DATE*/}
        <div className="flex flex-wrap oswald  lg:flex-row items-center justify-start gap-2 lg:gap-12 mt-10">
-         <h4 className="uppercase text-grey text-[14px] font-semibold"> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
-         <h4 className="uppercase text-grey text-[14px] font-semibold"> <span className="text-green font-bold ">TIME:</span> 17 JAN 2026</h4>
-         <h4 className="uppercase text-grey text-[14px] font-semibold"> <span className="text-green font-bold ">LOCATION:</span> CROSSROADS, BLANTYRE</h4>
+         <h4 className="uppercase text-grey font-light text-[14px] "> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
+         <h4 className="uppercase text-grey text-[14px] font-light"> <span className="text-green font-bold ">TIME:</span> 17 JAN 2026</h4>
+         <h4 className="uppercase text-grey text-[14px] font-light"> <span className="text-green font-bold ">LOCATION:</span> CROSSROADS, BLANTYRE</h4>
        </div>
             
           <div className="bg-[#4a4a4a] lg:mt-6 mt-6 w-full h-[0.2px]"></div>
@@ -72,13 +72,13 @@ const images = [
           <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="flex flex-col gap-8">
               <h4 className="font-bold lg:text-[32px] text-[32px] uppercase text-[#EA8548] oswald">ABOUT THIS EVENT</h4>
-              <p className="lg:text-[18px] text-grey text-[16px] lg:w-[470px] leading-relaxed">
+              <p className="lg:text-[18px] font-normal text-grey text-[16px] lg:w-[470px] leading-relaxed">
                 As part of the process of institutionalizing youth-led agri-food systems platforms in the LEAP4YOUTH Project, 
                 MwAPATA, in partnership with the National Youth Council of Malawi (NYCOM), with support from AGRA, conducted a 
                 district policy clinic with youth networks in Mchinji and an Agri-Skills Lab for youths in Zomba. The Mchinji Policy 
                 Clinic was held at Mchinji Community Hall from 2nd to 3rd February 2026, while the Zomba Agri-Skills Lab was held at Zomba Community Stadium Hall from 6th to 7th February 2026.</p>
               
-                <h4 className="font-bold lg:text-[22px] text-[32px] uppercase text-grey oswald">WATCH THE FULL EVENT <span className="text-[#EA8548]">HERE</span></h4>
+                <h4 className="font-normal lg:text-[22px] text-[32px] text-grey oswald">WATCH THE FULL EVENT <span className="text-[#EA8548]">HERE</span></h4>
             </div>
                {/* an image side*/}
               <div className="relative flex">
@@ -94,7 +94,7 @@ const images = [
             <h4 className="font-bold lg:text-[32px] text-[32px] uppercase text-[#EA8548] oswald">Event in pictures</h4>
 
             {/* pictures gallery*/}
-            <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 mt-12 space-y-6">
+            <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-6 mt-12 space-y-6">
               {images.map((img, index) => (
               <div key={index} className="overflow-hidden rounded-xl shadow-md group cursor-pointer">
                 <img

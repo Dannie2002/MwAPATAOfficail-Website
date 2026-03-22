@@ -93,7 +93,7 @@ const About_Us = () => {
                     <div className="bg-[#fffced] p-4">
                       <Download className="text-[#EA8548]"/>
                     </div>
-                   <h5 className="white">Download Our Strategic Plan</h5> 
+                   <h5 className="white font-semibold">Download Our Strategic Plan</h5> 
                   </div>
                </div>
             </div>

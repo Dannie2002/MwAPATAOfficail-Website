@@ -8,6 +8,7 @@ import employee2 from "../assets/Images/Employee2.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Section_header from "./Section_header";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -65,16 +66,23 @@ useGSAP(() => {
 
   return (
     <section className="py-12 min-h-screen">
+      <Section_header
+  title="Our Team"
+  bgImage={research}
+  breadcrumbs={[
+    { label: "Home", link: "/" },
+    { label: "Our Team" }
+  ]}
+/>
       <div className="section-wrapper px-6 lg:px-12">
-      <h1 className="lg:text-[22px] text-[18px] uppercase vietnam font-semibold text-orange">Our Team</h1>
-      <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
+      
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-5 lg:mt-18">
               <h4            
                 className="heading Section_title">
                 <span className="text-orange">MEET</span> OUR TEAM.
               </h4>
                {/* Two Lines on the right */} 
-              <div className="flex flex-col items-start lg:items-end">
+              <div className="flex flex-col mt-5 items-start lg:items-end">
                   <motion.div
                    initial={{ opacity: 0, x: 80 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -90,16 +98,16 @@ useGSAP(() => {
              {/* This is a grid for empployees card */} 
         <div className="lg:mt-18 mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {programs.map((program) => (
-            <div key={program} className="">
-              <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
-                <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
+            <div key={program} className="relative">
+              <div className="relative h-[230px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
+                <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                    {/* overlay to apply blend mode */}
                 <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
 
               </div>
-                <div className="mt-6">
-                      <h4 className="barlow font-bold text-grey uppercase text-[22px]">{program.name}</h4>
-                      <h1 className="p-0 mt-3 text-grey font-semibold">{program.title}</h1>
+                <div className="absolute lg:relative flex flex-col p-3 justify-end items-start inset-0 z-50">
+                      <h4 className="bebas text-[#fffced] lg:text-[var(--text-color)] uppercase text-[22px]">{program.name}</h4>
+                      <h1 className="p-0 white  lg:mt-3 mt-2 text-grey text-[18px] font-light">{program.title}</h1>
                 </div>
             </div> 
              ))}

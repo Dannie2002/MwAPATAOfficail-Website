@@ -71,11 +71,11 @@ const Governance = () => {
   return (
     <section className="min-h-screen">
 
-    <div className="lg:px-12 px-6">
+    <div className="lg:px-12 ">
          
       
         <div className="flex flex-col lg:flex-row  lg:mt-28 bg-[#eee] mt-10">
-            <div className="relative bg-orange flex lg:w-1/2">
+            <div className="relative p-6 bg-orange flex lg:w-1/2">
             <div className="flex lg:px-18 py-12 flex-col gap-4 z-20">
                  <h4 className="bebas z-20 white mb-4 text-3xl">
                    MwAPATA Institute Governance
@@ -90,14 +90,7 @@ const Governance = () => {
                     interaction/guidance provided by MSU Food Security Group and Advisory Board (dashed lines) as well
                      as management levels and reporting hierarchy (solid lines).</p>
 
-               <div className="border bg-transparent hover:bg-[var(--secondary-color)] flex transition-colors duration-500  mt-8 border-[#fffced]">
-                  <div className="white flex items-center justify-center  gap-4 ">
-                    <div className="bg-orange p-4">
-                      <Download className="white"/>
-                    </div>
-                   <h5 className="white">Download Our Strategic Plan</h5> 
-                  </div>
-               </div>
+              
             </div>
 
             
@@ -132,19 +125,19 @@ const Governance = () => {
           <h4 className="heading Section_title">
             Directors & Advisory Board Members</h4>
         </div>
-              {/* This is a grid for empployees card */} 
+            {/* This is a grid for empployees card */} 
         <div className="lg:mt-18 mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {programs.map((program) => (
-            <div key={program} className="">
-              <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
-                <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
+            <div key={program} className="relative">
+              <div className="relative h-[230px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
+                <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                    {/* overlay to apply blend mode */}
                 <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
 
               </div>
-                <div className="mt-6">
-                      <h4 className="barlow font-bold text-grey uppercase text-[22px]">{program.name}</h4>
-                      <h1 className="p-0 mt-3 text-grey font-semibold">{program.title}</h1>
+                <div className="absolute lg:relative flex flex-col p-3 justify-end items-start inset-0 z-50">
+                      <h4 className="bebas text-[#fffced] lg:text-[var(--text-color)] uppercase text-[22px]">{program.name}</h4>
+                      <h1 className="p-0 text-[#fffced] lg:text-[var(--text-color)]  lg:mt-3 mt-2 text-grey text-[18px] font-light">{program.title}</h1>
                 </div>
             </div> 
              ))}

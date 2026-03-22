@@ -33,68 +33,70 @@ const JobListing = () => {
 
 ];
 
-    const programs = [
+    const joblisting = [
   {
     id: 1,
-    name: "Mr. William Chadza",
     title: "Finance and Administration Manager",
-    description:
-      "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
-    image: capacity,
+    description:"Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
   },
   {
     id: 2,
-    name: "Prof. Levison Chiwaula",
     title: "Research Director",
-    description:
-      "Conducting evidence-based research to influence agricultural and development policies.",
-    image: research,
+    description:"Conducting evidence-based research to influence agricultural and development policies.",
   },
   {
     id: 3,
-    name: "Ms. Mercy Chirwa",
     title: "Outreach Coordinator",
-    description:
-      "Improving market systems and access for farmers and agribusiness stakeholders.",
-   image: employee1, 
+    description:"Improving market systems and access for farmers and agribusiness stakeholders.",
   },
   {
     id: 4,
-    name: "Mrs. Joyce Minofu",
     title: "Research Analyst",
-    description:
-      "Providing short courses and specialized training programs for professionals.",
-   image: employee2,
+    description:"Providing short courses and specialized training programs for professionals.",
   },
 ];
 
   return (
     <section className="min-h-screen">
 
-    <div className="lg:px-12">
+    <div className="lg:px-18">
          
       
         <div className="mt-6">
-          <h4 className="heading lg:text-[48px] text-[32px] oswald max-w-4xl lg:leading-[52px] uppercase font-semibold text-grey ">
+          <h4 className="heading lg:text-[48px] text-[32px] bebas max-w-4xl lg:leading-[52px] uppercase font-semibold text-grey ">
             JobListing</h4>
         </div>
               {/* This is a grid for empployees card */} 
-        <div className="lg:mt-18 mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {programs.map((program) => (
-            <div key={program} className="">
-              <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
-                <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
-                   {/* overlay to apply blend mode */}
-                <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
+         <div className="flex flex-col mt-12 gap-6 lg:gap-8">
+                      {joblisting.map((job,index)=>(
 
-              </div>
-                <div className="mt-6">
-                      <h4 className="barlow font-bold text-grey uppercase text-[22px]">{program.name}</h4>
-                      <h1 className="p-0 mt-3 text-grey font-semibold">{program.title}</h1>
-                </div>
-            </div> 
-             ))}
-        </div>
+
+
+                         <div key={job.id} className="bg-transparent relative flex flex-col ">
+                          <div className="flex items-center justify-between flex-row gap-4">
+                             <h4 className="text-grey  text-2xl mt-0 lg:mt-3 font-bold uppercase barlow ">
+                                       {job.title}
+                         </h4>
+                          <div className="bg-green px-4 py-2 ">
+                            <h4 className="white">Open</h4>
+                          </div>
+                        </div>
+                         <motion.div
+                          initial={{ opacity: 0, x: 80 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 1.99, ease: "easeInOut" }}
+                          className=" w-full relative h-[1.5px] mt-4 bg-green"></motion.div>
+                          <p className="lg:text-[18px] font-normal mt-4 text-grey text-[16px] lg:w-full leading-relaxed">
+                             {job.description}
+                          </p>
+                         </div>
+
+
+
+
+                      ))}
+
+         </div>
 
 
 

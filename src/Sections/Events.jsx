@@ -6,6 +6,7 @@ import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.JPG";
 import research from "../assets/Images/Research.JPG";
 import outreach from "../assets/Images/Outreach.JPG";
+import noise from "../assets/Images/Noise.png"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -53,6 +54,14 @@ const Events = () => {
       "Improving market systems and access for farmers and agribusiness stakeholders.",
       date: "17 Mar 2026",
    image: outreach, 
+  },
+    {
+    id: 4,
+    title: "MALAWI NATIONAL FOOD SYSTEMS TECHNICAL WORKING GROUP MEETING",
+    description:
+      "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
+      date: "17 Jan 2026",
+    image: capacity,
   }
 
 ];
@@ -68,7 +77,14 @@ const Events = () => {
 
   return (
     <section className="">
-      <Section_header />
+      <Section_header
+  title="Events"
+  bgImage={capacity}
+  breadcrumbs={[
+    { label: "Home", link: "/" },
+    { label: "/ Events" }
+  ]}
+/>
 
       <div className="py-12 px-6 lg:px-22">
 
@@ -76,7 +92,7 @@ const Events = () => {
 
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
-                className="head lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">
+                className="lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">
                 <span className="text-orange">OUR</span> EVENTS OF INFLUENCE <span className="text-orange">AND </span>INSPIRATION.
               </h4>
 
@@ -99,35 +115,34 @@ const Events = () => {
         <button
           key={tab}
           onClick={() => setActiveTab(tab)}
-          className={`lg:px-6 py-2 text-[18px] px-4 rounded-[4px] border oswald uppercase  transition-all duration-200
+          className={`lg:px-6 relative py-2 text-[18px] px-4 rounded-[3px] border bebas uppercase  transition-all duration-470
           ${
             activeTab === tab
-              ? "bg-orange  white   border-orange-500"
-              : "text-grey border-gray-300 hover:bg-gray-100"
+              ? "bg-green z-20  white   border-green-500"
+              : "text-grey bg-transparent border-gray-300 hover:bg-gray-100"
           }`}
         >
+          <img src={noise} className="noise rounded-[3px] opacity-5" />
           {tab}
         </button>
       ))}
     </div>
 
-       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:auto-rows-[480px]">
+{/*GRID FOR EVENT CARDS */}
+       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 lg:auto-rows-[430px]">
           {events.map(ev => (
-            <div
-              key={ev.id}
-              className="relative rounded-[14px] z-0 shadow-3xl"
-            >
+            <div key={ev.id} className="relative rounded-[14px] z-0 shadow-3xl">
                <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
                 <img src={ev.image} alt={ev.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
-              {/* overlay to apply blend mode */}
-               <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0d] via-[#323232] to-[#3A9B3D]/50  rounded-[4px] opacity-90 mix-blend-multiply"></div>
+                 {/* overlay to apply blend mode */}
+                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0d] via-[#323232] to-[#3A9B3D]/50  rounded-[4px] opacity-90 mix-blend-multiply"></div>
+                </div>
 
-               </div>
               <div className="absolute bg-transparent z-10 flex flex-col items-start gap-3 justify-between bottom-0 p-8 w-full">
                 <div className="mt-0  py-1 rounded-full">
                   <h4 className="white font-light barlow text-[16px] ">{ev.date}</h4>
                 </div>
-                <h4 className="bebas white uppercase text-[28px] leading-[30px]">
+                <h4 className="bebas white line-clamp-2 uppercase text-[28px] leading-[30px]">
                   {ev.title}
                 </h4>
                 
@@ -135,16 +150,17 @@ const Events = () => {
             </div>
           ))}
        </div>
-                <div className="flex items-center justify-start flex-row mt-6 gap-4 lg:mt-10">
-                    <div className="bg-orange flex-center  p-2 rounded-full">
-                     <ChevronLeft className="white size-6" />
-                    </div>
-                    
-                    <div className="bg-orange flex-center  p-2 rounded-full">
-                     <ChevronRight className="white size-6" />
-                    </div>
-                 
-                </div>
+               <div className="flex items-start flex-wrap overflow-hidden  gap-3 lg:mt-12  transition ">
+                         <div className="p-2 size-12 group flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-470">
+                           <ChevronLeft className="text-grey size-6 group-hover:text-white" />
+                         </div>
+                        
+                         <div className="p-2 size-12 flex-center group bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
+                           <ChevronRight className="text-grey size-6 group-hover:text-white" />
+                         </div>
+                         
+               
+                       </div>
 
       </div>
     </section>
