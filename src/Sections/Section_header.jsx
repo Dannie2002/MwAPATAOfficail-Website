@@ -8,7 +8,7 @@ const Section_header = ({ title, breadcrumbs = [],bgImage }) => {
   className="relative h-55 lg:h-66 w-full flex flex-col items-center lg:items-start lg:px-22 justify-center bg-cover bg-center"
   style={{ backgroundImage: `url(${header})` }}
 >{/* overlay to apply blend mode */}
- <div className="absolute inset-0 bg-gradient-to-r from-[#C95B19] via-[#EA8548] to-transparent opacity-90 "></div>
+ <div className="absolute inset-0 bg-gradient-to-r from-[var(--secondary-color)] via-[#48ea5e] to-transparent opacity-90 "></div>
         <div className="z-10">
           <h1 className="text-[#fffced] oswald font-bold text-[74px] uppercase lg:text-8xl">
             {title}

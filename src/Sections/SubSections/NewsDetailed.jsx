@@ -32,7 +32,7 @@ const NewsDetailed = () => {
       
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
-                className="head lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">
+                className="Section_title">
                 Stakeholders Strategize on Future of Smallholder Farming in Malawi
               </h4>
 
@@ -52,11 +52,15 @@ const NewsDetailed = () => {
 
 
        <div className="flex oswald flex-row items-center justify-start gap-12 mt-10">
-         <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
-         <h4 className="uppercase text-grey text-[16px] font-semibold"> <span className="text-green font-bold ">POSTED BY:</span> EMMANUEL JERE</h4>
+         <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
+         <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">TIME:</span> 17 JAN 2026</h4>
        </div>
             
-            <div className="bg-[#4a4a4a] lg:mt-6 mt-6 w-full h-[0.2px]"></div>
+             <motion.div
+                                      initial={{ opacity: 0, x: 80 }}
+                                      whileInView={{ opacity: 1, x: 0 }}
+                                      transition={{ duration: 1.99, ease: "easeInOut" }}
+                                      className=" w-full  relative h-[1.3px] mt-8 bg-green"></motion.div>
 
 
                 <div className="lg:mt-22 mt-12 flex flex-col gap-12">

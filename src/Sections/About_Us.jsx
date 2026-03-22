@@ -34,25 +34,34 @@ const About_Us = () => {
   return (
     <section className="min-h-screen">
       
-      <div className="flex flex-col  lg:items-start lg:justify-between py-0 px-6 lg:px-22  mt-10 lg:mt-18">
+      <div className="flex flex-col lg:py-12  lg:items-start lg:justify-between py-0 px-6 lg:px-22  mt-10 lg:mt-18">
           
-        <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-grey">ABOUT US</h1>
-          <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
+        <h1 className="Page_title">ABOUT US</h1>
+          <div className="mt-1 w-[50px] h-[1.9px] bg-green "></div>
 
 
-            <div className="flex flex-col gap-12 lg:mt-18 mt-10 lg:flex-row">
+            <div className="flex flex-col w-full gap-18 lg:mt-18 mt-10 lg:flex-row">
 
-              <div className="flex flex-col gap-4 lg:w-1/2">
-              <h4 className="lg:text-[48px] text-[32px] bebas max-w-3xl lg:leading-[48px] uppercase font-bold text-[#EA8548] ">Who We Are</h4>
-              <div className="flex flex-col mt-6 gap-6 lg:flex-row">
-                <h4 className="lg:w-1/2 bebas text-grey text-3xl">
-                   An independent agricultural policy think tank in Malawi
+              <div className="flex flex-col gap-6 lg:w-1/2">
+              <h4 className="lg:text-[48px] text-[32px] oswald max-w-3xl lg:leading-[48px] uppercase font-bold text-[#EA8548] ">Who We Are</h4>
+              <div className="flex flex-col mt-6 gap-6">
+                <h4 className="Counter_title">
+                  <span className="font-bold">An</span> independent <span className="font-semibold">agricultural policy <br /> think tank in Malawi.</span>
                 </h4>
                 <div className="flex flex-col gap-4">
-                      <p className="text-wrap lg:text-[18px] text-grey text-[16px] lg:w-[320px] leading-relaxed">
-                         We are a team of <span className="text-green font-semibold">dedicated researchers</span> and policy experts committed to advancing agricultural development in Malawi through rigorous analysis and evidence-based recommendations.
+                      <p className="text-wrap lg:text-[18px] lg:mt-4 text-grey text-[16px] lg:w-[560px] leading-relaxed">
+                         We are a team of dedicated researchers and policy experts committed to advancing agricultural development in Malawi through rigorous analysis and evidence-based recommendations.
                       </p>
-                      <h2 className="text-green font-semibold">Learn More</h2>
+                      <div className="flex gap-4 mt-6 items-center">
+                        <h2 className="text-green font-semibold">Learn More</h2>
+                         <motion.div
+                                            initial={{ opacity: 0, x: 80 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 1.99, ease: "easeInOut" }}
+                                           className="mt-2 w-[45px] h-[1.6px] bg-green"></motion.div>
+                         
+                      </div>
+                      
                 </div>
                  
               </div>
@@ -61,10 +70,11 @@ const About_Us = () => {
              
               </div>
 
-                <div className="relative flex lg:w-1/2">
-                <img src={capacity} alt="research" className="w-full clip h-full object-cover"/>
-                <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-                 <div className="absolute clip inset-0 bg-green opacity-20 mix-blend-multiply "></div>
+                <div className="relative flex items-end justify-end  lg:w-1/2">
+                <img src={research} alt="research" className="w-full clip grayscale h-[430px]  object-cover"/>
+                
+                
+                 
                 </div>
             
             </div>
@@ -118,7 +128,7 @@ const About_Us = () => {
                                     initial={{ opacity: 0, x: 80 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 1.99, ease: "easeInOut" }}
-                                    className=" w-full relative h-[1.5px] bg-green"></motion.div>
+                                    className=" w-full relative h-[2.3px] bg-green"></motion.div>
               <p className="lg:text-[18px] font-light lg:mt-4 text-[16px] text-grey leading-relaxed">
                 {item.description}
               </p>
@@ -135,7 +145,7 @@ const About_Us = () => {
                                     initial={{ opacity: 0, x: 80 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 1.99, ease: "easeInOut" }}
-                                    className=" w-full relative h-[1px] bg-green"></motion.div>
+                                    className=" w-full relative h-[2.3px] bg-green"></motion.div>
 
   <ul className="space-y-3 lg:mt-8 mt-6 text-grey">
     <li className="text-grey text-[16px] lg:text-[18px] leading-relaxed">

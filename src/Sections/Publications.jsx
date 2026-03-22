@@ -96,7 +96,7 @@ const Publications = () => {
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-6">
               <h4
            
-                className="lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">
+                className="Section_title agdasima">
                 MwAPATA's three main publication lines offer distinct options to meet the reader's needs
               </h4>
 
@@ -127,26 +127,23 @@ const Publications = () => {
                </div>
 
              <div className="absolute  z-10 flex flex-row items-center gap-3 justify-start bottom-0 p-4 w-full">
-              <h4 className="barlow font-bold white uppercase text-[24px]">{program.title}</h4>
+              <h4 className="Card_heading white">{program.title}</h4>
               <RightArrow size={28} color="#fffced" />
               </div>
             </div>
         ))}
        </div>
 
-       <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 "> 
-
-        <div className="">
-        <h4 className=" lg:text-[28px] text-[32px] font-semibold text-grey ">
-                In addition to our own publications, we offer the following resources
+       <h4 className="Counter_title mt-12 w-5xl">
+                <span className="font-semibold">In addition</span> to our own publications, we offer the following resources
               </h4>
-        </div>
+
        
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 col-span-3 gap-6 mt-6 lg:mt-0 auto-rows-[210px] lg:auto-rows-[430px]">
+        <div className="grid grid-cols-1 lg:grid-cols-4 col-span-3 gap-6 mt-6 lg:mt-12 auto-rows-[210px] lg:auto-rows-[430px]">
           {extraprograms.map((extraprogram,index) => (
                   <div
-              className={`bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[14px] ${index === 2 ? "" : ""}`}
+              className={`bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[14px] ${index === 2 ? "lg:col-span-2" : ""}`}
             >
             <h4 className="barlow font-bold white uppercase text-[22px]">{extraprogram.title}</h4>
             <p className=" white font-semibold">{extraprogram.description}</p>
@@ -156,7 +153,7 @@ const Publications = () => {
          
         </div>
 
-       </div>
+      
   </div>        
     </section>
   );

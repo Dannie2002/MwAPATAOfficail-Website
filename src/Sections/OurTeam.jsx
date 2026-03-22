@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Section_header from "./Section_header";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -65,7 +66,7 @@ useGSAP(() => {
 ];
 
   return (
-    <section className="py-12 min-h-screen">
+    <section className=" min-h-screen">
       <Section_header
   title="Our Team"
   bgImage={research}
@@ -74,15 +75,15 @@ useGSAP(() => {
     { label: "Our Team" }
   ]}
 />
-      <div className="section-wrapper px-6 lg:px-12">
+      <div className="section-wrapper px-6 lg:px-18">
       
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-5 lg:mt-18">
               <h4            
-                className="heading Section_title">
+                className="Section_title">
                 <span className="text-orange">MEET</span> OUR TEAM.
               </h4>
                {/* Two Lines on the right */} 
-              <div className="flex flex-col mt-5 items-start lg:items-end">
+              <div className="flex flex-col mt-12 items-start lg:items-end">
                   <motion.div
                    initial={{ opacity: 0, x: 80 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -102,16 +103,39 @@ useGSAP(() => {
               <div className="relative h-[230px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
                 <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                    {/* overlay to apply blend mode */}
-                <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
+                <div className="absolute lg:hidden inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
 
               </div>
                 <div className="absolute lg:relative flex flex-col p-3 justify-end items-start inset-0 z-50">
-                      <h4 className="bebas text-[#fffced] lg:text-[var(--text-color)] uppercase text-[22px]">{program.name}</h4>
-                      <h1 className="p-0 white  lg:mt-3 mt-2 text-grey text-[18px] font-light">{program.title}</h1>
+                  <div className="flex gap-4 items-center transition-all justify-end">
+                    <h4 className="Card_heading">{program.name}</h4>
+                     <motion.div
+                      initial={{ opacity: 0, x: 80 }} 
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 1.99, ease: "easeInOut" }}
+                   className="w-[40px]  h-[1.6px] lg:bg-[var(--secondary-color)] bg-[#fffced]">
+
+                   </motion.div>
+                   
+                  
+                  </div>
+                      
+                      <h4 className="lg:text-[var(--secondary-color)] text-[#fffced] lg:mt-3 mt-2 text-[18px] font-normal">{program.title}</h4>
                 </div>
             </div> 
              ))}
         </div>
+            <div className="flex items-start flex-wrap overflow-hidden  gap-3 lg:mt-12  transition ">
+                         <div className="p-2 size-12 group flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-470">
+                           <ChevronLeft className="text-grey size-6 group-hover:text-white" />
+                         </div>
+                        
+                         <div className="p-2 size-12 flex-center group bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
+                           <ChevronRight className="text-grey size-6 group-hover:text-white" />
+                         </div>
+                         
+               
+                       </div>
     </div>
     </section>
   );

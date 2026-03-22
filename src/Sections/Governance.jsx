@@ -136,9 +136,21 @@ const Governance = () => {
 
               </div>
                 <div className="absolute lg:relative flex flex-col p-3 justify-end items-start inset-0 z-50">
-                      <h4 className="bebas text-[#fffced] lg:text-[var(--text-color)] uppercase text-[22px]">{program.name}</h4>
-                      <h1 className="p-0 text-[#fffced] lg:text-[var(--text-color)]  lg:mt-3 mt-2 text-grey text-[18px] font-light">{program.title}</h1>
-                </div>
+                                  <div className="flex gap-4 items-center transition-all justify-end">
+                                    <h4 className="Card_heading">{program.name}</h4>
+                                     <motion.div
+                                      initial={{ opacity: 0, x: 80 }} 
+                                      whileInView={{ opacity: 1, x: 0 }}
+                                      transition={{ duration: 1.99, ease: "easeInOut" }}
+                                   className="w-[40px]  h-[1.6px] lg:bg-[var(--secondary-color)] bg-[#fffced]">
+                
+                                   </motion.div>
+                                   
+                                  
+                                  </div>
+                                      
+                                      <h4 className="lg:text-[var(--secondary-color)] text-[#fffced] lg:mt-3 mt-2 text-[18px] font-normal">{program.title}</h4>
+                                </div>
             </div> 
              ))}
         </div>

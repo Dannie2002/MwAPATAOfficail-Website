@@ -62,13 +62,13 @@ const Programmes = () => {
 
   return (
     <section className="py-22 mt-12 min-h-screen px-6 lg:px-22">
-      <h1 className="lg:text-[22px] text-[18px] uppercase barlow font-semibold text-orange">Programmes</h1>
+      <h1 className="Page_title">Programmes</h1>
       <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4
            
-                className="head lg:text-[48px] text-[32px] bebas max-w-3xl lg:leading-[52px] uppercase font-bold text-grey ">
-                <span className="text-orange">RECOGNIZING </span>THE ENORMITY OF THE CHALLENGES <span className="text-orange">OUR </span>SOCIETY FACES.
+                className="Section_title">
+                RECOGNIZING THE ENORMITY OF THE CHALLENGES OUR SOCIETY FACES.
               </h4>
 
               <div className="flex flex-col items-start lg:items-end">
@@ -96,8 +96,8 @@ const Programmes = () => {
 
                </div>
 
-             <div className="absolute  z-10 flex flex-row items-center gap-3 justify-start bottom-0 p-4 w-full">
-              <h4 className="barlow font-bold white uppercase text-[24px]">{program.title}</h4>
+             <div className="absolute  z-10 flex flex-row items-center gap-3 justify-start bottom-0 p-6 w-full">
+              <h4 className="Card_heading white">{program.title}</h4>
               <RightArrow size={28} color="#fffced" />
               </div>
             </div>

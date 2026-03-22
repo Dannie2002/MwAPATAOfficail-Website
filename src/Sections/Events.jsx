@@ -92,7 +92,7 @@ const Events = () => {
 
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
-                className="lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">
+                className="Section_title">
                 <span className="text-orange">OUR</span> EVENTS OF INFLUENCE <span className="text-orange">AND </span>INSPIRATION.
               </h4>
 
@@ -115,14 +115,14 @@ const Events = () => {
         <button
           key={tab}
           onClick={() => setActiveTab(tab)}
-          className={`lg:px-6 relative py-2 text-[18px] px-4 rounded-[3px] border bebas uppercase  transition-all duration-470
+          className={`lg:px-6 py-2 text-[18px] px-4 rounded-[3px] border bebas uppercase  transition-all duration-470
           ${
             activeTab === tab
-              ? "bg-green z-20  white   border-green-500"
-              : "text-grey bg-transparent border-gray-300 hover:bg-gray-100"
+              ? "bg-transparent z-20  text-green border-[1.3px]  border-b-[var(--secondary-color)]"
+              : "text-grey bg-transparent border-[1.3px] border-[#4a4a4a] hover:bg-gray-100"
           }`}
         >
-          <img src={noise} className="noise rounded-[3px] opacity-5" />
+         
           {tab}
         </button>
       ))}
@@ -142,7 +142,7 @@ const Events = () => {
                 <div className="mt-0  py-1 rounded-full">
                   <h4 className="white font-light barlow text-[16px] ">{ev.date}</h4>
                 </div>
-                <h4 className="bebas white line-clamp-2 uppercase text-[28px] leading-[30px]">
+                <h4 className="Card_heading white line-clamp-2">
                   {ev.title}
                 </h4>
                 

@@ -81,12 +81,12 @@ const EminentSpeaker = () => {
   ]}
 />
 
-    <div className="py-22 mt-12 px-6 lg:px-22">
+    <div className="py-12 px-6 lg:px-22">
 
       
           {/* section heading*/}        
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
-                  <h4 className=" lg:text-[68px] text-[32px] bebas max-w-3xl lg:leading-[68px] uppercase font-bold text-grey ">Ndizotheka Eminent Speaker Series</h4>
+                  <h4 className="Section_title ">Ndizotheka Eminent Speaker Series</h4>
 
                   <div className="flex flex-col items-start lg:items-end">
                       <motion.div
