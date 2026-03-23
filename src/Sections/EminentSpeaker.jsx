@@ -86,7 +86,7 @@ const EminentSpeaker = () => {
       
           {/* section heading*/}        
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
-                  <h4 className="Section_title ">Ndizotheka Eminent Speaker Series</h4>
+                  <h4 className="Section_title ">16th Ndizotheka Eminent Speaker Series</h4>
 
                   <div className="flex flex-col items-start lg:items-end">
                       <motion.div
@@ -114,7 +114,7 @@ const EminentSpeaker = () => {
                </div>
              <div className="mt-6">
               <h4 className="bebas text-grey uppercase text-[24px]">{program.name}</h4>
-               <p className="p-0 mt-3 text-grey uppecase font-semibold line-clamp-2">{program.title}</p>
+               <p className="p-0 mt-3 text-grey uppecase font-light line-clamp-2">{program.title}</p>
                 </div>
             </div> 
            ))} 

@@ -15,6 +15,8 @@ import EminentSpeaker from './Sections/EminentSpeaker'
 import JobListing from './Sections/JobListing'
 import Footer from './Sections/Footer'
 import EminentSpeakerDetailed from './Sections/SubSections/EminentSpeakerDetailed'
+import WorkingPapers from './Sections/SubSections/WorkingPapers'
+import PolicyBrief from './Sections/SubSections/PolicyBrief'
 
 
 
@@ -39,6 +41,8 @@ function App() {
     <EminentSpeaker />
     <EminentSpeakerDetailed />
     <JobListing />
+    <WorkingPapers />
+    <PolicyBrief />
     <Footer />
     </>
   )

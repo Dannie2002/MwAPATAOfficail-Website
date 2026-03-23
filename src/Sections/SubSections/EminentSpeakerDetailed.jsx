@@ -121,7 +121,7 @@ const images = [
                  
                 </div>
                   <div className="flex mt-6 lg:mt-0 flex-col gap-4 lg:w-1/2">
-                    <h4 className="Counter_title text-[24px] text-[var(--secondary-color)] font-semibold">SPEAKER:</h4>
+                    <h4 className="Counter_title barlow text-green">ABOUT SPEAKER:</h4>
                     <h4 className="Counter_title text-[22px] font-normal leading-[32px] ">Mr JONATHAN SAID</h4>
                     <p className="text-grey font-light">Research Professor of Tropical Soils, Soil and Water Sciences Department, University of Florida</p>
                     <motion.div

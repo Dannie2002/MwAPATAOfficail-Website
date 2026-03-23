@@ -63,6 +63,12 @@ const Newsletter = [
     title: "APRIL - JULY 2025 NEWSLETTER",
     image: capacity,
     file: "/newsletters/april-july-2025.pdf",
+  },
+     {
+    id:3,
+    title: "APRIL - JULY 2025 NEWSLETTER",
+    image: capacity,
+    file: "/newsletters/april-july-2025.pdf",
   }
 ];
 
@@ -84,32 +90,35 @@ const Newsletter = [
 
               <div className="flex flex-col gap-6 lg:gap-8">
                {Newsletter.map((news,index) => (
-                <div key={index} className="bg-green relative flex flex-row items-center justify-between rounded-2xl p-6">
-                <img src={noise} alt="research" className="noise"/>
-                   <div className="overlay"></div>
-                 <div className=" flex gap-12 z-20">
-                  
-                  <img src={capacity} className="size-48 z-20 bg-no-repeat rounded-[14px] object-cover bg-center" />
-                  <div className="flex z-20 gap-12 items-center">
-                   <h2 className="white uppercase font-bold oswald text-[24px] lg:text-[36px]">{news.title}</h2>
-                   </div>
-                  
-                </div>
-                 
-                 <div className="border lg:w-[320px] z-20 bg-transparent hover:bg-[var(--secondary-color)] flex transition-colors duration-500  mt-8 border-[#fffced]">
+                <div key={index.id} className="bg-transparent flex relative flex-col lg:flex-row items-center justify-between rounded-2xl p-6">
+                
+
+                <h2 className="Counter_title barlow">{news.title}</h2>
+              
+               
+               
+                 <div className="border lg:w-[320px] z-20 bg-transparent hover:bg-[var(--secondary-color)] flex transition-colors duration-500  mt-8 border-[var(--secondary-color)]">
                                    <div className="white flex items-center justify-center pr-6  gap-4 ">
                                      <div className="bg-green p-4">
                                        <Download className="white"/>
                                      </div>
-                                    <h5 className="white">Download</h5> 
+                                    <h5 className="text-grey font-semibold">Download</h5> 
                                    </div>
                  </div>
 
+
                  </div>
+                                      
+
+                 
 
                ))}
                  
-
+    <motion.div
+                                           initial={{ opacity: 0, x: 80 }}
+                                           whileInView={{ opacity: 1, x: 0 }}
+                                           transition={{ duration: 1.99, ease: "easeInOut" }}
+                                           className=" w-full relative h-[1.4px] mt-6 bg-green"></motion.div>
               </div>
 
                
