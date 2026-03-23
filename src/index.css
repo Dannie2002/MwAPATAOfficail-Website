@@ -116,4 +116,12 @@ html, body {
   @apply hover:text-[var(--secondary-color)] duration-490 text-[#fffced] lg:text-[var(--text-color)] lg:leading-[24px] uppercase lg:text-[24px]
 }
 
+.text_para{
+  @apply lg:text-[18px] font-light text-[var(--text-color)] text-[16px] lg:w-[600px] leading-relaxed;
+}
+
+.Section_wrapper{
+  @apply lg:py-12 py-4 px-6 lg:px-22;
+}
+
 }

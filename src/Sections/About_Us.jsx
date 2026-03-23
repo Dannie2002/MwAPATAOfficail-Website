@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.JPG";
 import noise from "../assets/Images/Noise.png";
-import research from "../assets/Images/Research.JPG";
+import about_mwapata from "../assets/Images/About_Mwapata.jpg";
 import outreach from "../assets/Images/Outreach.JPG";
 import policy from "../assets/Images/Policy_advocacy.JPG";
 import Mission from "./Icons/Mission";
@@ -33,6 +33,9 @@ const About_Us = () => {
 
   return (
     <section className="min-h-screen">
+
+    <div className="Section_wrapper">
+       
       
       <div className="flex flex-col lg:py-12  lg:items-start lg:justify-between py-0 px-6 lg:px-22  mt-10 lg:mt-18">
           
@@ -43,13 +46,13 @@ const About_Us = () => {
             <div className="flex flex-col w-full gap-18 lg:mt-18 mt-10 lg:flex-row">
 
               <div className="flex flex-col gap-6 lg:w-1/2">
-              <h4 className="lg:text-[48px] text-[32px] oswald max-w-3xl lg:leading-[48px] uppercase font-bold text-[#EA8548] ">Who We Are</h4>
+              <h4 className="Section_title">Who We Are</h4>
               <div className="flex flex-col mt-6 gap-6">
-                <h4 className="Counter_title">
+                <h4 className="Counter_title barlow">
                   <span className="font-bold">An</span> independent <span className="font-semibold">agricultural policy <br /> think tank in Malawi.</span>
                 </h4>
                 <div className="flex flex-col gap-4">
-                      <p className="text-wrap lg:text-[18px] lg:mt-4 text-grey text-[16px] lg:w-[560px] leading-relaxed">
+                      <p className="text-wrap lg:text-[18px] font-light lg:mt-4 text-grey text-[16px] lg:w-[560px] leading-relaxed">
                          We are a team of dedicated researchers and policy experts committed to advancing agricultural development in Malawi through rigorous analysis and evidence-based recommendations.
                       </p>
                       <div className="flex gap-4 mt-6 items-center">
@@ -71,7 +74,7 @@ const About_Us = () => {
               </div>
 
                 <div className="relative flex items-end justify-end  lg:w-1/2">
-                <img src={research} alt="research" className="w-full clip grayscale h-[430px]  object-cover"/>
+                <img src={about_mwapata} alt="research" className="w-full clip rounded-[4px] h-[430px]  object-cover"/>
                 
                 
                  
@@ -82,7 +85,7 @@ const About_Us = () => {
 
        </div>   
       
-        <div className="flex flex-col flex-col-reverse  lg:h-[790px] lg:flex-row  lg:mt-28 bg-[#fefafa] mt-10">
+        <div className="flex flex-col flex-col-reverse  lg:flex-row  lg:mt-28 bg-[#fefafa] mt-10">
             <div className="relative bg-green flex lg:w-1/2">
             <div className="flex lg:px-18 px-6 py-8 lg:py-12 flex-col gap-4 z-20">
                  <h4 className="Section_title white">
@@ -178,7 +181,7 @@ const About_Us = () => {
 
 
 
-
+</div> 
     </section>
   );
 };

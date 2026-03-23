@@ -94,7 +94,7 @@ const images = [
           <div className="flex flex-col gap-12 lg:gap-18 lg:mt-18 mt-10 lg:flex-row">
 
             <div className="flex flex-col gap-6 lg:w-1/2">
-              <h4 className="Counter_title text-green">Theme:</h4>
+              <h4 className="Counter_title barlow text-green">Theme:</h4>
               <p className="Counter_title text-[26px] font-normal leading-[32px] w-full">
                 Surmounting Soil Health Challenges:  Practical Solutions for Enhancing Agricultural Productivity in line with MW2063 Aspirations.
               </p>

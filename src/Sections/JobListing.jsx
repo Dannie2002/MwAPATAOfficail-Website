@@ -77,19 +77,19 @@ const JobListing = () => {
 
   return (
     <section className="min-h-screen">
-      <div className="lg:px-18 p-6">
+      <div className="Section_wrapper">
 
-        <div className="mt-6">
+        <div className="mt-12">
           <h4 className="Section_title">JobListings</h4>
         </div>
 
         {/* Job listings */}
-        <div className="flex flex-col mt-12 gap-12 lg:gap-14">
+        <div className="flex flex-col lg:mt-18 gap-12 lg:gap-14">
           {joblisting.map((job) => (
             <div key={job.id} className="bg-transparent relative flex flex-col">
               
               <div className="flex items-center justify-between gap-6">
-                <h4 className="text-grey text-[22px] lg:text-2xl mt-0 lg:mt-3 font-bold uppercase barlow">
+                <h4 className="Counter_title w-full font-semibold barlow">
                   {job.title}
                 </h4>
 

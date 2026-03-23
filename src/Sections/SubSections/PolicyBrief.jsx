@@ -55,7 +55,7 @@ const papers = [
   return (
     <section className="min-h-screen">
                  <Section_header
-  title="Working Papers"
+  title="Policy Brief"
   bgImage={capacity}
   breadcrumbs={[
     { label: "Home", link: "/" },
@@ -90,7 +90,7 @@ const papers = [
             {/* a grid left and right event image*/}
           <div className="flex flex-col mt-12 Counter_title">
             <div className="flex flex-col gap-8">
-                <p className="Counter_title w-[800px] font-font  ">
+                <p className="Counter_title w-[800px] barlow  ">
                  Policy Briefs offer 
 quickly accessible highlights and key messages on important policy topics, with the essential background information. These are often linked to a Working Paper. 
                 </p>

@@ -91,7 +91,7 @@ const Publications = () => {
     { label: "Events" }
   ]}
 />
-      <div className=" lg:py-22 py-4 px-6 lg:px-22">
+      <div className="Section_wrapper">
       
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-6">
               <h4
@@ -134,7 +134,7 @@ const Publications = () => {
         ))}
        </div>
 
-       <h4 className="Counter_title mt-12 w-5xl">
+       <h4 className="Counter_title barlow lg:mt-18 w-5xl">
                 <span className="font-semibold">In addition</span> to our own publications, we offer the following resources
               </h4>
 
@@ -143,10 +143,10 @@ const Publications = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 col-span-3 gap-6 mt-6 lg:mt-12 auto-rows-[210px] lg:auto-rows-[430px]">
           {extraprograms.map((extraprogram,index) => (
                   <div
-              className={`bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[14px] ${index === 2 ? "lg:col-span-2" : ""}`}
+              className={`bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[4px] ${index === 2 ? "lg:col-span-2" : ""}`}
             >
-            <h4 className="barlow font-bold white uppercase text-[22px]">{extraprogram.title}</h4>
-            <p className=" white font-semibold">{extraprogram.description}</p>
+            <h4 className="Card_heading white">{extraprogram.title}</h4>
+            <p className="text_para white w-4/5">{extraprogram.description}</p>
           </div>
 
           ))}

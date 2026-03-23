@@ -112,26 +112,38 @@ const EminentSpeaker = () => {
                <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
 
                </div>
-             <div className="mt-6">
-              <h4 className="bebas text-grey uppercase text-[24px]">{program.name}</h4>
-               <p className="p-0 mt-3 text-grey uppecase font-light line-clamp-2">{program.title}</p>
-                </div>
+             <div className="absolute lg:relative flex flex-col p-3 justify-end items-start inset-0 z-50">
+                              <div className="flex gap-4 items-center transition-all justify-end">
+                                <h4 className="Card_heading">{program.name}</h4>
+                                 <motion.div
+                                  initial={{ opacity: 0, x: 80 }} 
+                                  whileInView={{ opacity: 1, x: 0 }}
+                                  transition={{ duration: 1.99, ease: "easeInOut" }}
+                               className="w-[40px]  h-[1.6px] lg:bg-[var(--secondary-color)] bg-[#fffced]">
+            
+                               </motion.div>
+                               
+                              
+                              </div>
+                                  
+                                  <p className="lg:text-[var(--text-color)] line-clamp-2 text-[#fffced] lg:mt-3 mt-2 text-[18px] font-light">{program.title}</p>
+                            </div>
             </div> 
            ))} 
         </div>
 
           {/* Grid for EminentSpeaker card */}
-        <div className="flex items-start flex-row overflow-hidden gap-3 lg:mt-12 group transition-all ">
-          <div className="p-2 size-12 flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
-            <ChevronLeft className="text-grey size-6 group-hover:text-white" />
-          </div>
-         
-          <div className="p-2 size-12 flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
-            <ChevronRight className="text-grey size-6 group-hover:text-white" />
-          </div>
-          
-
-        </div>
+        <div className="flex items-start flex-wrap overflow-hidden  gap-4 lg:mt-12  transition ">
+                                 <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--secondary-color)]/60 duration-470">
+                                   <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
+                                 </div>
+                                
+                                 <div className="p-2 size-12 flex-center group bg-green hover:bg-[var(--secondary-color)]/80 duration-500">
+                                   <ChevronRight className="text-[#fffced] size-6 group-hover:text-white" />
+                                 </div>
+                                 
+                       
+                               </div>
       
     </div>      
     </section>

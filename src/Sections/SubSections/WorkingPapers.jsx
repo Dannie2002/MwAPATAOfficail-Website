@@ -64,7 +64,7 @@ const papers = [
   ]}
 />
 
-    <div className="py-12 px-6 lg:px-22">
+    <div className="Section_wrapper">
        
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
@@ -90,7 +90,7 @@ const papers = [
             {/* a grid left and right event image*/}
           <div className="flex flex-col mt-12 Counter_title">
             <div className="flex flex-col gap-8">
-                <p className="Counter_title w-[800px] font-font  ">
+                <p className="Counter_title w-[800px] barlow  ">
                   Working Papers offer
                   original, internally reviewed papers in a longer format for readers interested in taking a "deep dive" into an issue and how it was researched. 
                 </p>

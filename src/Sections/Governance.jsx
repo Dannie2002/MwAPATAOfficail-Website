@@ -8,6 +8,7 @@ import outreach from "../assets/Images/Outreach.JPG";
 import policy from "../assets/Images/Policy_advocacy.JPG";
 import employee1 from "../assets/Images/Employee1.jpg";
 import employee2 from "../assets/Images/Employee2.jpg";
+import background from "../assets/Images/About_Mwapata.jpg"
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
 import { Download, Gem } from "lucide-react";
@@ -71,12 +72,12 @@ const Governance = () => {
   return (
     <section className="min-h-screen">
 
-    <div className="lg:px-12 ">
+    <div className="lg:px-22 py-12 ">
          
       
         <div className="flex flex-col lg:flex-row  lg:mt-28 bg-[#eee] mt-10">
             <div className="relative p-6 bg-orange flex lg:w-1/2">
-            <div className="flex lg:px-18 py-12 flex-col gap-4 z-20">
+            <div className="flex lg:px-6 py-12 flex-col gap-4 z-20">
                  <h4 className="bebas z-20 white mb-4 text-3xl">
                    MwAPATA Institute Governance
                 </h4>
@@ -100,31 +101,18 @@ const Governance = () => {
                  <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
             </div>
 
-          <div className="grid p-6 lg:p-8  lg:gap-6 grid-cols-1 lg:grid-cols-2  lg:w-1/2">
-          {mission_vision.map((item, index) => (
-            <div key={item.id} className="flex items-start flex-col gap-4">
-                <div className="bg-green p-4 rounded-[14px] flex-center">
-                  {item.icon}
-                </div>
-              <h4 className="text-green  text-2xl  font-bold uppercase barlow ">
-                {`Our ${item.title}`}
-              </h4>
-              <p className="lg:text-[18px] text-[16px] text-grey leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-              ))}
-            
-            </div>
-
-           
-
-            
+        <div className="w-1/2">
+        <img src={background} className=" grayscale size-full " />
+        </div>  
+ 
         </div>
+
+
+
         <div className="lg:mt-18 mt-8">
           <h4 className="heading Section_title">
             Directors & Advisory Board Members</h4>
-        </div>
+       
             {/* This is a grid for empployees card */} 
         <div className="lg:mt-18 mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {programs.map((program) => (
@@ -149,13 +137,13 @@ const Governance = () => {
                                   
                                   </div>
                                       
-                                      <h4 className="lg:text-[var(--secondary-color)] text-[#fffced] lg:mt-3 mt-2 text-[18px] font-normal">{program.title}</h4>
+                                      <p className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-2 text-[18px] font-light">{program.title}</p>
                                 </div>
             </div> 
              ))}
         </div>
 
-
+        </div>
 
     </div> 
 

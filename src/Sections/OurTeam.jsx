@@ -5,6 +5,7 @@ import capacity from "../assets/Images/Capacity_building.JPG";
 import research from "../assets/Images/Research.JPG";
 import employee1 from "../assets/Images/Employee1.jpg";
 import employee2 from "../assets/Images/Employee2.jpg";
+import team from "../assets/Images/Team_Mwapata.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -69,10 +70,10 @@ useGSAP(() => {
     <section className=" min-h-screen">
       <Section_header
   title="Our Team"
-  bgImage={research}
+  bgImage={team}
   breadcrumbs={[
     { label: "Home", link: "/" },
-    { label: "Our Team" }
+    { label: "/ Our Team" }
   ]}
 />
       <div className="section-wrapper px-6 lg:px-18">
@@ -120,18 +121,18 @@ useGSAP(() => {
                   
                   </div>
                       
-                      <h4 className="lg:text-[var(--secondary-color)] text-[#fffced] lg:mt-3 mt-2 text-[18px] font-normal">{program.title}</h4>
+                      <p className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-2 text-[18px] font-light">{program.title}</p>
                 </div>
             </div> 
              ))}
         </div>
-            <div className="flex items-start flex-wrap overflow-hidden  gap-3 lg:mt-12  transition ">
-                         <div className="p-2 size-12 group flex-center bg-[#eee] hover:bg-[var(--secondary-color)] duration-470">
-                           <ChevronLeft className="text-grey size-6 group-hover:text-white" />
+            <div className="flex items-start flex-wrap overflow-hidden  gap-4 lg:mt-12  transition ">
+                         <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--primary-color)]/60 duration-470">
+                           <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
                          </div>
                         
-                         <div className="p-2 size-12 flex-center group bg-[#eee] hover:bg-[var(--secondary-color)] duration-500">
-                           <ChevronRight className="text-grey size-6 group-hover:text-white" />
+                         <div className="p-2 size-12 flex-center group bg-green hover:bg-[var(--secondary-color)]/80 duration-500">
+                           <ChevronRight className="text-[#fffced] size-6 group-hover:text-white" />
                          </div>
                          
                

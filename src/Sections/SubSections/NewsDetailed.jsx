@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import capacity from "../../assets/Images/Capacity_building.JPG";
 import { useGSAP } from "@gsap/react";
 import noise from "../../assets/Images/Noise.png";
-import { Share2,ThumbsUp,ThumbsDown,MessageCircleMore } from "lucide-react";
+import { Share2,ThumbsUp,ThumbsDown,MessageCircleMore,Facebook, MessageCircle, Twitter } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -54,6 +54,7 @@ const NewsDetailed = () => {
        <div className="flex oswald flex-row items-center justify-start gap-12 mt-10">
          <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
          <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">TIME:</span> 17 JAN 2026</h4>
+         <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">REPORTED BY:</span> JOHN KONDOWE</h4>
        </div>
             
              <motion.div
@@ -73,7 +74,7 @@ const NewsDetailed = () => {
                 </div>
 
                   <div className="flex flex-col gap-8">
-              <p className="lg:text-[18px] text-grey text-[16px] lg:w-full leading-relaxed">
+              <p className="text_para w-full">
                 As part of the process of institutionalizing youth-led agri-food systems platforms in the LEAP4YOUTH Project, 
                 MwAPATA, in partnership with the National Youth Council of Malawi (NYCOM), with support from AGRA, conducted a 
                 district policy clinic with youth networks in Mchinji and an Agri-Skills Lab for youths in Zomba. The Mchinji Policy 
@@ -81,7 +82,7 @@ const NewsDetailed = () => {
                  Agri-Skills Lab was held at Zomba Community Stadium Hall from 6th to 7th February 2026.
               </p>
               
-                <h4 className="font-bold lg:text-[22px] text-[32px] uppercase text-grey oswald">BY EDWIN BANDA</h4>
+                <h4 className="Card_heading">BY EDWIN BANDA</h4>
                 
                   </div>
 
@@ -92,25 +93,34 @@ const NewsDetailed = () => {
                         <div><ThumbsUp className="text-grey"/></div>
                         <div><ThumbsDown className="text-grey"/></div>
                     </div>
-                    <div className="flex gap-6">
-                        <div className="text-green">Share:</div>
-                        <div>facebook</div>
-                        <div>whatsapp</div>
-                        <div>Twitter</div>
-                    </div>
+              <div className="flex items-center gap-6">
+  <div className="text-green">Share:</div>
+
+  <div className="cursor-pointer text-green hover:opacity-70">
+    <Facebook size={20} />
+  </div>
+
+  <div className="cursor-pointer text-green hover:opacity-70">
+    <MessageCircle size={20} />
+  </div>
+
+  <div className="cursor-pointer text-green hover:opacity-70">
+    <Twitter size={20} />
+  </div>
+</div>
                 </div>
 
-                <div className="bg-green relative flex flex-col lg:flex-row p-8 gap-8">
-                  <img src={noise} alt="research" className="absolute z-0 inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-                                   <div className="absolute clip inset-0 bg-green opacity-20 mix-blend-multiply "></div>
+                <div className="bg-green mt-12 relative flex rounded-[4px] flex-col lg:flex-row p-8 gap-8">
+                  <img src={noise} alt="research" className="absolute rounded-[4px] z-0 inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+                                   <div className="absolute clip rounded-[4px] inset-0 bg-green opacity-20 mix-blend-multiply "></div>
                     <div className="w-1/2 z-20">
-                        <h4 className="white text-2xl">Comments (0)</h4>
-                        <p className="white mt-2">No comments yet. Be the first to comment!</p>
+                        <h4 className="Counter_title barlow white">Comments (0)</h4>
+                        <p className="text-para white mt-6">No comments yet. Be the first to comment!</p>
 
                     </div>
 
-                    <div className="flex z-20 flex-col gap-6">
-                       <h4 className="white text-2xl">Leave a Comment</h4>
+                    <div className="flex z-20 flex-col gap-12">
+                       <h4 className="Counter_title barlow white">Leave a Comment</h4>
                     
 
                     <input type="email" placeholder="Enter your Name" className="px-6 py-3 outline-none border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
