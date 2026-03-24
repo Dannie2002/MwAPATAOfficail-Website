@@ -111,12 +111,12 @@ const Events = () => {
               </div>
       </div>
 
-<div className="flex gap-6 mt-10 flex-wrap lg:mt-10">
+<div className="flex gap-6 mt-12 flex-wrap lg:mt-10">
       {tabs.map((tab) => (
         <button
           key={tab}
           onClick={() => setActiveTab(tab)}
-          className={`lg:px-6 py-2 text-[18px] px-4 rounded-[3px] border bebas uppercase  transition-all duration-470
+          className={`lg:px-6 py-2 text-[18px] px-4 rounded-[3px] border barlow uppercase  transition-all duration-470
           ${
             activeTab === tab
               ? "bg-transparent z-20  text-green border-[1.3px]  border-b-[var(--secondary-color)]"

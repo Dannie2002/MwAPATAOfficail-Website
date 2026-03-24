@@ -17,6 +17,8 @@ import Footer from './Sections/Footer'
 import EminentSpeakerDetailed from './Sections/SubSections/EminentSpeakerDetailed'
 import WorkingPapers from './Sections/SubSections/WorkingPapers'
 import PolicyBrief from './Sections/SubSections/PolicyBrief'
+import Capacity_Building_Seminars from './Sections/Capacity_Building_Seminars'
+import Highlights from './Sections/Highlights'
 
 
 
@@ -28,6 +30,7 @@ function App() {
     <>
     <LandingPage />
     <About_Us />
+    <Highlights />
     <OurTeam />
     <Governance />
     <Programmes />
@@ -43,6 +46,7 @@ function App() {
     <JobListing />
     <WorkingPapers />
     <PolicyBrief />
+    <Capacity_Building_Seminars />
     <Footer />
     </>
   )

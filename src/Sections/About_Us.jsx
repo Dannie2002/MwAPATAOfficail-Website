@@ -19,7 +19,7 @@ const About_Us = () => {
     title: "Mission",
     description:
       "We conduct independent, objective and empirical high-quality research aimed at generating innovative agricultural policy recommendations that improve decision-making and livelihoods in Malawi.",
-    icon: <Mission className="lg:size-10 size-8"  color="#fffced" />,
+    icon: <Mission className="lg:size-10 size-10 "  color="#fffced" />,
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const About_Us = () => {
     <div className="Section_wrapper">
        
       
-      <div className="flex flex-col lg:py-12  lg:items-start lg:justify-between py-0 px-6 lg:px-22  mt-10 lg:mt-18">
+      <div className="flex flex-col   lg:items-start lg:justify-between mt-10 lg:mt-18">
           
         <h1 className="Page_title">ABOUT US</h1>
           <div className="mt-1 w-[50px] h-[1.9px] bg-green "></div>
@@ -47,12 +47,12 @@ const About_Us = () => {
 
               <div className="flex flex-col gap-6 lg:w-1/2">
               <h4 className="Section_title">Who We Are</h4>
-              <div className="flex flex-col mt-6 gap-6">
-                <h4 className="Counter_title barlow">
+              <div className="flex flex-col lg:mt-6 gap-6">
+                <h4 className="Counter_title">
                   <span className="font-bold">An</span> independent <span className="font-semibold">agricultural policy <br /> think tank in Malawi.</span>
                 </h4>
                 <div className="flex flex-col gap-4">
-                      <p className="text-wrap lg:text-[18px] font-light lg:mt-4 text-grey text-[16px] lg:w-[560px] leading-relaxed">
+                      <p className="text-wrap lg:text-[18px] font-light lg:mt-4 text-grey text-[18px] lg:w-[560px] leading-relaxed">
                          We are a team of dedicated researchers and policy experts committed to advancing agricultural development in Malawi through rigorous analysis and evidence-based recommendations.
                       </p>
                       <div className="flex gap-4 mt-6 items-center">
@@ -85,7 +85,7 @@ const About_Us = () => {
 
        </div>   
       
-        <div className="flex flex-col flex-col-reverse  lg:flex-row  lg:mt-28 bg-[#fefafa] mt-10">
+        <div className="flex flex-col flex-col-reverse  lg:flex-row  lg:-mx-22 lg:mt-28 bg-[#eee5e5] mt-10">
             <div className="relative bg-green flex lg:w-1/2">
             <div className="flex lg:px-18 px-6 py-8 lg:py-12 flex-col gap-4 z-20">
                  <h4 className="Section_title white">
@@ -121,7 +121,7 @@ const About_Us = () => {
           <div className="grid p-6 lg:p-12 lg:p-8 gap-6 lg:gap-6 gap-14 grid-cols-1 lg:grid-cols-2  lg:w-1/2">
           {mission_vision.map((item, index) => (
             <div key={item.id} className="flex items-start flex-col gap-4">
-                <div className="bg-[#EA8548] p-2 rounded-[14px] flex-center">
+                <div className="bg-[#EA8548] p-2 rounded-[4px] flex-center">
                   {item.icon}
                 </div>
               <h4 className="text-[#EA8548]  text-2xl mt-0 lg:mt-3 font-bold uppercase barlow ">
@@ -138,7 +138,7 @@ const About_Us = () => {
             </div>
               ))}
               <div className="flex items-start flex-col">
-                <div className="bg-[#EA8548] p-2 rounded-[14px] flex-center">
+                <div className="bg-[#EA8548] p-2 rounded-[4px] flex-center">
                   <Gem className="size-10 white"/>
                 </div>
   <h4 className="text-[#EA8548] text-2xl font-bold uppercase mt-6 barlow mb-4">

@@ -139,7 +139,7 @@ const Newsletter = [
                          event announcements, and expert perspectives 
                         delivered straight to your inbox.</p>
                         </div>
-                    <h4 className="head white bebas font-extrabold mt-6 text-[48px] w-[200px] leading-[48px] lg:w-[500px] lg:leading-[98px] lg:text-[98px] uppercase">SUBSCRIBE <br></br>NOW</h4>
+                    <h4 className="white bebas font-extrabold mt-6 text-[48px] w-[200px] leading-[48px] lg:w-[500px] lg:leading-[98px] lg:text-[98px] uppercase">SUBSCRIBE <br></br>NOW</h4>
                <div className="relative">
 <DottedArrow color="#fffced" size={70} className="absolute lg:top-0 lg:left-0 left-52 bottom-0"  />
                </div>

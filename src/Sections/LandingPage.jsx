@@ -56,7 +56,7 @@ useGSAP(() => {
         {/* CTA */}
         <button className="hidden md:block bebas text-[18px] white border-[#fffced] border-[0.7px] uppercase bg-transparent px-8 py-2   transition-all duration-500 ease-in-out"
         onClick={() => setIsOpen(!isOpen)}>
-            more
+            Quick Link
         </button>
 
         {/* Mobile Menu Button */}
@@ -150,25 +150,27 @@ useGSAP(() => {
       <div className="flex z-10  p-8 lg:px-22  lg:gap-4 flex-col items-center lg:items-start">
           <div className="flex gap-4 flex-center">
             <div className="h-[25px] w-[2.6px] bg-green"></div>
-            <p className="white text-[20px] lg:text-[18px] lg:text-left text-center w-full lg:w-[450px]"><span className="text-[#f08000] font-bold">Evidence</span> for Transformation</p>
+            <p className="white archivo text_para"><span className="text-[#f08000] font-bold">Evidence</span> for Transformation</p>
           </div>
                                              
-          <h4 className="white bebas font-extrabold mt-6 text-[58px] w-full leading-[58px] lg:w-[660px] lg:leading-[88px] text-center lg:text-start lg:text-[88px] uppercase">
+          <h4 className="Section_title white lg:leading-[98px] lg:text-[102px]">
             <span className="text-[#f08000]">RESEARCH </span> THAT IMPROVES LIVELIHOOD IN MALAWI.
           </h4>
                
-          <p className="white w-[430px]  mt-6 lg:text-left text-center text-[16px] lg:w-[500px]">MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan 
+          <p className="white w-[430px] archivo lg:text-[18px] font-light  mt-6 lg:text-left text-center text-[16px] lg:w-[500px]">MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan 
                   State University, and continues with the support of various strategic partners. 
           </p>
-              <div className=" relative">
-               <DottedArrow color="#fffced" size={70} className=" absolute lg:-top-5 lg:left-0 left-26 rotate-90 bottom-20"  />
-              </div>
-               
-                
-                   
-          <div className="mt-6 flex flex-row  gap-6">
-            <button className="bg-green clip lg:px-8 text-2xl py-4 px-6 text-[18px]  border-[#fffced]  font-semibold white">Discover the Research</button>
-          </div>
+             
+                       
+          <div className="flex gap-4 mt-6 items-center">
+                                  <h2 className="white  font-light">Learn More</h2>
+                                   <motion.div
+                                                      initial={{ opacity: 0, x: 80 }}
+                                                      whileInView={{ opacity: 1, x: 0 }}
+                                                      transition={{ duration: 1.99, ease: "easeInOut" }}
+                                                     className="mt-2 w-[45px] h-[1.6px] bg-green"></motion.div>
+                                   
+                                </div>
       </div>
 
 

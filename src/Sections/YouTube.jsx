@@ -7,6 +7,7 @@ import outreach from "../assets/Images/Outreach.JPG";
 import policy from "../assets/Images/Policy_advocacy.JPG";
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
+import noise from "../assets/Images/Noise.png"
 import DottedArrow from "./Icons/DottedArrow";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -34,25 +35,27 @@ const YouTube= () => {
 
 
   return (
-    <section className="h-[60vh]">
+    <section className="min-h-[60vh] relative" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+       <div className="absolute inset-0 bg-gradient-to-r from-[var(--secondary-color)] via-[#48ea5e] to-transparent opacity-90 "></div>
+         <img src={noise} className="absolute h-full w-full z-0 opacity-20 inset-0"/>
 
-      <div className="lg:px-22 py-12 px-6">
+      <div className="Section_wrapper">
         
       
-        <div className="flex relative flex-col items-start justify-center ">
+        <div className="flex relative flex-col items-start justify-center " >
                        
                 
                     <div className="flex z-10  barlow  lg:gap-6 flex-col items-start">
                       <div className="flex gap-4">
                         
-                      <p className="text_para"><span className="text-[#f08000] font-bold">Watch </span>videos of our various activities and research dissemination events.
+                      <p className="text_para white"><span className="text-[#f08000] font-bold">Watch </span>videos of our various activities and research dissemination events.
  </p>
                       </div>
                       
                         
-                    <h4 className="Section_title text-8xl">SUBSCRIBE TO OUR</h4>
+                    <h4 className="Section_title text-[107px] white leading-[87px]">SUBSCRIBE TO OUR</h4>
                <div className="relative">
-<DottedArrow color="#fffced" size={70} className="absolute lg:top-0 lg:left-0 left-52 bottom-0"  />
+<DottedArrow color="#ff0000" size={70} className="absolute lg:top-0 lg:left-0 left-52 bottom-0"  />
                </div>
                
                 

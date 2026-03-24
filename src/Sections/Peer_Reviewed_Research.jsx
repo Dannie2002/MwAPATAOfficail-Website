@@ -9,7 +9,7 @@ import Section_header from "../Section_header";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const WorkingPapers= () => {
+const Peer_Reviewed_Research = () => {
   useGSAP(() => {
   gsap.from(".head", {
     y: 100,
@@ -29,10 +29,10 @@ const papers = [
   {
     id: 1,
     image: capacity,
-    title: "Agricultural Diversification Strategies and Rural Household Food Security and Income in Malawi",
-    date: "12 March 2024",
+    title: "Does accessing multiple social support programmes improve household resilience and food security?",
+    date: "27 January 2026",
     description:
-      "The study identifies the agricultural diversification strategies adopted by farming households in Malawi; assesses how household welfare varies with the identified diversification strategies; and identifies factors associated with household participation in the various agricultural diversification strategies.",
+      "This Policy Brief generates empirical evidence on the effectiveness of combining multiple social support programmes to improve resilience. The study findings also offer insights to inform policy decisions on programme design to strengthen household resilience and improve food security in Malawi.",
   },
   {
     id: 2,
@@ -55,21 +55,21 @@ const papers = [
   return (
     <section className="min-h-screen">
                  <Section_header
-  title="Working Papers"
+  title="Peer_Reviewed_Research"
   bgImage={capacity}
   breadcrumbs={[
     { label: "Home", link: "/" },
     { label: "/ Publication" },
-    { label: "/ Working Papers" }
+    { label: "/ Policy Brief" }
   ]}
 />
 
-    <div className="Section_wrapper">
+    <div className="py-12 px-6 lg:px-22">
        
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
                 className="Section_title">
-                WORKING PAPERS
+                Peer_Reviewed_Research
               </h4>
 
               <div className="flex flex-col items-start lg:items-end">
@@ -90,16 +90,16 @@ const papers = [
             {/* a grid left and right event image*/}
           <div className="flex flex-col mt-12 Counter_title">
             <div className="flex flex-col gap-8">
-                <p className="Counter_title ">
-                  <span className="font-bold">Working papers</span> offer
-                  original, internally reviewed papers in a longer format for readers interested in taking a <span className="font-bold">"deep dive"</span> into an issue and how it was researched. 
+                <p className="Counter_title w-[800px] barlow  ">
+                 Peer_Reviewed_Research
+quickly accessible highlights and key messages on important policy topics, with the essential background information. These are often linked to a Working Paper. 
                 </p>
               
                 <h4 className="font-light lg:text-[18px] text-[32px] text-grey lowercase"><motion.div
                                                             initial={{ opacity: 0, x: 80 }}
                                                             whileInView={{ opacity: 1, x: 0 }}
                                                             transition={{ duration: 1.99, ease: "easeInOut" }}
-                                                           className="mt-2 w-[45px] h-[2.6px] bg-green"></motion.div></h4>
+                                                           className="mt-2 w-[45px] h-[1.6px] bg-green"></motion.div></h4>
             </div>
         
                  
@@ -126,7 +126,7 @@ const papers = [
 
         {/* text */}
           <div className="flex flex-col gap-3 ">
-          <h3 className="Card_heading stack font-semibold">{paper.title}</h3>
+          <h3 className="Card_heading barlow font-semibold">{paper.title}</h3>
 
                 <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
 
@@ -139,11 +139,11 @@ const papers = [
       
     ))}
   </div>
-
+  <h1>fme</h1>
 </div>
     </div>       
     </section>
   );
 };
 
-export default WorkingPapers;
+export default Peer_Reviewed_Research;

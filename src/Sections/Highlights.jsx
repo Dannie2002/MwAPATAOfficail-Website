@@ -1,7 +1,7 @@
 import React from "react";
 import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
-import capacity from "../assets/Images/Capacity_building.JPG";
+import event1 from "../assets/Images/Event1.jpg";
 import research from "../assets/Images/Research.JPG";
 import employee1 from "../assets/Images/Employee1.jpg";
 import employee2 from "../assets/Images/Employee2.jpg";
@@ -14,7 +14,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const OurTeam = () => {
+const Highlights = () => {
 
 useGSAP(() => {
   gsap.from(".heading", {
@@ -34,32 +34,32 @@ useGSAP(() => {
     const programs = [
   {
     id: 1,
-    name: "Mr. William Chadza",
-    title: "Finance and Administration Manager",
+    Title: "MwAPATA Participates in the AGRA Media Onboarding Meeting ",
+    Category: "News Updates",
     description:
       "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
-    image: capacity,
+    image: event1,
   },
   {
     id: 2,
-    name: "Prof. Levison Chiwaula",
-    title: "Research Director",
+    Title: "Prof. Levison Chiwaula",
+    Category: "Events",
     description:
       "Conducting evidence-based research to influence agricultural and development policies.",
     image: research,
   },
   {
     id: 3,
-    name: "Ms. Mercy Chirwa",
-    title: "Outreach Coordinator",
+    Title: "MwAPATA participates in the Commodity Platforms Capacity Strengthening Workshop and Learning Visit",
+    Category: "Publications",
     description:
-      "Improving market systems and access for farmers and agribusiness stakeholders.",
+      "MwAPATA participates in the Commodity Platforms Capacity Strengthening Workshop and Learning Visit",
    image: employee1, 
   },
   {
     id: 4,
-    name: "Mrs. Joyce Minofu",
-    title: "Research Analyst",
+    Title: "Mrs. Joyce Minofu",
+    Category: "News Updates",
     description:
       "Providing short courses and specialized training programs for professionals.",
    image: employee2,
@@ -68,48 +68,34 @@ useGSAP(() => {
 
   return (
     <section className=" min-h-screen">
-      <Section_header
-  title="Our Team"
-  bgImage={team}
-  breadcrumbs={[
-    { label: "Home", link: "/" },
-    { label: "/ Our Team" }
-  ]}
-/>
-      <div className="section-wrapper px-6 lg:px-18">
+
+      <div className="Section_wrapper ">
       
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-5 lg:mt-18">
               <h4            
                 className="Section_title">
-                <span className="text-orange">MEET</span> OUR TEAM.
+                HIGHLIGHTS
               </h4>
                {/* Two Lines on the right */} 
               <div className="flex flex-col mt-12 items-start lg:items-end">
-                  <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.3, ease: "easeInOut" }}
-                  className="mt-2 w-[90px] h-[4px] bg-green "></motion.div>
-                  <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.99, ease: "easeInOut" }}
-                  className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
+                  <button className="Counter_title w-fit border">VIEW ALL UPDATES</button>
               </div>
       </div>
              {/* This is a grid for empployees card */} 
-        <div className="lg:mt-18 mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="Grid_4">
           {programs.map((program) => (
             <div key={program} className="relative">
               <div className="relative h-[230px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
                 <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                    {/* overlay to apply blend mode */}
-                <div className="absolute lg:hidden inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
 
               </div>
-                <div className="absolute lg:relative flex flex-col p-3 justify-end items-start inset-0 z-50">
+
+                <div className="absolute  flex flex-col p-4 justify-between items-start inset-0 z-50">
+                    <h5 className="lg:text-[var(--text-color)] white text-[#fffced] lg:mt-3 mt-2 text-[18px] font-light">{program.Category}</h5>
                   <div className="flex lg:mt-4 gap-4 items-center transition-all justify-end">
-                    <h4 className="Card_heading">{program.name}</h4>
+                    <h4 className="Card_heading  white line-clamp-2">{program.Title}</h4>
                      <motion.div
                       initial={{ opacity: 0, x: 80 }} 
                       whileInView={{ opacity: 1, x: 0 }}
@@ -120,8 +106,7 @@ useGSAP(() => {
                    
                   
                   </div>
-                      
-                      <p className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-2 text-[18px] font-light">{program.title}</p>
+                 
                 </div>
             </div> 
              ))}
@@ -142,4 +127,4 @@ useGSAP(() => {
   );
 };
 
-export default OurTeam;
+export default Highlights;

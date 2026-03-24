@@ -72,8 +72,41 @@ const Governance = () => {
   return (
     <section className="min-h-screen">
 
-    <div className="lg:px-22 py-12 ">
-         
+    <div className="">
+
+
+            <div className="flex flex-col lg:flex-row  lg:mt-28 bg-[#eee] mt-10">
+            <div className="relative p-6 bg-orange flex lg:w-1/2">
+            <div className="flex lg:px-6 py-12 flex-col gap-4 z-20">
+                 <h4 className="bebas z-20 white mb-4 text-3xl">
+                  Background
+                </h4>
+                <p className="white font-light text-[16px] lg:text-[18px]">Rural poverty, malnutrition, inequality and social exclusion remain major challenges in Malawi. It is widely understood that sustained agricultural productivity growth will be necessary to address these challenges, transform the economy, and raise living standards because of extensive forward and backward linkages between agriculture
+                   and the rest of Malawi’s economy. We have a plan to attain the level of agricultural growth that can transform the country’s economy.</p> 
+
+                     <div className="flex gap-4 mt-6 items-center">
+                                           <h2 className="text-green font-semibold">Learn More</h2>
+                                            <motion.div
+                                                               initial={{ opacity: 0, x: 80 }}
+                                                               whileInView={{ opacity: 1, x: 0 }}
+                                                               transition={{ duration: 1.99, ease: "easeInOut" }}
+                                                              className="mt-2 w-[45px] h-[1.6px] bg-green"></motion.div>
+                                            
+                                         </div> 
+            </div>
+
+            
+            
+                
+                <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+                 <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
+            </div>
+
+        <div className="w-1/2">
+        <img src={background} className=" grayscale size-full " />
+        </div>  
+ 
+        </div> 
       
         <div className="flex flex-col lg:flex-row  lg:mt-28 bg-[#eee] mt-10">
             <div className="relative p-6 bg-orange flex lg:w-1/2">
@@ -107,8 +140,11 @@ const Governance = () => {
  
         </div>
 
+      
 
 
+
+      <div className="Section_wrapper">
         <div className="lg:mt-18 mt-8">
           <h4 className="heading Section_title">
             Directors & Advisory Board Members</h4>
@@ -124,7 +160,7 @@ const Governance = () => {
 
               </div>
                 <div className="absolute lg:relative flex flex-col p-3 justify-end items-start inset-0 z-50">
-                                  <div className="flex gap-4 items-center transition-all justify-end">
+                                  <div className="flex lg:mt-4 gap-4 items-center transition-all justify-end">
                                     <h4 className="Card_heading">{program.name}</h4>
                                      <motion.div
                                       initial={{ opacity: 0, x: 80 }} 
@@ -144,6 +180,7 @@ const Governance = () => {
         </div>
 
         </div>
+      </div>  
 
     </div> 
 

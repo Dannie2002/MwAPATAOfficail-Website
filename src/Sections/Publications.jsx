@@ -134,7 +134,7 @@ const Publications = () => {
         ))}
        </div>
 
-       <h4 className="Counter_title barlow lg:mt-18 w-5xl">
+       <h4 className="Counter_title mt-12">
                 <span className="font-semibold">In addition</span> to our own publications, we offer the following resources
               </h4>
 
