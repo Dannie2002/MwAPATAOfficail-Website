@@ -103,49 +103,50 @@ const EminentSpeaker = () => {
         </div>
 
           {/* Grid for EminentSpeaker card */}
-        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="Grid_4">
           {programs.map((program) => (
-            <div className="">
-              <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
-                <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
-              {/* overlay to apply blend mode */}
-               <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
-
-               </div>
-             <div className="absolute lg:relative flex flex-col p-3 justify-end items-start inset-0 z-50">
-                              <div className="flex gap-4 items-center transition-all justify-end">
-                                <h4 className="Card_heading">{program.name}</h4>
+             <div key={program} className="relative">
+                          <div className="relative h-[230px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
+                            <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
+                               {/* overlay to apply blend mode */}
+                            <div className="absolute lg:hidden inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
+            
+                          </div>
+                            <div className="flex flex-col p-4 justify-end items-start inset-0 z-50">
+                              <div className="flex lg:mt-4 gap-4 items-center transition-all justify-end">
+                                <h4 className="Card_heading text-grey">{program.name}</h4>
                                  <motion.div
                                   initial={{ opacity: 0, x: 80 }} 
                                   whileInView={{ opacity: 1, x: 0 }}
                                   transition={{ duration: 1.99, ease: "easeInOut" }}
-                               className="w-[40px]  h-[1.6px] lg:bg-[var(--secondary-color)] bg-[#fffced]">
+                               className="w-[40px]  h-[1.6px] bg-[var(--secondary-color)] ">
             
                                </motion.div>
                                
                               
                               </div>
                                   
-                                  <p className="lg:text-[var(--text-color)] line-clamp-2 text-[#fffced] lg:mt-3 mt-2 text-[18px] font-light">{program.title}</p>
+                                  <p className="text-[var(--text-color)] line-clamp-3  lg:mt-3 mt-2 text-[18px] font-light">{program.title}</p>
                             </div>
-            </div> 
+              </div> 
            ))} 
         </div>
 
           {/* Grid for EminentSpeaker card */}
-        <div className="flex items-start flex-wrap overflow-hidden  gap-4 lg:mt-12  transition ">
-                                 <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--secondary-color)]/60 duration-470">
-                                   <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
-                                 </div>
-                                
-                                 <div className="p-2 size-12 flex-center group bg-green hover:bg-[var(--secondary-color)]/80 duration-500">
-                                   <ChevronRight className="text-[#fffced] size-6 group-hover:text-white" />
-                                 </div>
-                                 
-                       
-                               </div>
+        <div className="flex items-start flex-wrap overflow-hidden mt-6  gap-4 lg:mt-12  transition ">
+                                                 <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--secondary-color)]/60 duration-470">
+                                                   <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
+                                                 </div>
+                                                
+                                                 <div className="p-2 size-12 flex-center group bg-green hover:bg-[var(--secondary-color)]/80 duration-500">
+                                                   <ChevronRight className="text-[#fffced] size-6 group-hover:text-white" />
+                                                 </div>
+                                                 
+                                       
+                        </div>
       
-    </div>      
+    </div> 
+         
     </section>
   );
 };

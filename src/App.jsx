@@ -19,6 +19,7 @@ import WorkingPapers from './Sections/SubSections/WorkingPapers'
 import PolicyBrief from './Sections/SubSections/PolicyBrief'
 import Capacity_Building_Seminars from './Sections/Capacity_Building_Seminars'
 import Highlights from './Sections/Highlights'
+import Contact_Us from './Sections/Contact_Us'
 
 
 
@@ -32,22 +33,29 @@ function App() {
     <About_Us />
     <Highlights />
     <OurTeam />
+    <Contact_Us />
+    {/*
     <Governance />
     <Programmes />
     <Events />
+    
     <Newsletter />
     <EventDetailed /> 
     <NewsDetailed />
-    <News />  
+    <News /> 
+     
     <YouTube />
     <Publications />
+    
     <EminentSpeaker />
+    
     <EminentSpeakerDetailed />
     <JobListing />
     <WorkingPapers />
     <PolicyBrief />
     <Capacity_Building_Seminars />
     <Footer />
+     */}
     </>
   )
 }

@@ -118,7 +118,7 @@ const About_Us = () => {
                  <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
             </div>
 
-          <div className="grid p-6 lg:p-12 lg:p-8 gap-6 lg:gap-6 gap-14 grid-cols-1 lg:grid-cols-2  lg:w-1/2">
+          <div className="grid p-6 lg:p-12 lg:p-8 gap-6 lg:gap-12  grid-cols-1  lg:w-1/2">
           {mission_vision.map((item, index) => (
             <div key={item.id} className="flex items-start flex-col gap-4">
                 <div className="bg-[#EA8548] p-2 rounded-[4px] flex-center">

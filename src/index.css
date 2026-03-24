@@ -32,6 +32,7 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 p, h1, h2, h3, h4, h5, h6, li, div, span {
@@ -107,7 +108,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 
 .Section_title {
   font-family: var(--font-agdasima);
-  @apply lg:text-[58px] text-[32px] max-w-4xl lg:leading-[58px] uppercase font-semibold text-[var(--primary-color)];
+  @apply lg:text-[58px] text-[38px] leading-[38px] max-w-4xl lg:leading-[58px] uppercase font-semibold text-[var(--primary-color)];
 }
 .overlay{
   @apply absolute rounded-[14px] inset-0 bg-[var(--secondary-color)] opacity-20 mix-blend-multiply;
@@ -129,7 +130,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 }
 .Card_heading{
   font-family: var(--font-bebas);
-  @apply hover:text-[var(--secondary-color)] duration-490 text-[#fffced] lg:text-[var(--text-color)] lg:leading-[24px] uppercase lg:text-[24px]
+  @apply hover:text-[var(--secondary-color)] duration-490 text-[#fffced] lg:text-[var(--text-color)] lg:leading-[24px] text-[24px] uppercase lg:text-[24px]
 }
 
 .text_para{
@@ -141,7 +142,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 }
 
 .Grid_4{
-  @apply lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 lg:auto-rows-[430px];
+  @apply lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8;
 }
 
 }

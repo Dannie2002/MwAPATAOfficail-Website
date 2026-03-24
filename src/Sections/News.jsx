@@ -125,7 +125,7 @@ const News = () => {
           ))}
        </div>
         
-                <div className="flex items-start flex-wrap overflow-hidden  gap-4 lg:mt-12  transition ">
+                <div className="flex items-start flex-wrap overflow-hidden mt-6  gap-4 lg:mt-12  transition ">
                                          <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--secondary-color)]/60 duration-470">
                                            <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
                                          </div>

@@ -30,7 +30,7 @@ useGSAP(() => {
   return (
     <section className="min-h-screen relative" style={{backgroundImage: `url(${capacity})`,backgroundAttachment:"fixed", backgroundSize: "cover", backgroundPosition: "center"}}>
       <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-      <div className="absolute  z-0  inset-0 bg-gradient-to-r from-[#000000] via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95 "></div>
+      <div className="absolute  z-0  inset-0 bg-gradient-to-r from-[#0b0b0d] via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95 "></div>
 
      {/* This is a navigation bar */} 
     <header className="w-full bg-[#f08000] rounded-[4px] sticky top-0 z-50">
@@ -82,7 +82,7 @@ useGSAP(() => {
       />
     </div>
 
-     <div className="grid grid-cols-3 w-4xl gap-0">
+     <div className="Grid_4">
 
       {/* About MwAPATA */}
       <div>
@@ -145,15 +145,15 @@ useGSAP(() => {
       
 
       {/* These are hero_contents */}
-    <div className="flex clip lg:rounded-[4px] justify-center flex-col lg:mt-0  mt-0" >
+    <div className="flex lg:rounded-[4px] justify-center flex-col lg:mt-0  mt-0" >
 
-      <div className="flex z-10  p-8 lg:px-22  lg:gap-4 flex-col items-center lg:items-start">
-          <div className="flex gap-4 flex-center">
+      <div className="flex z-10   p-8 lg:px-22  lg:gap-4 flex-col items-center lg:items-start">
+          <div className="flex mb-4 gap-4 flex-center">
             <div className="h-[25px] w-[2.6px] bg-green"></div>
             <p className="white archivo text_para"><span className="text-[#f08000] font-bold">Evidence</span> for Transformation</p>
           </div>
                                              
-          <h4 className="Section_title white lg:leading-[98px] lg:text-[102px]">
+          <h4 className="Section_title text-center white text-[48px] leading-[48px] lg:leading-[98px] lg:text-[102px]">
             <span className="text-[#f08000]">RESEARCH </span> THAT IMPROVES LIVELIHOOD IN MALAWI.
           </h4>
                

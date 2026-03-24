@@ -42,10 +42,10 @@ useGSAP(() => {
   },
   {
     id: 2,
-    Title: "Prof. Levison Chiwaula",
+    Title: "Consultative Group on International Agricultural Research (CGIAR) Policy Innovations Hub Launch and Dialogue",
     Category: "Events",
     description:
-      "Conducting evidence-based research to influence agricultural and development policies.",
+      "Consultative Group on International Agricultural Research (CGIAR) Policy Innovations Hub Launch and Dialogue",
     image: research,
   },
   {
@@ -58,7 +58,7 @@ useGSAP(() => {
   },
   {
     id: 4,
-    Title: "Mrs. Joyce Minofu",
+    Title: "Providing short courses and specialized training programs for professionals.",
     Category: "News Updates",
     description:
       "Providing short courses and specialized training programs for professionals.",
@@ -67,7 +67,7 @@ useGSAP(() => {
 ];
 
   return (
-    <section className=" min-h-screen">
+    <section className=" min-h-screen bg-[#eaeee5]">
 
       <div className="Section_wrapper ">
       
@@ -78,7 +78,7 @@ useGSAP(() => {
               </h4>
                {/* Two Lines on the right */} 
               <div className="flex flex-col mt-12 items-start lg:items-end">
-                  <button className="Counter_title w-fit border">VIEW ALL UPDATES</button>
+                  <button className="Counter_title font-semibold text-[24px] text-[var(--primary-color)] py-2 px-4 w-fit border">VIEW ALL UPDATES</button>
               </div>
       </div>
              {/* This is a grid for empployees card */} 
@@ -93,7 +93,9 @@ useGSAP(() => {
               </div>
 
                 <div className="absolute  flex flex-col p-4 justify-between items-start inset-0 z-50">
-                    <h5 className="lg:text-[var(--text-color)] white text-[#fffced] lg:mt-3 mt-2 text-[18px] font-light">{program.Category}</h5>
+                    <div className="bg-[#fffced]/40 px-4 py-1 z-50 lg:mt-3 mt-2 rounded-full backdrop-blur-2xl  flex-center">
+                    <h6 className="z-50 white text-[#fffced]  text-[16px] font-light">{program.Category}</h6>
+                    </div>
                   <div className="flex lg:mt-4 gap-4 items-center transition-all justify-end">
                     <h4 className="Card_heading  white line-clamp-2">{program.Title}</h4>
                      <motion.div
@@ -111,7 +113,7 @@ useGSAP(() => {
             </div> 
              ))}
         </div>
-            <div className="flex items-start flex-wrap overflow-hidden  gap-4 lg:mt-12  transition ">
+            <div className="flex items-start flex-wrap overflow-hidden mt-6 gap-4 lg:mt-12  transition ">
                          <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--primary-color)]/60 duration-470">
                            <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
                          </div>

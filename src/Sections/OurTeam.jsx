@@ -76,7 +76,7 @@ useGSAP(() => {
     { label: "/ Our Team" }
   ]}
 />
-      <div className="section-wrapper px-6 lg:px-18">
+      <div className="Section_wrapper">
       
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-5 lg:mt-18">
               <h4            
@@ -84,7 +84,7 @@ useGSAP(() => {
                 <span className="text-orange">MEET</span> OUR TEAM.
               </h4>
                {/* Two Lines on the right */} 
-              <div className="flex flex-col mt-12 items-start lg:items-end">
+              <div className="flex flex-col lg:mt-12 mt-6 items-start lg:items-end">
                   <motion.div
                    initial={{ opacity: 0, x: 80 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -98,7 +98,7 @@ useGSAP(() => {
               </div>
       </div>
              {/* This is a grid for empployees card */} 
-        <div className="lg:mt-18 mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="Grid_4">
           {programs.map((program) => (
             <div key={program} className="relative">
               <div className="relative h-[230px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
@@ -107,7 +107,7 @@ useGSAP(() => {
                 <div className="absolute lg:hidden inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
 
               </div>
-                <div className="absolute lg:relative flex flex-col p-3 justify-end items-start inset-0 z-50">
+                <div className="absolute lg:relative flex flex-col lg:py-4   justify-end items-start inset-0 z-50">
                   <div className="flex lg:mt-4 gap-4 items-center transition-all justify-end">
                     <h4 className="Card_heading">{program.name}</h4>
                      <motion.div
@@ -116,18 +116,17 @@ useGSAP(() => {
                       transition={{ duration: 1.99, ease: "easeInOut" }}
                    className="w-[40px]  h-[1.6px] lg:bg-[var(--secondary-color)] bg-[#fffced]">
 
-                   </motion.div>
-                   
-                  
+                     </motion.div> 
                   </div>
                       
-                      <p className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-2 text-[18px] font-light">{program.title}</p>
+                  <p className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-2 text-[18px] font-light">{program.title}</p>
                 </div>
             </div> 
              ))}
         </div>
-            <div className="flex items-start flex-wrap overflow-hidden  gap-4 lg:mt-12  transition ">
-                         <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--primary-color)]/60 duration-470">
+
+            <div className="flex items-start flex-wrap  mt-6 gap-4 lg:mt-6  transition ">
+                         <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--secondary-color)]/60 duration-470">
                            <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
                          </div>
                         

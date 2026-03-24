@@ -19,7 +19,7 @@ const Section_header = ({ title, breadcrumbs = [],bgImage }) => {
         <nav className="absolute mx-auto bottom-0 z-20 pb-4 ">
           <ul className="flex items-center gap-2">
             {breadcrumbs.map((item, index) => (
-              <li className="white" key={index}>{item.label}</li>
+              <li className="white uppercase" key={index}>{item.label}</li>
             ))}
           </ul>
         </nav>

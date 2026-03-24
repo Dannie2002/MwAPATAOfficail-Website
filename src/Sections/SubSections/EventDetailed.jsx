@@ -39,7 +39,7 @@ const images = [
     <section className="min-h-screen">
     <div className="py-12 px-6 lg:px-22">
        
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
+      <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
                 className="Section_title">
                 MwAPATA Participates in the AGRA Media Onboarding Meeting
