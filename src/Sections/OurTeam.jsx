@@ -6,32 +6,15 @@ import research from "../assets/Images/Research.JPG";
 import employee1 from "../assets/Images/Employee1.jpg";
 import employee2 from "../assets/Images/Employee2.jpg";
 import team from "../assets/Images/Team_Mwapata.jpg";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import Section_header from "./Section_header";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const OurTeam = () => {
 
-useGSAP(() => {
-  gsap.from(".heading", {
-    y: 100,
-    opacity: 0,
-    duration: 0.95,
-    scrollTrigger: {
-      trigger: ".heading",
-      start: "top 80%",
-      end: "bottom top",
-      scrub: true,
-      ease: "power1.inOut",
-    }
-  });
-}, []); 
 
-    const programs = [
+
+    const Employees = [
   {
     id: 1,
     name: "Mr. William Chadza",
@@ -99,17 +82,17 @@ useGSAP(() => {
       </div>
              {/* This is a grid for empployees card */} 
         <div className="Grid_4">
-          {programs.map((program) => (
-            <div key={program} className="relative">
+          {Employees.map((employee) => (
+            <div key={employee} className="relative">
               <div className="relative h-[230px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
-                <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
+                <img src={employee.image} alt={employee.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                    {/* overlay to apply blend mode */}
                 <div className="absolute lg:hidden inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
 
               </div>
-                <div className="absolute lg:relative flex flex-col lg:py-4   justify-end items-start inset-0 z-50">
-                  <div className="flex lg:mt-4 gap-4 items-center transition-all justify-end">
-                    <h4 className="Card_heading">{program.name}</h4>
+                <div className="absolute lg:relative flex flex-col lg:py-4  p-4 justify-end items-start inset-0 z-50">
+                  <div className="flex lg:mt-4 gap-4  items-center transition-all justify-end">
+                    <h4 className="Card_heading">{employee.name}</h4>
                      <motion.div
                       initial={{ opacity: 0, x: 80 }} 
                       whileInView={{ opacity: 1, x: 0 }}
@@ -119,7 +102,7 @@ useGSAP(() => {
                      </motion.div> 
                   </div>
                       
-                  <p className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-2 text-[18px] font-light">{program.title}</p>
+                  <p className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[18px] font-light">{employee.title}</p>
                 </div>
             </div> 
              ))}

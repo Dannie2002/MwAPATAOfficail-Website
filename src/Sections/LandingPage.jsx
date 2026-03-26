@@ -4,26 +4,12 @@ import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/LandingPhoto.jpg";
 import DottedArrow from "./Icons/DottedArrow";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import SplitText from "gsap/SplitText";
 import noise from "../assets/Images/Noise.png";
-gsap.registerPlugin(useGSAP, SplitText);
+
 
 const LandingPage= () => {
   const [isOpen, setIsOpen] = useState(false);
 
-useGSAP(() => {
-  const heroSplit = new SplitText(".head", { type: "lines, words, chars" });
-  gsap.from(heroSplit.chars, {
-    opacity: 0,
-    y: 50,
-    ease: "power4.out",
-    duration: 1,
-    stagger: 0.05,
-    delay: 0.5
-  });
-}, []);
 
 
 
@@ -153,7 +139,7 @@ useGSAP(() => {
             <p className="white archivo text_para"><span className="text-[#f08000] font-bold">Evidence</span> for Transformation</p>
           </div>
                                              
-          <h4 className="Section_title text-center white text-[48px] leading-[48px] lg:leading-[98px] lg:text-[102px]">
+          <h4 className="Section_title font-black text-center white text-[48px] leading-[48px] lg:leading-[98px] lg:text-[102px]">
             <span className="text-[#f08000]">RESEARCH </span> THAT IMPROVES LIVELIHOOD IN MALAWI.
           </h4>
                

@@ -1,29 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import capacity from "../assets/Images/Capacity_building.JPG";
-import { useGSAP } from "@gsap/react";
 
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Capacity_Building_seminars = () => {
 
-useGSAP(() => {
-  gsap.from(".head", {
-    y: 100,
-    opacity: 0,
-    duration: 0.95,
-    scrollTrigger: {
-      trigger: ".head",
-      start: "top 80%",
-      end: "bottom top",
-      scrub: true,
-      ease: "power1.inOut",
-    }
-  });
-});
+
 
 const seminars = [
   {

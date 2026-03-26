@@ -129,8 +129,8 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
   @apply lg:text-[22px] text-[18px] uppercase  text-[var(--text-color)];
 }
 .Card_heading{
-  font-family: var(--font-bebas);
-  @apply hover:text-[var(--secondary-color)] duration-490 text-[#fffced] lg:text-[var(--text-color)] lg:leading-[24px] text-[24px] uppercase lg:text-[24px]
+  font-family: var(--font-barlow);
+  @apply hover:text-[var(--secondary-color)] duration-490 cursor-pointer font-semibold text-[#fffced] lg:text-[var(--text-color)] lg:leading-[24px]  leading-[26px] text-[24px] uppercase lg:text-[24px];
 }
 
 .text_para{
@@ -138,7 +138,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 }
 
 .Section_wrapper{
-  @apply lg:py-12 py-4 px-6 lg:px-22;
+  @apply lg:py-12 py-4 px-6 lg:px-18;
 }
 
 .Grid_4{

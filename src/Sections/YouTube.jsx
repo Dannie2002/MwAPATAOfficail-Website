@@ -9,30 +9,9 @@ import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
 import noise from "../assets/Images/Noise.png"
 import DottedArrow from "./Icons/DottedArrow";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const YouTube= () => {
-
-  useGSAP(() => {
-  gsap.from(".head", {
-    y: 100,
-    opacity: 0,
-    duration: 0.95,
-    scrollTrigger: {
-      trigger: ".head",
-      start: "top 80%",
-      end: "bottom top",
-      scrub: true,
-      ease: "power1.inOut",
-    }
-  });
-});
-
-
 
   return (
     <section className="min-h-[60vh] relative" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>

@@ -39,16 +39,16 @@ const About_Us = () => {
       
       <div className="flex flex-col   lg:items-start lg:justify-between mt-10 lg:mt-18">
           
-        <h1 className="Page_title">ABOUT US</h1>
+        <h1 className="Page_title">WHO ARE WE</h1>
           <div className="mt-1 w-[50px] h-[1.9px] bg-green "></div>
 
 
             <div className="flex flex-col w-full gap-18 lg:mt-18 mt-10 lg:flex-row">
 
               <div className="flex flex-col gap-6 lg:w-1/2">
-              <h4 className="Section_title">Who We Are</h4>
+              <h4 className="Section_title">ABOUT MWAPATA</h4>
               <div className="flex flex-col lg:mt-6 gap-6">
-                <h4 className="Counter_title">
+                <h4 className="Counter_title ">
                   <span className="font-bold">An</span> independent <span className="font-semibold">agricultural policy <br /> think tank in Malawi.</span>
                 </h4>
                 <div className="flex flex-col gap-4">
@@ -85,7 +85,7 @@ const About_Us = () => {
 
        </div>   
       
-        <div className="flex flex-col flex-col-reverse  lg:flex-row  lg:-mx-22 lg:mt-28 bg-[#eee5e5] mt-10">
+        <div className="flex flex-col flex-col-reverse  lg:flex-row  lg:-mx-22 lg:mt-28  bg-[#eaeee5] mt-10">
             <div className="relative bg-green flex lg:w-1/2">
             <div className="flex lg:px-18 px-6 py-8 lg:py-12 flex-col gap-4 z-20">
                  <h4 className="Section_title white">

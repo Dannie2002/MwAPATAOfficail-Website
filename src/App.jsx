@@ -54,8 +54,9 @@ function App() {
     <WorkingPapers />
     <PolicyBrief />
     <Capacity_Building_Seminars />
-    <Footer />
      */}
+    <Footer />
+    
     </>
   )
 }

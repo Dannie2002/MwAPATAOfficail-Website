@@ -47,12 +47,12 @@ const Contact_Us = () => {
     <div className="Section_wrapper">
        
       
-              <h4 className="Section_title ">
-                   Find Mwapata Institute
+              <h4 className="Section_title mt-6">
+                   Mwapata Contact Details
                 </h4>
       
-        <div className="flex flex-col  lg:flex-row  lg:-mx-22 lg:mt-28 bg-[#eee5e5] mt-10">
-            <div className="relative flex flex-row px-18 py-12 items-start justify-between bg-green lg:w-1/2">
+        <div className="flex flex-col  lg:flex-row  lg:-mx-22 lg:mt-28 bg-[#eaeee5] mt-10">
+            <div className="relative flex flex-col lg:flex-row px-18 py-12 items-start justify-between lg:w-1/2">
             
                 
 
@@ -60,14 +60,14 @@ const Contact_Us = () => {
                 
 
                     
-                        <div className="flex gap-4 mt-12 z-20">
-                        <h5 className="white  font-light Card_heading">Address: </h5>
-                        <p className="white ">P.O Box 30883 <br /> Capital City <br /> Lilongwe 3 <br /> Malawi</p>
+                        <div className="flex gap-4 lg:mt-12 z-20">
+                        <h5 className="text-green  font-semibold Card_heading">Address: </h5>
+                        <p className="text-grey">P.O Box 30883 <br /> Capital City <br /> Lilongwe 3 <br /> Malawi</p>
                         </div>
 
                         <div className="flex gap-4 mt-12 z-20">
-                        <h5 className="white w-fit  font-light Card_heading">Email: </h5>
-                        <p className="white ">info@mwapata.mw</p>
+                        <h5 className="text-green  font-semibold Card_heading">Email: </h5>
+                        <p className="text-grey">info@mwapata.mw</p>
                         </div>
                     
 
@@ -77,8 +77,7 @@ const Contact_Us = () => {
             
             
                 
-                <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-                 <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
+                
             </div>
 
           <div className="grid p-6 lg:p-12 lg:p-8 gap-6 lg:gap-12  grid-cols-1  lg:w-1/2">

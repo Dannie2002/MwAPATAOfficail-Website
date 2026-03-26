@@ -6,30 +6,13 @@ import research from "../assets/Images/Research.JPG";
 import employee1 from "../assets/Images/Employee1.jpg";
 import employee2 from "../assets/Images/Employee2.jpg";
 import team from "../assets/Images/Team_Mwapata.jpg";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import Section_header from "./Section_header";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 
 const Highlights = () => {
 
-useGSAP(() => {
-  gsap.from(".heading", {
-    y: 100,
-    opacity: 0,
-    duration: 0.95,
-    scrollTrigger: {
-      trigger: ".heading",
-      start: "top 80%",
-      end: "bottom top",
-      scrub: true,
-      ease: "power1.inOut",
-    }
-  });
-}, []); 
 
     const programs = [
   {
@@ -77,8 +60,8 @@ useGSAP(() => {
                 HIGHLIGHTS
               </h4>
                {/* Two Lines on the right */} 
-              <div className="flex flex-col mt-12 items-start lg:items-end">
-                  <button className="Counter_title font-semibold text-[24px] text-[var(--primary-color)] py-2 px-4 w-fit border">VIEW ALL UPDATES</button>
+              <div className="flex flex-col hover:bg-[var(--primary-color)] group transition-all duration-430 items-start lg:items-end">
+                  <button className="Counter_title group-hover:text-[#fffced] duration-430 font-semibold text-[24px] text-[var(--primary-color)] py-2 px-4 w-fit border">VIEW ALL UPDATES</button>
               </div>
       </div>
              {/* This is a grid for empployees card */} 
@@ -93,11 +76,11 @@ useGSAP(() => {
               </div>
 
                 <div className="absolute  flex flex-col p-4 justify-between items-start inset-0 z-50">
-                    <div className="bg-[#fffced]/40 px-4 py-1 z-50 lg:mt-3 mt-2 rounded-full backdrop-blur-2xl  flex-center">
-                    <h6 className="z-50 white text-[#fffced]  text-[16px] font-light">{program.Category}</h6>
+                    <div className="bg-[#fffced]/40 px-4 py-1 z-50 border border-[#fffced]/30 lg:mt-3 mt-2 rounded-full backdrop-blur-xl  flex-center">
+                    <h6 className="z-50 white text-[#fffced] uppercase text-[12px] font-semibold">{program.Category}</h6>
                     </div>
-                  <div className="flex lg:mt-4 gap-4 items-center transition-all justify-end">
-                    <h4 className="Card_heading  white line-clamp-2">{program.Title}</h4>
+                  <div className="flex lg:mt-4 gap-4 py-2 items-center transition-all justify-end">
+                    <h4 className="Card_heading font-semibold white line-clamp-2">{program.Title}</h4>
                      <motion.div
                       initial={{ opacity: 0, x: 80 }} 
                       whileInView={{ opacity: 1, x: 0 }}

@@ -1,91 +1,162 @@
-import React from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import React, { useState } from "react";
+import noise from "../assets/Images/Noise.png";
+import logo from "../assets/Images/MwAPATA logo.pdf";
+import { motion, AnimatePresence } from "framer-motion";
+import {Facebook, ChevronDown, ChevronUp,ChevronRight } from "lucide-react";
+import {MessageCircle, Twitter } from "lucide-react";
 
-gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
+  const [openIndex, setOpenIndex] = useState(null);
 
+  const handleToggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+  
   const footerLinks = [
     {
-      title: "Services",
-      links: ["Branding", "Design", "Marketing", "Advertisement"],
+      title: "Who we are",
+      links: ["About us", "Our Team", "Governance", "Partners"],
     },
     {
-      title: "Company",
+      title: "What We Do",
       links: ["About us", "Contact", "Jobs", "Press kit"],
     },
     {
-      title: "Legal",
-      links: ["Terms of use", "Privacy policy", "Cookie policy"],
+      title: "Get involved",
+      links: ["YouTube Channel", "Publication Feedback", "JobListing", "Contact Us"],
     },
+    {
+      title: "Follow Us:",
+      socials: [<Facebook size={35} key={1} />, <MessageCircle size={35} key={2} />, <Twitter size={35} key={3} />],
+    }
   ];
 
-  useGSAP(() => {
-    gsap.from(".head", {
-      y: 100,
-      opacity: 0,
-      duration: 0.95,
-      scrollTrigger: {
-        trigger: ".head",
-        start: "top 80%",
-        end: "bottom top",
-        scrub: true,
-        ease: "power1.inOut",
-      },
-    });
-  });
 
   return (
-    <footer className="min-h-[60vh] bg-green">
-      <div className="py-12 px-6 lg:px-22">
+    <footer className="min-h-[70vh] relative bg-[#eaeee5]">
+      <div className="absolute bg-green inset-0 z-20 top-0 opacity-30 -left-20 size-[120px] rounded-full"></div>
+       <div className="absolute bg-[#eaeee5] inset-0 z-20 top-4 rounded-full -left-20 size-[90px]"></div>
+   
+                      
+       <div className="Section_wrapper z-20">
 
-      
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-
-        {footerLinks.map((section, index) => (
-          <nav key={index} className="flex flex-col gap-2">
-            <h6 className="uppercase white barlow font-bold">
+         <div className="Grid_4 z-20">
+           {footerLinks.map((section, index) => (
+            <nav key={index} className="flex flex-col z-20 gap-2">
+            <div className="flex items-center justify-between z-20">
+            <h6
+                className={`Card_heading agdasima mb-0  font-semibold lg:mb-4 text-[26px]  text-[var(--primary-color)] ${section.links ? 'cursor-pointer lg:cursor-default' : ''}`}
+                 onClick={() => section.links && handleToggle(index)}
+            >
               {section.title}
             </h6>
+            {section.links && (
+              <ChevronDown
+                className={`flex lg:hidden transition-transform duration-450 ease-in-out transform ${openIndex === index ? "rotate-180" : ""}`}
+                size={26}
+                color="#3A9B3D"
+                onClick={() => handleToggle(index)}
+              />
+            )}
+            </div>
+          
+                      <motion.div
+                      initial={{ opacity: 0, x: 80 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 1.99, ease: "easeInOut" }} className="w-full relative h-[1.5px] mb-2 mt-2 lg:hidden bg-green">
+                      </motion.div>
+            {section.links && (
+              <>
+                {/* Desktop view: always visible */}
+                <div className="hidden lg:flex flex-col gap-3">
+                  {section.links.map((link, i) => (
+                    <a key={i} className="link cursor-pointer text-[17.5px] text-grey link-hover">
+                      {link}
+                    </a>
+                  ))}
+                </div>
 
-            {section.links.map((link, i) => (
-              <a key={i} className="link link-hover">
-                {link}
-              </a>
-            ))}
+                {/* Mobile view: animated accordion */}
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0,}}
+                      animate={{ height: "auto", opacity: 1}}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.45, ease: "easeInOut" }}
+                      className="flex lg:hidden flex-col gap-3 overflow-hidden"
+                    >
+                      {section.links.map((link, i) => (
+                        <a key={i} className="link cursor-pointer text-[17.5px] text-grey link-hover">
+                          {link}
+                        </a>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </>
+            )}
+            {section.socials && (
+              <div className="flex mt-4 gap-6">
+                {section.socials.map((icon, i) => (
+                  <div key={i} className="cursor-pointer text-green hover:opacity-70">
+                    {icon}
+                  </div>
+                ))}
+              </div>
+            )}
           </nav>
         ))}
 
-        <form className="flex flex-col gap-4">
-          <h6 className="uppercase white barlow font-bold">
-            Newsletter
-          </h6>
+      </div>
 
-          <label className="white">
-            Enter your email address
-          </label>
+          <motion.div
+                initial={{ opacity: 0, x: 80 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.99, ease: "easeInOut" }}
+  className="w-full relative h-[1.5px] hidden lg:flex mt-12 bg-green"></motion.div>
 
-          <div className="flex flex-col sm:flex-row gap-3">
+              <div className="mt-12 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div className="flex overflow-hidden bg-transparent">
+                  <embed src={logo} type="application/pdf" className="w-[180px] h-[120px]" />
+                </div>
+ 
+                            <div className="flex-col gap-6">
+                                          <h6 className="Card_heading agdasima font-semibold mb-6 text-[26px] text-[var(--primary-color)] ">
+                                          Subscribe to our newsletter
+                                        </h6>
 
-            <input
-              type="email"
-              placeholder="username@site.com"
-              className="px-6 py-3 border-b-[0.8px] border-[#fffced] white rounded-[4px] w-full"
-            />
+                                  <form id="newsletter-form" className="flex flex-row gap-4">
+                                  <input type="email" id="email" placeholder="Enter your email" required
+                                    className="w-full px-4 py-2 border border-[var(--secondary-color)] rounded-[4px] focus:outline-none focus:border-[var(--primary-color)]/30" />
+                                  <button type="submit"
+                                    className="bg-green white barlow uppercase font-semibold text-[18px] py-2 px-4 rounded-[4px] transition">
+                                         <ChevronRight className="text-[#fffced] size-6 group-hover:text-white" />
+                                       </button>
+                                </form>
+                                    
+                            </div>
 
-            <button className="px-6 py-3 white border border-[#fffced] rounded-[4px]">
-              Subscribe
-            </button>
+               </div>
 
-          </div>
 
-        </form>
+
+
+               
+
 
       </div>
-    </div>
+    
+      <div className="bg-green w-full px-6 mx-auto lg:px-18  py-4 flex items-center justify-between relative">
+        <p className="white text-[12px] lg:text-[14px] z-50">Privacy Policy</p>     
+        <p className="white text-[12px] lg:text-[14px] z-50">©2026 MwAPATA Institute</p>
+        <p className="white text-[12px] lg:text-[14px] z-50">+265 993 413 191</p>
+        <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-multiply opacity-30 z-0 clip h-full object-cover"/>
+        <div className="absolute inset-0 z-0 bg-green opacity-60 mix-blend-multiply"></div>
+      </div>
+
+
     </footer>
   );
 };
