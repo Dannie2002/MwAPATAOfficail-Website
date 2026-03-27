@@ -53,7 +53,7 @@ const eventDetails = [
            {/* EVENT LOCATION AND DATE*/}
        <div className="flex flex-wrap oswald  lg:flex-row items-center justify-start gap-2 lg:gap-12 mt-10">
          {eventDetails.map(({ icon: Icon, text }, index) => (
-           <h4 key={index} className="uppercase gap-2 flex items-center text-grey barlow font-sbold text-[14px]">
+           <h4 key={index} className="uppercase gap-2 flex items-center text-grey barlow font-semibold text-[14px]">
              <span className="text-green font-bold">
                <Icon className="size-5" />
              </span>
@@ -83,7 +83,7 @@ const eventDetails = [
                     Representing the MwAPATA institute, Mr Chilora delivered a 5-minute presentation pitch on the Enhancing Inclusive Youth-Led Platform for Evidence-based Agricultural policymaking and implementation in Malawi (LEAP4YOUTH Project), which the MwAPATA Institute is implementing in partnership with National Youth Council of Malawi (NYCOM), supported by AGRA.
                   </p>
               
-                  <h4 className="font-light lg:text-[18px] text-[22px] text-grey lowercase">WATCH THE FULL EVENT <span className="text-green underline font-bold">HERE</span></h4>
+                  <h6 className="font-light lg:text-[18px] text-[18px] text-grey lowercase">WATCH THE FULL EVENT <span className="text-green underline font-bold">HERE</span></h6>
             </div>
                {/* an image side*/}
               <div className="relative flex">

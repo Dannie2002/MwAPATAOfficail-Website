@@ -26,15 +26,15 @@ const OurTeam = () => {
     name: "Prof. Levison Chiwaula",
     title: "Research Director",
     description:
-      "Conducting evidence-based research to influence agricultural and development policies.",
+      "Levison is a Professor of Economics at the University of Malawi (UNIMA).  He holds a PhD in Economics from Leibniz University of Hannover in Germany and has over 15 years of experience in higher education teaching and research.  Prof. Chiwaula is a seasoned researcher with a track record of winning competitive research grants and publishing in renowned peer-reviewed journals. He has led and participated in several projects funded by IDRC, DFID, AERC, PEP, and the EU and has also provided consultancy services to several governmental and non-governmental organizations.",
     image: research,
   },
   {
     id: 3,
     name: "Ms. Mercy Chirwa",
-    title: "Outreach Coordinator",
+    title: "Finance and Administration Manager",
     description:
-      "Improving market systems and access for farmers and agribusiness stakeholders.",
+      "Mercy is an accomplished Finance, Grants Management and Administration Specialist with over 12 years of practical experience. She has worked with various International NGOs and managed funds from donors like USAID, DFID, EU, Flanders, Norway, UN, JICA and GIZ. Mercy holds a Master of Business Administration from UNICAF University and Bachelor of Business Administration majoring in Accounting from University of Eastern Africa-Kenya. As Finance and Administration Manager, she has overall strategic and operational responsibility for financial and operations management of MwAPATA Institute.",
    image: employee1, 
   },
   {
@@ -42,7 +42,7 @@ const OurTeam = () => {
     name: "Mrs. Joyce Minofu",
     title: "Research Analyst",
     description:
-      "Providing short courses and specialized training programs for professionals.",
+      "Joyce holds MSc in Agricultural and Applied Economics from Lilongwe University of Agriculture and Natural Resources (LUANAR)  and University of Pretoria. She successfully completed some research studies whose results were published and presented to different conferences. Joyce's interests are in agricultural policy, natural resource economics and rural development. Previously, Joyce worked with several individuals and organizations in research and program management. Before joining MwAPATA, Joyce worked as a Research Associate (Adoption, Impact and Markets) at International Institute of Tropical Agriculture (IITA).",
    image: employee2,
   },
 ];
@@ -83,7 +83,7 @@ const OurTeam = () => {
           {Employees.map((employee) => (
             <div 
               key={employee.id} 
-              className="relative lg:bg-[#eaeee5] lg:h-[580px] cursor-pointer"
+              className="relative lg:bg-[#eaeee5]  cursor-pointer"
               onClick={() => setSelectedEmployee(employee)}
             >
               <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 shadow-3xl">
@@ -93,18 +93,19 @@ const OurTeam = () => {
 
               </div>
                 <div className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-50">
-                  <div className="flex lg:mt-4 gap-4  items-center transition-all justify-end">
-                    <h4 className="Card_heading">{employee.name}</h4>
-                     <motion.div
-                      initial={{ opacity: 0, x: 80 }} 
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 1.99, ease: "easeInOut" }}
-                   className="w-[40px]  h-[1.6px] lg:bg-[var(--secondary-color)] bg-[#fffced]">
-
-                     </motion.div> 
-                  </div>
+                  
+                      <div className="flex lg:mt-4 gap-4 items-center transition-all justify-end">
+                                <h4 className="Card_heading">{employee.name}</h4>
+                                                 
+                              </div>
+                
+                  
                       
                   <p className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[18px] font-light">{employee.title}</p>
+                  <div className="flex-center gap-4">
+                                  <h6 className="text-green uppercase font-semibold">Learn More</h6>
+                                  <ChevronRight className="text-grey size-4 group-hover:text-white" />
+                                  </div>
                 </div>
             </div> 
              ))}
@@ -137,7 +138,7 @@ const OurTeam = () => {
                  onClick={(e) => e.stopPropagation()}
                >
                  {/* Header Section with Close Button */}
-                 <div className="flex items-center justify-end p-4 border-b border-green/10 bg-[#eaeee5] sticky top-0 z-50">
+                 <div className="flex items-center justify-end p-4 bg-[#e5e6e3] sticky top-0 z-50">
                    <button 
                      onClick={() => setSelectedEmployee(null)}
                      className="p-2 hover:bg-green/10 rounded-full transition-all"
@@ -147,14 +148,19 @@ const OurTeam = () => {
                  </div>
 
                  {/* Scrollable Content Section */}
-                 <div className="overflow-y-auto flex-1 p-8 lg:p-12">
+                 <div className="overflow-y-auto flex-1 Section_wrapper ">
                    <div className="flex flex-col gap-6">
-                     <div className="flex flex-col items-start">
-                       <h4 className="Card_heading !text-grey !text-[32px]">{selectedEmployee.name}</h4>
-                       <p className="text-[var(--text-color)] lg:mt-3 mt-1 text-[18px] font-light">{selectedEmployee.title}</p>
-                       <div className="mt-4 w-[50px] h-[4px] bg-orange"></div>
+                     <div className="flex flex-col gap-4 mt-4 items-start">
+                       <h4 className="Card_heading text-grey">{selectedEmployee.name}</h4>
+                       <p className="text-[var(--text-color)] text-[18px] font-light">{selectedEmployee.title}</p>
+                          <motion.div
+                                       initial={{ opacity: 0, x: 80 }}
+                                       whileInView={{ opacity: 1, x: 0 }}
+                                       transition={{ duration: 1.99, ease: "easeInOut" }}
+                                       className="w-full relative h-[1.5px]  bg-green"
+                                     ></motion.div>
                      </div>
-                     <p className="text_para !text-grey leading-relaxed whitespace-pre-line">
+                     <p className="text-grey leading-relaxed whitespace-pre-line">
                        {selectedEmployee.description}
                      </p>
                    </div>

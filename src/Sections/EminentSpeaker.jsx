@@ -1,10 +1,12 @@
 import React from "react";
 import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
-import capacity from "../assets/Images/Capacity_building.jpg";
 import research from "../assets/Images/Research.jpg";
-import outreach from "../assets/Images/Outreach.jpg";
-import policy from "../assets/Images/Policy_advocacy.jpg";
+import speaker1 from "../assets/Images/EminentSpeaker1.jpg";
+import speaker2 from "../assets/Images/EminentSpeaker2.jpg";
+import speaker3 from "../assets/Images/EminentSpeaker3.jpg";
+import speaker4 from "../assets/Images/EminentSpeaker4.jpg";
+
 import Data from "./Icons/Data";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Section_header from '../Sections/Section_header'
@@ -20,7 +22,7 @@ const EminentSpeaker = () => {
     title: "Promoting Neglected and Under-Utilized Food Crops: A Pathway to Diversified and Resilient Food Systems",
     description:
       "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
-    image: capacity,
+    image: speaker4,
   },
   {
     id: 2,
@@ -28,7 +30,7 @@ const EminentSpeaker = () => {
     title: "Leveraging Food System Transformation to Achieve Resilient Livelihoods, Nutrition Security and Environmental Sustainability in Malawi",
     description:
       "Conducting evidence-based research to influence agricultural and development policies.",
-    image: research,
+    image: speaker3,
   },
   {
     id: 3,
@@ -36,7 +38,7 @@ const EminentSpeaker = () => {
     title: "Leveraging Carbon Markets and Climate Finance to Accelerate Sustainable Development in Malawi",
     description:
       "Improving market systems and access for farmers and agribusiness stakeholders.",
-   image: outreach, 
+   image: speaker2, 
   },
     {
     id: 4,
@@ -44,7 +46,7 @@ const EminentSpeaker = () => {
     title: "Unlocking Wealth Creation through Enhanced Agro-Processing of Priority Value Chains for Nutrition and Diets",
     description:
       "Improving market systems and access for farmers and agribusiness stakeholders.",
-   image: outreach, 
+   image: speaker1, 
   },
 
 ];
@@ -86,7 +88,7 @@ const EminentSpeaker = () => {
           {/* Grid for EminentSpeaker card */}
         <div className="Grid_4">
           {programs.map((program) => (
-             <div key={program.id} className="relative">
+             <div key={program.id} className="relative bg-[#eaeee5] ">
                           <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
                             <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                                {/* overlay to apply blend mode */}
@@ -95,21 +97,13 @@ const EminentSpeaker = () => {
                           </div>
                             <div className="flex flex-col gap-4 mt-2 p-4 justify-end items-start inset-0 z-50">
                               <div className="flex lg:mt-4 gap-4 items-center transition-all justify-end">
-                                <h4 className="Card_heading text-grey">{program.name}</h4>
-                                 <motion.div
-                                  initial={{ opacity: 0, x: 80 }} 
-                                  whileInView={{ opacity: 1, x: 0 }}
-                                  transition={{ duration: 1.99, ease: "easeInOut" }}
-                               className="w-[40px]  h-[1.6px] bg-[var(--secondary-color)] ">
-            
-                               </motion.div>
-                               
-                              
+                                <h4 className="Card_heading">{program.name}</h4>
+                                                 
                               </div>
                                   
                                   <p className="text-[var(--text-color)] line-clamp-3  lg:mt-3 mt-2 text-[18px] font-light">{program.title}</p>
                                   <div className="flex-center gap-4">
-                                  <h6 className="text_para text-[16px]">Learn More</h6>
+                                  <h6 className="text-green uppercase font-semibold">Learn More</h6>
                                   <ChevronRight className="text-grey size-4 group-hover:text-white" />
                                   </div>
                             </div>
