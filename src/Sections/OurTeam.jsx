@@ -9,11 +9,7 @@ import team from "../assets/Images/Team_Mwapata.jpg";
 import Section_header from "./Section_header";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-
 const OurTeam = () => {
-
-
-
     const Employees = [
   {
     id: 1,
@@ -83,14 +79,14 @@ const OurTeam = () => {
              {/* This is a grid for empployees card */} 
         <div className="Grid_4">
           {Employees.map((employee) => (
-            <div key={employee} className="relative">
-              <div className="relative h-[230px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
-                <img src={employee.image} alt={employee.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
+            <div key={employee.id} className="relative lg:bg-[#eaeee5] lg:h-[580px]">
+              <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 shadow-3xl">
+                <img src={employee.image} alt={employee.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full object-cover"/>
                    {/* overlay to apply blend mode */}
                 <div className="absolute lg:hidden inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
 
               </div>
-                <div className="absolute lg:relative flex flex-col lg:py-4  p-4 justify-end items-start inset-0 z-50">
+                <div className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-50">
                   <div className="flex lg:mt-4 gap-4  items-center transition-all justify-end">
                     <h4 className="Card_heading">{employee.name}</h4>
                      <motion.div

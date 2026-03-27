@@ -1,29 +1,9 @@
 import React from "react";
 import {motion} from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import capacity from "../../assets/Images/Capacity_building.JPG";
-import { useGSAP } from "@gsap/react";
 import noise from "../../assets/Images/Noise.png";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-
 const EventDetailed = () => {
-  useGSAP(() => {
-  gsap.from(".head", {
-    y: 100,
-    opacity: 0,
-    duration: 0.95,
-    scrollTrigger: {
-      trigger: ".head",
-      start: "top 80%",
-      end: "bottom top",
-      scrub: true,
-      ease: "power1.inOut",
-    }
-  });
-});
-
 const images = [
   capacity,
   capacity,
@@ -86,11 +66,7 @@ In addition, the meeting aimed to build informed and long-term partnerships betw
 Representing the MwAPATA institute, Mr Chilora delivered a 5-minute presentation pitch on the Enhancing Inclusive Youth-Led Platform for Evidence-based Agricultural policymaking and implementation in Malawi (LEAP4YOUTH Project), which the MwAPATA Institute is implementing in partnership with National Youth Council of Malawi (NYCOM), supported by AGRA. 
                 </p>
               
-                <h4 className="font-light lg:text-[18px] text-[32px] text-grey lowercase">WATCH THE FULL EVENT <span className="text-green font-bold">HERE<span> <motion.div
-                                                            initial={{ opacity: 0, x: 80 }}
-                                                            whileInView={{ opacity: 1, x: 0 }}
-                                                            transition={{ duration: 1.99, ease: "easeInOut" }}
-                                                           className="mt-2 w-[45px] h-[1.6px] bg-green"></motion.div></span></span></h4>
+                <h4 className="font-light lg:text-[18px] text-[22px] text-grey lowercase">WATCH THE FULL EVENT <span className="text-green underline font-bold">HERE</span></h4>
             </div>
                {/* an image side*/}
               <div className="relative flex">

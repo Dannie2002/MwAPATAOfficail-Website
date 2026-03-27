@@ -40,21 +40,23 @@ function App() {
     <Events />
     
     <Newsletter />
-    <EventDetailed /> 
+     
     <NewsDetailed />
     <News /> 
      
     <YouTube />
     <Publications />
     
-    <EminentSpeaker />
     
-    <EminentSpeakerDetailed />
     <JobListing />
     <WorkingPapers />
     <PolicyBrief />
     <Capacity_Building_Seminars />
      */}
+     <EventDetailed />
+     <EminentSpeaker />
+    
+    <EminentSpeakerDetailed />
     <Footer />
     
     </>

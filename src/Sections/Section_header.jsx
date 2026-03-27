@@ -11,7 +11,7 @@ const Section_header = ({ title, breadcrumbs = [],bgImage }) => {
     <div className="absolute inset-0 bg-gradient-to-r from-[var(--secondary-color)] via-[#48ea5e] to-transparent opacity-90 "></div>
     <img src={noise} className="absolute h-full w-full z-0 opacity-20 inset-0"/>
         <div className="z-10">
-          <h1 className="text-[#fffced] oswald font-bold text-[74px] uppercase lg:text-8xl">
+          <h1 className="text-[#fffced] agdasima leading-[64px] font-bold text-[64px] uppercase lg:text-8xl">
             {title}
           </h1>
         </div>

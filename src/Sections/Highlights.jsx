@@ -50,7 +50,7 @@ const Highlights = () => {
 ];
 
   return (
-    <section className=" min-h-screen bg-[#eaeee5]">
+    <section className=" min-h-screen">
 
       <div className="Section_wrapper ">
       
@@ -67,8 +67,8 @@ const Highlights = () => {
              {/* This is a grid for empployees card */} 
         <div className="Grid_4">
           {programs.map((program) => (
-            <div key={program} className="relative">
-              <div className="relative h-[230px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
+            <div key={program.id} className="relative">
+              <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
                 <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                    {/* overlay to apply blend mode */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>

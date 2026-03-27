@@ -16,7 +16,7 @@ const Footer = () => {
   const footerLinks = [
     {
       title: "Who we are",
-      links: ["About us", "Our Team", "Governance", "Partners"],
+      links: ["About us", "Our Team","Background", "Governance", "Partners"],
     },
     {
       title: "What We Do",
@@ -27,7 +27,7 @@ const Footer = () => {
       links: ["YouTube Channel", "Publication Feedback", "JobListing", "Contact Us"],
     },
     {
-      title: "Follow Us:",
+      title: "Find Us:",
       socials: [<Facebook size={35} key={1} />, <MessageCircle size={35} key={2} />, <Twitter size={35} key={3} />],
     }
   ];
@@ -45,12 +45,15 @@ const Footer = () => {
            {footerLinks.map((section, index) => (
             <nav key={index} className="flex flex-col z-20 gap-2">
             <div className="flex items-center justify-between z-20">
-            <h6
+            <motion.h6
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.99, ease: "easeInOut" }}
                 className={`Card_heading agdasima mb-0  font-semibold lg:mb-4 text-[26px]  text-[var(--primary-color)] ${section.links ? 'cursor-pointer lg:cursor-default' : ''}`}
                  onClick={() => section.links && handleToggle(index)}
             >
               {section.title}
-            </h6>
+            </motion.h6>
             {section.links && (
               <ChevronDown
                 className={`flex lg:hidden transition-transform duration-450 ease-in-out transform ${openIndex === index ? "rotate-180" : ""}`}
@@ -151,7 +154,18 @@ const Footer = () => {
       <div className="bg-green w-full px-6 mx-auto lg:px-18  py-4 flex items-center justify-between relative">
         <p className="white text-[12px] lg:text-[14px] z-50">Privacy Policy</p>     
         <p className="white text-[12px] lg:text-[14px] z-50">©2026 MwAPATA Institute</p>
-        <p className="white text-[12px] lg:text-[14px] z-50">+265 993 413 191</p>
+        <div className="bg-orange flex items-center justify-center px-4 py-2 gap-4 border border-[#fffced]/70 rounded-l-full z-20">
+          <h6 className="white text-[12px] lg:text-[14px]">Evidence for Transformation</h6>
+           <div className="flex gap-4">
+                {footerLinks[3].socials.map((icon, i) => (
+                  <div key={i} className="cursor-pointer text-green hover:opacity-70">
+                    {React.cloneElement(icon, { size: 18, color: "#fffced"})}
+                  </div>
+                ))}
+              </div>
+
+
+        </div>
         <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-multiply opacity-30 z-0 clip h-full object-cover"/>
         <div className="absolute inset-0 z-0 bg-green opacity-60 mix-blend-multiply"></div>
       </div>

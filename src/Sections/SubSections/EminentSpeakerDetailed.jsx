@@ -1,31 +1,11 @@
 import React from "react";
 import {motion} from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import capacity from "../../assets/Images/Capacity_building.JPG";
-import { useGSAP } from "@gsap/react";
 import noise from "../../assets/Images/Noise.png";
 import EminentSpeaker from "../EminentSpeaker";
 import Section_header from "../Section_header";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-
 const EminentSpeakerDetailed = () => {
-  useGSAP(() => {
-  gsap.from(".head", {
-    y: 100,
-    opacity: 0,
-    duration: 0.95,
-    scrollTrigger: {
-      trigger: ".head",
-      start: "top 80%",
-      end: "bottom top",
-      scrub: true,
-      ease: "power1.inOut",
-    }
-  });
-});
-
 const images = [
   capacity,
   capacity,
@@ -76,7 +56,7 @@ const images = [
       </div>
 
 
-       <div className="flex flex-wrap oswald  lg:flex-row items-center justify-start gap-6 lg:gap-12 mt-10">
+       <div className="flex flex-wrap oswald  lg:flex-row items-center justify-start gap-2 lg:gap-12 mt-10">
          <h4 className="uppercase text-grey text-[14px] font-light"> <span className="text-green font-bold ">DATE:</span> 2ND JAN 2026</h4>
          <h4 className="uppercase text-grey text-[14px] font-light"> <span className="text-green font-bold ">TIME:</span> 17:00hr </h4>
          <h4 className="uppercase text-grey text-[14px] font-light"> <span className="text-green font-bold ">LOCATION:</span> CROSSROADS, BLANTYRE & Virtual via Zoom </h4>

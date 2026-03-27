@@ -140,7 +140,7 @@ const LandingPage= () => {
           </div>
                                              
           <h4 className="Section_title font-black text-center white text-[48px] leading-[48px] lg:leading-[98px] lg:text-[102px]">
-            <span className="text-[#f08000]">RESEARCH </span> THAT IMPROVES LIVELIHOOD IN MALAWI.
+            <span className="text-[#f08000] ">RESEARCH </span> THAT IMPROVES LIVELIHOOD IN MALAWI.
           </h4>
                
           <p className="white w-[430px] archivo lg:text-[18px] font-light  mt-6 lg:text-left text-center text-[16px] lg:w-[500px]">MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan 
