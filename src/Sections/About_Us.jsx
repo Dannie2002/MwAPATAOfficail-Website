@@ -49,14 +49,17 @@ const About_Us = () => {
               <h4 className="Section_title">ABOUT MWAPATA</h4>
               <div className="flex flex-col lg:mt-6 gap-6">
                 <h4 className="Counter_title ">
-                  <span className="font-bold">An</span> independent <span className="font-semibold">agricultural policy <br /> think tank in Malawi.</span>
+                  <span className="font-bold">We are An</span> independent <span className="font-semibold">agricultural policy <br /> think tank in Malawi.</span>
                 </h4>
                 <div className="flex flex-col gap-4">
                       <p className="text-wrap lg:text-[18px] font-light lg:mt-4 text-grey text-[18px] lg:w-[560px] leading-relaxed">
-                         We are a team of dedicated researchers and policy experts committed to advancing agricultural development in Malawi through rigorous analysis and evidence-based recommendations.
+                        The Institute is engaging the Government of Malawi, private sector, and
+                         civil society stakeholders in a program of 
+                         applied policy analysis, policy outreach, capacity
+                         building, and policy coordination.
                       </p>
                       <div className="flex gap-4 mt-6 items-center">
-                        <h2 className="text-green font-semibold">Learn More</h2>
+                        <h2 className="text-green uppercase font-semibold">Learn More</h2>
                          <motion.div
                                             initial={{ opacity: 0, x: 80 }}
                                             whileInView={{ opacity: 1, x: 0 }}

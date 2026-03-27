@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 import {motion} from "framer-motion";
 import capacity from "../../assets/Images/Capacity_building.JPG";
 import noise from "../../assets/Images/Noise.png";
+import { MapPinned, Clock, CalendarDays} from "lucide-react";
+
 
 const EventDetailed = () => {
+
+
+
 const images = [
   capacity,
   capacity,
@@ -15,13 +20,19 @@ const images = [
 
 ];
 
+const eventDetails = [
+  { icon: CalendarDays, text: "17 JAN 2026" },
+  { icon: Clock, text: "17 JAN 2026" },
+  { icon: MapPinned, text: "CROSSROADS, BLANTYRE, Malawi" },
+];
+
   return (
     <section className="min-h-screen">
     <div className="py-12 px-6 lg:px-22">
        
       <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
-                className="Section_title">
+                className="Section_title Title_gsap">
                 MwAPATA Participates in the AGRA Media Onboarding Meeting
               </h4>
 
@@ -41,11 +52,16 @@ const images = [
 
            {/* EVENT LOCATION AND DATE*/}
        <div className="flex flex-wrap oswald  lg:flex-row items-center justify-start gap-2 lg:gap-12 mt-10">
-         <h4 className="uppercase text-grey barlow font-sbold text-[14px] "> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
-         <h4 className="uppercase text-grey barlow font-sbold text-[14px] "> <span className="text-green font-bold ">TIME:</span> 17 JAN 2026</h4>
-         <h4 className="uppercase text-grey barlow font-sbold text-[14px] "> <span className="text-green font-bold ">LOCATION:</span> CROSSROADS, BLANTYRE</h4>
+         {eventDetails.map(({ icon: Icon, text }, index) => (
+           <h4 key={index} className="uppercase gap-2 flex items-center text-grey barlow font-sbold text-[14px]">
+             <span className="text-green font-bold">
+               <Icon className="size-5" />
+             </span>
+             {text}
+           </h4>
+         ))}
        </div>
-            
+
           <motion.div
                                     initial={{ opacity: 0, x: 80 }}
                                     whileInView={{ opacity: 1, x: 0 }}
@@ -56,17 +72,18 @@ const images = [
           <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="flex flex-col gap-8">
               <h4 className="Counter_title barlow">ABOUT <span className="font-semibold">THIS EVENT</span></h4>
-              <p className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
-               MwAPATA Research Analyst, Mr Lemekezani Kingston Chilora, participated in the Media Onboarding Meeting organised by AGRA-Sustainably Growing Africa’s Food, held at the Bingu International Convention Centre (BICC) in Lilongwe on 16th March 2026. The meeting aimed to strengthen the capacity of journalists from different districts and institutions to better understand AGRA’s mandate, strategic priorities, and country-level interventions in Malawi. 
-
-
-In addition, the meeting aimed to build informed and long-term partnerships between AGRA plus its partners with the media as well as to enhance accurate and evidence-based reporting on agriculture and food systems, in order to increase the visibility of AGRA-supported initiatives that contribute to inclusive agricultural transformation.
-
-
-Representing the MwAPATA institute, Mr Chilora delivered a 5-minute presentation pitch on the Enhancing Inclusive Youth-Led Platform for Evidence-based Agricultural policymaking and implementation in Malawi (LEAP4YOUTH Project), which the MwAPATA Institute is implementing in partnership with National Youth Council of Malawi (NYCOM), supported by AGRA. 
-                </p>
+                  <p className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
+                  MwAPATA Research Analyst, Mr Lemekezani Kingston Chilora, participated in the Media Onboarding Meeting organised by AGRA-Sustainably Growing Africa’s Food, held at the Bingu International Convention Centre (BICC) in Lilongwe on 16th March 2026. 
+                  </p>
+                  <p className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
+                    The meeting aimed to strengthen the capacity of journalists from different districts and institutions to better understand AGRA’s mandate, strategic priorities, and country-level interventions in Malawi. 
+                    In addition, the meeting aimed to build informed and long-term partnerships between AGRA plus its partners with the media as well as to enhance accurate and evidence-based reporting on agriculture and food systems, in order to increase the visibility of AGRA-supported initiatives that contribute to inclusive agricultural transformation.
+                  </p>
+                  <p className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
+                    Representing the MwAPATA institute, Mr Chilora delivered a 5-minute presentation pitch on the Enhancing Inclusive Youth-Led Platform for Evidence-based Agricultural policymaking and implementation in Malawi (LEAP4YOUTH Project), which the MwAPATA Institute is implementing in partnership with National Youth Council of Malawi (NYCOM), supported by AGRA.
+                  </p>
               
-                <h4 className="font-light lg:text-[18px] text-[22px] text-grey lowercase">WATCH THE FULL EVENT <span className="text-green underline font-bold">HERE</span></h4>
+                  <h4 className="font-light lg:text-[18px] text-[22px] text-grey lowercase">WATCH THE FULL EVENT <span className="text-green underline font-bold">HERE</span></h4>
             </div>
                {/* an image side*/}
               <div className="relative flex">

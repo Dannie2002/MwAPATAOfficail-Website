@@ -1,5 +1,5 @@
-import React from "react";
-import {motion} from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import event1 from "../assets/Images/Event1.jpg";
 import research from "../assets/Images/Research.JPG";
@@ -7,11 +7,15 @@ import employee1 from "../assets/Images/Employee1.jpg";
 import employee2 from "../assets/Images/Employee2.jpg";
 import team from "../assets/Images/Team_Mwapata.jpg";
 import Section_header from "./Section_header";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, Check } from "lucide-react";
 
 
 
 const Highlights = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedCategories, setSelectedCategories] = useState([]);
+
+  const categories = ["News Updates", "Events", "Publications"];
 
 
     const programs = [
@@ -49,24 +53,67 @@ const Highlights = () => {
   },
 ];
 
+const toggleCategory = (category) => {
+  setSelectedCategories((prev) =>
+    prev.includes(category)
+      ? prev.filter((c) => c !== category)
+      : [...prev, category]
+  );
+};
+
+const filteredPrograms = selectedCategories.length > 0
+  ? programs.filter((p) => selectedCategories.includes(p.Category))
+  : programs;
+
   return (
     <section className=" min-h-screen">
 
       <div className="Section_wrapper ">
       
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-5 lg:mt-18">
-              <h4            
-                className="Section_title">
-                HIGHLIGHTS
-              </h4>
-               {/* Two Lines on the right */} 
-              <div className="flex flex-col hover:bg-[var(--primary-color)] group transition-all duration-430 items-start lg:items-end">
-                  <button className="Counter_title group-hover:text-[#fffced] duration-430 font-semibold text-[24px] text-[var(--primary-color)] py-2 px-4 w-fit border">VIEW ALL UPDATES</button>
+      <div className="flex gap-4 flex-col lg:flex-row lg:items-center lg:justify-between mt-5 lg:mt-18 relative">
+              <h4 className="Section_title">HIGHLIGHTS</h4>
+
+              <div className="flex flex-col border-[1.6px] border-[var(--primary-color)] lg:min-w-[250px] rounded-[4px] overflow-hidden">
+                <div onClick={() => setIsOpen(!isOpen)}  className="flex items-center justify-between  cursor-pointer flex-row gap-3 py-2 px-4 group transition-all duration-430 ">
+                  <h5 className="Counter_title font-semibold duration-430 text-[22px] text-[var(--primary-color)] w-full ">
+                  FILTER BY CONTENT TYPE
+                  </h5>
+                  <ChevronDown className={`size-8 text-green transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+                </div>
+
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.45, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-4 mt-2 pb-4 flex flex-col gap-3">
+                        {categories.map((category) => (
+                          <label key={category} className="flex items-center justify-between cursor-pointer text-grey font-semibold text-[16px]">
+                            {category}
+                            <div className="relative flex items-center justify-center">
+                              <input 
+                                type="checkbox" 
+                                checked={selectedCategories.includes(category)}
+                                onChange={() => toggleCategory(category)}
+                                className="peer appearance-none size-5 border-[1.6px] border-[var(--secondary-color)] transition-all duration-450 cursor-pointer"
+                              />
+                              <Check className="absolute size-4 pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity duration-200 text-[var(--secondary-color)]" strokeWidth={4} />
+                            </div>
+                            
+                          </label>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
       </div>
-             {/* This is a grid for empployees card */} 
         <div className="Grid_4">
-          {programs.map((program) => (
+          {filteredPrograms.map((program) => (
             <div key={program.id} className="relative">
               <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
                 <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
