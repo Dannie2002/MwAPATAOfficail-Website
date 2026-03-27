@@ -55,14 +55,18 @@ const Contact_Us = () => {
             <div className="relative flex flex-col px-18 py-12 items-start justify-start lg:w-1/2">
             
                 
-
+                      <h4 className="Counter_title w-fit lowercase archivo">For enquiries regarding our research, publications, partnerships, or events, please contact us and a member of our team will respond shortly.</h4>
                 
                 
 
                     
                         <div className="flex gap-4 lg:mt-12 z-20">
                         <div className=""><MapPinned className="size-6 text-green"/> </div>
-                        <p className="text-grey">P.O Box 30883 <br /> Capital City <br /> Lilongwe 3 <br /> Malawi</p>
+                        <div>
+                           <p className="text-grey font-bold">Lilongwe</p>
+                        <p className="text-grey">P.O Box 30883</p>
+                        </div>
+                       
                         </div>
 
                         <div className="flex gap-4 mt-12 z-20">

@@ -55,23 +55,23 @@ const EminentSpeaker = () => {
   return (
     <section className="min-h-screen">
 
-            <Section_header
-  title="Emminent"
-  bgImage={research}
-  breadcrumbs={[
-    { label: "Home", link: "/" },
-    { label: "/ Eminent speaker" }
-  ]}
-/>
+        <Section_header
+         title="Emminent"
+         bgImage={research}
+         breadcrumbs={[
+         { label: "Home", link: "/" },
+         { label: "/ Eminent speaker" }
+         ]}
+         />
 
-    <div className="py-12 px-6 lg:px-22">
+      <div className="Section_wrapper">
 
       
           {/* section heading*/}        
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
-                  <h4 className="Section_title ">16th Ndizotheka Eminent Speaker Series</h4>
+                  <h4 className="Section_title ">Ndizotheka Eminent Speaker Series</h4>
 
-                  <div className="flex flex-col items-start lg:items-end">
+                  <div className="flex flex-col mt-4 items-start lg:mt-0 lg:items-end">
                       <motion.div
                       initial={{ opacity: 0, x: 80 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -88,24 +88,19 @@ const EminentSpeaker = () => {
           {/* Grid for EminentSpeaker card */}
         <div className="Grid_4">
           {programs.map((program) => (
-             <div key={program.id} className="relative bg-[#eaeee5] ">
-                          <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
+             <div key={program.id} className="relative bg-[#eaeee5] " >
+                            <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
                             <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
-                               {/* overlay to apply blend mode */}
                             <div className="absolute lg:hidden inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
-            
-                          </div>
+                             </div>
+                            {/* Description div */}
                             <div className="flex flex-col gap-4 mt-2 p-4 justify-end items-start inset-0 z-50">
-                              <div className="flex lg:mt-4 gap-4 items-center transition-all justify-end">
-                                <h4 className="Card_heading">{program.name}</h4>
-                                                 
-                              </div>
-                                  
-                                  <p className="text-[var(--text-color)] line-clamp-3  lg:mt-3 mt-2 text-[18px] font-light">{program.title}</p>
-                                  <div className="flex-center gap-4">
-                                  <h6 className="text-green uppercase font-semibold">Learn More</h6>
-                                  <ChevronRight className="text-grey size-4 group-hover:text-white" />
-                                  </div>
+                                <h4 className="Card_heading text-grey">{program.name}</h4>
+                                <p className="text-[var(--text-color)] line-clamp-3 text-[18px] font-light">{program.title}</p>
+                                <div className="flex-center gap-4">
+                                  <h6 className="text-green text-[14px] uppercase font-semibold">Learn More</h6>
+                                  <ChevronRight className="text-green size-6 group-hover:text-white" />
+                                </div>
                             </div>
               </div> 
            ))} 
@@ -122,7 +117,7 @@ const EminentSpeaker = () => {
                                                  </div>
                                                  
                                        
-                        </div>
+        </div>
       
     </div> 
          

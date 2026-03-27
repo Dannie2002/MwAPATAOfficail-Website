@@ -92,25 +92,21 @@ const OurTeam = () => {
                 <div className="absolute lg:hidden inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
 
               </div>
-                <div className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-50">
-                  
-                      <div className="flex lg:mt-4 gap-4 items-center transition-all justify-end">
-                                <h4 className="Card_heading">{employee.name}</h4>
-                                                 
-                              </div>
-                
-                  
-                      
+                <div className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-50"> 
+                  <h4 className="Card_heading lg:mt-4">{employee.name}</h4>
                   <p className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[18px] font-light">{employee.title}</p>
-                  <div className="flex-center gap-4">
-                                  <h6 className="text-green uppercase font-semibold">Learn More</h6>
-                                  <ChevronRight className="text-grey size-4 group-hover:text-white" />
-                                  </div>
+                  <div className="flex-center mt-2 gap-2">
+                  <h6 className="lg:text-green white text-[14px] uppercase font-semibold">Learn More</h6>
+                  <ChevronRight className="lg:text-green white size-4 group-hover:text-white" />
+                  </div>
                 </div>
+              
             </div> 
              ))}
         </div>
 
+
+           {/* NEXT & PREV BUTTONS */}
             <div className="flex items-start flex-wrap  mt-6 gap-4 lg:mt-6  transition ">
                          <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--secondary-color)]/60 duration-470">
                            <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
