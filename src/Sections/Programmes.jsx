@@ -1,10 +1,10 @@
 import React from "react";
 import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
-import capacity from "../assets/Images/Capacity_building.JPG";
-import research from "../assets/Images/Research.JPG";
-import outreach from "../assets/Images/Outreach.JPG";
-import policy from "../assets/Images/Policy_advocacy.JPG";
+import capacity from "../assets/Images/Capacity_building.jpg";
+import research from "../assets/Images/Research.jpg";
+import outreach from "../assets/Images/Outreach.jpg";
+import policy from "../assets/Images/Policy_advocacy.jpg";
 
 
 const Programmes = () => {

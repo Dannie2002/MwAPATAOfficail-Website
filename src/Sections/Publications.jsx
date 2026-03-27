@@ -1,34 +1,16 @@
 import React from "react";
 import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
-import capacity from "../assets/Images/Capacity_building.JPG";
-import research from "../assets/Images/Research.JPG";
-import outreach from "../assets/Images/Outreach.JPG";
-import policy from "../assets/Images/Policy_advocacy.JPG";
+import capacity from "../assets/Images/Capacity_building.jpg";
+import research from "../assets/Images/Research.jpg";
+import outreach from "../assets/Images/Outreach.jpg";
+import policy from "../assets/Images/Policy_advocacy.jpg";
 import Data from "./Icons/Data";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import Section_header from "./Section_header";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Publications = () => {
 
-      useGSAP(() => {
-  gsap.from(".head", {
-    y: 100,
-    opacity: 0,
-    duration: 0.95,
-    scrollTrigger: {
-      trigger: ".head",
-      start: "top 80%",
-      end: "bottom top",
-      scrub: true,
-      ease: "power1.inOut",
-    }
-  });
-});
 
 
     const programs = [

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import event1 from "../assets/Images/Event1.jpg";
-import research from "../assets/Images/Research.JPG";
+import research from "../assets/Images/Research.jpg";
 import employee1 from "../assets/Images/Employee1.jpg";
 import employee2 from "../assets/Images/Employee2.jpg";
 import team from "../assets/Images/Team_Mwapata.jpg";

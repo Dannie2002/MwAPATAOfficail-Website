@@ -1,11 +1,11 @@
 import React from "react";
 import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
-import capacity from "../assets/Images/Capacity_building.JPG";
+import capacity from "../assets/Images/Capacity_building.jpg";
 import noise from "../assets/Images/Noise.png";
 import about_mwapata from "../assets/Images/About_Mwapata.jpg";
-import outreach from "../assets/Images/Outreach.JPG";
-import policy from "../assets/Images/Policy_advocacy.JPG";
+import outreach from "../assets/Images/Outreach.jpg";
+import policy from "../assets/Images/Policy_advocacy.jpg";
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
 import { Download, Gem, Mail, MapPinned, Phone} from "lucide-react";

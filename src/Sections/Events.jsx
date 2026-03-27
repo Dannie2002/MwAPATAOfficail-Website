@@ -3,9 +3,9 @@ import {motion} from "framer-motion";
 import { useState } from "react";
 import Section_header from '../Sections/Section_header'
 import RightArrow from "./Icons/RightArrow";
-import capacity from "../assets/Images/Capacity_building.JPG";
-import research from "../assets/Images/Research.JPG";
-import outreach from "../assets/Images/Outreach.JPG";
+import capacity from "../assets/Images/Capacity_building.jpg";
+import research from "../assets/Images/Research.jpg";
+import outreach from "../assets/Images/Outreach.jpg";
 import events_mwapata from"../assets/Images/Event_Mwapata.jpg";
 import noise from "../assets/Images/Noise.png"
 import { ChevronLeft, ChevronRight } from "lucide-react";

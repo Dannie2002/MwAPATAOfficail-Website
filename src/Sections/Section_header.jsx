@@ -1,5 +1,5 @@
 import React from "react";
-import header from "../assets/Images/Capacity_building.JPG";
+import header from "../assets/Images/Capacity_building.jpg";
 import noise from "../assets/Images/Noise.png"
 
 const Section_header = ({ title, breadcrumbs = [],bgImage }) => {

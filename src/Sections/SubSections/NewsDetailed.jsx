@@ -1,6 +1,6 @@
 import React from "react";
 import {motion} from "framer-motion";
-import capacity from "../../assets/Images/Capacity_building.JPG";
+import capacity from "../../assets/Images/Capacity_building.jpg";
 import noise from "../../assets/Images/Noise.png";
 import { Share2,ThumbsUp,ThumbsDown,MessageCircleMore,Facebook, MessageCircle, Twitter } from "lucide-react";
 

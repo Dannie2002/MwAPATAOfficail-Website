@@ -1,6 +1,6 @@
 import React from "react";
 import {motion} from "framer-motion";
-import capacity from "../../assets/Images/Capacity_building.JPG";
+import capacity from "../../assets/Images/Capacity_building.jpg";
 import noise from "../../assets/Images/Noise.png";
 import EminentSpeaker from "../EminentSpeaker";
 import Section_header from "../Section_header";

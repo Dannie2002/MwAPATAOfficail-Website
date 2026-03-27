@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
-import capacity from "../assets/Images/Capacity_building.JPG";
-import research from "../assets/Images/Research.JPG";
+import capacity from "../assets/Images/Capacity_building.jpg";
+import research from "../assets/Images/Research.jpg";
 import employee1 from "../assets/Images/Employee1.jpg";
 import employee2 from "../assets/Images/Employee2.jpg";
 import team from "../assets/Images/Team_Mwapata.jpg";
@@ -20,7 +20,7 @@ const OurTeam = () => {
     description:
       "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
     image: capacity,
-  },
+  },   
   {
     id: 2,
     name: "Prof. Levison Chiwaula",
