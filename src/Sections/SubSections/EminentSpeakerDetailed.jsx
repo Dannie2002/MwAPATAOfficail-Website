@@ -63,7 +63,7 @@ const EminentSpeakerDetails = [
 
       <div className="flex flex-wrap oswald  lg:flex-row items-center justify-start gap-2 lg:gap-12 mt-10">
          {EminentSpeakerDetails.map(({ icon: Icon, text }, index) => (
-           <h4 key={index} className="uppercase gap-2 flex items-center text-grey barlow font-sbold text-[14px]">
+           <h4 key={index} className="uppercase gap-2 flex items-center text-grey barlow font-bold text-[14px]">
              <span className="text-green font-bold">
                <Icon className="size-5" />
              </span>
@@ -83,7 +83,7 @@ const EminentSpeakerDetails = [
           <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-12 lg:mt-18 mt-10">
 
             <div className="flex flex-col gap-6">
-              <h4 className="Counter_title barlow text-green">Theme:</h4>
+              <h4 className="Counter_title archivo text-[24px] text-green">Theme:</h4>
               <p className="Counter_title text-[26px] font-semibold leading-[32px] w-full">
                 Surmounting Soil Health Challenges:  Practical Solutions for Enhancing Agricultural Productivity in line with MW2063 Aspirations.
               </p>
@@ -109,14 +109,10 @@ const EminentSpeakerDetails = [
                  
                 </div>
               <div className="flex mt-6 lg:mt-0 flex-col gap-4 lg:w-1/2">
-                <h4 className="Counter_title barlow text-green">ABOUT SPEAKER:</h4>
+                <h4 className="Counter_title archivo text-[24px]  text-green">ABOUT SPEAKER:</h4>
                 <h4 className="Counter_title text-[22px] font-normal leading-[32px] ">Mr JONATHAN SAID</h4>
                 <p className="text-grey font-light">Research Professor of Tropical Soils, Soil and Water Sciences Department, University of Florida</p>
-                <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.99, ease: "easeInOut" }}
-                  className="mt-2 w-[50px] h-[4px] bg-green"></motion.div>
+                
                </div>
                   
             </div>

@@ -18,18 +18,18 @@ const Contact_Us = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.5,
+        delayChildren: 0.5,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 80 },
     show: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.65, ease: "easeOut" }
+      transition: { duration: 0.79, ease: "easeInOut" }
     },
   };
 
@@ -72,11 +72,11 @@ const Contact_Us = () => {
             
             
                 
-                      <motion.h4 className="Counter_title  lowercase stack"
+                      <motion.h4 className="Counter_title lowercase archivo"
                       
                       initial={{ opacity: 0, y: 80 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.99, ease: "easeInOut" }}>For enquiries regarding our research, publications, or events, please <span className="font-semibold">contact us</span> and will respond shortly.</motion.h4>
+                      transition={{ duration: 0.99, ease: "easeInOut" }}><span className="font-semibold">For inquires</span> regarding our research, publications, or events, please <span className="font-semibold">contact us</span> and will respond shortly.</motion.h4>
                         <motion.div
                                       initial={{ opacity: 0, x: 80 }}
                                       whileInView={{ opacity: 1, x: 0 }}
@@ -89,10 +89,10 @@ const Contact_Us = () => {
  
                       
                       
-                <div className="flex mt-6 flex-col lg:mt-18 items-start gap-8 w-full">
+                <div className="flex mt-12 flex-col lg:mt-18 items-start gap-8 w-full">
 
                     <motion.div 
-                      className="flex lg:flex-row flex-col gap-12 w-full"
+                      className="flex lg:flex-row flex-col gap-8 lg:gap-18 w-full"
                       variants={containerVariants}
                       initial="hidden"
                       whileInView="show"
@@ -129,14 +129,14 @@ const Contact_Us = () => {
                 </div> 
 
 
-          <div className="flex mt-18 items-start justify-between">
-            <div>
-                 <h4 className="text-[17.5px] w-3/5 font-semibold text-grey">Please complete the following form and we will contact you as soon as possible</h4>
+          <div className="flex mt-18 flex-col lg:flex-row items-start justify-between">
+            <div className="lg:w-1/2">
+                 <h4 className="Counter_title lowercase text-[18px] leading-[24px] archivo lg:w-3/5">Please complete the following form and we will contact you as soon as possible</h4>
             </div>
             
 
-                   <div className="grid gap-6 lg:gap-12  grid-cols-1  lg:w-1/2">
-              <div className="flex z-20 border p-8 flex-col gap-12">
+                   <div className="flex mt-12 lg:mt-0 lg:w-1/2">
+              <div className="flex z-20 border w-full p-8 flex-col gap-12">
                        
                     
 
