@@ -39,17 +39,17 @@ const About_Us = () => {
       
       <div className="flex flex-col   lg:items-start lg:justify-between mt-10 lg:mt-18">
           
-        <h1 className="Page_title">WHO ARE WE</h1>
+        <h1 className="Page_title ">WHO ARE WE</h1>
           <div className="mt-1 w-[50px] h-[1.9px] bg-green "></div>
 
 
             <div className="flex flex-col w-full gap-18 lg:mt-18 mt-10 lg:flex-row">
 
               <div className="flex flex-col gap-6 lg:w-1/2">
-              <h4 className="Section_title">ABOUT MWAPATA</h4>
-              <div className="flex flex-col lg:mt-6 gap-6">
-                <h4 className="Counter_title ">
-                  <span className="font-bold">We are An</span> independent <span className="font-semibold">agricultural policy <br /> think tank in Malawi.</span>
+          
+              <div className="flex flex-col gap-6">
+                <h4 className="Counter_title archivo lg:leading-[58px] lg:text-[58px] lowercase">
+                  <span className="font-bold">We are An</span> independent <br />  <span className="font-semibold">agricultural policy<br />  think tank in Malawi.</span>
                 </h4>
                 <div className="flex flex-col gap-4">
                       <p className="text-wrap lg:text-[18px] font-light lg:mt-4 text-grey text-[18px] lg:w-[560px] leading-relaxed">
@@ -59,7 +59,7 @@ const About_Us = () => {
                          building, and policy coordination.
                       </p>
                       <div className="flex gap-4 mt-6 items-center">
-                        <h2 className="text-green uppercase font-semibold">Learn More</h2>
+                        <h6 className="text-green uppercase font-semibold">Learn More</h6>
                          <motion.div
                                             initial={{ opacity: 0, x: 80 }}
                                             whileInView={{ opacity: 1, x: 0 }}
@@ -76,12 +76,13 @@ const About_Us = () => {
              
               </div>
 
-                <div className="relative flex items-end justify-end  lg:w-1/2">
+                <motion.div className="relative flex items-end justify-end  lg:w-1/2"
+                initial={{ opacity: 0, scale: 0.75 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.85, ease: "easeInOut" }}>
                 <img src={about_mwapata} alt="research" className="w-full clip rounded-[4px] h-[430px]  object-cover"/>
-                
-                
-                 
-                </div>
+                </motion.div>
+      
             
             </div>
                

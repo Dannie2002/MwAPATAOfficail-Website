@@ -83,21 +83,21 @@ const OurTeam = () => {
           {Employees.map((employee) => (
             <div 
               key={employee.id} 
-              className="relative lg:bg-[#eaeee5]  cursor-pointer"
+              className="relative lg:bg-[#eaeee5] group  cursor-pointer"
               onClick={() => setSelectedEmployee(employee)}
             >
               <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 shadow-3xl">
                 <img src={employee.image} alt={employee.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full object-cover"/>
                    {/* overlay to apply blend mode */}
-                <div className="absolute lg:hidden inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
+                <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-450 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
 
               </div>
                 <div className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-50"> 
                   <h4 className="Card_heading lg:mt-4">{employee.name}</h4>
                   <p className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[18px] font-light">{employee.title}</p>
                   <div className="flex-center mt-2 gap-2">
-                  <h6 className="lg:text-green white text-[14px] uppercase font-semibold">Learn More</h6>
-                  <ChevronRight className="lg:text-green white size-4 group-hover:text-white" />
+                  <h6 className=" lg:text-(--secondary-color) z-50 text-[#fffced] text-[14px] uppercase font-semibold">Learn More</h6>
+                  <ChevronRight className="lg:text-(--secondary-color) z-50 text-[#fffced] size-6 " />
                   </div>
                 </div>
               
@@ -123,18 +123,18 @@ const OurTeam = () => {
          <AnimatePresence>
            {selectedEmployee && (
              <div 
-               className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/40 backdrop-blur-md"
+               className="fixed inset-0 h-full top-0 z-[100] flex items-center justify-center  bg-black/40 backdrop-blur-md"
                onClick={() => setSelectedEmployee(null)}
              >
                <motion.div 
                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
                  animate={{ opacity: 1, scale: 1, y: 0 }}
                  exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                 className="bg-[#eaeee5] w-full max-w-4xl max-h-[90vh] flex flex-col rounded-[4px] shadow-2xl overflow-hidden"
+                 className="bg-[#eaeee5] w-full h-full flex flex-col rounded-[4px] shadow-2xl overflow-hidden"
                  onClick={(e) => e.stopPropagation()}
                >
                  {/* Header Section with Close Button */}
-                 <div className="flex items-center justify-end p-4 bg-[#e5e6e3] sticky top-0 z-50">
+                 <div className="flex items-center justify-end p-2 lg:p-4 bg-[#e5e6e3] sticky top-0 z-50">
                    <button 
                      onClick={() => setSelectedEmployee(null)}
                      className="p-2 hover:bg-green/10 rounded-full transition-all"
@@ -144,9 +144,9 @@ const OurTeam = () => {
                  </div>
 
                  {/* Scrollable Content Section */}
-                 <div className="overflow-y-auto flex-1 Section_wrapper ">
+                 <div className="overflow-y-auto  Section_wrapper ">
                    <div className="flex flex-col gap-6">
-                     <div className="flex flex-col gap-4 mt-4 items-start">
+                     <div className="flex flex-col gap-4 mt-2 lg:mt-4 items-start">
                        <h4 className="Card_heading text-grey">{selectedEmployee.name}</h4>
                        <p className="text-[var(--text-color)] text-[18px] font-light">{selectedEmployee.title}</p>
                           <motion.div

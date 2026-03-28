@@ -126,7 +126,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 
 .Page_title{
   font-family: var(--font-bebas);
-  @apply lg:text-[22px] text-[18px] uppercase  text-[var(--text-color)];
+  @apply lg:text-[22px] text-[18px] uppercase  text-[var(--primary-color)];
 }
 .Card_heading{
   font-family: var(--font-barlow);
@@ -138,7 +138,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 }
 
 .Section_wrapper{
-  @apply lg:py-12 py-4 px-6 lg:px-18;
+  @apply lg:py-12 py-4 mx-auto px-6 lg:px-18;
 }
 
 .Grid_4{
