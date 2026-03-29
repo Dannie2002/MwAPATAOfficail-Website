@@ -79,7 +79,7 @@ const About_Us = () => {
                 <motion.div className="relative flex items-end justify-end  lg:w-1/2"
                 initial={{ opacity: 0, scale: 0.75 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.85, ease: "easeInOut" }}>
+                transition={{ duration: 1.99, ease: "easeInOut" }}>
                 <img src={about_mwapata} alt="research" className="w-full clip rounded-[4px] h-[430px]  object-cover"/>
                 </motion.div>
       

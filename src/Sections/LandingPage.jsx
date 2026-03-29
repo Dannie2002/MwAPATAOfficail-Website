@@ -2,33 +2,91 @@ import React from "react";
 import { useState } from "react";
 import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
-import capacity from "../assets/Images/LandingPhoto.jpg";
+import capacity from "../assets/Images/LandingPhoto.jpg"; // Assuming this is the correct path for the image
 import DottedArrow from "./Icons/DottedArrow";
+import { ChevronDown, Facebook, Twitter, MessageCircle, Phone } from "lucide-react"; // Added Twitter and MessageCircle
 import noise from "../assets/Images/Noise.png";
+import logo from "../assets/Images/MwAPATA logo.pdf";
 
 
 const LandingPage= () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // New states for desktop Quick Links dropdown and mobile accordion
+  const [isDesktopQuickLinksOpen, setDesktopQuickLinksOpen] = useState(false);
+  const [openQuickLinkIndex, setOpenQuickLinkIndex] = useState(null);
+
+   const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.4,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 80 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.79, ease: "easeInOut" }
+    },
+  };
+
+  const handleQuickLinkToggle = (index) => {
+    setOpenQuickLinkIndex(openQuickLinkIndex === index ? null : index);
+  };
+
+  const quickLinksData = [
+    {
+      title: "About MwAPATA",
+      links: ["Our Team", "Strategic Plan", "Governance", "Partners"],
+    },
+    {
+      title: "Management",
+      links: ["Executive Team", "Board of Directors", "Advisory Committee", "Leadership"],
+    },
+    {
+      title: "Background",
+      links: ["Research Focus", "Programs", "Publications", "Policy Engagement", "Impact Stories"],
+    },
+    // Add other main navigation links here if they should be part of the mobile quick links
+    { title: "Main Navigation", links: ["Home", "About", "Events", "Publications & Resources", "Eminent Speaker Series"], isMain: true }
+  ];
+
 
 
 
   return (
-    <section className="min-h-screen relative" style={{backgroundImage: `url(${capacity})`,backgroundAttachment:"fixed", backgroundSize: "cover", backgroundPosition: "center"}}>
-      <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-      <div className="absolute  z-0  inset-0 bg-gradient-to-r from-[#0b0b0d] via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95 "></div>
+    <section className="relative ">
+      {/* Top Utility Bar - Reduced height and anchored */}
+      <div className="w-full z-0 bg-[#eaeee5] h-42 flex items-center justify-center">
+        <img src={logo} type="application/pdf" className="w-[180px] h-[120px]" />
+      </div>
 
-     {/* This is a navigation bar */} 
-    <header className="w-full bg-[#f08000] rounded-[4px] sticky top-0 z-50">
-      <nav className="relative mx-auto flex items-center justify-between px-4 lg:px-22 py-3">
+    
+  
+      
+
+      {/* These are hero_contents */}
+      <div className="Section_wrapper flex items-center min-h-screen  relative" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+          <header className="w-full absolute inset-0 top-0 lg:px-18 z-10">
+      <nav className="relative  flex items-center justify-between  py-4">
 
         {/* Logo */}
-        <button
-          className="white flex gap-3 uppercase text-[18px] barlow"     
-        >
-         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
-        </button>
+        <div className="flex items-center gap-4"> {/* Container for logo and social icons */}
+       
+          {/* Social Media Icons */}
+          <div className="flex gap-4">
+            <Phone className="white size-5 cursor-pointer hover:opacity-80 transition-opacity"/>
+            <Facebook className="white size-5 cursor-pointer hover:opacity-80 transition-opacity"/>
+            <Twitter className="white size-5 cursor-pointer hover:opacity-80 transition-opacity"/>
+            <MessageCircle className="white size-5 cursor-pointer hover:opacity-80 transition-opacity"/>
+          </div>
+        </div>
 
         {/* Desktop Menu */}
         <ul className="hidden  barlow uppercase md:flex items-center gap-8 white font-medium">
@@ -40,8 +98,8 @@ const LandingPage= () => {
         </ul>
 
         {/* CTA */}
-        <button className="hidden md:block bebas text-[18px] white border-[#fffced] border-[0.7px] uppercase bg-transparent px-8 py-2   transition-all duration-500 ease-in-out"
-        onClick={() => setIsOpen(!isOpen)}>
+        <button className="hidden bebas text-[18px] white border-[#fffced] border-[0.7px] uppercase bg-transparent px-8 py-2   transition-all duration-500 ease-in-out"
+        onClick={() => setDesktopQuickLinksOpen(!isDesktopQuickLinksOpen)}>
             Quick Link
         </button>
 
@@ -53,114 +111,137 @@ const LandingPage= () => {
           ☰
         </button>
 
-   {isOpen && (
-  <div className="flex flex-col gap-6 absolute right-0 top-full mt-0 w-full h-[400px] p-8
-  backdrop-blur-4xl bg-[#eee] z-0
-
-  transform transition-all duration-300 ease-out
-  animate-[dropdown_0.6s_ease-out]"
-  >
-     <div className="w-1/4 mb-4">
-      <input
-        type="text"
-        placeholder="Search ..."
-        className="w-full bg-transparent border-b border-[#4a4a4a] outline-none py-2 text-[18px] placeholder-[#4a4a4a] text-grey focus:border-green transition-all duration-300"
-      />
-    </div>
-
-     <div className="Grid_4">
-
-      {/* About MwAPATA */}
-      <div>
-        <h4 className="text-green bebas text-[24px] mb-3">About MwAPATA</h4>
-        <ul className="space-y-2 text-gray-700">
-          <li>Our Team</li>
-          <li>Strategic Plan</li>
-          <li>Governance</li>
-          <li>Partners</li>
-        </ul>
-      </div>
-
-      {/* Management */}
-      <div>
-        <h4 className="text-green bebas text-[24px] mb-3">Management</h4>
-        <ul className="space-y-2 text-gray-700">
-          <li>Executive Team</li>
-          <li>Board of Directors</li>
-          <li>Advisory Committee</li>
-          <li>Leadership</li>
-        </ul>
-      </div>
-
-      {/* Background */}
-      <div>
-        <h4 className="text-green bebas text-[24px] mb-3">Background</h4>
-        <ul className="space-y-2 text-gray-700">
-          <li>Research Focus</li>
-          <li>Programs</li>
-          <li>Publications</li>
-          <li>Policy Engagement</li>
-          <li>Impact Stories</li>
-        </ul>
-      </div>
-
-    </div>
-    
-    
-
-  </div>
-)}
       </nav>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-6 pb-4">
-          <ul className="flex flex-col gap-4 text-gray-700 font-medium">
-            <li className="hover:text-green-700 cursor-pointer">Home</li>
-            <li className="hover:text-green-700 cursor-pointer">About</li>
-            <li className="hover:text-green-700 cursor-pointer">Events</li>
-            <li className="hover:text-green-700 cursor-pointer">Publications & Resources</li>
-            <li className="hover:text-green-700 cursor-pointer">More</li>
-            <button className="mt-2 bebas bg-green uppercase white py-2 clip">
-              Subscribe
-            </button>
-          </ul>
+        <div className="md:hidden flex flex-col gap-6 absolute right-0 top-full mt-0 w-full p-8
+        backdrop-blur-4xl bg-[#eee] z-40
+        transform transition-all duration-300 ease-out
+        animate-[dropdown_0.6s_ease-out] max-h-[calc(100vh-64px)] overflow-y-auto"
+        >
+          <div className="w-full mb-4">
+            <input
+              type="text"
+              placeholder="Search ..."
+              className="w-full bg-transparent border-b border-[#4a4a4a] outline-none py-2 text-[18px] placeholder-[#4a4a4a] text-grey focus:border-green transition-all duration-300"
+            />
+          </div>
+          {quickLinksData.map((section, index) => (
+            <nav key={index} className="flex flex-col gap-2">
+              <div className="flex items-center justify-between">
+                <h6
+                  className={`Card_heading agdasima mb-0 font-semibold text-[22px] text-[var(--primary-color)] ${section.links ? 'cursor-pointer' : ''}`}
+                  onClick={() => section.links && handleQuickLinkToggle(index)}
+                >
+                  {section.title}
+                </h6>
+                {section.links && (
+                  <ChevronDown
+                    className={`flex transition-transform duration-450 ease-in-out transform ${openQuickLinkIndex === index ? "rotate-180" : ""}`}
+                    color="#3A9B3D"
+                    onClick={() => handleQuickLinkToggle(index)}
+                  />
+                )}
+              </div>
+              <motion.div className="w-full relative h-[1.5px] mb-2 mt-2 bg-green"></motion.div>
+              {section.links && (
+                <AnimatePresence>
+                  {openQuickLinkIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.45, ease: "easeInOut" }}
+                      className="flex flex-col gap-3 overflow-hidden"
+                    >
+                      {section.links.map((link, i) => (
+                        <a key={i} className="link cursor-pointer text-[17.5px] text-grey link-hover">
+                          {link}
+                        </a>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              )}
+            </nav>
+          ))}
         </div>
       )}
-    </header>
-      
 
-      {/* These are hero_contents */}
-    <div className="flex lg:rounded-[4px] justify-center flex-col lg:mt-0  mt-0" >
-
-      <div className="flex z-10   p-8 lg:px-22  lg:gap-4 flex-col items-center lg:items-start">
-          <div className="flex mb-4 gap-4 flex-center">
-            <div className="h-[25px] w-[2.6px] bg-green"></div>
-            <p className="white archivo text_para"><span className="text-[#f08000] font-bold">Evidence</span> for Transformation</p>
+      {/* Desktop Quick Links Dropdown */}
+      {isDesktopQuickLinksOpen && (
+        <div className="hidden md:flex flex-col gap-6 absolute right-0 top-full mt-0 w-full h-[400px] p-8
+        backdrop-blur-4xl bg-[#eee] z-40
+        transform transition-all duration-300 ease-out
+        animate-[dropdown_0.6s_ease-out]"
+        >
+          <div className="w-1/4 mb-4">
+            <input
+              type="text"
+              placeholder="Search ..."
+              className="w-full bg-transparent border-b border-[#4a4a4a] outline-none py-2 text-[18px] placeholder-[#4a4a4a] text-grey focus:border-green transition-all duration-300"
+            />
           </div>
-                                             
-          <h4 className="Section_title font-black text-center white text-[48px] leading-[48px] lg:leading-[98px] lg:text-[102px]">
-            <span className="text-[#f08000] ">RESEARCH </span> THAT IMPROVES LIVELIHOOD IN MALAWI.
-          </h4>
-               
-          <p className="white w-[430px] archivo lg:text-[18px] font-light  mt-6 lg:text-left text-center text-[16px] lg:w-[500px]">MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan 
+
+          <div className="Grid_4">
+            {quickLinksData.filter(section => !section.isMain).map((section, index) => (
+              <div key={index}>
+                <h4 className="text-green bebas text-[24px] mb-3">{section.title}</h4>
+                <ul className="space-y-2 text-gray-700">
+                  {section.links.map((link, i) => (
+                    <li key={i}>{link}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+          </header>
+
+          <img src={noise} alt="noise" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+          <div className="absolute z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/60 via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>
+          <div className="flex lg:gap-4 flex-col items-center justify-between lg:items-start">
+              <div className="flex mb-4 gap-4 flex-center">
+                <div className="h-[25px] w-[2.6px] z-10 bg-[#fffced]"></div>
+                  <motion.h5  className="white text_para z-10" initial={{ opacity: 0, y: -90, }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1.55, delay:0.2 , ease: "easeInOut" }} >
+                    <span className=" font-semibold">Evidence</span> for Transformation
+                
+                </motion.h5>
+              </div>
+                                                
+              <motion.h4 className="Section_title z-10 font-black text-center lg:text-start white text-[48px] leading-[48px] lg:leading-[55px] lg:text-[64px]"
+              initial={{ opacity: 0, y: -90 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.55, ease: "easeInOut" }}
+              >
+                <span className=" ">RESEARCH </span> THAT IMPROVES LIVELIHOOD<br /> IN MALAWI.
+              </motion.h4>
+                  
+            
+              <motion.div className="relative" variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}> 
+                <motion.p className="white relative z-10 w-[430px] archivo lg:text-[18px] font-light mt-6 lg:text-left text-center text-[16px] lg:w-[500px]" variants={itemVariants}>
+                  MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan 
                   State University, and continues with the support of various strategic partners. 
-          </p>
-             
-                       
-          <div className="flex gap-4 mt-6 items-center">
-                                  <h2 className="white  font-light">Learn More</h2>
-                                   <motion.div
-                                                      initial={{ opacity: 0, x: 80 }}
-                                                      whileInView={{ opacity: 1, x: 0 }}
-                                                      transition={{ duration: 1.99, ease: "easeInOut" }}
-                                                     className="mt-2 w-[45px] h-[1.6px] bg-green"></motion.div>
-                                   
-                                </div>
+                </motion.p>             
+              <motion.div className="flex gap-4 mt-6 items-center" variants={itemVariants}>
+                <h2 className="white font-light">Learn More</h2>
+                <motion.div
+                  initial={{ opacity: 0, x: 80 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1.99, ease: "easeInOut" }}
+                  className="mt-2 w-[45px] h-[1.6px] bg-green"
+                ></motion.div>
+              </motion.div>
+              </motion.div> 
+
+          </div>
+
+
       </div>
-
-
-    </div>
 
     </section>
   );

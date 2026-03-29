@@ -55,7 +55,6 @@ function App() {
      */}
      <EventDetailed />
      <EminentSpeaker />
-    
     <EminentSpeakerDetailed />
     <Footer />
     
