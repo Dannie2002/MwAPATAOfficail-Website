@@ -67,7 +67,7 @@ const filteredPrograms = selectedCategories.length > 0
   : programs;
 
   return (
-    <section className=" min-h-screen">
+    <section className=" min-h-screen bg-[#f8ffef]">
 
       <div className="Section_wrapper ">
       
@@ -123,22 +123,12 @@ const filteredPrograms = selectedCategories.length > 0
 
               </div>
 
-                <div className="absolute  flex flex-col p-4 justify-between items-start inset-0 z-50">
-                    <div className="bg-[#fffced]/40 px-4 py-1 z-50 border border-[#fffced]/30 lg:mt-3 mt-2 rounded-full backdrop-blur-xl  flex-center">
-                    <h6 className="z-50 white text-[#fffced] uppercase text-[12px] font-semibold">{program.Category}</h6>
+                <div className="absolute  flex flex-col p-4 justify-between items-start inset-0 z-10">
+                    <div className="bg-[#fffced]/40 px-4 py-1 z-10 border border-[#fffced]/30 lg:mt-3 mt-2 rounded-full backdrop-blur-xl  flex-center">
+                    <h6 className="z-20 white text-[#fffced] uppercase text-[12px] font-semibold">{program.Category}</h6>
                     </div>
-                  <div className="flex lg:mt-4 gap-4 py-2 items-center transition-all justify-end">
-                    <h4 className="Card_heading font-semibold white line-clamp-2">{program.Title}</h4>
-                     <motion.div
-                      initial={{ opacity: 0, x: 80 }} 
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 1.99, ease: "easeInOut" }}
-                   className="w-[40px]  h-[1.6px] lg:bg-[var(--secondary-color)] bg-[#fffced]">
-
-                   </motion.div>
-                   
                   
-                  </div>
+                    <h4 className="Card_heading white line-clamp-2">{program.Title}</h4>
                  
                 </div>
             </div> 

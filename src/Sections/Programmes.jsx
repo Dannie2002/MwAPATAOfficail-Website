@@ -2,6 +2,7 @@ import React from "react";
 import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.jpg";
+import noise from "../assets/Images/Noise.png";
 import research from "../assets/Images/Research.jpg";
 import outreach from "../assets/Images/Outreach.jpg";
 import policy from "../assets/Images/Policy_advocacy.jpg";
@@ -53,7 +54,7 @@ const Programmes = () => {
                 RECOGNIZING THE ENORMITY OF THE CHALLENGES OUR SOCIETY FACES.
               </h4>
 
-              <div className="flex flex-col items-start lg:items-end">
+              <div className="flex lg:hidden mt-4 flex-col items-start lg:items-end">
                   <motion.div
                    initial={{ opacity: 0, x: 80 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -73,8 +74,8 @@ const Programmes = () => {
             <div className="relative z-0 shadow-3xl">
                <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
                 <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
-              {/* overlay to apply blend mode */}
-               <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
+              <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+              <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--primary-color)]/40  via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-100"></div>
 
                </div>
 

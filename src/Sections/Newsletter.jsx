@@ -70,18 +70,18 @@ const Newsletter = [
             <div className="Grid_4 grid-cols-1">
 
                {Newsletter.map((news,index) => (
-                <div key={index.id} className="bg-transparent flex border border-[var(--text-color)]/40 relative flex-col lg:flex-row items-center justify-between p-6">
+                <div key={index.id} className="bg-transparent flex border border-[var(--text-color)]/40 relative flex-col lg:flex-row items-center justify-between p-6 gap-4 lg:p-12">
                 
 
-                <h2 className="Card_heading text-green text-[34px]">{news.title}</h2>
-                 <div className="border lg:w-[320px] z-20 bg-transparent hover:bg-[var(--secondary-color)] flex transition-colors duration-500 border-[var(--secondary-color)]">
-                                   <div className="white flex items-center justify-center pr-6  gap-4 ">
-                                     <div className="bg-green p-4">
+                <h2 className="Card_heading text-green lg:text-[34px]">{news.title}</h2>
+                
+                                   <div className="white flex border border-(--Secondary-color) items-center justify-center gap-4 ">
+                                     <div className="bg-green p-2">
                                        <Download className="white"/>
                                      </div>
                                     <h5 className="text-grey font-semibold">Download</h5> 
                                    </div>
-                 </div>
+                 
 
 
                  </div>

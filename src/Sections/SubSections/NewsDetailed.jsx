@@ -1,12 +1,55 @@
 import React from "react";
 import {motion} from "framer-motion";
 import capacity from "../../assets/Images/Capacity_building.jpg";
+import newsletter from "../../assets/Images/Newsletter.jpg"
+import Section_header from "../Section_header";
 import noise from "../../assets/Images/Noise.png";
-import { Share2,ThumbsUp,ThumbsDown,MessageCircleMore,Facebook, MessageCircle, Twitter } from "lucide-react";
+import { Share2,ThumbsUp,ThumbsDown,MapPinned, Clock, CalendarDays  } from "lucide-react";
+import { MessageCircleMore,Facebook, MessageCircle, Twitter } from "lucide-react";
 
 const NewsDetailed = () => {
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    show: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.49, ease: "easeInOut" }
+    },
+  };
+
+const NewsDetails = [
+  { icon: CalendarDays, text: "17 JAN 2026" },
+  { icon: Clock, text: "17 JAN 2026" },
+  { label: "Reported by:", text: "John Kondowe" },
+];
+
   return (
-    <section className="py-12 px-6 lg:px-22">
+  <section className="min-h-screen">
+          <Section_header
+  title="News"
+  bgImage={newsletter}
+  breadcrumbs={[
+    { label: "Home", link: "/" },
+    { label: "/ News Updates" }
+  ]}
+/>
+    <div className="Section_wrapper">
+    
+
+
+
       
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
@@ -14,7 +57,7 @@ const NewsDetailed = () => {
                 Stakeholders Strategize on Future of Smallholder Farming in Malawi
               </h4>
 
-              <div className="flex flex-col items-start lg:items-end">
+              <div className="flex flex-col mt-4 items-start lg:items-end">
                   <motion.div
                    initial={{ opacity: 0, x: 80 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -29,11 +72,23 @@ const NewsDetailed = () => {
       </div>
 
 
-       <div className="flex oswald flex-row items-center justify-start gap-12 mt-10">
-         <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
-         <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">TIME:</span> 17 JAN 2026</h4>
-         <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">REPORTED BY:</span> JOHN KONDOWE</h4>
-       </div>
+       <motion.div  variants={containerVariants}  
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }} className="flex flex-wrap w-full lg:flex-row items-center justify-start gap-3 lg:gap-14 mt-10">
+         {NewsDetails.map((detail, index) => (
+           <motion.h4 key={index} variants={itemVariants} className="uppercase gap-4 flex items-center text-grey barlow font-semibold text-[14px]">
+             {detail.icon ? (
+               <motion.span variants={itemVariants} className="text-green font-bold">
+                 <detail.icon className="size-5" />
+               </motion.span>
+             ) : (
+               <span className="text-green font-bold">{detail.label}</span>
+             )}
+             {detail.text}
+           </motion.h4>
+         ))}
+       </motion.div>
             
              <motion.div
                                       initial={{ opacity: 0, x: 80 }}
@@ -52,7 +107,7 @@ const NewsDetailed = () => {
                 </div>
 
                   <div className="flex flex-col gap-8">
-              <p className="text_para w-full">
+              <p className="lg:text-[18px] font-light text-grey text-[16px] leading-relaxed">
                 As part of the process of institutionalizing youth-led agri-food systems platforms in the LEAP4YOUTH Project, 
                 MwAPATA, in partnership with the National Youth Council of Malawi (NYCOM), with support from AGRA, conducted a 
                 district policy clinic with youth networks in Mchinji and an Agri-Skills Lab for youths in Zomba. The Mchinji Policy 
@@ -111,7 +166,7 @@ const NewsDetailed = () => {
                  
             </div>
               
-          
+     </div>     
     </section>
   );
 };

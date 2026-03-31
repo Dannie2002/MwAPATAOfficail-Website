@@ -8,6 +8,7 @@ import outreach from "../assets/Images/Outreach.jpg";
 import policy from "../assets/Images/Policy_advocacy.jpg";
 import strategy1 from "../assets/Images/Strategy1.jpg";
 import strategy2 from "../assets/Images/Strategy2.jpg";
+import team from "../assets/Images/Team_Mwapata.jpg";
 import strategy3 from "../assets/Images/Strategy3.jpg";
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
@@ -88,7 +89,7 @@ const About_Us = () => {
                 initial={{ opacity: 0, scale: 0.75 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.99, ease: "easeInOut" }}>
-                <img src={about_mwapata} alt="research" className="w-full clip rounded-[4px] h-[430px]  object-cover"/>
+                <img src={team} alt="research" className="w-full clip grayscale h-[430px]  object-cover"/>
                 </motion.div>
       
             

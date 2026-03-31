@@ -33,18 +33,18 @@ function App() {
     <LandingPage />
     <About_Us />
     <Highlights />
-    <OurTeam />
-    <Contact_Us />
-    <Publications />
-    <Programmes />
-    <Events />
+    <WorkingPapers />
+    <PolicyBrief />
     <Newsletter />
-     
     <NewsDetailed />
     {/*
     <Governance />
     
-    
+     <OurTeam />
+    <Contact_Us />
+    <Publications />
+    <Programmes />
+    <Events />
    
     <News /> 
      
@@ -53,8 +53,7 @@ function App() {
     
      <JobListing />
     
-    <WorkingPapers />
-    <PolicyBrief />
+    
      <EminentSpeaker /> 
     
     <EminentSpeakerDetailed />

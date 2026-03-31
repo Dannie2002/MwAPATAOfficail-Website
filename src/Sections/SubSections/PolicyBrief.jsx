@@ -33,7 +33,7 @@ const papers = [
 ];
 
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen bg-[#f8ffef]">
                  <Section_header
   title="Policy Brief"
   bgImage={capacity}
@@ -44,7 +44,7 @@ const papers = [
   ]}
 />
 
-    <div className="py-12 px-6 lg:px-22">
+    <div className="Section_wrapper">
        
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
@@ -52,7 +52,7 @@ const papers = [
                 Policy Brief
               </h4>
 
-              <div className="flex flex-col items-start lg:items-end">
+              <div className="flex lg:hidden mt-4 flex-col items-start lg:items-end">
                   <motion.div
                    initial={{ opacity: 0, x: 80 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -68,31 +68,21 @@ const papers = [
 
 
             {/* a grid left and right event image*/}
-          <div className="flex flex-col mt-12 Counter_title">
-            <div className="flex flex-col gap-8">
-                <p className="Counter_title w-[800px] barlow  ">
-                 Policy Briefs offer 
-quickly accessible highlights and key messages on important policy topics, with the essential background information. These are often linked to a Working Paper. 
+          <div className="flex flex-col mt-12 ">
+            
+                <p className="text_para ">
+                 Policy Briefs offer quickly accessible highlights and key messages on important policy topics, with the essential background information. These are often linked to a Working Paper. 
                 </p>
-              
-                <h4 className="font-light lg:text-[18px] text-[32px] text-grey lowercase"><motion.div
-                                                            initial={{ opacity: 0, x: 80 }}
-                                                            whileInView={{ opacity: 1, x: 0 }}
-                                                            transition={{ duration: 1.99, ease: "easeInOut" }}
-                                                           className="mt-2 w-[45px] h-[1.6px] bg-green"></motion.div></h4>
-            </div>
-        
-                 
+                   
           </div>
 
                 {/* event gallery section*/}
-         <div className="mt-12 lg:mt-22">
+         <div className="Grid_4 grid-cols-1">
 
-  <div className="flex flex-col gap-10 mt-12">
     {papers.map((paper, index) => (
       <div
         key={index}
-        className="flex flex-col md:flex-row  gap-12 items-start group cursor-pointer"
+        className="flex flex-col md:flex-row border p-6 border-(--text-color)/40  gap-12 items-start group cursor-pointer"
       >
         
         {/* image */}
@@ -106,11 +96,11 @@ quickly accessible highlights and key messages on important policy topics, with 
 
         {/* text */}
           <div className="flex flex-col gap-3 ">
-          <h3 className="Card_heading barlow font-semibold">{paper.title}</h3>
+          <h3 className="Card_heading  font-semibold">{paper.title}</h3>
 
                 <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
 
-          <p className="lg:text-[18px] font-light text-grey text-[16px] lg:w-full leading-relaxed">
+          <p className="text_para w-full">
             {paper.description}
           </p>
         </div>
@@ -118,7 +108,7 @@ quickly accessible highlights and key messages on important policy topics, with 
       </div>
       
     ))}
-  </div>
+ 
   <h1>fme</h1>
 </div>
     </div>       

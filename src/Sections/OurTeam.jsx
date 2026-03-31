@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
-import capacity from "../assets/Images/Capacity_building.jpg";
+import ceo from "../assets/Images/CEO.jpg";
 import research from "../assets/Images/Research.jpg";
 import employee1 from "../assets/Images/Employee1.jpg";
 import employee2 from "../assets/Images/Employee2.jpg";
@@ -12,6 +12,29 @@ import Section_header from "./Section_header";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const OurTeam = () => {
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.69, ease: "easeInOut" }
+    },
+  };
+
+
+
     const [selectedEmployee, setSelectedEmployee] = useState(null);
 
     const Employees = [
@@ -21,7 +44,7 @@ const OurTeam = () => {
     title: "Finance and Administration Manager",
     description:
       "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
-    image: capacity,
+    image: ceo,
   },   
   {
     id: 2,
@@ -50,7 +73,7 @@ const OurTeam = () => {
 ];
 
   return (
-    <section className=" min-h-screen">
+    <section className=" min-h-screen bg-[#f8ffef]">
       <Section_header
   title="Our Team"
   bgImage={team}
@@ -94,14 +117,18 @@ const OurTeam = () => {
                 <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-450 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
 
               </div>
-                <div className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-10"> 
-                  <h4 className="Card_heading lg:mt-4">{employee.name}</h4>
-                  <p className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[18px] font-light">{employee.title}</p>
-                  <div className="flex-center mt-2 gap-2">
+                <motion.div variants={containerVariants}
+                initial="hidden"
+                whileInView="show"
+                viewport={{once:true}}
+                className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-10"> 
+                  <motion.h4 variants={itemVariants} className="Card_heading lg:mt-4">{employee.name}</motion.h4>
+                  <motion.p variants={itemVariants} className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[18px] font-light">{employee.title}</motion.p>
+                  <motion.div variants={itemVariants} className="flex-center mt-2 gap-2">
                   <h6 className=" lg:text-(--secondary-color) z-50 text-[#fffced] text-[14px] uppercase font-semibold">Learn More</h6>
                   <ChevronRight className="lg:text-(--secondary-color) z-50 text-[#fffced] size-6 " />
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               
             </div> 
              ))}
@@ -109,7 +136,7 @@ const OurTeam = () => {
 
 
            {/* NEXT & PREV BUTTONS */}
-            <div className="flex items-start flex-wrap  mt-6 gap-4 lg:mt-6  transition ">
+            <div className="flex items-start flex-wrap  mt-6 gap-4 lg:mt-12  transition ">
                          <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--secondary-color)]/60 duration-470">
                            <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
                          </div>
