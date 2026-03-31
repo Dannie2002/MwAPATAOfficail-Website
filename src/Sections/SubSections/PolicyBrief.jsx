@@ -84,9 +84,8 @@ const papers = [
         key={index}
         className="flex flex-col md:flex-row border p-6 border-(--text-color)/40  gap-12 items-start group cursor-pointer"
       >
-        
         {/* image */}
-        <div className="w-[450px] h-[250px] flex-shrink-0 overflow-hidden rounded-[4px] shadow-md">
+        <div className="lg:w-[450px] lg:h-[250px] flex-shrink-0 overflow-hidden shadow-md">
           <img
             src={paper.image}
             alt={paper.title}
@@ -95,15 +94,13 @@ const papers = [
         </div>
 
         {/* text */}
-          <div className="flex flex-col gap-3 ">
-          <h3 className="Card_heading  font-semibold">{paper.title}</h3>
-
-                <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
-
-          <p className="text_para w-full">
-            {paper.description}
-          </p>
-        </div>
+          <div className="flex flex-col gap-4 ">
+              <h3 className="Card_heading text-green font-semibold">{paper.title}</h3>
+              <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
+              <p className="text_para w-full">
+                {paper.description}
+              </p>
+           </div>
             
       </div>
       

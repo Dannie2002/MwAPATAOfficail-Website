@@ -3,6 +3,7 @@ import {motion} from "framer-motion";
 import capacity from "../../assets/Images/Capacity_building.jpg";
 import noise from "../../assets/Images/Noise.png";
 import Section_header from "../Section_header";
+import {  CalendarDays  } from "lucide-react";
 
 const WorkingPapers= () => {
 const papers = [
@@ -52,7 +53,7 @@ const papers = [
                 WORKING PAPERS
               </h4>
 
-              <div className="flex flex-col items-start lg:items-end">
+              <div className="flex flex-col items-start lg:hidden mt-4 lg:items-end">
                   <motion.div
                    initial={{ opacity: 0, x: 80 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -68,21 +69,13 @@ const papers = [
 
 
             {/* a grid left and right event image*/}
-          <div className="flex flex-col mt-12 Counter_title">
-            <div className="flex flex-col gap-8">
-                <p className="Counter_title ">
+          <div className="flex flex-col mt-12">
+           
+                <p className="text_para">
                   <span className="font-bold">Working papers</span> offer
                   original, internally reviewed papers in a longer format for readers interested in taking a <span className="font-bold">"deep dive"</span> into an issue and how it was researched. 
                 </p>
               
-                <h4 className="font-light lg:text-[18px] text-[32px] text-grey lowercase"><motion.div
-                                                            initial={{ opacity: 0, x: 80 }}
-                                                            whileInView={{ opacity: 1, x: 0 }}
-                                                            transition={{ duration: 1.99, ease: "easeInOut" }}
-                                                           className="mt-2 w-[45px] h-[2.6px] bg-green"></motion.div></h4>
-            </div>
-        
-                 
           </div>
 
                 {/* event gallery section*/}
@@ -90,13 +83,12 @@ const papers = [
 
   <div className="flex flex-col gap-10 mt-12">
     {papers.map((paper, index) => (
-      <div
+        <div
         key={index}
-        className="flex flex-col md:flex-row  gap-12 items-start group cursor-pointer"
+        className="flex flex-col md:flex-row border p-6 border-(--text-color)/40  gap-12 items-start group cursor-pointer"
       >
-        
         {/* image */}
-        <div className="w-[450px] h-[250px] flex-shrink-0 overflow-hidden rounded-[4px] shadow-md">
+        <div className="lg:w-[450px] lg:h-[250px] flex-shrink-0 overflow-hidden shadow-md">
           <img
             src={paper.image}
             alt={paper.title}
@@ -105,15 +97,13 @@ const papers = [
         </div>
 
         {/* text */}
-          <div className="flex flex-col gap-3 ">
-          <h3 className="Card_heading stack font-semibold">{paper.title}</h3>
-
-                <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
-
-          <p className="lg:text-[18px] font-light text-grey text-[16px] lg:w-full leading-relaxed">
-            {paper.description}
-          </p>
-        </div>
+          <div className="flex flex-col gap-4 ">
+              <h3 className="Card_heading text-green font-semibold">{paper.title}</h3>
+              <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]"> <span className="text-green font-bold "><CalendarDays className="size-5"/> </span>{paper.date}</h4>
+              <p className="text_para w-full">
+                {paper.description}
+              </p>
+           </div>
             
       </div>
       
