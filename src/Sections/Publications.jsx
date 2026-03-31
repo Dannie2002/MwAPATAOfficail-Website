@@ -4,12 +4,37 @@ import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.jpg";
 import research from "../assets/Images/Research.jpg";
 import outreach from "../assets/Images/Outreach.jpg";
+import publications from "../assets/Images/Publications.jpg";
+import workingpapers from "../assets/Images/Working_papers.jpg";
+import noise from "../assets/Images/Noise.png";
+import policy_brief from "../assets/Images/Policy_brief.jpg";
+import policy_perspective from "../assets/Images/Policy_perspective.jpg";
 import policy from "../assets/Images/Policy_advocacy.jpg";
 import Data from "./Icons/Data";
 import Section_header from "./Section_header";
 
 
 const Publications = () => {
+
+    const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.79, ease: "easeInOut" }
+    },
+  };
 
 
 
@@ -19,21 +44,21 @@ const Publications = () => {
     title: "Working Papers",
     description:
       "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
-    image: capacity,
+    image: workingpapers,
   },
   {
     id: 2,
     title: "Policy Briefs",
     description:
       "Conducting evidence-based research to influence agricultural and development policies.",
-    image: research,
+    image: policy_brief,
   },
   {
     id: 3,
     title: "Policy Perspective",
     description:
       "Improving market systems and access for farmers and agribusiness stakeholders.",
-   image: outreach, 
+   image: policy_perspective, 
   },
 
 ];
@@ -64,25 +89,25 @@ const Publications = () => {
 ];
 
   return (
-    <section className=" min-h-screen">
+    <section className=" min-h-screen bg-[#f8ffef]">
       <Section_header
   title="Publications"
-  bgImage={outreach}
+  bgImage={publications}
   breadcrumbs={[
     { label: "Home", link: "/" },
-    { label: "Events" }
+    { label: "/Publications" }
   ]}
 />
       <div className="Section_wrapper">
       
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-6">
+      <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between mt-10 lg:mt-6">
               <h4
            
-                className="Section_title agdasima">
+                className="Section_title ">
                 MwAPATA's three main publication lines offer distinct options to meet the reader's needs
               </h4>
 
-              <div className="flex flex-col items-start lg:items-end">
+              <div className="flex lg:hidden ga flex-col items-start lg:items-end">
                   <motion.div
                    initial={{ opacity: 0, x: 80 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -95,45 +120,48 @@ const Publications = () => {
                   className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
               </div>
       </div>
-          {/* Grid for publications card */}
-        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 auto-rows-[230px] lg:auto-rows-[430px]">
-          {programs.map((program, index) => (
-            <div
-              className={`relative z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`}
-            >
-               <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
-                <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
-              {/* overlay to apply blend mode */}
-               <div className="absolute inset-0 bg-green rounded-[4px] opacity-60 mix-blend-multiply"></div>
 
+          {/* Grid for publications card */}
+        <motion.div className="Grid_4 auto-rows-[230px] lg:auto-rows-[430px]" 
+                      variants={containerVariants}  
+                      initial="hidden"
+                      whileInView="show"
+                      viewport={{ once: true }}>
+                      {programs.map((program, index) => (
+            <motion.div key={program.id} variants={itemVariants} className={`relative z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`} >
+               <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
+                 <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
+                 <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+                 <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--primary-color)]/40  via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-100"></div>
                </div>
 
-             <div className="absolute  z-10 flex flex-row items-center gap-3 justify-start bottom-0 p-4 w-full">
-              <h4 className="Card_heading white">{program.title}</h4>
-              <RightArrow size={28} color="#fffced" />
+              <div className="absolute  z-10 flex flex-row items-center gap-3 justify-start bottom-0 p-4 w-full">
+                <h4 className="Card_heading white">{program.title}</h4>
+                <RightArrow size={28} color="#fffced" />
               </div>
-            </div>
+           </motion.div>
         ))}
-       </div>
+       </motion.div>
 
-       <h4 className="Counter_title mt-12">
+       <h4 className="text_para text-[18px] lg:text-[24px] lg:leading-[24px] mt-18 font-light archivo text-grey ">
                 <span className="font-semibold">In addition</span> to our own publications, we offer the following resources
               </h4>
 
        
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 col-span-3 gap-6 mt-6 lg:mt-12 auto-rows-[210px] lg:auto-rows-[430px]">
+        <motion.div className="Grid_4 auto-rows-[210px] lg:auto-rows-[215px]"
+                    variants={containerVariants}  
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}>
           {extraprograms.map((extraprogram,index) => (
-                  <div
-              className={`bg-[#c6bc6e] p-6 flex flex-col items-start justify-between rounded-[4px] ${index === 2 ? "lg:col-span-2" : ""}`}
-            >
-            <h4 className="Card_heading white">{extraprogram.title}</h4>
-            <p className="text_para white w-4/5">{extraprogram.description}</p>
-          </div>
-
-          ))}
+              <motion.div key={index} variants={itemVariants} className={`bg-transparent hover:bg-[var(--secondary-color)] group transition-all duration-490 border hover:border-transparent border-[var(--text-color)]/30 p-6 flex flex-col items-start justify-between rounded-[4px] ${index === 2 ? "lg:col-span-2" : ""}`}>
+                 <h4 className="Card_heading text-green group-hover:text-[#fffced] ">{extraprogram.title}</h4>
+                 <p className="text_para text-grey group-hover:text-[#fffced] w-full">{extraprogram.description}</p>
+              </motion.div>
+               ))}
          
-        </div>
+        </motion.div>
 
       
   </div>        

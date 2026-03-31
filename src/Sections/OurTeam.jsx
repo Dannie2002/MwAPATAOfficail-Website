@@ -6,6 +6,8 @@ import research from "../assets/Images/Research.jpg";
 import employee1 from "../assets/Images/Employee1.jpg";
 import employee2 from "../assets/Images/Employee2.jpg";
 import team from "../assets/Images/Team_Mwapata.jpg";
+import blessme from "../assets/Images/Blessme_employee.jpg";
+import unknown from "../assets/Images/Unknown_employee.jpg";
 import Section_header from "./Section_header";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
@@ -23,11 +25,11 @@ const OurTeam = () => {
   },   
   {
     id: 2,
-    name: "Prof. Levison Chiwaula",
-    title: "Research Director",
+    name: "Mr. Blessme Phiri",
+    title: "Commmunications Officer",
     description:
-      "Levison is a Professor of Economics at the University of Malawi (UNIMA).  He holds a PhD in Economics from Leibniz University of Hannover in Germany and has over 15 years of experience in higher education teaching and research.  Prof. Chiwaula is a seasoned researcher with a track record of winning competitive research grants and publishing in renowned peer-reviewed journals. He has led and participated in several projects funded by IDRC, DFID, AERC, PEP, and the EU and has also provided consultancy services to several governmental and non-governmental organizations.",
-    image: research,
+      "Blessme has been a media practitioner for over 7 years, working in development communications, public relations, community mobilization, media academia, strategic communications, social marketing, graphic designing and audio-visual media production. He holds a Bachelor of Arts in Media for Development from the University of Malawi (UNIMA) and currently studying Master of Ars in Theatre and Media Communications for Development at UNIMA as well. Blessme has worked as a Program Officer in the USAID Health Communication for Life project, and as a part-time lecturer in Media for Development at the University of Malawi. Prior to joining MwAPATA Institute, Blessme worked as Communications Officer for CRECCOM.",
+    image: blessme,
   },
   {
     id: 3,
@@ -43,7 +45,7 @@ const OurTeam = () => {
     title: "Research Analyst",
     description:
       "Joyce holds MSc in Agricultural and Applied Economics from Lilongwe University of Agriculture and Natural Resources (LUANAR)  and University of Pretoria. She successfully completed some research studies whose results were published and presented to different conferences. Joyce's interests are in agricultural policy, natural resource economics and rural development. Previously, Joyce worked with several individuals and organizations in research and program management. Before joining MwAPATA, Joyce worked as a Research Associate (Adoption, Impact and Markets) at International Institute of Tropical Agriculture (IITA).",
-   image: employee2,
+   image: unknown,
   },
 ];
 
@@ -92,7 +94,7 @@ const OurTeam = () => {
                 <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-450 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
 
               </div>
-                <div className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-50"> 
+                <div className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-10"> 
                   <h4 className="Card_heading lg:mt-4">{employee.name}</h4>
                   <p className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[18px] font-light">{employee.title}</p>
                   <div className="flex-center mt-2 gap-2">
@@ -134,7 +136,7 @@ const OurTeam = () => {
                  onClick={(e) => e.stopPropagation()}
                >
                  {/* Header Section with Close Button */}
-                 <div className="flex items-center justify-end p-2 lg:p-4 bg-[#e5e6e3] sticky top-0 z-50">
+                 <div className="flex items-center justify-end p-2 lg:p-4 bg-[#f8ffef] sticky top-0 z-50">
                    <button 
                      onClick={() => setSelectedEmployee(null)}
                      className="p-2 hover:bg-green/10 rounded-full transition-all"

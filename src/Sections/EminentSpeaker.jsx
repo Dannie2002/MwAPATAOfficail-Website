@@ -2,6 +2,7 @@ import React from "react";
 import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import research from "../assets/Images/Research.jpg";
+import speaker_series from "../assets/Images/Speaker_series.jpg";
 import speaker1 from "../assets/Images/EminentSpeaker1.jpg";
 import speaker2 from "../assets/Images/EminentSpeaker2.jpg";
 import speaker3 from "../assets/Images/EminentSpeaker3.jpg";
@@ -57,7 +58,7 @@ const EminentSpeaker = () => {
 
         <Section_header
          title="Emminent"
-         bgImage={research}
+         bgImage={speaker_series}
          breadcrumbs={[
          { label: "Home", link: "/" },
          { label: "/ Eminent speaker" }

@@ -53,9 +53,10 @@ const Newsletter = [
 ];
 
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen bg-[#f8ffef]">
       
-      <div className="flex flex-col  lg:items-start lg:justify-between py-0 px-6 lg:px-22  mt-10 lg:mt-18">
+      <div className="Section_wrapper">
+
               <motion.h4
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -66,18 +67,14 @@ const Newsletter = [
                
 
 
-            <div className="flex flex-col lg:mt-28 w-full gap-8 mt-10 ">
+            <div className="Grid_4 grid-cols-1">
 
-              <div className="flex flex-col gap-6 lg:gap-8">
                {Newsletter.map((news,index) => (
-                <div key={index.id} className="bg-transparent flex relative flex-col lg:flex-row items-center justify-between rounded-2xl p-6">
+                <div key={index.id} className="bg-transparent flex border border-[var(--text-color)]/40 relative flex-col lg:flex-row items-center justify-between p-6">
                 
 
-                <h2 className="Counter_title barlow">{news.title}</h2>
-              
-               
-               
-                 <div className="border lg:w-[320px] z-20 bg-transparent hover:bg-[var(--secondary-color)] flex transition-colors duration-500  mt-8 border-[var(--secondary-color)]">
+                <h2 className="Card_heading text-green text-[34px]">{news.title}</h2>
+                 <div className="border lg:w-[320px] z-20 bg-transparent hover:bg-[var(--secondary-color)] flex transition-colors duration-500 border-[var(--secondary-color)]">
                                    <div className="white flex items-center justify-center pr-6  gap-4 ">
                                      <div className="bg-green p-4">
                                        <Download className="white"/>
@@ -94,12 +91,8 @@ const Newsletter = [
 
                ))}
                  
-    <motion.div
-                                           initial={{ opacity: 0, x: 80 }}
-                                           whileInView={{ opacity: 1, x: 0 }}
-                                           transition={{ duration: 1.99, ease: "easeInOut" }}
-                                           className=" w-full relative h-[1.4px] mt-6 bg-green"></motion.div>
-              </div>
+    
+              
 
                
             
@@ -107,6 +100,13 @@ const Newsletter = [
                
 
        </div>   
+
+
+
+
+
+
+
       
         <div className="flex relative rounded-2xl flex-col items-start justify-center h-full lg:h-[650px] lg:mt-28 bg-[#ac6133] mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             

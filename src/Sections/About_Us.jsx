@@ -6,6 +6,9 @@ import noise from "../assets/Images/Noise.png";
 import about_mwapata from "../assets/Images/About_Mwapata.jpg";
 import outreach from "../assets/Images/Outreach.jpg";
 import policy from "../assets/Images/Policy_advocacy.jpg";
+import strategy1 from "../assets/Images/Strategy1.jpg";
+import strategy2 from "../assets/Images/Strategy2.jpg";
+import strategy3 from "../assets/Images/Strategy3.jpg";
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
 import { Download, Gem } from "lucide-react";
@@ -32,24 +35,29 @@ const About_Us = () => {
 ];
 
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen bg-[#f8ffef]">
 
     <div className="Section_wrapper">
        
       
       <div className="flex flex-col   lg:items-start lg:justify-between mt-10 lg:mt-18">
           
-        <h1 className="Page_title ">WHO ARE WE</h1>
-          <div className="mt-1 w-[50px] h-[1.9px] bg-green "></div>
+        <h1 className="Page_title font-bold barlow  text-2xl ">WHO ARE WE</h1>
+            <motion.div
+                          initial={{ opacity: 0, x: 80 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 1.99, ease: "easeInOut" }}
+                          className="w-full relative h-[1.5px] mt-2 bg-green"
+                        ></motion.div>
 
 
             <div className="flex flex-col w-full gap-18 lg:mt-18 mt-10 lg:flex-row">
 
-              <div className="flex flex-col gap-6 lg:w-1/2">
+              <div className="flex flex-col gap-0 lg:w-1/2">
           
               <div className="flex flex-col gap-6">
-                <h4 className="Counter_title archivo lg:leading-[58px] lg:text-[58px] lowercase">
-                  <span className="font-bold">We are An</span> independent <br />  <span className="font-semibold">agricultural policy<br />  think tank in Malawi.</span>
+                <h4 className="Counter_title leading-[42px] text-green text-[42px] archivo lg:leading-[48px] lg:text-[48px] lowercase">
+                  <span className="font-semibold">We are An</span> independent <br />  <span className="">agricultural policy<br />  think tank in Malawi.</span>
                 </h4>
                 <div className="flex flex-col gap-4">
                       <p className="text-wrap lg:text-[18px] font-light lg:mt-4 text-grey text-[18px] lg:w-[560px] leading-relaxed">
@@ -76,7 +84,7 @@ const About_Us = () => {
              
               </div>
 
-                <motion.div className="relative flex items-end justify-end  lg:w-1/2"
+                <motion.div className="relative flex mt-0 items-end justify-end  lg:w-1/2"
                 initial={{ opacity: 0, scale: 0.75 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.99, ease: "easeInOut" }}>
@@ -89,8 +97,8 @@ const About_Us = () => {
 
        </div>   
       
-        <div className="flex flex-col flex-col-reverse  lg:flex-row  lg:-mx-22 lg:mt-28  bg-[#eaeee5] mt-10">
-            <div className="relative bg-green flex lg:w-1/2">
+        <div className="flex flex-col flex-col-reverse  lg:flex-row  lg:-mx-22 lg:mt-28  bg-[#f8ffef] mt-10">
+            <div className="relative  flex lg:w-1/2" style={{backgroundImage: `url(${strategy2})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             <div className="flex lg:px-18 px-6 py-8 lg:py-12 flex-col gap-4 z-20">
                  <h4 className="Section_title white">
                    STRATEGIC PLAN
@@ -119,16 +127,16 @@ const About_Us = () => {
             
                 
                 <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-                 <div className="absolute inset-0 bg-green opacity-60 mix-blend-multiply"></div>
+                 <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--primary-color)]/70  via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-100"></div>
             </div>
 
-          <div className="grid p-6 lg:p-12 lg:p-8 gap-6 lg:gap-12  grid-cols-1  lg:w-1/2">
+          <div className="grid p-6 lg:p-12 lg:p-8 gap-12 lg:gap-12  grid-cols-1  lg:w-1/2">
           {mission_vision.map((item, index) => (
             <div key={item.id} className="flex items-start flex-col gap-4">
-                <div className="bg-[#EA8548] p-2 rounded-[4px] flex-center">
+                <div className="bg-green p-2 rounded-[4px] flex-center">
                   {item.icon}
                 </div>
-              <h4 className="text-[#EA8548]  text-2xl mt-0 lg:mt-3 font-bold uppercase barlow ">
+              <h4 className="text-green mt-2 lg:mt-3 Card_heading ">
                 {`Our ${item.title}`}
               </h4>
                                  <motion.div
@@ -142,10 +150,10 @@ const About_Us = () => {
             </div>
               ))}
               <div className="flex items-start flex-col">
-                <div className="bg-[#EA8548] p-2 rounded-[4px] flex-center">
+                <div className="bg-green p-2 rounded-[4px] flex-center">
                   <Gem className="size-10 white"/>
                 </div>
-  <h4 className="text-[#EA8548] text-2xl font-bold uppercase mt-6 barlow mb-4">
+  <h4 className="text-green text-2xl font-bold uppercase mt-6 barlow mb-4">
     core values
   </h4>
    <motion.div

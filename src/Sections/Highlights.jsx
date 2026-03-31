@@ -5,6 +5,7 @@ import event1 from "../assets/Images/Event1.jpg";
 import research from "../assets/Images/Research.jpg";
 import employee1 from "../assets/Images/Employee1.jpg";
 import employee2 from "../assets/Images/Employee2.jpg";
+import event_mwapata from "../assets/Images/Event_header.jpg"
 import team from "../assets/Images/Team_Mwapata.jpg";
 import Section_header from "./Section_header";
 import { ChevronDown, ChevronLeft, ChevronRight, Check } from "lucide-react";
@@ -15,7 +16,7 @@ const Highlights = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState([]);
 
-  const categories = ["News Updates", "Events", "Publications"];
+  const categories = ["All","News Updates", "Events", "Publications"];
 
 
     const programs = [
@@ -49,7 +50,7 @@ const Highlights = () => {
     Category: "News Updates",
     description:
       "Providing short courses and specialized training programs for professionals.",
-   image: employee2,
+   image: event_mwapata ,
   },
 ];
 
@@ -73,9 +74,9 @@ const filteredPrograms = selectedCategories.length > 0
       <div className="flex gap-4 flex-col lg:flex-row lg:items-center lg:justify-between mt-5 lg:mt-18 relative">
               <h4 className="Section_title">HIGHLIGHTS</h4>
 
-              <div className="flex flex-col border-[1.6px] border-[var(--primary-color)] lg:min-w-[250px] rounded-[4px] overflow-hidden">
+              <div className="flex flex-col mt-2 border-[0.6px] border-[var(--primary-color)] lg:min-w-[250px] overflow-hidden">
                 <div onClick={() => setIsOpen(!isOpen)}  className="flex items-center justify-between  cursor-pointer flex-row gap-3 py-2 px-4 group transition-all duration-430 ">
-                  <h5 className="Counter_title font-semibold duration-430 text-[22px] text-[var(--primary-color)] w-full ">
+                  <h5 className="Card_heading text-[var(--primary-color)]">
                   FILTER BY CONTENT TYPE
                   </h5>
                   <ChevronDown className={`size-8 text-green transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
@@ -116,9 +117,9 @@ const filteredPrograms = selectedCategories.length > 0
           {filteredPrograms.map((program) => (
             <div key={program.id} className="relative">
               <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
-                <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
+                <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full object-cover"/>
                    {/* overlay to apply blend mode */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 "></div>
 
               </div>
 

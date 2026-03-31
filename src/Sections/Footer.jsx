@@ -12,6 +12,26 @@ const Footer = () => {
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+    const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.79, ease: "easeInOut" }
+    },
+  };
   
   const footerLinks = [
     {
@@ -45,15 +65,12 @@ const Footer = () => {
            {footerLinks.map((section, index) => (
             <nav key={index} className="flex flex-col z-20 gap-2">
             <div className="flex items-center justify-between z-20">
-            <motion.h6
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.99, ease: "easeInOut" }}
+            <h6
                 className={`Card_heading agdasima mb-0  font-semibold lg:mb-4 text-[26px]  text-[var(--primary-color)] ${section.links ? 'cursor-pointer lg:cursor-default' : ''}`}
                  onClick={() => section.links && handleToggle(index)}
             >
               {section.title}
-            </motion.h6>
+            </h6>
             {section.links && (
               <ChevronDown
                 className={`flex lg:hidden transition-transform duration-450 ease-in-out transform ${openIndex === index ? "rotate-180" : ""}`}
@@ -72,13 +89,18 @@ const Footer = () => {
             {section.links && (
               <>
                 {/* Desktop view: always visible */}
-                <div className="hidden lg:flex flex-col gap-3">
+                <motion.div className="hidden lg:flex flex-col gap-3"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="show"
+                 viewport={{ once: true }}
+                >
                   {section.links.map((link, i) => (
-                    <a key={i} className="link cursor-pointer text-[17.5px] text-grey link-hover">
+                    <motion.a key={i} variants={itemVariants} className="link cursor-pointer text-[17.5px] text-grey link-hover">
                       {link}
-                    </a>
+                    </motion.a>
                   ))}
-                </div>
+                </motion.div>
 
                 {/* Mobile view: animated accordion */}
                 <AnimatePresence>
@@ -109,15 +131,16 @@ const Footer = () => {
                 ))}
               </div>
             )}
-          </nav>
+            </nav>
         ))}
 
       </div>
 
+
           <motion.div
                 initial={{ opacity: 0, x: 80 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1.99, ease: "easeInOut" }}
+                transition={{ duration: 0.49, ease: "easeInOut" }}
   className="w-full relative h-[1.5px] hidden lg:flex mt-12 bg-green"></motion.div>
 
               <div className="mt-12 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">

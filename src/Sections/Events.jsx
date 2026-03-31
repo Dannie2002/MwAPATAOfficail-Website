@@ -61,7 +61,7 @@ const Events = () => {
   ];
 
   return (
-    <section className="">
+    <section className="min-h-screen bg-[#f8ffef]">
       <Section_header
   title="Events"
   bgImage={events_mwapata}
@@ -81,7 +81,7 @@ const Events = () => {
                 <span className="text-orange">OUR</span> EVENTS OF INFLUENCE <span className="text-orange">AND </span>INSPIRATION.
               </h4>
 
-              <div className="flex flex-col items-start lg:items-end">
+              <div className="flex lg:hidden flex-col items-start lg:items-end">
                   <motion.div
                    initial={{ opacity: 0, x: 80 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -100,11 +100,11 @@ const Events = () => {
         <button
           key={tab}
           onClick={() => setActiveTab(tab)}
-          className={`lg:px-6 py-2 text-[18px] px-4 rounded-[3px] border barlow uppercase  transition-all duration-470
+          className={`lg:px-6 py-2 text-[16px] px-4  border uppercase barlow  transition-all duration-370
           ${
             activeTab === tab
-              ? "bg-transparent z-20  text-green border-[1.3px]  border-b-[var(--secondary-color)]"
-              : "text-grey bg-transparent border-[1.3px] border-[#4a4a4a] hover:bg-gray-100"
+              ? "bg-green shadow-2xl z-20 font-semibold white border-[1.3px]  border-b-[var(--secondary-color)]"
+              : "text-grey bg-transparent border-[1.3px] border-[#4a4a4a]/40 "
           }`}
         >
          
@@ -116,16 +116,16 @@ const Events = () => {
 {/*GRID FOR EVENT CARDS */}
        <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8 lg:auto-rows-[430px]">
           {events.map(ev => (
-            <div key={ev.id} className="relative rounded-[14px] z-0 shadow-3xl">
+            <div key={ev.id} className="relative  z-0 shadow-3xl">
                <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
-                <img src={ev.image} alt={ev.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
+                <img src={ev.image} alt={ev.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full  object-cover"/>
                  {/* overlay to apply blend mode */}
-                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0d] via-[#323232] to-[#3A9B3D]/50  rounded-[4px] opacity-90 mix-blend-multiply"></div>
+                 <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-t from-[var(--secondary-color)]/60  via-[#3A9B3D]/70 to-[#3A9B3D]/40 opacity-100"></div>
                 </div>
 
               <div className="absolute bg-transparent z-10 flex flex-col items-start gap-3 justify-between bottom-0 p-8 w-full">
                 <div className="mt-0  py-1 rounded-full">
-                  <h4 className="white font-light barlow text-[16px] ">{ev.date}</h4>
+                  <h4 className="white font-light archivo text-[14px] ">{ev.date}</h4>
                 </div>
                 <h4 className="Card_heading  white line-clamp-2">
                   {ev.title}

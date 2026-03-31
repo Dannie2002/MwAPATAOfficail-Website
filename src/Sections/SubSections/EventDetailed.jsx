@@ -1,12 +1,33 @@
 import React, { useRef } from "react";
 import {motion} from "framer-motion";
 import capacity from "../../assets/Images/Capacity_building.jpg";
+import event_header from "../../assets/Images/Event_header.jpg";
 import noise from "../../assets/Images/Noise.png";
 import { MapPinned, Clock, CalendarDays} from "lucide-react";
+import Section_header from "../Section_header";
 
 
 const EventDetailed = () => {
 
+    const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    show: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.49, ease: "easeInOut" }
+    },
+  };
 
 
 const images = [
@@ -27,16 +48,26 @@ const eventDetails = [
 ];
 
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen bg-[#f7f9f6]">
+         
+      <Section_header
+  title="Events"
+  bgImage={event_header}
+  breadcrumbs={[
+    { label: "Home", link: "/" },
+    { label: "/ Events" }
+  ]}
+/>
+
     <div className="py-12 px-6 lg:px-22">
        
       <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between mt-10 lg:mt-18">
-              <h4 
-                className="Section_title Title_gsap">
+              <motion.h4 
+              initial={{opacity:0, x:-20}} whileInView={{opacity:1, x:0}} transition={{duration:490, ease:"easeInOut"}}  className="Section_title text-[#dd730a]">
                 MwAPATA Participates in the AGRA Media Onboarding Meeting
-              </h4>
+              </motion.h4>
 
-              <div className="flex flex-col items-start lg:items-end">
+              <div className="flex lg:hidden flex-col items-start lg:items-end">
                   <motion.div
                    initial={{ opacity: 0, x: 80 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -51,16 +82,19 @@ const eventDetails = [
       </div>
 
            {/* EVENT LOCATION AND DATE*/}
-       <div className="flex flex-wrap oswald  lg:flex-row items-center justify-start gap-2 lg:gap-12 mt-10">
+       <motion.div  variants={containerVariants}  
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }} className="flex flex-wrap w-full lg:flex-row items-center justify-start gap-3 lg:gap-14 mt-10">
          {eventDetails.map(({ icon: Icon, text }, index) => (
-           <h4 key={index} className="uppercase gap-2 flex items-center text-grey barlow font-semibold text-[14px]">
-             <span className="text-green font-bold">
+           <motion.h4 key={index} variants={itemVariants} className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]">
+             <motion.span variants={itemVariants} className="text-green font-bold">
                <Icon className="size-5" />
-             </span>
+             </motion.span>
              {text}
-           </h4>
+           </motion.h4>
          ))}
-       </div>
+       </motion.div>
 
           <motion.div
                                     initial={{ opacity: 0, x: 80 }}
@@ -70,24 +104,27 @@ const eventDetails = [
 
             {/* a grid left and right event image*/}
           <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="flex flex-col gap-8">
-              <h4 className="Counter_title barlow">ABOUT <span className="font-semibold">THIS EVENT</span></h4>
-                  <p className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
+            <motion.div variants={containerVariants}
+                        initial='hidden'
+                        whileInView='show'
+                        viewport="true"  className="flex flex-col gap-8">
+                <motion.h4 variants={itemVariants} className="Counter_title barlow">ABOUT <span className="font-semibold">THIS EVENT</span></motion.h4>
+                  <motion.p variants={itemVariants} className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
                   MwAPATA Research Analyst, Mr Lemekezani Kingston Chilora, participated in the Media Onboarding Meeting organised by AGRA-Sustainably Growing Africa’s Food, held at the Bingu International Convention Centre (BICC) in Lilongwe on 16th March 2026. 
-                  </p>
-                  <p className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
+                  </motion.p>
+                  <motion.p variants={itemVariants} className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
                     The meeting aimed to strengthen the capacity of journalists from different districts and institutions to better understand AGRA’s mandate, strategic priorities, and country-level interventions in Malawi. 
                     In addition, the meeting aimed to build informed and long-term partnerships between AGRA plus its partners with the media as well as to enhance accurate and evidence-based reporting on agriculture and food systems, in order to increase the visibility of AGRA-supported initiatives that contribute to inclusive agricultural transformation.
-                  </p>
-                  <p className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
+                  </motion.p>
+                  <motion.p variants={itemVariants} className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
                     Representing the MwAPATA institute, Mr Chilora delivered a 5-minute presentation pitch on the Enhancing Inclusive Youth-Led Platform for Evidence-based Agricultural policymaking and implementation in Malawi (LEAP4YOUTH Project), which the MwAPATA Institute is implementing in partnership with National Youth Council of Malawi (NYCOM), supported by AGRA.
-                  </p>
+                  </motion.p>
               
                   <h6 className="font-light lg:text-[18px] text-[18px] text-grey lowercase">WATCH THE FULL EVENT <span className="text-green underline font-bold">HERE</span></h6>
-            </div>
+            </motion.div>
                {/* an image side*/}
               <div className="relative flex">
-                <img src={capacity} alt="research" className="w-full h-[430px] rounded-[4px] object-cover"/>
+                <img src={event_header} alt="research" className="w-full h-[430px] rounded-[4px] object-cover"/>
                   <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-[430px] object-cover"/>
                   <div className="absolute clip inset-0 bg-green h-[430px] opacity-20 mix-blend-multiply "></div>
               </div>
@@ -101,7 +138,7 @@ const eventDetails = [
             {/* pictures gallery*/}
             <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-6 mt-12 space-y-6">
               {images.map((img, index) => (
-              <div key={index} className="overflow-hidden h-[430px] rounded-[4px] shadow-md group cursor-pointer">
+              <div key={index} className="overflow-hidden h-[130px] rounded-[4px] shadow-md group cursor-pointer">
                 <img
                   src={img}
                   alt="Event"

@@ -24,6 +24,7 @@ import Contact_Us from './Sections/Contact_Us'
 
 
 
+
 function App() {
 
 
@@ -34,28 +35,35 @@ function App() {
     <Highlights />
     <OurTeam />
     <Contact_Us />
-    {/*
-    <Governance />
+    <Publications />
     <Programmes />
     <Events />
-    
     <Newsletter />
      
     <NewsDetailed />
+    {/*
+    <Governance />
+    
+    
+   
     <News /> 
      
     <YouTube />
-    <Publications />
     
     
-    <JobListing />
+     <JobListing />
+    
     <WorkingPapers />
     <PolicyBrief />
+     <EminentSpeaker /> 
+    
+    <EminentSpeakerDetailed />
     <Capacity_Building_Seminars />
      */}
      <EventDetailed />
-     <EminentSpeaker />
-    <EminentSpeakerDetailed />
+    
+    
+    
     <Footer />
     
     </>
