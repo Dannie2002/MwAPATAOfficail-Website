@@ -89,7 +89,7 @@ const Publications = () => {
 ];
 
   return (
-    <section className=" min-h-screen bg-[#f8ffef]">
+    <section className="Section_bg">
       <Section_header
   title="Publications"
   bgImage={publications}
@@ -128,7 +128,7 @@ const Publications = () => {
                       whileInView="show"
                       viewport={{ once: true }}>
                       {programs.map((program, index) => (
-            <motion.div key={program.id} variants={itemVariants} className={`relative z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`} >
+            <motion.div key={program.id} variants={itemVariants} className={`relative cursor-pointer z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`} >
                <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
                  <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                  <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
@@ -143,7 +143,7 @@ const Publications = () => {
         ))}
        </motion.div>
 
-       <h4 className="text_para text-[18px] lg:text-[24px] lg:leading-[24px] mt-18 font-light archivo text-grey ">
+       <h4 className="text_para text-[18px] lg:text-[18px] lg:leading-[18px] mt-18 font-light archivo text-grey ">
                 <span className="font-semibold">In addition</span> to our own publications, we offer the following resources
               </h4>
 

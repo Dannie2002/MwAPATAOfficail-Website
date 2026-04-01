@@ -114,7 +114,7 @@ const OurTeam = () => {
               <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 shadow-3xl">
                 <img src={employee.image} alt={employee.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full object-cover"/>
                    {/* overlay to apply blend mode */}
-                <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-450 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
+                <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-450 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 "></div>
 
               </div>
                 <motion.div variants={containerVariants}

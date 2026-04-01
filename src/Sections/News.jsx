@@ -49,7 +49,7 @@ const News = () => {
 
 
   return (
-    <section className="min-h-screen">
+    <section className="Section_bg">
 
           <Section_header
   title="News"

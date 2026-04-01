@@ -54,7 +54,7 @@ const EminentSpeaker = () => {
 
    
   return (
-    <section className="min-h-screen">
+    <section className="Section_bg">
 
         <Section_header
          title="Emminent"
@@ -89,7 +89,7 @@ const EminentSpeaker = () => {
           {/* Grid for EminentSpeaker card */}
         <div className="Grid_4">
           {programs.map((program) => (
-             <div key={program.id} className="relative bg-[#eaeee5] " >
+             <div key={program.id} className="relative cursor-pointer bg-[#eaeee5] " >
                             <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
                             <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                             <div className="absolute lg:hidden inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>

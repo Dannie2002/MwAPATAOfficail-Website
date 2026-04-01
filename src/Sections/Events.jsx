@@ -61,7 +61,7 @@ const Events = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-[#f8ffef]">
+    <section className="Section_bg">
       <Section_header
   title="Events"
   bgImage={events_mwapata}

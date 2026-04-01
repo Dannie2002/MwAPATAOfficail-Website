@@ -33,15 +33,11 @@ function App() {
     <>
       <LandingPage />
       <About_Us />
+      <OurTeam />
       <Highlights />
       <WorkingPapers />
-      <PolicyBrief />
-      <Newsletter />
-      <NewsDetailed />
-      <Contact_Us />
-      <EventDetailed />
-      <EminentSpeakerDetailed />
-      <EminentSpeaker />
+    <Publications />
+    <Newsletter />
       <ExtraEvent />
       <Footer />
     </>

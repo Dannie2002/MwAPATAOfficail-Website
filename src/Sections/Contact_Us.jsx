@@ -116,7 +116,7 @@ const contact_details = [
                       
                 <div className="mt-12 lg:mt-18">
                   <motion.div 
-                    className="flex lg:flex-row flex-col gap-8 lg:gap-18 items-start justify-between"
+                    className="flex lg:flex-row flex-col gap-8 lg:gap-18 items-start "
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="show"
