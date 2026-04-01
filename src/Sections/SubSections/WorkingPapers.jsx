@@ -33,8 +33,28 @@ const papers = [
   },
 ];
 
+ const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.49, ease: "easeInOut" }
+    },
+  };
+
   return (
-    <section className="min-h-screen">
+    <section className="Section_bg">
                  <Section_header
   title="Working Papers"
   bgImage={capacity}
@@ -47,7 +67,7 @@ const papers = [
 
     <div className="Section_wrapper">
        
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-12">
               <h4 
                 className="Section_title">
                 WORKING PAPERS
@@ -83,12 +103,13 @@ const papers = [
 
   <div className="flex flex-col gap-10 mt-12">
     {papers.map((paper, index) => (
-        <div
+        <div 
+       
         key={index}
         className="flex flex-col md:flex-row border p-6 border-(--text-color)/40  gap-12 items-start group cursor-pointer"
       >
         {/* image */}
-        <div className="lg:w-[450px] lg:h-[250px] flex-shrink-0 overflow-hidden shadow-md">
+        <div className="lg:w-[450px] lg:h-[215px] flex-shrink-0 overflow-hidden shadow-md">
           <img
             src={paper.image}
             alt={paper.title}
@@ -97,13 +118,17 @@ const papers = [
         </div>
 
         {/* text */}
-          <div className="flex flex-col gap-4 ">
-              <h3 className="Card_heading text-green font-semibold">{paper.title}</h3>
-              <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]"> <span className="text-green font-bold "><CalendarDays className="size-5"/> </span>{paper.date}</h4>
-              <p className="text_para w-full">
+          <motion.div
+           variants={containerVariants}
+           initial="hidden"
+           whileInView="show"
+           viewport={{once:true}} className="flex flex-col gap-4 ">
+              <motion.h3 variants={itemVariants} className="Card_heading text-green font-semibold">{paper.title}</motion.h3>
+              <motion.h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]" variants={itemVariants}> <span className="text-green font-bold "><CalendarDays className="size-5"/> </span>{paper.date}</motion.h4>
+              <motion.p variants={itemVariants} className="text_para w-full">
                 {paper.description}
-              </p>
-           </div>
+              </motion.p>
+           </motion.div>
             
       </div>
       

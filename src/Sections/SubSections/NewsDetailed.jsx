@@ -36,7 +36,7 @@ const NewsDetails = [
 ];
 
   return (
-  <section className="min-h-screen">
+  <section className="Section_bg">
           <Section_header
   title="News"
   bgImage={newsletter}
@@ -57,7 +57,7 @@ const NewsDetails = [
                 Stakeholders Strategize on Future of Smallholder Farming in Malawi
               </h4>
 
-              <div className="flex flex-col mt-4 items-start lg:items-end">
+              <div className="flex flex-col mt-4 lg:hidden items-start lg:items-end">
                   <motion.div
                    initial={{ opacity: 0, x: 80 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -115,30 +115,30 @@ const NewsDetails = [
                  Agri-Skills Lab was held at Zomba Community Stadium Hall from 6th to 7th February 2026.
               </p>
               
-                <h4 className="Card_heading">BY EDWIN BANDA</h4>
+                <h4 className="Card_heading text-green">BY EDWIN BANDA</h4>
                 
                   </div>
 
                 <div className="flex flex-col lg:flex-row items-start  lg:items-center lg:justify-between gap-8">
                     <div className="flex gap-8  text-bold">
-                        <div><MessageCircleMore className="text-grey" /></div>
-                        <div><Share2 className="text-grey"/></div>
-                        <div><ThumbsUp className="text-grey"/></div>
-                        <div><ThumbsDown className="text-grey"/></div>
+                        <div><MessageCircleMore className="text-green" /></div>
+                        <div><Share2 className="text-green"/></div>
+                        <div><ThumbsUp className="text-green"/></div>
+                        <div><ThumbsDown className="text-green"/></div>
                     </div>
               <div className="flex items-center gap-6">
-  <div className="text-green">Share:</div>
+  <div className="font-semibold text-green">Share:</div>
 
-  <div className="cursor-pointer text-green hover:opacity-70">
-    <Facebook size={20} />
+  <div className="cursor-pointer bg-green p-2 rounded-full flex items-center justify-center text-green hover:opacity-70">
+    <Facebook className="size-5 white" />
   </div>
 
-  <div className="cursor-pointer text-green hover:opacity-70">
-    <MessageCircle size={20} />
+   <div className="cursor-pointer bg-green p-2 rounded-full flex items-center justify-center text-green hover:opacity-70">
+    <MessageCircle className="size-5 white" />
   </div>
 
-  <div className="cursor-pointer text-green hover:opacity-70">
-    <Twitter size={20} />
+   <div className="cursor-pointer bg-green p-2 rounded-full flex items-center justify-center text-green hover:opacity-70">
+    <Twitter className="size-5 white" />
   </div>
 </div>
                 </div>
@@ -146,21 +146,63 @@ const NewsDetails = [
                 <div className="bg-green mt-12 relative flex rounded-[4px] flex-col lg:flex-row p-8 gap-8">
                   <img src={noise} alt="research" className="absolute rounded-[4px] z-0 inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
                                    <div className="absolute clip rounded-[4px] inset-0 bg-green opacity-20 mix-blend-multiply "></div>
-                    <div className="w-1/2 z-20">
-                        <h4 className="Counter_title barlow white">Comments (0)</h4>
+                    <div className="lg:w-1/2 z-20">
+                        <h4 className="Card_heading white">Comments (0)</h4>
                         <p className="text-para white mt-6">No comments yet. Be the first to comment!</p>
 
                     </div>
 
-                    <div className="flex z-20 flex-col gap-12">
-                       <h4 className="Counter_title barlow white">Leave a Comment</h4>
+                      <div className="flex flex-col z-10 mt-12 lg:mt-0 lg:w-1/2">
+                      <h4 className="Card_heading white">Leave a comment</h4>
+                      <div className="flex mt-6 z-20 border-[0.3px] border-[#fffced]/40 w-full p-8 flex-col gap-12">
+                       
                     
 
-                    <input type="email" placeholder="Enter your Name" className="px-6 py-3 outline-none border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Enter your Phone Number" className="px-6 focus:border-green focus:shadow-[0_2px_0_0_rgba(211,107,84,0.5)] transition duration-300 placeholder:text-[#fffced]/60 outline-none py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
-                    <textarea placeholder="Enter your Comment" rows="4" className="px-6 outline-none py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
-                    <button className="bg-orange clip lg:px-6 text-2xl px-6 py-6 text-[18px] w-[220px]  border-[#AC6133] uppercase barlow font-semibold white">Submit Comment</button>
-                    </div>
+                   <form action="#" method="POST" className="">
+    <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+      <div>
+        <label htmlFor="first-name" className="white text-[16px] lg:text-[18px] mb-2 archivo">First name</label>
+        <div className="mt-2.5">
+          <input id="first-name" type="text" name="first-name" autoComplete="given-name" className="block w-full bg-transparent border-b border-b-[#fffced]/40 px-3.5 text-base white outline-none focus:border-green transition-all font-light placeholder:text-gret" />
+        </div>
+      </div>
+      <div>
+        <label htmlFor="last-name" className="white text-[16px] lg:text-[18px] mb-2 archivo">Last name</label>
+        <div className="mt-2.5">
+          <input id="last-name" type="text" name="last-name" autoComplete="family-name" className="block w-full bg-transparent border-b border-b-[#fffced]/40 px-3.5 text-base text-grey outline-none focus:border-green transition-all font-light placeholder:text-gray-400" />
+        </div>
+      </div>
+    
+      <div className="sm:col-span-2">
+        <label htmlFor="email" className="white text-[16px] lg:text-[18px] mb-2 archivo">Email</label>
+        <div className="mt-2.5">
+          <input id="email" type="email" name="email" autoComplete="email" className="block w-full bg-transparent border-b border-b-[#fffced]/40 px-3.5 text-base text-grey outline-none focus:border-green transition-all font-light placeholder:text-gret" />
+        </div>
+      </div>
+      <div className="sm:col-span-2">
+        <label htmlFor="phone-number" className="white text-[16px] lg:text-[18px] mb-2 archivo">Phone number</label>
+        <div className="mt-2.5">
+          <div className="flex bg-transparent border-b border-b-[#fffced]/40 has-[input:focus-within]:border-green transition-all">
+            <input id="phone-number" type="text" name="phone-number" placeholder="+265-123-456-890" className="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base text-grey placeholder:text-[#fffced]/40 focus:outline-none focus:outline-none" />
+          </div>
+        </div>
+      </div>
+      <div className="sm:col-span-2">
+        <label htmlFor="message" className="white text-[16px] lg:text-[18px] mb-2 archivo ">Comment</label>
+        <div className="mt-2.5">
+          <textarea id="message" name="message" rows="4" className="block w-full bg-transparent border-b border-b-[#fffced]/40 px-3.5 outline-none focus:border-green transition-all placeholder:text-[var(--text-color)]"></textarea>
+        </div>
+      </div>
+     
+    </div>
+    <div className="mt-10">
+      <button type="submit" className="block  w-full rounded-[4px] bg-green px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green/90 transition-all uppercase barlow tracking-wide">Submit</button>
+    </div>
+  </form>
+             
+                      </div>
+                     
+                  </div> 
                    
                 </div>
                  

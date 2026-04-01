@@ -7,27 +7,8 @@ import { MapPinned, Clock, CalendarDays} from "lucide-react";
 import Section_header from "../Section_header";
 
 
-const EventDetailed = () => {
+const ExtraEvent = () => {
 
-    const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.5,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    show: { 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.49, ease: "easeInOut" }
-    },
-  };
 
 
 const images = [
@@ -44,7 +25,7 @@ const images = [
 const eventDetails = [
   { icon: CalendarDays, text: "17 JAN 2026" },
   { icon: Clock, text: "17 JAN 2026" },
-  { icon: MapPinned, text: "CROSSROADS, BLANTYRE, Malawi" },
+  { icon: MapPinned, text: "Bingu International Convention Centre, Lilongwe, Malawi" },
 ];
 
   return (
@@ -64,7 +45,7 @@ const eventDetails = [
       <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between mt-10 lg:mt-18">
               <h4 
                 className="Section_title text-[#dd730a]">
-                MwAPATA Participates in the AGRA Media Onboarding Meeting
+                The 2024 Malawi Annual Agricultural  Productivity and Commercialization Conference
               </h4>
 
               <div className="flex lg:hidden flex-col items-start lg:items-end">
@@ -82,19 +63,16 @@ const eventDetails = [
       </div>
 
            {/* EVENT LOCATION AND DATE*/}
-       <motion.div  variants={containerVariants}  
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }} className="flex flex-wrap w-full lg:flex-row items-center justify-start gap-3 lg:gap-14 mt-10">
+       <div className="flex flex-wrap w-full lg:flex-row items-center justify-start gap-3 lg:gap-14 mt-10">
          {eventDetails.map(({ icon: Icon, text }, index) => (
-           <motion.h4 key={index} variants={itemVariants} className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]">
-             <motion.span variants={itemVariants} className="text-green font-bold">
+           <h4 key={index} className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]">
+             <span className="text-green font-bold">
                <Icon className="size-5" />
-             </motion.span>
+             </span>
              {text}
-           </motion.h4>
+           </h4>
          ))}
-       </motion.div>
+       </div>
 
           <motion.div
                                     initial={{ opacity: 0, x: 80 }}
@@ -104,24 +82,21 @@ const eventDetails = [
 
             {/* a grid left and right event image*/}
           <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <motion.div variants={containerVariants}
-                        initial='hidden'
-                        whileInView='show'
-                        viewport="true"  className="flex flex-col gap-8">
-                <motion.h4 variants={itemVariants} className="Counter_title barlow">ABOUT <span className="font-semibold">THIS EVENT</span></motion.h4>
-                  <motion.p variants={itemVariants} className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
+            <div className="flex flex-col gap-8">
+              <h4 className="Counter_title barlow">ABOUT <span className="font-semibold">THIS EVENT</span></h4>
+                  <p className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
                   MwAPATA Research Analyst, Mr Lemekezani Kingston Chilora, participated in the Media Onboarding Meeting organised by AGRA-Sustainably Growing Africa’s Food, held at the Bingu International Convention Centre (BICC) in Lilongwe on 16th March 2026. 
-                  </motion.p>
-                  <motion.p variants={itemVariants} className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
+                  </p>
+                  <p className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
                     The meeting aimed to strengthen the capacity of journalists from different districts and institutions to better understand AGRA’s mandate, strategic priorities, and country-level interventions in Malawi. 
                     In addition, the meeting aimed to build informed and long-term partnerships between AGRA plus its partners with the media as well as to enhance accurate and evidence-based reporting on agriculture and food systems, in order to increase the visibility of AGRA-supported initiatives that contribute to inclusive agricultural transformation.
-                  </motion.p>
-                  <motion.p variants={itemVariants} className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
+                  </p>
+                  <p className="lg:text-[18px] font-light text-grey text-[16px] lg:w-[600px] leading-relaxed">
                     Representing the MwAPATA institute, Mr Chilora delivered a 5-minute presentation pitch on the Enhancing Inclusive Youth-Led Platform for Evidence-based Agricultural policymaking and implementation in Malawi (LEAP4YOUTH Project), which the MwAPATA Institute is implementing in partnership with National Youth Council of Malawi (NYCOM), supported by AGRA.
-                  </motion.p>
+                  </p>
               
                   <h6 className="font-light lg:text-[18px] text-[18px] text-grey lowercase">WATCH THE FULL EVENT <span className="text-green underline font-bold">HERE</span></h6>
-            </motion.div>
+            </div>
                {/* an image side*/}
               <div className="relative flex">
                 <img src={event_header} alt="research" className="w-full h-[430px] rounded-[4px] object-cover"/>
@@ -153,4 +128,4 @@ const eventDetails = [
   );
 };
 
-export default EventDetailed;
+export default ExtraEvent;

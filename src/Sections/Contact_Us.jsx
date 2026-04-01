@@ -51,8 +51,33 @@ const Contact_Us = () => {
 
 ];
 
+const contact_details = [
+  {
+    id: 1,
+    title: "Our Office",
+    description: [
+      "P.O Box 30883",
+      "Capital City",
+      "Lilongwe",
+    ],
+    icon: <MapPinned className="size-6 text-green" />,
+  },
+  {
+    id: 2,
+    title: "Email",
+    description: ["info@mwapata.mw"],
+    icon: <Mail className="size-6 text-green" />,
+  },
+  {
+    id: 3,
+    title: "Phone",
+    description: ["+(265) 887 403 004/005"],
+    icon: <Phone className="size-6 text-green" />,
+  },
+];
+
   return (
-    <section className="min-h-screen bg-[#f8ffef]">
+    <section className="Section_bg">
 
               <Section_header
   title="Contact Us"
@@ -89,46 +114,31 @@ const Contact_Us = () => {
  
                       
                       
-                <div className="flex mt-12 flex-col lg:mt-18 items-start gap-8 w-full">
-
-                    <motion.div 
-                      className="flex lg:flex-row flex-col gap-8 lg:gap-18 w-full"
-                      variants={containerVariants}
-                      initial="hidden"
-                      whileInView="show"
-                      viewport={{ once: true }}
-                    >
-                        <motion.div variants={itemVariants} className="flex gap-4 z-20">
-                          <div className=""><MapPinned className="size-6 text-green"/> </div>
-                          <div>
-                           <h6 className="text-green Card_heading text-[18px] lg:text-[18px] mb-2 font-bold">Our Office</h6>
-                            <p className="text-grey">P.O Box 30883</p>
-                            <p className="text-grey">Capital City</p>
-                            <p className="text-grey">Lilongwe</p>
-                          </div>
-                        </motion.div>
-
-                        <motion.div variants={itemVariants} className="flex gap-4  z-20">
-                          <div className=""><Mail className="size-6 text-green"/> </div>
-                          <div>
-                            <h6 className="text-green Card_heading text-[18px] lg:text-[18px] mb-2 font-bold">Email</h6>
-                            <p className="text-grey">info@mwapata.mw</p>
-                          </div>
-                        </motion.div>
-                       
-
-                        <motion.div variants={itemVariants} className="flex gap-4 z-20">
-                          <div className=""><Phone className="size-6 text-green"/> </div>
-                          <div>
-                            <h6 className="text-green Card_heading text-[18px] lg:text-[18px] mb-2 font-bold">Phone</h6>
-                            <p className="text-grey">+265 887 403 004/005</p>
-                          </div>
-                        </motion.div>
-
-                    </motion.div>
+                <div className="mt-12 lg:mt-18">
+                  <motion.div 
+                    className="flex lg:flex-row flex-col gap-8 lg:gap-18 items-start justify-between"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                  >
+                    {contact_details.map(({ id, title, description, icon }) => (
+                      <motion.div key={id} variants={itemVariants} className="flex gap-4 z-20">
+                        <div className="flex-shrink-0">{icon}</div>
+                        <div>
+                          <h6 className="text-green Card_heading text-[18px] mb-3 font-bold">{title}</h6>
+                          {description.map((line, index) => (
+                            <p key={index} className="text-grey">{line}</p>
+                          ))}
+                        </div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
                 </div> 
 
 
+          
+          
           <div className="flex mt-18 flex-col lg:flex-row items-start justify-between">
             <div className="lg:w-1/2">
                  <motion.h4 initial={{opacity:0,y:60}} whileInView={{opacity:1,y:0}} transition={{duration:0.79,ease:easeInOut}} className="Counter_title lowercase text-[16px] leading-[24px] archivo lg:w-3/5"><span className="font-semibold">Please complete </span>the following form and we will contact you as soon as possible</motion.h4>

@@ -119,6 +119,10 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
   @apply absolute rounded-[14px] z-0 inset-0 mix-blend-overlay opacity-30  size-full object-cover;
 }
  
+.Section_bg{
+  @apply bg-[#f8ffef] min-h-screen overflow-hidden;
+}
+
 .Counter_title{
   font-family: var(--font-barlow);
   @apply lg:w-[820px] uppercase font-light text-[32px] leading-[32px]  text-[var(--text-color)]  lg:text-[38px] lg:leading-[38px] ;

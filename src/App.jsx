@@ -20,6 +20,7 @@ import PolicyBrief from './Sections/SubSections/PolicyBrief'
 import Capacity_Building_Seminars from './Sections/Capacity_Building_Seminars'
 import Highlights from './Sections/Highlights'
 import Contact_Us from './Sections/Contact_Us'
+import ExtraEvent from './Sections/SubSections/ExtraEvent.jsx'
 
 
 
@@ -30,41 +31,19 @@ function App() {
 
   return (
     <>
-    <LandingPage />
-    <About_Us />
-    <Highlights />
-    <WorkingPapers />
-    <PolicyBrief />
-    <Newsletter />
-    <NewsDetailed />
-    {/*
-    <Governance />
-    
-     <OurTeam />
-    <Contact_Us />
-    <Publications />
-    <Programmes />
-    <Events />
-   
-    <News /> 
-     
-    <YouTube />
-    
-    
-     <JobListing />
-    
-    
-     <EminentSpeaker /> 
-    
-    <EminentSpeakerDetailed />
-    <Capacity_Building_Seminars />
-     */}
-     <EventDetailed />
-    
-    
-    
-    <Footer />
-    
+      <LandingPage />
+      <About_Us />
+      <Highlights />
+      <WorkingPapers />
+      <PolicyBrief />
+      <Newsletter />
+      <NewsDetailed />
+      <Contact_Us />
+      <EventDetailed />
+      <EminentSpeakerDetailed />
+      <EminentSpeaker />
+      <ExtraEvent />
+      <Footer />
     </>
   )
 }

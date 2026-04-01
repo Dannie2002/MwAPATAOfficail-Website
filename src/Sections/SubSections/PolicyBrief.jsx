@@ -3,6 +3,7 @@ import {motion} from "framer-motion";
 import capacity from "../../assets/Images/Capacity_building.jpg";
 import noise from "../../assets/Images/Noise.png";
 import Section_header from "../Section_header";
+import {  CalendarDays  } from "lucide-react";
 
 const PolicyBrief= () => {
 const papers = [
@@ -46,7 +47,7 @@ const papers = [
 
     <div className="Section_wrapper">
        
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-10">
               <h4 
                 className="Section_title">
                 Policy Brief
@@ -68,16 +69,16 @@ const papers = [
 
 
             {/* a grid left and right event image*/}
-          <div className="flex flex-col mt-12 ">
+          <div className="flex flex-col mt-6 ">
             
-                <p className="text_para ">
+                <p className="text_para">
                  Policy Briefs offer quickly accessible highlights and key messages on important policy topics, with the essential background information. These are often linked to a Working Paper. 
                 </p>
                    
           </div>
 
                 {/* event gallery section*/}
-         <div className="Grid_4 grid-cols-1">
+     <div className="Grid_4 grid-cols-1">
 
     {papers.map((paper, index) => (
       <div
@@ -96,7 +97,7 @@ const papers = [
         {/* text */}
           <div className="flex flex-col gap-4 ">
               <h3 className="Card_heading text-green font-semibold">{paper.title}</h3>
-              <h4 className="uppercase text-grey barlow font-sbold text-[16px] "> <span className="text-green font-bold ">DATE:</span> 17 JAN 2026</h4>
+              <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
               <p className="text_para w-full">
                 {paper.description}
               </p>
@@ -106,7 +107,7 @@ const papers = [
       
     ))}
  
-  <h1>fme</h1>
+
 </div>
     </div>       
     </section>

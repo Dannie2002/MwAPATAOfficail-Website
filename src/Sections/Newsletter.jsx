@@ -31,7 +31,7 @@ const Newsletter = () => {
 
 ];
 
-const Newsletter = [
+const newsletterData = [
   {
     id:1,
     title: "APRIL - JULY 2025 NEWSLETTER",
@@ -67,20 +67,20 @@ const Newsletter = [
                
 
 
-            <div className="Grid_4 grid-cols-1">
+            <div className="Grid_4 grid-cols-2">
 
-               {Newsletter.map((news,index) => (
-                <div key={index.id} className="bg-transparent flex border border-[var(--text-color)]/40 relative flex-col lg:flex-row items-center justify-between p-6 gap-4 lg:p-12">
+               {newsletterData.map((news) => (
+                <div key={news.id} className="bg-transparent flex border border-[var(--text-color)]/40 relative flex-col items-center justify-between p-6 gap-4 lg:p-12">
                 
 
-                <h2 className="Card_heading text-green lg:text-[34px]">{news.title}</h2>
+                <h2 className="Card_heading text-green text-[32px]">{news.title}</h2>
                 
-                                   <div className="white flex border border-(--Secondary-color) items-center justify-center gap-4 ">
-                                     <div className="bg-green p-2">
-                                       <Download className="white"/>
-                                     </div>
-                                    <h5 className="text-grey font-semibold">Download</h5> 
-                                   </div>
+                                     <div className="white mt-6 flex border cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[#fffced]/40  w-fit px-6 py-3  gap-4 ">
+                                                      <h5 className="text-grey font-semibold">Download Newsletter</h5> 
+                                                      <div className="">
+                                                        <Download className="text-green size-5"/>
+                                                      </div>
+                                                 </div>
                  
 
 

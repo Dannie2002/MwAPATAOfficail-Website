@@ -20,16 +20,9 @@ const Highlights = () => {
 
 
     const programs = [
+
   {
     id: 1,
-    Title: "MwAPATA Participates in the AGRA Media Onboarding Meeting ",
-    Category: "News Updates",
-    description:
-      "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
-    image: event1,
-  },
-  {
-    id: 2,
     Title: "Consultative Group on International Agricultural Research (CGIAR) Policy Innovations Hub Launch and Dialogue",
     Category: "Events",
     description:
@@ -37,7 +30,7 @@ const Highlights = () => {
     image: research,
   },
   {
-    id: 3,
+    id: 2,
     Title: "MwAPATA participates in the Commodity Platforms Capacity Strengthening Workshop and Learning Visit",
     Category: "Publications",
     description:
@@ -45,7 +38,7 @@ const Highlights = () => {
    image: employee1, 
   },
   {
-    id: 4,
+    id: 3,
     Title: "Providing short courses and specialized training programs for professionals.",
     Category: "News Updates",
     description:
@@ -71,13 +64,17 @@ const filteredPrograms = selectedCategories.length > 0
 
       <div className="Section_wrapper ">
       
-      <div className="flex gap-4 flex-col lg:flex-row lg:items-center lg:justify-between mt-5 lg:mt-18 relative">
+     
+     
+     
+      <div className="flex gap-4 lg:gap-12 flex-col lg:flex-row  mt-5 lg:mt-18 relative">
+        <div className="lg:w-[25%]">
               <h4 className="Section_title">HIGHLIGHTS</h4>
 
-              <div className="flex flex-col mt-2 border-[0.6px] border-[var(--primary-color)] lg:min-w-[250px] overflow-hidden">
-                <div onClick={() => setIsOpen(!isOpen)}  className="flex items-center justify-between  cursor-pointer flex-row gap-3 py-2 px-4 group transition-all duration-430 ">
-                  <h5 className="Card_heading text-[var(--primary-color)]">
-                  FILTER BY CONTENT TYPE
+              <div className="flex flex-col mt-4 border-[0.6px] border-[var(--primary-color)] lg:min-w-[250px] overflow-hidden">
+                <div onClick={() => setIsOpen(!isOpen)}  className="flex items-center justify-between  cursor-pointer flex-row py-2 px-4 group transition-all duration-430 ">
+                  <h5 className="Card_heading text-[18px] text-[var(--primary-color)]">
+                  FILTER CONTENT
                   </h5>
                   <ChevronDown className={`size-8 text-green transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
                 </div>
@@ -112,8 +109,10 @@ const filteredPrograms = selectedCategories.length > 0
                   )}
                 </AnimatePresence>
               </div>
-      </div>
-        <div className="Grid_4">
+     </div>
+
+
+        <div className="lg:w-[75%] grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-8">
           {filteredPrograms.map((program) => (
             <div key={program.id} className="relative">
               <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
@@ -133,18 +132,12 @@ const filteredPrograms = selectedCategories.length > 0
                 </div>
             </div> 
              ))}
+             
         </div>
-            <div className="flex items-start flex-wrap overflow-hidden mt-6 gap-4 lg:mt-12  transition ">
-                         <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--primary-color)]/60 duration-470">
-                           <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
-                         </div>
-                        
-                         <div className="p-2 size-12 flex-center group bg-green hover:bg-[var(--secondary-color)]/80 duration-500">
-                           <ChevronRight className="text-[#fffced] size-6 group-hover:text-white" />
-                         </div>
-                         
-               
-                       </div>
+        
+ </div>
+
+           
     </div>
     </section>
   );

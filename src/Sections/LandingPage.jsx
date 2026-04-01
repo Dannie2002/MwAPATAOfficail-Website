@@ -108,7 +108,7 @@ const LandingPage= () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden  barlow uppercase md:flex items-center gap-8 white font-medium">
+        <ul className="hidden barlow uppercase md:flex items-center gap-8 white font-medium">
           <li className="hover:text-green cursor-pointer">Home</li>
           <li className="hover:text-green-700 cursor-pointer">About</li>
           <li className="hover:text-green-700 cursor-pointer">Events</li>
@@ -220,7 +220,7 @@ const LandingPage= () => {
           
 
           <img src={noise} alt="noise" className="absolute inset-0 w-full mix-blend-overlay opacity-40  clip h-full object-cover"/>
-          <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/60 via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>
+          <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/50 via-[#3A9B3D]/70 to-[#3A9B3D]/90 opacity-80"></div>
           <div className="absolute flex lg:hidden z-0 inset-0 bg-gradient-to-b from-[var(--primary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>
           <div className="flex lg:gap-4 flex-col items-center justify-between lg:items-start">
                          
@@ -249,7 +249,7 @@ const LandingPage= () => {
                   MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan 
                   State University, and continues with the support of various strategic partners. 
                 </motion.p>             
-              <motion.div className="flex mt-6 bg-orange px-4 py-2 w-[200px] justify-between items-center" variants={itemVariants}>
+              <motion.div className="flex mt-6 bg-orange px-4 py-2 w-[200px] justify-center items-center" variants={itemVariants}>
                 <h2 className="white font-semibold">Learn More</h2>
                
               </motion.div>
