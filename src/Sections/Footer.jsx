@@ -48,17 +48,14 @@ const Footer = () => {
     },
     {
       title: "Find Us:",
-      socials: [<Facebook size={35} key={1} />, <MessageCircle size={35} key={2} />, <Twitter size={35} key={3} />],
+      socials: [<Facebook className="white size-8" key={1} />, <MessageCircle className="white size-8" key={2} />, <Twitter className="white size-8" key={3} />],
     }
   ];
 
 
   return (
-    <footer className="min-h-[70vh] relative bg-[#f8ffef]">
-      <div className="absolute bg-green inset-0 z-20 top-0 opacity-30 -left-20 size-[120px] rounded-full"></div>
-       <div className="absolute bg-[#eaeee5] inset-0 z-20 top-4 rounded-full -left-20 size-[90px]"></div>
-   
-                      
+    <footer className="min-h-[70vh] relative bg-[#eef7e3]">
+                    
        <div className="Section_wrapper z-20">
 
          <div className="Grid_4 z-20">
@@ -125,7 +122,7 @@ const Footer = () => {
             {section.socials && (
               <div className="flex mt-4 gap-6">
                 {section.socials.map((icon, i) => (
-                  <div key={i} className="cursor-pointer text-green hover:opacity-70">
+                  <div key={i} className="cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] rounded-[4px]  bg-orange p-3 text-green hover:bg-green">
                     {icon}
                   </div>
                 ))}
@@ -149,7 +146,7 @@ const Footer = () => {
                 </div>
  
                             <div className="flex-col gap-6">
-                                          <h6 className="Card_heading agdasima font-semibold mb-6 text-[26px] text-[var(--primary-color)] ">
+                                          <h6 className="Card_heading agdasima font-semibold mb-6 text-[26px] text-[var(--secondary-color)] ">
                                           Subscribe to our newsletter
                                         </h6>
 

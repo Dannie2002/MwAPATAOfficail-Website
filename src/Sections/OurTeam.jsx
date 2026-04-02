@@ -108,7 +108,7 @@ const OurTeam = () => {
           {Employees.map((employee) => (
             <div 
               key={employee.id} 
-              className="relative lg:bg-[#eaeee5] group  cursor-pointer"
+              className="relative lg:bg-[#eef7e3] group  cursor-pointer"
               onClick={() => setSelectedEmployee(employee)}
             >
               <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 shadow-3xl">
@@ -194,7 +194,7 @@ const OurTeam = () => {
              </div>
            )}
          </AnimatePresence>
-    </div>
+      </div>
     </section>
   );
 };

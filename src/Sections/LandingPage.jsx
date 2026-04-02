@@ -72,14 +72,19 @@ const LandingPage= () => {
     // Add other main navigation links here if they should be part of the mobile quick links
     { title: "Main Navigation", links: ["Home", "About", "Events", "Publications & Resources", "Eminent Speaker Series"], isMain: true }
   ];
-
+ const socialLinks = [
+      { icon: <Facebook className="white size-5 cursor-pointer hover:opacity-80 transition-opacity" /> },
+      { icon: <Twitter className="white size-5 cursor-pointer hover:opacity-80 transition-opacity" /> },
+      { icon: <MessageCircle className="white size-5 cursor-pointer hover:opacity-80 transition-opacity" /> },
+      { icon: <Phone className="white size-5 cursor-pointer hover:opacity-80 transition-opacity" /> }
+    ];
 
 
 
   return (
     <section className="relative ">
       {/* Top Utility Bar - Reduced height and anchored */}
-      <div className="w-full z-0 bg-[#f8ffef] h-28 lg:h-42 flex items-center justify-center">
+      <div className="w-full  z-0 bg-[#f8ffef] h-28 lg:h-42 flex items-center justify-center">
         <img src={logo} type="application/pdf" className="w-[180px] h-[120px]" />
       </div>
 
@@ -88,7 +93,7 @@ const LandingPage= () => {
       
 
       {/* These are hero_contents */}
-      <div className="Section_wrapper flex md:justify-start lg:justify-start items-center min-h-[85vh]  relative" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+      <div className="min-h-[80vh] Section_wrapper items-center flex  relative" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
           <header className={`
             ${isScrolled ? "fixed bg-orange  py-0" : "absolute bg-transparent py-2"} 
             w-full top-0 left-0 px-6 lg:px-18 z-50 transition-all duration-490 ease-in-out
@@ -99,11 +104,12 @@ const LandingPage= () => {
         <div className="flex items-center gap-4"> {/* Container for logo and social icons */}
        
           {/* Social Media Icons */}
-          <div className="flex hidden lg:flex gap-4">
-            <Phone className="white size-5 cursor-pointer hover:opacity-80 transition-opacity"/>
-            <Facebook className="white size-5 cursor-pointer hover:opacity-80 transition-opacity"/>
-            <Twitter className="white size-5 cursor-pointer hover:opacity-80 transition-opacity"/>
-            <MessageCircle className="white size-5 cursor-pointer hover:opacity-80 transition-opacity"/>
+          <div className="flex  lg:flex gap-4">
+            {socialLinks.map((social) => (
+            <div className="p-2 cursor-pointer border border-[#fffced]/30 rounded-full transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] ">
+              {social.icon}
+            </div>
+            ))}
           </div>
         </div>
 
@@ -220,11 +226,12 @@ const LandingPage= () => {
           
 
           <img src={noise} alt="noise" className="absolute inset-0 w-full mix-blend-overlay opacity-40  clip h-full object-cover"/>
-          <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/50 via-[#3A9B3D]/70 to-[#3A9B3D]/90 opacity-80"></div>
+          <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/50 via-[#3A9B3D]/90 to-[#3A9B3D]/90 opacity-80"></div>
           <div className="absolute flex lg:hidden z-0 inset-0 bg-gradient-to-b from-[var(--primary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>
-          <div className="flex lg:gap-4 flex-col items-center justify-center lg:items-start">
+          
+          <div className="flex flex-col gap-4 relative z-10">
                          
-              <div className="flex mb-4 gap-4 flex-center">
+              <div className="flex items-center gap-2">
                 <div className="h-[25px] w-[2.6px] z-10 bg-[#fffced]"></div>
                   <motion.h5  className="white text_para z-10" initial={{ opacity: 0, y: -90, }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1.55, delay:0.2 , ease: "easeInOut" }} >
                     <span className=" font-semibold">Evidence</span> for Transformation
@@ -232,26 +239,25 @@ const LandingPage= () => {
                 </motion.h5>
               </div>
                                                 
-              <motion.h4 className="Section_title z-10 font-black text-center md:text-start lg:text-start white text-[48px] leading-[48px] lg:leading-[55px] lg:text-[64px]"
-              initial={{ opacity: 0, y: -90 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.55, ease: "easeInOut" }}
-              >
-                <span className=" ">RESEARCH </span> THAT IMPROVES LIVELIHOOD<br /> IN MALAWI.
+              <motion.h4 className="Section_title white lg:text-[78px] lg:leading-[78px]"
+                initial={{ opacity: 0, y: -90 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.55, ease: "easeInOut" }}>
+                RESEARCH  THAT IMPROVES LIVELIHOOD IN MALAWI.
               </motion.h4>
                   
             
-              <motion.div className="relative flex flex-col " variants={containerVariants}
+              <motion.div className="flex flex-col gap-4" variants={containerVariants}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}> 
-                <motion.p className="white relative z-10 w-[430px] md:text-left archivo lg:text-[18px] font-light mt-6 lg:text-left text-center text-[16px] lg:w-[500px]" variants={itemVariants}>
+                <motion.p className="white text_para font-light" variants={itemVariants}>
                   MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan 
                   State University, and continues with the support of various strategic partners. 
                 </motion.p> 
 
-              <motion.div className="flex mt-6 bg-orange px-6 py-3 w-[230px] justify-center items-center" variants={itemVariants}>
-                <h2 className="white font-semibold">Learn More</h2>
+              <motion.div className="white flex border cursor-pointer  transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[var(--primary-color)]  w-fit px-6 py-3  gap-4 " variants={itemVariants}>
+                <h2 className="white uppercase text-[16px] font-semibold">Learn More</h2>
                
               </motion.div>
               </motion.div> 

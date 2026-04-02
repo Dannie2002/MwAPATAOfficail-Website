@@ -92,7 +92,7 @@ const Governance = () => {
                 MwAPATA Institute Governance
               </h4>
 
-              <p className="text_para w-[80%] mt-6">
+              <p className="text_para lg:w-[80%] mt-6">
                 The Institute is guided by a Board of Directors and an Advisory Board. The Boards are made up of members from key stakeholders in the agricultural sector and balanced in terms of skills, knowledge and experience from the public sector, private sector, civil society and development partners in the agricultural/agrifood system.
               </p>
                {/* Two Lines on the right */} 

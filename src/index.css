@@ -33,10 +33,16 @@ html, body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  width: 100%;
 }
 
 p, h1, h2, h3, h4, h5, h6, li, div, span {
     overflow-wrap: break-word;
+}
+
+
+.card{
+  clip-path: path('M14 0H286C299.255 0 310 10.7452 310 24V286C310 299.255 299.255 310 286 310H14C0.744769 310 0 299.255 0 286V24C0 10.7452 0.744769 0 14 0Z');
 }
 
 .archivo{

@@ -41,33 +41,28 @@ const About_Us = () => {
   {
     id: 1,
     displayTitle: "Our Mission",
-    description: [
-      "We conduct independent, objective and empirical high-quality research aimed at generating innovative agricultural policy recommendations that improve decision-making and livelihoods in Malawi.",
-    ],
-    icon: <Mission className="lg:size-10 size-10 "  color="#fffced" />,
+     icon: <Mission className="lg:size-10 size-10 "  color="#fffced" />,
+    description:"We conduct independent, objective and empirical high-quality research aimed at generating innovative agricultural policy recommendations that improve decision-making and livelihoods in Malawi.",
+   
   },
   {
     id: 2,
     displayTitle: "Our Vision",
-    description: [
-      "To be a sustainable, world-class, Malawian agriculture policy research think-tank.",
-    ],
-    icon: <Vision className="size-10"   color="#fffced" />,
+     icon: <Vision className="size-10"   color="#fffced" />,
+    description:"To be a sustainable, world-class, Malawian agriculture policy research think-tank."
   },
   {
     id: 3,
     displayTitle: "Core Values",
-    isList: true,
-    description: [
-      "Professionalism", "Relevance", "Independence", "Mutual Respect", "Excellence", "Sustainability"
-    ],
     icon: <Gem className="size-10 white"/>,
+    valueslist:["Professionalism", "Relevance", "Independence", "Mutual Respect", "Excellence", "Sustainability"],
+    
   }
 
 ];
 
   return (
-    <section className="min-h-screen bg-[#f8ffef]">
+    <section className="Section_bg">
 
     <div className="Section_wrapper">
        
@@ -115,7 +110,7 @@ const About_Us = () => {
 
        </div>   
       
-        <div className="flex flex-col-reverse lg:flex-row lg:-mx-22 lg:mt-28 bg-[#f8ffef] mt-10">
+        <div className="flex flex-col-reverse  lg:flex-row lg:-mx-22 lg:mt-28 bg-[#eef7e3] mt-10">
             <div className="relative mt-10 lg:mt-0 flex lg:w-1/2" style={{backgroundImage: `url(${strategy2})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             <div className="flex lg:px-18 px-6 py-8 lg:py-12 flex-col gap-4 z-20">
                  <h4 className="Section_title white">
@@ -132,7 +127,7 @@ const About_Us = () => {
                     to learn more about our mission and how we go about making the changes we want to see.</p>
 
                
-                  <div className="white flex border cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[#fffced]/40 mt-6 w-fit px-6 py-3  gap-4 ">
+                  <div className="white flex border cursor-pointer  transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[#fffced]/40 mt-6 w-fit px-6 py-3  gap-4 ">
                     <h5 className="white font-semibold">Download Our Strategic Plan</h5> 
                     <div className="">
                       <Download className="white size-5"/>
@@ -144,39 +139,43 @@ const About_Us = () => {
             
                 
                 <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-                 <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--primary-color)]/70  via-[#3A9B3D]/70 to-[#3A9B3D]/90 opacity-100"></div>
+                 <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--primary-color)]/70  via-[#3A9B3D]/70 to-[#3A9B3D]/90 opacity-100">
+                 </div>
             </div>
 
-          <div className="grid lg:p-12 gap-12 grid-cols-1 lg:w-1/2">
+          <div className="Grid_4 mt-0 px-6 py-4 lg:px-18 lg:py-12 grid-cols-1 lg:w-1/2">
           {mission_vision.map((item) => (
             <motion.div key={item.id} variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true }} className="flex items-start flex-col gap-4">
                 <motion.div variants={itemVariants} className="bg-[var(--secondary-color)] p-2 border backdrop-blur-2xl  border-[#fffced]/40 rounded-[4px] flex-center">
                   {item.icon}
                 </motion.div>
               <motion.h4 variants={itemVariants} className="text-green mt-2 lg:mt-3 Card_heading ">
-                {item.id === 3 ? item.displayTitle : item.displayTitle}
+                {item.displayTitle}
               </motion.h4>
-                                 <motion.div
+                     <motion.div
                                     initial={{ opacity: 0, x: 80 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 1.69, ease: "easeInOut" }}
                                     className=" w-full relative h-[1.6px] bg-green">
-                                  </motion.div>
-              {item.isList ? (
-                <motion.ul variants={itemVariants} className="grid grid-cols-2 gap-x-8 gap-y-3 lg:mt-8 mt-6">
-                  {item.description.map((value, idx) => (
-                    <li key={idx} className="text-grey text-[16px] lg:text-[18px] font-light leading-relaxed flex items-center gap-2">
-                      <span className="text-green font-bold text-xl">•</span> {value}
-                    </li>
-                  ))}
-                </motion.ul>
-              ) : (
-                item.description.map((line, idx) => (
-                  <p key={idx} className="lg:text-[18px] font-light lg:mt-4 text-[16px] text-grey leading-relaxed">
-                    {line}
-                  </p>
-                ))
+                      </motion.div>
+              {item.description &&(
+                  <motion.p variants={itemVariants} className="text_para w-full lg:w-[90%]">
+                    {item.description}
+                  </motion.p>
               )}
+              {item.valueslist && (
+                  <motion.ul variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true }} className="list-disc grid grid-cols-2 text_para w-full lg:w-[90%] pl-6">
+                    {item.valueslist.map((value, index) => (
+                      <motion.li key={index} variants={itemVariants} className="mb-2">{value}</motion.li>
+                    ))}
+                  </motion.ul>
+              )}
+
+
+
+
+
+          
             </motion.div>
               ))}
             </div>
