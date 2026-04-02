@@ -55,7 +55,7 @@ const newsletterData = [
 ];
 
   return (
-    <section className="Section_bg">
+    <section className="Section_bg pb-12">
 
             <Section_header
   title="Newsletter"
@@ -78,13 +78,13 @@ const newsletterData = [
                
 
 
-            <div className="Grid_4 grid-cols-2">
+            <div className="Grid_4  lg:grid-cols-2">
 
                {newsletterData.map((news) => (
-                <div key={news.id} className="bg-transparent transition-all  hover:bg-(--secondary-color) hover:border-none group flex border border-[var(--text-color)]/40 relative flex-col items-center justify-between p-6 gap-4 lg:p-12">
+                <div key={news.id} className="bg-transparent transition-all  hover:bg-(--secondary-color) hover:border-none group flex border  border-[var(--secondary-color)]/40 relative flex-col items-center justify-between p-6 gap-4 lg:p-12">
                 
 
-                <h2 className="Card_heading text-green  group-hover:text-[#fffced] text-[32px]">{news.title}</h2>
+                <h2 className="Card_heading text-green  group-hover:text-[#fffced] lg:text-[32px]">{news.title}</h2>
                 
                                      <div className="white mt-6 flex border cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[#fffced]/40  w-fit px-6 py-3  gap-4 ">
                                                       <h5 className="text-grey  group-hover:text-[#fffced] font-semibold">Download Newsletter</h5> 
@@ -114,25 +114,25 @@ const newsletterData = [
 
 
 
-        <div className="flex relative  flex-col items-start justify-center h-full lg:h-[430px] lg:mt-10  mt-10" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+        <div className="flex relative  flex-col items-start justify-center h-full lg:h-[430px] lg:mt-10  mt-10" style={{backgroundImage: `url(${capacity})`,backgroundAttachment:"fixed", backgroundSize: "cover", backgroundPosition: "center"}}>
             
                
                   <img src={noise} alt="research" className="absolute z-5 inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
                                    <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]  via-[#3A9B3D]/90 to-[#3A9B3D]/20 "></div>
-                    <div className="flex z-10  p-8 lg:px-18 lg:py-12 barlow  lg:gap-6 flex-col items-start">
+                    <div className="flex z-10  px-6 py-4 lg:px-18 lg:py-12 barlow gap-4 lg:gap-6 flex-col items-start">
                       <div className="flex gap-4 flex-center">
-                            <div className="h-full w-[2.6px] bg-[#fffced]"></div>
-                      <p className="white text-[20px] lg:text-[18px] w-[220px] lg:w-[450px]"><span className="text-[#EA8548] font-bold">Subscribe </span>to our newsletter to receive valuable resources,
+                            <div className="h-full hidden lg:block w-[2.6px] bg-[#fffced]"></div>
+                      <p className="white text-[16px] archivo lg:text-[18px] w-full lg:w-[450px]"><span className="text-[#EA8548] font-bold">Subscribe </span>to our newsletter to receive valuable resources,
                          event announcements, and expert perspectives 
                         delivered straight to your inbox.</p>
                         </div>
-                    <h4 className="white agdasima font-extrabold  text-[48px] w-[200px] leading-[48px] lg:w-[500px] lg:leading-[68px] lg:text-[68px] uppercase">SUBSCRIBE <br></br>NOW</h4>
+                    <h4 className="white agdasima font-extrabold  text-[38px] w-[200px] leading-[38px] lg:w-[500px] lg:leading-[68px] lg:text-[68px] uppercase">SUBSCRIBE <br></br>NOW</h4>
      
                              
-                    <div className="mt-6 flex w-full flex-col lg:flex-row  gap-6">
-                    <input type="email" placeholder="Enter your email" className="px-6 py-3 border-[0.8px] white  border-[#fffced] rounded-l-[4px]  lg:w-[470px]"/>
+                    <div className=" flex w-full flex-row  lg:gap-6">
+                    <input type="email" placeholder="Enter your email" className="px-6 py-3 border-[0.8px] white  border-[#fffced]/40 rounded-l-[4px]  lg:w-[470px]"/>
                        <div className="white flex border cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[#fffced]/40  w-fit px-6 py-3  gap-4 ">
-                                        <h5 className="white uppercase font-semibold">Subscribe</h5> 
+                                        <h5 className="white hidden lg:flex uppercase font-semibold">Subscribe</h5> 
                                         <div className="">
                                           <ChevronRight className="white size-5"/>
                                         </div>

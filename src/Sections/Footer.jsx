@@ -54,7 +54,7 @@ const Footer = () => {
 
 
   return (
-    <footer className="min-h-[70vh] relative bg-[#eaeee5]">
+    <footer className="min-h-[70vh] relative bg-[#f8ffef]">
       <div className="absolute bg-green inset-0 z-20 top-0 opacity-30 -left-20 size-[120px] rounded-full"></div>
        <div className="absolute bg-[#eaeee5] inset-0 z-20 top-4 rounded-full -left-20 size-[90px]"></div>
    

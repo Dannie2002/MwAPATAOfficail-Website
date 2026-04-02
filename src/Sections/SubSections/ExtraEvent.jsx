@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import {motion} from "framer-motion";
 import capacity from "../../assets/Images/Capacity_building.jpg";
+import speaker4 from "../../assets/Images/EminentSpeaker2.jpg";
 import event_header from "../../assets/Images/Event_header.jpg";
 import noise from "../../assets/Images/Noise.png";
 import { MapPinned, Clock, CalendarDays} from "lucide-react";
@@ -74,11 +75,20 @@ const eventDetails = [
          ))}
        </div>
 
+        <div className="flex items-center mt-6 gap-4">
+          <h5 className="text-[var(--primary-color)] uppercase text-[24px] agdasima">Guest of honor:</h5>
+                               <img src={speaker4} alt="research" className="rounded-full size-[50px] object-cover"/>
+                               <div className="flex flex-col ">
+                                 <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[18px]">Dr. Allan Banda</h4>
+                                 <p className="text-grey">Research Analyst</p>
+                               </div>
+                             </div> 
+
           <motion.div
                                     initial={{ opacity: 0, x: 80 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 1.99, ease: "easeInOut" }}
-                                    className=" w-full relative h-[2.3px] mt-8 bg-green"></motion.div>
+                                    className=" w-full relative h-[1.6px] mt-8 bg-green"></motion.div>
 
             {/* a grid left and right event image*/}
           <div className="lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -104,6 +114,16 @@ const eventDetails = [
                   <div className="absolute clip inset-0 bg-green h-[430px] opacity-20 mix-blend-multiply "></div>
               </div>
                  
+          </div>
+
+           <div className="mt-12 lg:mt-22">
+            <h4 className="Counter_title barlow font-semibold">Key Documents and Links</h4>
+            <div className="flex flex-col gap-4 mt-6">
+              <p className="text_para font-semibold">Event Recording available <span className="text-green">here</span></p>
+              <p className="text_para font-semibold">Event Report available <span className="text-green">here</span></p>
+              <p className="text_para font-semibold">Presentation Slides available <span className="text-green">here</span></p>
+            </div>
+           
           </div>
 
                 {/* event gallery section*/}

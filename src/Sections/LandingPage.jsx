@@ -222,7 +222,7 @@ const LandingPage= () => {
           <img src={noise} alt="noise" className="absolute inset-0 w-full mix-blend-overlay opacity-40  clip h-full object-cover"/>
           <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/50 via-[#3A9B3D]/70 to-[#3A9B3D]/90 opacity-80"></div>
           <div className="absolute flex lg:hidden z-0 inset-0 bg-gradient-to-b from-[var(--primary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>
-          <div className="flex lg:gap-4 flex-col items-center justify-between lg:items-start">
+          <div className="flex lg:gap-4 flex-col items-center justify-center lg:items-start">
                          
               <div className="flex mb-4 gap-4 flex-center">
                 <div className="h-[25px] w-[2.6px] z-10 bg-[#fffced]"></div>
@@ -241,15 +241,16 @@ const LandingPage= () => {
               </motion.h4>
                   
             
-              <motion.div className="relative" variants={containerVariants}
+              <motion.div className="relative flex flex-col " variants={containerVariants}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}> 
                 <motion.p className="white relative z-10 w-[430px] md:text-left archivo lg:text-[18px] font-light mt-6 lg:text-left text-center text-[16px] lg:w-[500px]" variants={itemVariants}>
                   MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan 
                   State University, and continues with the support of various strategic partners. 
-                </motion.p>             
-              <motion.div className="flex mt-6 bg-orange px-4 py-2 w-[200px] justify-center items-center" variants={itemVariants}>
+                </motion.p> 
+
+              <motion.div className="flex mt-6 bg-orange px-6 py-3 w-[230px] justify-center items-center" variants={itemVariants}>
                 <h2 className="white font-semibold">Learn More</h2>
                
               </motion.div>
