@@ -73,7 +73,7 @@ const newsletterData = [
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.99, ease: "easeInOut" }}
                 className="Section_title">
-                <span className="text-orange">An independent</span> agricultural policy think tank in <span className="text-orange">Malawi</span>.
+                <span className="text-orange">Stay Current</span> Our latest research and publications.
               </motion.h4>
                
 

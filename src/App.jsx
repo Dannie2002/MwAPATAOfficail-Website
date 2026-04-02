@@ -34,11 +34,7 @@ function App() {
       <LandingPage />
       <About_Us />
       <OurTeam />
-      <Highlights />
-      <WorkingPapers />
-    <Publications />
-    <Newsletter />
-      <ExtraEvent />
+      <Governance />
       <Footer />
     </>
   )
