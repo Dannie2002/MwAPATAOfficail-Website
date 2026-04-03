@@ -36,6 +36,25 @@ const About_Us = () => {
     },
   };
 
+    const scontainerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 1.5,
+      },
+    },
+  };
+
+  const sitemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    show: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.49, ease: "easeInOut" }
+    },
+  };
 
  const mission_vision = [
   {
@@ -110,30 +129,35 @@ const About_Us = () => {
 
        </div>   
       
-        <div className="flex flex-col-reverse  lg:flex-row lg:-mx-22 lg:mt-28 bg-[#eef7e3] mt-10">
+        <div className="flex flex-col-reverse  lg:flex-row lg:-mx-18 lg:mt-28 bg-[#eef7e3] mt-10">
             <div className="relative mt-10 lg:mt-0 flex lg:w-1/2" style={{backgroundImage: `url(${strategy2})`, backgroundSize: "cover", backgroundPosition: "center"}}>
-            <div className="flex lg:px-18 px-6 py-8 lg:py-12 flex-col gap-4 z-20">
-                 <h4 className="Section_title white">
+            <motion.div 
+               variants={scontainerVariants}
+               initial="hidden"
+               whileInView="show"
+               viewport={{once:true}}
+               className="flex Section_wrapper flex-col gap-4 z-20">
+                 <motion.h4 variants={sitemVariants} className="Section_title white">
                    STRATEGIC PLAN
-                </h4>
-                <p className="white font-light lg:mt-8 text-[16px] lg:text-[18px]">In our 2026 - 2030 Strategic Plan, we are committing ourselves to 
+                </motion.h4>
+                <motion.p variants={sitemVariants} className="white font-light lg:mt-8 text-[16px] lg:text-[18px]">In our 2026 - 2030 Strategic Plan, we are committing ourselves to 
                   conducting policy research with a view to guide agriculture productivity and 
                   commercialization now and in the future, and support the development of the National 
-                  Transformation 2063 document.</p>
+                  Transformation 2063 document.</motion.p>
 
-                  <p className="white font-light text-[16px] lg:text-[18px]">The Strategic Plan defines the direction to be taken in the short, medium and long 
+                  <motion.p variants={sitemVariants} className="white font-light text-[16px] lg:text-[18px]">The Strategic Plan defines the direction to be taken in the short, medium and long 
                     terms and it provides direction on the Institutional and Research Development Agendas of MwAPATA.
                      Download the full document 
-                    to learn more about our mission and how we go about making the changes we want to see.</p>
+                    to learn more about our mission and how we go about making the changes we want to see.</motion.p>
 
                
-                  <div className="white flex border cursor-pointer  transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[#fffced]/40 mt-6 w-fit px-6 py-3  gap-4 ">
+                  <motion.div variants={sitemVariants} className="white flex border cursor-pointer  transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[#fffced]/40 mt-6 w-fit px-6 py-3  gap-4 ">
                     <h5 className="white font-semibold">Download Our Strategic Plan</h5> 
                     <div className="">
                       <Download className="white size-5"/>
                     </div>
-               </div>
-            </div>
+               </motion.div>
+            </motion.div>
 
             
             

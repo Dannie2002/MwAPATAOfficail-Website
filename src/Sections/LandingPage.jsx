@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/LandingPhoto.jpg"; // Assuming this is the correct path for the image
 import DottedArrow from "./Icons/DottedArrow";
-import { ChevronDown, Facebook, Twitter, MessageCircle, Phone } from "lucide-react"; // Added Twitter and MessageCircle
+import { ChevronRight, Facebook, Twitter, MessageCircle, Phone } from "lucide-react"; // Added Twitter and MessageCircle
 import noise from "../assets/Images/Noise.png";
 import logo from "../assets/Images/MwAPATA logo.pdf";
 
@@ -85,7 +85,17 @@ const LandingPage= () => {
     <section className="relative ">
       {/* Top Utility Bar - Reduced height and anchored */}
       <div className="w-full  z-0 bg-[#f8ffef] h-28 lg:h-42 flex items-center justify-center">
-        <img src={logo} type="application/pdf" className="w-[180px] h-[120px]" />
+        
+        <img 
+          srcSet="https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_147,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png 1x, https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_294,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png 2x" 
+          id="img_comp-kc5loj2e" 
+          src="https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_147,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png" 
+          alt="PNGmwapata_logo_version-1_three-color_lo" 
+          style={{ objectFit: 'contain', objectPosition: 'unset' }} 
+          className="BI8PVQ Tj01hh" 
+          width="150" 
+          height="88" 
+        />
       </div>
 
     
@@ -123,10 +133,7 @@ const LandingPage= () => {
         </ul>
 
         {/* CTA */}
-        <button className="hidden bebas text-[18px] white border-[#fffced] border-[0.7px] uppercase bg-transparent px-8 py-2   transition-all duration-500 ease-in-out"
-        onClick={() => setDesktopQuickLinksOpen(!isDesktopQuickLinksOpen)}>
-            Quick Link
-        </button>
+      
 
         {/* Mobile Menu Button */}
         <button
@@ -139,10 +146,10 @@ const LandingPage= () => {
       </nav>
 
       {isOpen && (
-        <div className="md:hidden flex flex-col gap-6 absolute right-0 top-full mt-0 w-full p-8
-         bg-[#f8ffef] z-40
+        <div className="md:hidden flex rounded-[4px] flex-col w-[90%] mx-auto gap-6 absolute inset-0  top-full p-6
+         bg-[#eef7e3] z-40 
         transform transition-all duration-300 ease-out
-        animate-[dropdown_0.6s_ease-out] max-h-[calc(100vh-64px)] overflow-y-auto"
+        animate-[dropdown_0.6s_ease-out] min-h-[calc(100vh-164px)] overflow-y-auto"
         >
           <div className="w-full mb-4">
             <input
@@ -161,14 +168,14 @@ const LandingPage= () => {
                   {section.title}
                 </h6>
                 {section.links && (
-                  <ChevronDown
-                    className={`flex transition-transform duration-450 ease-in-out transform ${openQuickLinkIndex === index ? "rotate-180" : ""}`}
+                  <ChevronRight
+                    className={`flex transition-transform duration-450 ease-in-out transform ${openQuickLinkIndex === index ? "-rotate-90" : ""}`}
                     color="#3A9B3D"
                     onClick={() => handleQuickLinkToggle(index)}
                   />
                 )}
               </div>
-              <motion.div className="w-full relative h-[1.5px] mb-2 mt-2 bg-green"></motion.div>
+              <motion.div className="w-full hidden relative h-[1.5px] mb-2 mt-2 bg-green"></motion.div>
               {section.links && (
                 <AnimatePresence>
                   {openQuickLinkIndex === index && (
@@ -256,7 +263,7 @@ const LandingPage= () => {
                   State University, and continues with the support of various strategic partners. 
                 </motion.p> 
 
-              <motion.div className="white flex border cursor-pointer  transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[var(--primary-color)]  w-fit px-6 py-3  gap-4 " variants={itemVariants}>
+              <motion.div className="white flex  cursor-pointer  transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)] items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[var(--primary-color)]  w-fit px-6 py-3  gap-4 " variants={itemVariants}>
                 <h2 className="white uppercase text-[16px] font-semibold">Learn More</h2>
                
               </motion.div>

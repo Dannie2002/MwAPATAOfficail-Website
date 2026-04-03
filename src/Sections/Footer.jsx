@@ -142,7 +142,16 @@ const Footer = () => {
 
               <div className="mt-12 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                 <div className="flex overflow-hidden bg-transparent">
-                  <embed src={logo} type="application/pdf" className="w-[180px] h-[120px]" />
+                         <img 
+          srcSet="https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_147,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png 1x, https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_294,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png 2x" 
+          id="img_comp-kc5loj2e" 
+          src="https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_147,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png" 
+          alt="PNGmwapata_logo_version-1_three-color_lo" 
+          style={{ objectFit: 'contain', objectPosition: 'unset' }} 
+          className="BI8PVQ Tj01hh" 
+          width="150" 
+          height="88" 
+        />
                 </div>
  
                             <div className="flex-col gap-6">
