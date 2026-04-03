@@ -3,14 +3,17 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/LandingPhoto.jpg"; // Assuming this is the correct path for the image
+import slider1 from "../assets/Images/Strategy1.jpg";
+import slider2 from "../assets/Images/Strategy2.jpg";
 import DottedArrow from "./Icons/DottedArrow";
-import { ChevronRight, Facebook, Twitter, MessageCircle, Phone } from "lucide-react"; // Added Twitter and MessageCircle
+import { ChevronRight,ChevronLeft, Facebook, Twitter, MessageCircle, Phone } from "lucide-react"; // Added Twitter and MessageCircle
 import noise from "../assets/Images/Noise.png";
 import logo from "../assets/Images/MwAPATA logo.pdf";
 
 
 const LandingPage= () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   // New states for desktop Quick Links dropdown and mobile accordion
   const [isDesktopQuickLinksOpen, setDesktopQuickLinksOpen] = useState(false);
@@ -51,6 +54,42 @@ const LandingPage= () => {
       transition: { duration: 0.79, ease: "easeInOut" }
     },
   };
+
+  const heroSlides = [
+    {
+      id: 1,
+      image: capacity,
+      highlight: "Evidence",
+      title: "Generating Evidence for Agriculture Transformation in Malawi.",
+      description: "MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan State University, and continues with the support of various strategic partners.",
+    },
+    {
+      id: 2,
+      image: slider1, // Use a different image for the second slide
+      highlight: "Innovation",
+      title: "Driving Policy Innovation for Sustainable Development.",
+      description: "We are at the forefront of agricultural policy research, offering objective insights and fostering collaborations to improve livelihoods across Malawi.",
+    },
+    {
+      id: 3,
+      image: slider2, // Use another image for the third slide
+      highlight: "Collaboration",
+      title: "Partnerships for Impact: Strengthening Malawi's Future.",
+      description: "Our work is powered by strategic partnerships with government, private sector, and civil society, ensuring impactful and sustainable change.",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 8000); // Change slide every 8 seconds
+    return () => clearInterval(interval);
+  }, [heroSlides.length]);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+
+  const activeSlide = heroSlides[currentSlide];
 
   const handleQuickLinkToggle = (index) => {
     setOpenQuickLinkIndex(openQuickLinkIndex === index ? null : index);
@@ -103,7 +142,9 @@ const LandingPage= () => {
       
 
       {/* These are hero_contents */}
-      <div className="min-h-[90vh] Section_wrapper items-center flex  relative" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+      <div className="min-h-[90vh] Section_wrapper items-center flex relative"
+        style={{ backgroundImage: `url(${activeSlide.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
           <header className={`
             ${isScrolled ? "fixed bg-orange  py-0" : "absolute bg-transparent py-2"} 
             w-full top-0 left-0 px-6 lg:px-18 z-50 transition-all duration-490 ease-in-out
@@ -236,42 +277,67 @@ const LandingPage= () => {
           <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/50 via-[#3A9B3D]/90 to-[#3A9B3D]/90 opacity-80"></div>
           <div className="absolute flex lg:hidden z-0 inset-0 bg-gradient-to-b from-[var(--primary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>
           
-          <div className="flex flex-col gap-4 relative z-10">
-                         
-              <div className="flex ">
-                <div className="h-[2.5px] w-[121.6px] z-10 bg-[#fffced]"></div>
-                  <motion.h5  className="white hidden text_para z-10" initial={{ opacity: 0, y: -90, }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1.55, delay:0.2 , ease: "easeInOut" }} >
-                    <span className=" font-semibold">Evidence</span> for Transformation
+          <div className="flex flex-col gap-4  z-10">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide} // Unique key for AnimatePresence to detect slide change
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+                className="flex flex-col gap-4"
+              >
+                <div className="flex">
+                  <div className="h-[2.5px] w-[121.6px] z-10 bg-[#fffced]"></div>
+                  <h5 className="white hidden text_para z-10">
+                    <span className="font-semibold">{activeSlide.highlight}</span> for Transformation
+                  </h5>
+                </div>
+
+                <h4 className="Section_title white lg:text-[56px] lg:leading-[56px]">
+                  {activeSlide.title}
+                </h4>
                 
-                </motion.h5>
-              </div>
-                                                
-              <motion.h4 className="Section_title white lg:text-[56px] lg:leading-[56px]"
-                initial={{ opacity: 0, y: -90 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.55, ease: "easeInOut" }}>
-                Generating Evidence for Agriculture Transformation in Malawi.
-              </motion.h4>
-                  
-            
-              <motion.div className="flex flex-col gap-4" variants={containerVariants}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}> 
-                <motion.p className="white text_para font-light" variants={itemVariants}>
-                  MwAPATA was established with a grant from the Foundation for a Smoke-Free World via Michigan 
-                  State University, and continues with the support of various strategic partners. 
-                </motion.p> 
+                <p className="white text_para font-light">
+                  {activeSlide.description}
+                </p>
 
-              <motion.div className="white flex  cursor-pointer  transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)] items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[var(--primary-color)]  w-fit px-6 py-3  gap-4 " variants={itemVariants}>
-                <h2 className="white uppercase text-[16px] font-semibold">Learn More</h2>
-               
+                <div className="white flex cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)] items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[var(--primary-color)] w-fit px-6 py-3 gap-4">
+                  <h2 className="white uppercase text-[16px] font-semibold">Learn More</h2>
+                </div>
               </motion.div>
-              </motion.div> 
+            </AnimatePresence>
 
+            {/* Carousel Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/30 hover:bg-black/50 rounded-full transition-colors z-20"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="white size-6" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/30 hover:bg-black/50 rounded-full transition-colors z-20"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="white size-6" />
+            </button>
+
+            {/* Carousel Navigation Dots */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+              {heroSlides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`size-3 rounded-full transition-all ${
+                    currentSlide === index ? "bg-white scale-125" : "bg-white/50"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                ></button>
+              ))}
+            </div>
           </div>
-
-
       </div>
 
     </section>

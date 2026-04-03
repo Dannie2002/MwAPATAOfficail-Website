@@ -4,6 +4,7 @@ import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.jpg";
 import noise from "../assets/Images/Noise.png";
 import about_mwapata from "../assets/Images/About_Mwapata.jpg";
+import speaker_series from "../assets/Images/Speaker_series.jpg";
 import outreach from "../assets/Images/Outreach.jpg";
 import policy from "../assets/Images/Policy_advocacy.jpg";
 import strategy1 from "../assets/Images/Strategy1.jpg";
@@ -118,7 +119,7 @@ const About_Us = () => {
                 initial={{ opacity: 0, scale: 0.75 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.99, ease: "easeInOut" }}>
-                <img src={team} alt="research" className="w-full clip h-[430px]  object-cover"/>
+                <img src={speaker_series} alt="research" className="w-full clip h-[430px]  object-cover"/>
                  <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
              
                 
