@@ -73,7 +73,11 @@ export function ScrollVelocityRow({
     );
   }
   return (
-    <ScrollVelocityRowLocal baseVelocity={baseVelocity} direction={direction}>
+    <ScrollVelocityRowLocal
+      baseVelocity={baseVelocity}
+      direction={direction}
+      className={className}
+    >
       {children}
     </ScrollVelocityRowLocal>
   );
@@ -147,6 +151,12 @@ function ScrollVelocityRowImpl({
     };
   }, [children, unitWidth]);
 
+  useEffect(() => {
+    const dir = direction >= 0 ? 1 : -1;
+    baseDirectionRef.current = dir;
+    currentDirectionRef.current = dir;
+  }, [direction]);
+
   const x = useTransform([baseX, unitWidth], ([v, bw]) => {
     const width = Number(bw) || 1;
     const offset = Number(v) || 0;
@@ -200,7 +210,12 @@ function ScrollVelocityRowImpl({
   );
 }
 
-function ScrollVelocityRowLocal({ children, baseVelocity = 5, direction = 1 }) {
+function ScrollVelocityRowLocal({
+  children,
+  baseVelocity = 5,
+  direction = 1,
+  className = "",
+}) {
   const { scrollY } = useScroll();
   const localVelocity = useVelocity(scrollY);
   const localSmoothVelocity = useSpring(localVelocity, {
@@ -216,6 +231,7 @@ function ScrollVelocityRowLocal({ children, baseVelocity = 5, direction = 1 }) {
     <ScrollVelocityRowImpl
       baseVelocity={baseVelocity}
       direction={direction}
+      className={className}
       velocityFactor={localVelocityFactor}
     >
       {children}

@@ -21,6 +21,7 @@ import Capacity_Building_Seminars from './Sections/Capacity_Building_Seminars'
 import Highlights from './Sections/Highlights'
 import Contact_Us from './Sections/Contact_Us'
 import ExtraEvent from './Sections/SubSections/ExtraEvent.jsx'
+import Partners from './Sections/Partners.jsx'
 
 
 
@@ -32,7 +33,13 @@ function App() {
   return (
     <>
       <LandingPage />
+       <Partners />
       <About_Us />
+     
+      <Newsletter />
+      <Publications />
+      <PolicyBrief />
+      <WorkingPapers />
       <OurTeam />
       <Governance />
       <Footer />

@@ -5,7 +5,7 @@ import noise from "../assets/Images/Noise.png"
 const Section_header = ({ title, breadcrumbs = [],bgImage }) => {
   return (
     <div>
-      <div  className="relative h-55 lg:h-66 w-full flex flex-col items-center lg:items-start lg:px-22 justify-center bg-cover bg-center"
+      <div  className="relative h-55 lg:h-[330px] w-full flex flex-col items-center lg:items-start lg:px-22 justify-center bg-cover bg-center"
          style={{ backgroundImage: `url(${bgImage})` }}
 >{/* overlay to apply blend mode */}
      <div className="absolute flex z-5 inset-0 bg-gradient-to-t from-[var(--primary-color)] via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>

@@ -89,7 +89,7 @@ const Publications = () => {
 ];
 
   return (
-    <section className="Section_bg">
+    <section className=" bg-[#eef7e3]">
       <Section_header
   title="Publications"
   bgImage={publications}
@@ -103,7 +103,7 @@ const Publications = () => {
       <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between mt-10 lg:mt-6">
               <h4
            
-                className="Section_title ">
+                className="Section_title">
                 MwAPATA's three main publication lines offer distinct options to meet the reader's needs
               </h4>
 
@@ -143,19 +143,19 @@ const Publications = () => {
         ))}
        </motion.div>
 
-       <h4 className="text_para text-[18px] lg:text-[18px] lg:leading-[18px] mt-18 font-light archivo text-grey ">
-                <span className="font-semibold">In addition</span> to our own publications, we offer the following resources
+       <h4 className=" text-[18px] lg:text-[38px] lg:leading-[38px] barlow uppercase font-semibold lg:w-[70%] mt-18 font-light archivo text-grey ">
+              <span className="font-semibold">In addition</span> to our own publications, we offer the following resources
               </h4>
 
        
 
-        <motion.div className="Grid_4 auto-rows-[210px] lg:auto-rows-[215px]"
+        <motion.div className="Grid_4 auto-rows-[210px] lg:auto-rows-[430px]"
                     variants={containerVariants}  
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}>
           {extraprograms.map((extraprogram,index) => (
-              <motion.div key={index} variants={itemVariants} className={`bg-transparent hover:bg-[var(--secondary-color)] group transition-all duration-490 border hover:border-transparent border-[var(--text-color)]/30 p-6 flex flex-col items-start justify-between rounded-[4px] ${index === 2 ? "lg:col-span-2" : ""}`}>
+              <motion.div key={index} variants={itemVariants} className={`bg-transparent hover:bg-[var(--secondary-color)] group transition-all duration-490 border hover:border-transparent border-[var(--text-color)]/60 p-6 flex flex-col items-start justify-between ${index === 2 ? "lg:col-span-2" : ""}`}>
                  <h4 className="Card_heading text-green group-hover:text-[#fffced] ">{extraprogram.title}</h4>
                  <p className="text_para text-grey group-hover:text-[#fffced] w-full">{extraprogram.description}</p>
               </motion.div>

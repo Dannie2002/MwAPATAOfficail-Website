@@ -84,7 +84,7 @@ const OurTeam = () => {
 />
       <div className="Section_wrapper">
       
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-5 lg:mt-18">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-5 lg:mt-10">
               <h4            
                 className="Section_title">
                 <span className="text-orange">MEET</span> OUR TEAM.
@@ -159,7 +159,7 @@ const OurTeam = () => {
                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
                  animate={{ opacity: 1, scale: 1, y: 0 }}
                  exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                 className="bg-[#eaeee5] w-full h-full flex flex-col rounded-[4px] shadow-2xl overflow-hidden"
+                 className="bg-[#eef7e3] w-full h-full flex flex-col rounded-[4px] shadow-2xl overflow-hidden"
                  onClick={(e) => e.stopPropagation()}
                >
                  {/* Header Section with Close Button */}

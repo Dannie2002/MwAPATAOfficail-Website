@@ -86,51 +86,34 @@ const papers = [
                   className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
               </div>
       </div>
-
-
-            {/* a grid left and right event image*/}
-          <div className="flex flex-col mt-12">
-           
-                <p className="text_para">
-                  <span className="font-bold">Working papers</span> offer
-                  original, internally reviewed papers in a longer format for readers interested in taking a <span className="font-bold">"deep dive"</span> into an issue and how it was researched. 
-                </p>
-              
-          </div>
-
                 {/* event gallery section*/}
          <div className="mt-12 lg:mt-22">
 
   <div className="flex flex-col gap-10 mt-12">
     {papers.map((paper, index) => (
-        <div 
+        <div
+               key={index}
+               className="flex flex-col md:flex-row border-b pb-6 border-(--text-color)/40  gap-12 items-start group cursor-pointer"
+             >
+               {/* image */}
+               <div className="lg:w-[25%] lg:h-[250px] flex-shrink-0 overflow-hidden ">
+                 <img
+                   src={paper.image}
+                   alt={paper.title}
+                   className="w-full h-full object-cover rounded-[4px] group-hover:scale-105 transition duration-500"
+                 />
+               </div>
        
-        key={index}
-        className="flex flex-col md:flex-row border p-6 border-(--text-color)/40  gap-12 items-start group cursor-pointer"
-      >
-        {/* image */}
-        <div className="lg:w-[450px] lg:h-[215px] flex-shrink-0 overflow-hidden shadow-md">
-          <img
-            src={paper.image}
-            alt={paper.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-          />
-        </div>
-
-        {/* text */}
-          <motion.div
-           variants={containerVariants}
-           initial="hidden"
-           whileInView="show"
-           viewport={{once:true}} className="flex flex-col gap-4 ">
-              <motion.h3 variants={itemVariants} className="Card_heading text-green font-semibold">{paper.title}</motion.h3>
-              <motion.h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]" variants={itemVariants}> <span className="text-green font-bold "><CalendarDays className="size-5"/> </span>{paper.date}</motion.h4>
-              <motion.p variants={itemVariants} className="text_para w-full">
-                {paper.description}
-              </motion.p>
-           </motion.div>
-            
-      </div>
+               {/* text */}
+                 <div className="flex flex-col gap-6 ">
+                     <h3 className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[38px] lg:leading-[38px]  font-semibold">{paper.title}</h3>
+                     <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
+                     <p className="text_para w-full">
+                       {paper.description}
+                     </p>
+                  </div>
+                   
+             </div>
       
     ))}
   </div>

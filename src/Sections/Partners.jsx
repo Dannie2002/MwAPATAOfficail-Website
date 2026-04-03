@@ -4,17 +4,12 @@ import{ ScrollVelocityRow } from "../Componets/ScrollVelocity.jsx";
 const Partners = () => {
   return (
     <section>
-        <div>
+        <div className='bg-green'>
                   
-            <ScrollVelocityRow baseVelocity={14} className='lg:p-0'>
-              <div className=' flex  gap-6 min-w-[400px]'>
+            <ScrollVelocityRow baseVelocity={4} className='lg:p-0'>
+              <div className=' flex  gap-16 w-[600px]'>
                   
-                  <div className='lg:size-14 size-14 text text-blue-400 flex-center backdrop-blur-3xl  border border-[#fffced]/20 rounded-xl'>
-                    <h1>h3</h1>
-                  </div>
-                  <div className='lg:size-14 size-14 flex-center text text-green backdrop-blur-3xl  border border-[#fffced]/20 rounded-xl'>
-                    <h1>hello</h1>
-                  </div>
+          <h4 className='Section_title white'>Evidence for Transformation</h4>
                   
                 </div>
             </ScrollVelocityRow>

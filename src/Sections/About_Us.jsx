@@ -86,7 +86,7 @@ const About_Us = () => {
     <div className="Section_wrapper">
        
       
-      <div className="flex flex-col   lg:items-start lg:justify-between mt-10 lg:mt-18">
+      <div className="flex flex-col   lg:items-start lg:justify-between mt-10 lg:mt-10">
           
         <h1 className="Section_title ">WHO ARE WE</h1>
          
@@ -96,11 +96,11 @@ const About_Us = () => {
 
           
           
-              <div className="flex flex-col lg:flex-row gap-6">
-                <h4 className="text_para leading-[28px] lg:w-1/2 text-[28px] lg:leading-[36px] lg:text-[36px] font-light archivo  text-grey ">
-                  <span className="font-semibold">We are An</span> independent   <span className="">agricultural policy think tank in Malawi.</span>
+              <div className="flex flex-col  gap-6">
+                <h4 className="text_para leading-[28px]  text-[28px] lg:leading-[52px] lg:text-[52px]  barlow uppercase font-semibold  text-grey ">
+                  <span className="font-bold">We are An</span> independent   agricultural policy <span className="font-bold">think tank in Malawi.</span>
                 </h4>
-                <div className="flex flex-col lg:w-1/2 gap-4">
+                <div className="flex flex-col  gap-4">
                       <p className="text_para w-full lg:w-[90%]">
                         The Institute is engaging the Government of Malawi, private sector, and
                          civil society stakeholders in a program of 
@@ -120,6 +120,7 @@ const About_Us = () => {
                 transition={{ duration: 1.99, ease: "easeInOut" }}>
                 <img src={team} alt="research" className="w-full clip h-[430px]  object-cover"/>
                  <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+             
                 
               </motion.div>
       

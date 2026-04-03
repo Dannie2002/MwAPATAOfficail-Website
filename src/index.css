@@ -14,7 +14,7 @@
   --primary-color: #dd730a;
   --secondary-color: #3A9B3D;
   --background-color: #F7FFF7;
-  --text-color: #4a4a4a;
+  --text-color: #373636;
   --text-colour: #fffced;
   --font-dmsans: 'DM Sans', sans-serif;
   --font-barlow: 'Barlow Semi Condensed', sans-serif;
@@ -152,7 +152,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 }
 
 .Grid_4{
-  @apply lg:mt-22 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8;
+  @apply lg:mt-16 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8;
 }
 
 }

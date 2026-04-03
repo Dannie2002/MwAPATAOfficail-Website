@@ -84,7 +84,7 @@ const LandingPage= () => {
   return (
     <section className="relative ">
       {/* Top Utility Bar - Reduced height and anchored */}
-      <div className="w-full  z-0 bg-[#f8ffef] h-28 lg:h-42 flex items-center justify-center">
+      <div className="w-full  z-0 bg-[#f8ffef] py-4 flex items-center justify-center">
         
         <img 
           srcSet="https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_147,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png 1x, https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_294,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png 2x" 
@@ -103,7 +103,7 @@ const LandingPage= () => {
       
 
       {/* These are hero_contents */}
-      <div className="min-h-[80vh] Section_wrapper items-center flex  relative" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+      <div className="min-h-[90vh] Section_wrapper items-center flex  relative" style={{backgroundImage: `url(${capacity})`, backgroundSize: "cover", backgroundPosition: "center"}}>
           <header className={`
             ${isScrolled ? "fixed bg-orange  py-0" : "absolute bg-transparent py-2"} 
             w-full top-0 left-0 px-6 lg:px-18 z-50 transition-all duration-490 ease-in-out
@@ -149,7 +149,7 @@ const LandingPage= () => {
         <div className="md:hidden flex rounded-[4px] flex-col w-[90%] mx-auto gap-6 absolute inset-0  top-full p-6
          bg-[#eef7e3] z-40 
         transform transition-all duration-300 ease-out
-        animate-[dropdown_0.6s_ease-out] min-h-[calc(100vh-164px)] overflow-y-auto"
+        animate-[dropdown_0.6s_ease-out] min-h-[calc(100vh-122px)] overflow-y-auto"
         >
           <div className="w-full mb-4">
             <input
@@ -238,19 +238,19 @@ const LandingPage= () => {
           
           <div className="flex flex-col gap-4 relative z-10">
                          
-              <div className="flex items-center gap-2">
-                <div className="h-[25px] w-[2.6px] z-10 bg-[#fffced]"></div>
-                  <motion.h5  className="white text_para z-10" initial={{ opacity: 0, y: -90, }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1.55, delay:0.2 , ease: "easeInOut" }} >
+              <div className="flex ">
+                <div className="h-[2.5px] w-[121.6px] z-10 bg-[#fffced]"></div>
+                  <motion.h5  className="white hidden text_para z-10" initial={{ opacity: 0, y: -90, }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1.55, delay:0.2 , ease: "easeInOut" }} >
                     <span className=" font-semibold">Evidence</span> for Transformation
                 
                 </motion.h5>
               </div>
                                                 
-              <motion.h4 className="Section_title white lg:text-[78px] lg:leading-[78px]"
+              <motion.h4 className="Section_title white lg:text-[56px] lg:leading-[56px]"
                 initial={{ opacity: 0, y: -90 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.55, ease: "easeInOut" }}>
-                RESEARCH  THAT IMPROVES LIVELIHOOD IN MALAWI.
+                Generating Evidence for Agriculture Transformation in Malawi.
               </motion.h4>
                   
             

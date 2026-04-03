@@ -2,6 +2,7 @@ import React from "react";
 import {motion} from "framer-motion";
 import capacity from "../../assets/Images/Capacity_building.jpg";
 import noise from "../../assets/Images/Noise.png";
+import newsletter from "../../assets/Images/Newsletter.jpg"
 import Section_header from "../Section_header";
 import {  CalendarDays  } from "lucide-react";
 
@@ -9,7 +10,7 @@ const PolicyBrief= () => {
 const papers = [
   {
     id: 1,
-    image: capacity,
+    image: newsletter,
     title: "Does accessing multiple social support programmes improve household resilience and food security?",
     date: "27 January 2026",
     description:
@@ -68,35 +69,26 @@ const papers = [
       </div>
 
 
-            {/* a grid left and right event image*/}
-          <div className="flex flex-col mt-6 ">
-            
-                <p className="text_para">
-                 Policy Briefs offer quickly accessible highlights and key messages on important policy topics, with the essential background information. These are often linked to a Working Paper. 
-                </p>
-                   
-          </div>
-
                 {/* event gallery section*/}
      <div className="Grid_4 grid-cols-1">
 
     {papers.map((paper, index) => (
       <div
         key={index}
-        className="flex flex-col md:flex-row border p-6 border-(--text-color)/40  gap-12 items-start group cursor-pointer"
+        className="flex flex-col md:flex-row border-b pb-6 border-(--text-color)/40  gap-12 items-start group cursor-pointer"
       >
         {/* image */}
-        <div className="lg:w-[450px] lg:h-[250px] flex-shrink-0 overflow-hidden shadow-md">
+        <div className="lg:w-[25%] lg:h-[250px] flex-shrink-0 overflow-hidden ">
           <img
             src={paper.image}
             alt={paper.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            className="w-full h-full object-cover rounded-[4px] group-hover:scale-105 transition duration-500"
           />
         </div>
 
         {/* text */}
-          <div className="flex flex-col gap-4 ">
-              <h3 className="Card_heading text-green font-semibold">{paper.title}</h3>
+          <div className="flex flex-col gap-6 ">
+              <h3 className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[38px] lg:leading-[38px]  font-semibold">{paper.title}</h3>
               <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
               <p className="text_para w-full">
                 {paper.description}
