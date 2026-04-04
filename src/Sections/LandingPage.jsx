@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/LandingPhoto.jpg"; // Assuming this is the correct path for the image
-import slider1 from "../assets/Images/Strategy1.jpg";
+import slider1 from "../assets/Images/Speaker_series.jpg";
 import slider2 from "../assets/Images/Strategy2.jpg";
 import DottedArrow from "./Icons/DottedArrow";
-import { ChevronRight,ChevronLeft, Facebook, Twitter, MessageCircle, Phone } from "lucide-react"; // Added Twitter and MessageCircle
+import { ChevronRight,ChevronLeft, ChevronDown,Facebook, Twitter, MessageCircle, Phone } from "lucide-react"; // Added Twitter and MessageCircle
 import noise from "../assets/Images/Noise.png";
 import logo from "../assets/Images/MwAPATA logo.pdf";
 
@@ -65,9 +65,9 @@ const LandingPage= () => {
     },
     {
       id: 2,
-      image: slider1, // Use a different image for the second slide
-      highlight: "Innovation",
-      title: "Driving Policy Innovation for Sustainable Development.",
+      image: slider1, // Research Image
+      highlight: "Research",
+      title: "Stay Informed on Research Releases.",
       description: "We are at the forefront of agricultural policy research, offering objective insights and fostering collaborations to improve livelihoods across Malawi.",
     },
     {
@@ -165,12 +165,12 @@ const LandingPage= () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden barlow uppercase md:flex items-center gap-8 white font-medium">
-          <li className="hover:text-green cursor-pointer">Home</li>
-          <li className="hover:text-green-700 cursor-pointer">About</li>
-          <li className="hover:text-green-700 cursor-pointer">Events</li>
-          <li className="hover:text-green-700 cursor-pointer">Publications & Resources</li>
-          <li className="hover:text-green-700 cursor-pointer">Eminent Speaker Series</li>
+        <ul className="hidden links barlow uppercase md:flex items-center gap-8 white font-medium">
+          <li className=" cursor-pointer">Home</li>
+          <li className="cursor-pointer hover:scale-105 transition-transform duration-490 ease-in-out">Who are we </li>
+          <li className="cursor-pointer">What we do</li>
+          <li className="cursor-pointer">Publications & Resources</li>
+          <li className="cursor-pointer">Eminent Speaker Series</li>
         </ul>
 
         {/* CTA */}
@@ -289,9 +289,6 @@ const LandingPage= () => {
               >
                 <div className="flex">
                   <div className="h-[2.5px] w-[121.6px] z-10 bg-[#fffced]"></div>
-                  <h5 className="white hidden text_para z-10">
-                    <span className="font-semibold">{activeSlide.highlight}</span> for Transformation
-                  </h5>
                 </div>
 
                 <h4 className="Section_title white lg:text-[56px] lg:leading-[56px]">
@@ -311,21 +308,21 @@ const LandingPage= () => {
             {/* Carousel Navigation Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/30 hover:bg-black/50 rounded-full transition-colors z-20"
+              className="absolute left-4 top-1/2  Glassy_btn p-2 rounded-full z-20"
               aria-label="Previous slide"
             >
               <ChevronLeft className="white size-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/30 hover:bg-black/50 rounded-full transition-colors z-20"
+              className="absolute right-4 top-1/2  Glassy_btn p-2 rounded-full z-20"
               aria-label="Next slide"
             >
               <ChevronRight className="white size-6" />
             </button>
 
             {/* Carousel Navigation Dots */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+            <div className="absolute bottom-18 left-1/2 -translate-x-1/2 flex gap-2 z-20">
               {heroSlides.map((_, index) => (
                 <button
                   key={index}

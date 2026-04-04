@@ -40,6 +40,24 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
     overflow-wrap: break-word;
 }
 
+.links li{
+  position: relative;
+}
+
+.links li::after{
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  left: 0;
+  bottom: -6px;
+  transition: width 0.49s ease;
+}
+
+.links li:hover::after{
+  width: 100%;
+}
 
 .card{
   clip-path: path('M14 0H286C299.255 0 310 10.7452 310 24V286C310 299.255 299.255 310 286 310H14C0.744769 310 0 299.255 0 286V24C0 10.7452 0.744769 0 14 0Z');
@@ -153,6 +171,10 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 
 .Grid_4{
   @apply lg:mt-16 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8;
+}
+
+.Glassy_btn{
+  @apply flex border cursor-pointer  transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-sm backdrop-blur-2xl bg-[#fffced]/40 mt-6 w-fit px-6 py-3  gap-4 
 }
 
 }

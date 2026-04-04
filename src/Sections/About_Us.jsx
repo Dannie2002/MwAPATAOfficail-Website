@@ -1,5 +1,3 @@
-import React from "react";
-import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.jpg";
 import noise from "../assets/Images/Noise.png";
@@ -11,11 +9,25 @@ import strategy1 from "../assets/Images/Strategy1.jpg";
 import strategy2 from "../assets/Images/Strategy2.jpg";
 import team from "../assets/Images/Team_Mwapata.jpg";
 import strategy3 from "../assets/Images/Strategy3.jpg";
+import React, { Children, useRef } from 'react';
+import {motion, useTransform, useScroll} from "framer-motion"
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
 import { Download, Gem } from "lucide-react";
 
 const About_Us = () => {
+
+  const ref = useRef(null)
+const { scrollYProgress } = useScroll({
+  target: ref,
+  offset: ["start end", "center center"]
+})
+
+const clipPath = useTransform(
+  scrollYProgress,
+  [0, 1],
+  ["inset(0% 50% 0% 50%)", "inset(0% 0% 0% 0%)"]
+)
 
     const containerVariants = {
     hidden: { opacity: 0 },
@@ -82,26 +94,37 @@ const About_Us = () => {
 ];
 
   return (
-    <section className="Section_bg">
+    <section className="Section_bg ">
 
     <div className="Section_wrapper">
        
       
-      <div className="flex flex-col   lg:items-start lg:justify-between mt-10 lg:mt-10">
+      <div className="flex flex-col  px-0 lg:items-start lg:justify-between mt-10 lg:mt-10">
           
-        <h1 className="Section_title ">WHO ARE WE</h1>
+        <h1 className="Page_title barlow font-semibold ">WHO ARE WE</h1>
          
 
 
-            <div className="Grid_4 lg:grid-cols-2">
+            <div className="Grid_4  lg:grid-cols-3">
 
           
           
               <div className="flex flex-col  gap-6">
-                <h4 className="text_para leading-[28px]  text-[28px] lg:leading-[52px] lg:text-[52px]  barlow uppercase font-semibold  text-grey ">
+                <h4 className="leading-[28px]  text-[28px] lg:leading-[38px] lg:text-[38px] barlow uppercase font-semibold  text-grey ">
                   <span className="font-bold">We are An</span> independent   agricultural policy <span className="font-bold">think tank in Malawi.</span>
                 </h4>
-                <div className="flex flex-col  gap-4">
+                 
+              </div>
+             
+              <motion.div ref={ref} style={{ clipPath }} className="relative flex mt-0 items-end justify-end ">
+              
+                <img src={speaker_series} alt="research" className="w-full clip h-[430px]  object-cover"/>
+                 <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+               
+              </motion.div>
+
+              <div className="flex flex-col items-end justify-end">
+                  <div className="flex flex-col  gap-4">
                       <p className="text_para w-full lg:w-[90%]">
                         The Institute is engaging the Government of Malawi, private sector, and
                          civil society stakeholders in a program of 
@@ -109,21 +132,11 @@ const About_Us = () => {
                          building, and policy coordination.
                       </p>
                       
-                        <h6 className="text-green uppercase font-semibold">Learn More</h6>
+                        <h6 className="text-green uppercase mt-6 font-semibold">ABOUT US</h6>
      
                       
-                </div>   
+                </div> 
               </div>
-             
-              <motion.div className="relative flex mt-0 items-end justify-end "
-                initial={{ opacity: 0, scale: 0.75 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.99, ease: "easeInOut" }}>
-                <img src={speaker_series} alt="research" className="w-full clip h-[430px]  object-cover"/>
-                 <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-             
-                
-              </motion.div>
       
             
             </div>
@@ -153,7 +166,7 @@ const About_Us = () => {
                     to learn more about our mission and how we go about making the changes we want to see.</motion.p>
 
                
-                  <motion.div variants={sitemVariants} className="white flex border cursor-pointer  transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[#fffced]/40 mt-6 w-fit px-6 py-3  gap-4 ">
+                  <motion.div variants={sitemVariants} className="Glassy_btn">
                     <h5 className="white font-semibold">Download Our Strategic Plan</h5> 
                     <div className="">
                       <Download className="white size-5"/>

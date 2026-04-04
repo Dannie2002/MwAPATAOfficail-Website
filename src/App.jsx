@@ -33,15 +33,7 @@ function App() {
   return (
     <>
       <LandingPage />
-       <Partners />
       <About_Us />
-     
-      <Newsletter />
-      <Publications />
-      <PolicyBrief />
-      <WorkingPapers />
-      <OurTeam />
-      <Governance />
       <Footer />
     </>
   )
