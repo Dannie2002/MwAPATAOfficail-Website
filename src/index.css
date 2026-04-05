@@ -40,11 +40,11 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
     overflow-wrap: break-word;
 }
 
-.links li{
+.links{
   position: relative;
 }
 
-.links li::after{
+.links::after{
   position: absolute;
   content: "";
   width: 0;
@@ -55,7 +55,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
   transition: width 0.49s ease;
 }
 
-.links li:hover::after{
+.links:hover::after{
   width: 100%;
 }
 
@@ -149,7 +149,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 
 .Counter_title{
   font-family: var(--font-barlow);
-  @apply lg:w-[820px] uppercase font-light text-[32px] leading-[32px]  text-[var(--text-color)]  lg:text-[38px] lg:leading-[38px] ;
+  @apply leading-[28px] text-[28px] lg:leading-[38px] lg:text-[38px] uppercase font-semibold  text-[var(--text-color)] ;
 }
 
 .Page_title{

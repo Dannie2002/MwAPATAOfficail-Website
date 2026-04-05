@@ -24,7 +24,7 @@ const LandingPage= () => {
   useEffect(() => {
     const handleScroll = () => {
       // Threshold based on the height of your logo utility bar (h-28 = 112px, lg:h-42 = 168px)
-      const threshold = window.innerWidth >= 1024 ? 168 : 112;
+      const threshold = window.innerWidth >= 1024 ? 148 : 112;
       if (window.scrollY >= threshold) {
         setIsScrolled(true);
       } else {
@@ -111,6 +111,52 @@ const LandingPage= () => {
     // Add other main navigation links here if they should be part of the mobile quick links
     { title: "Main Navigation", links: ["Home", "About", "Events", "Publications & Resources", "Eminent Speaker Series"], isMain: true }
   ];
+
+const navLinks = [
+  {
+    title: "Home",
+    link: "/"
+  },
+  {
+    title: "Who are we",
+    children: [
+      { title: "About Us", link: "/about" },
+      { title: "Governance", link: "/governance" },
+      { title: "Our Team", link: "/team" },
+      { title: "Strategic Plan", link: "/strategic-plan" },
+      { title: "Partners", link: "/partners" }
+    ]
+  },
+  {
+    title: "What we do",
+    children: [
+      { title: "Events", link: "/events" },
+      { title: "Research", link: "/research" },
+      { title: "Programmes", link: "/programmes" }
+    ]
+  },
+  {
+    title: "Publications & Resources",
+    children: [
+      { title: "Working Papers", link: "/working-papers" },
+      { title: "Policy Brief", link: "/policy-brief" },
+      { title: "Perspectives", link: "/perspectives" },
+      { title: "Peer Review Research", link: "/peer-review" },
+      { title: "Reports", link: "/reports" },
+      { title: "Presentations", link: "/presentations" },
+      { title: "Data Portal", link: "/data-portal" },
+      { title: "Data Policy", link: "/data-policy" },
+      { title: "Request Data", link: "/request-data" },
+      { title: "Capacity Building Seminars", link: "/seminars" }
+    ]
+  },
+  {
+    title: "Eminent Speaker Series",
+    link: "/speaker-series"
+  }
+];
+
+
  const socialLinks = [
       { icon: <Facebook className="white size-5 cursor-pointer hover:opacity-80 transition-opacity" /> },
       { icon: <Twitter className="white size-5 cursor-pointer hover:opacity-80 transition-opacity" /> },
@@ -137,10 +183,6 @@ const LandingPage= () => {
         />
       </div>
 
-    
-  
-      
-
       {/* These are hero_contents */}
       <div className="min-h-[90vh] Section_wrapper items-center flex relative"
         style={{ backgroundImage: `url(${activeSlide.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
@@ -165,13 +207,31 @@ const LandingPage= () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden links barlow uppercase md:flex items-center gap-8 white font-medium">
-          <li className=" cursor-pointer">Home</li>
-          <li className="cursor-pointer hover:scale-105 transition-transform duration-490 ease-in-out">Who are we </li>
-          <li className="cursor-pointer">What we do</li>
-          <li className="cursor-pointer">Publications & Resources</li>
-          <li className="cursor-pointer">Eminent Speaker Series</li>
-        </ul>
+       <ul className="hidden  barlow uppercase md:flex items-center gap-8 white font-medium">
+  {navLinks.map((item, index) => (
+    <li key={index} className="relative links group cursor-pointer">
+
+      <a className="" href={item.link || "#"}>{item.title}</a>
+
+      {item.children && (
+        <div className="absolute top-full left-0 hidden group-hover:flex flex-col pt-5 z-50">
+          <div className="bg-[#eef7e3] min-w-[300px] shadow-2xl">
+            <ul className="flex lowercase archivo flex-col">
+
+              {item.children.map((child, i) => (
+                <li key={i} className="text-grey p-4 border-b border-b-[#ff0000]/5 hover:bg-(--text-color)/30 hover:text-green transition-colors">
+                  <a href={child.link}>{child.title}</a>
+                </li>
+              ))}
+
+            </ul>
+          </div>
+        </div>
+      )}
+
+    </li>
+  ))}
+</ul>
 
         {/* CTA */}
       
@@ -277,6 +337,8 @@ const LandingPage= () => {
           <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/50 via-[#3A9B3D]/90 to-[#3A9B3D]/90 opacity-80"></div>
           <div className="absolute flex lg:hidden z-0 inset-0 bg-gradient-to-b from-[var(--primary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>
           
+
+
           <div className="flex flex-col gap-4  z-10">
             <AnimatePresence mode="wait">
               <motion.div
@@ -327,8 +389,8 @@ const LandingPage= () => {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`size-3 rounded-full transition-all ${
-                    currentSlide === index ? "bg-white scale-125" : "bg-white/50"
+                  className={`rounded-full transition-all ${
+                    currentSlide === index ? "bg-white h-2 w-6 scale-125" : "bg-white/50 size-2"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 ></button>

@@ -95,18 +95,17 @@ const contact_details = [
       
         <div className="flex flex-col mt-12 ">
             
-            
-                
-                      <motion.h4 className="text_para text-[16px] lg:leading-[26px] lg:text-[26px] font-light archivo  text-grey "
+           
+                      <motion.h4 className="Counter_title lg:w-1/2"
                       
                       initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.49, ease: "easeInOut" }}><span className="font-bold">For inquires</span> regarding our research, publications, or events, <span className="">Here are contact details.</span></motion.h4>
+                      transition={{ duration: 0.49, ease: "easeInOut" }}><span className="font-bold">For inquires</span> regarding our research, publications, or events, <span className="font-bold">Here are contact details.</span></motion.h4>
                         <motion.div
                                       initial={{ opacity: 0, x: 80 }}
                                       whileInView={{ opacity: 1, x: 0 }}
                                       transition={{ duration: 1.99, ease: "easeInOut" }}
-                                      className="w-full relative h-[1.5px] mt-8 bg-green"
+                                      className="w-full h-[1.1px] mt-8 bg-green"
                                     ></motion.div>
                 
                 
@@ -114,7 +113,7 @@ const contact_details = [
  
                       
                       
-                <div className="mt-12 lg:mt-18">
+                <div className="mt-12 lg:mt-10">
                   <motion.div 
                     className="flex lg:flex-row flex-col gap-8 lg:gap-18 items-start "
                     variants={containerVariants}
@@ -141,7 +140,7 @@ const contact_details = [
           
           <div className="flex mt-18 flex-col lg:flex-row items-start justify-between">
             <div className="lg:w-1/2">
-                 <motion.h4 initial={{opacity:0,y:60}} whileInView={{opacity:1,y:0}} transition={{duration:0.79,ease:easeInOut}} className="Counter_title lowercase text-[16px] leading-[24px] archivo lg:w-3/5"><span className="font-semibold">Please complete </span>the following form and we will contact you as soon as possible</motion.h4>
+                <motion.h4 initial={{opacity:0,y:60}} whileInView={{opacity:1,y:0}} transition={{duration:0.79,ease:easeInOut}} className="Counter_title lowercase font-light text-[24px] leading-[24px] archivo lg:w-3/5"><span className="font-semibold">Please complete </span>the following form and we will contact you as soon as possible</motion.h4>
             </div>
             
 

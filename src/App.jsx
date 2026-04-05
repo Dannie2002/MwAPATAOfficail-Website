@@ -34,6 +34,8 @@ function App() {
     <>
       <LandingPage />
       <About_Us />
+      <Contact_Us  />
+      <OurTeam />
       <Footer />
     </>
   )
