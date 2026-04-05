@@ -136,6 +136,35 @@ const navLinks = [
     ]
   },
   {
+    title: "Contact Us",
+
+  }
+
+];
+const topLinks = [
+  {
+    title: "Events",
+    link: "/"
+  },
+  {
+    title: "Job Listings",
+    children: [
+      { title: "About Us", link: "/about" },
+      { title: "Governance", link: "/governance" },
+      { title: "Our Team", link: "/team" },
+      { title: "Strategic Plan", link: "/strategic-plan" },
+      { title: "Partners", link: "/partners" }
+    ]
+  },
+  {
+    title: "Get Involved",
+    children: [
+      { title: "Events", link: "/events" },
+      { title: "Research", link: "/research" },
+      { title: "Programmes", link: "/programmes" }
+    ]
+  },
+  {
     title: "Publications & Resources",
     children: [
       { title: "Working Papers", link: "/working-papers" },
@@ -156,7 +185,6 @@ const navLinks = [
   }
 ];
 
-
  const socialLinks = [
       { icon: <Facebook className="white size-5 cursor-pointer hover:opacity-80 transition-opacity" /> },
       { icon: <Twitter className="white size-5 cursor-pointer hover:opacity-80 transition-opacity" /> },
@@ -169,7 +197,7 @@ const navLinks = [
   return (
     <section className="relative ">
       {/* Top Utility Bar - Reduced height and anchored */}
-      <div className="w-full  z-0 bg-[#f8ffef] py-4 flex items-center justify-center">
+      <div className="w-full  z-0 bg-[#eef7e3] py-4 flex items-center justify-center">
         
         <img 
           srcSet="https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_147,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png 1x, https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_294,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png 2x" 
@@ -182,6 +210,29 @@ const navLinks = [
           height="88" 
         />
       </div>
+      <div className="bg-green flex items-center justify-center  py-4">
+       <ul className="hidden  barlow uppercase md:flex items-center gap-8 white font-medium">
+        {topLinks.map((item, index) => (
+          <li key={index} className="relative links group cursor-pointer">
+            <a className="block py-2" href={item.link || "#"}>{item.title}</a>
+
+             {item.children && (
+              <div className="absolute top-full left-0 hidden group-hover:flex flex-col pt-4 z-90">
+                <div className="bg-[#eef7e3] min-w-[300px] shadow-2xl">
+                 <ul className="flex lowercase archivo flex-col">
+                  {item.children.map((child, i) => (
+                   <li key={i} className="text-grey p-4 border-b border-b-[#ff0000]/5 hover:bg-(--text-color)/30 hover:text-green transition-colors">
+                    <a href={child.link}>{child.title}</a>
+                  </li>
+                  ))}
+                 </ul>
+                </div>
+              </div>
+             )}
+          </li>
+         ))}
+      </ul>
+      </div>
 
       {/* These are hero_contents */}
       <div className="min-h-[90vh] Section_wrapper items-center flex relative"
@@ -189,7 +240,7 @@ const navLinks = [
       >
           <header className={`
             ${isScrolled ? "fixed bg-orange  py-0" : "absolute bg-transparent py-2"} 
-            w-full top-0 left-0 px-6 lg:px-18 z-50 transition-all duration-490 ease-in-out
+            w-full top-0 left-0  px-6 lg:px-18 z-50 transition-all duration-490 ease-in-out
           `}>
       <nav className="relative  flex items-center justify-between  py-4">
 
@@ -208,30 +259,26 @@ const navLinks = [
 
         {/* Desktop Menu */}
        <ul className="hidden  barlow uppercase md:flex items-center gap-8 white font-medium">
-  {navLinks.map((item, index) => (
-    <li key={index} className="relative links group cursor-pointer">
+        {navLinks.map((item, index) => (
+          <li key={index} className="relative links group cursor-pointer">
+            <a className="block py-2" href={item.link || "#"}>{item.title}</a>
 
-      <a className="" href={item.link || "#"}>{item.title}</a>
-
-      {item.children && (
-        <div className="absolute top-full left-0 hidden group-hover:flex flex-col pt-5 z-50">
-          <div className="bg-[#eef7e3] min-w-[300px] shadow-2xl">
-            <ul className="flex lowercase archivo flex-col">
-
-              {item.children.map((child, i) => (
-                <li key={i} className="text-grey p-4 border-b border-b-[#ff0000]/5 hover:bg-(--text-color)/30 hover:text-green transition-colors">
-                  <a href={child.link}>{child.title}</a>
-                </li>
-              ))}
-
-            </ul>
-          </div>
-        </div>
-      )}
-
-    </li>
-  ))}
-</ul>
+             {item.children && (
+              <div className="absolute top-full left-0 hidden group-hover:flex flex-col pt-4 z-40">
+                <div className="bg-[#eef7e3] min-w-[300px] shadow-2xl">
+                 <ul className="flex lowercase archivo flex-col">
+                  {item.children.map((child, i) => (
+                   <li key={i} className="text-grey p-4 border-b border-b-[#ff0000]/5 hover:bg-(--text-color)/30 hover:text-green transition-colors">
+                    <a href={child.link}>{child.title}</a>
+                  </li>
+                  ))}
+                 </ul>
+                </div>
+              </div>
+             )}
+          </li>
+         ))}
+      </ul>
 
         {/* CTA */}
       

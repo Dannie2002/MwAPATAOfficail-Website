@@ -110,7 +110,7 @@ const clipPath = useTransform(
           
           
               <div className="flex flex-col  gap-6">
-                <h4 className="leading-[28px]  text-[28px] lg:leading-[38px] lg:text-[38px] barlow uppercase font-semibold  text-grey ">
+                <h4 className="Counter_title agdasima ">
                   <span className="font-bold">We are An</span> independent   agricultural policy <span className="font-bold">think tank in Malawi.</span>
                 </h4>
                  
