@@ -177,4 +177,8 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
   @apply flex border cursor-pointer  transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-sm backdrop-blur-2xl bg-[#fffced]/40 mt-6 w-fit px-6 py-3  gap-4 
 }
 
+.text_field{
+  @apply block w-full bg-transparent border-b px-4 py-2 text-(--text-color) border-b-[#4a4a4a]/90 text-base  outline-none   transition-all font-light 
+}
+
 }

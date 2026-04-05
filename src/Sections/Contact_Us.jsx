@@ -154,7 +154,7 @@ const contact_details = [
       <div>
         <label htmlFor="first-name" className="text-grey text-[16px] lg:text-[18px] mb-2 archivo font-semibold">First name</label>
         <div className="mt-2.5">
-          <input id="first-name" type="text" name="first-name" autoComplete="given-name" className="block w-full bg-transparent border-b border-b-green/20 px-3.5 text-base text-grey outline-none focus:border-green transition-all font-light placeholder:text-gret" />
+          <input id="first-name" type="text" name="first-name" autoComplete="given-name" className="block w-full bg-transparent border-b border-b-green/20 px-3.5 text-base text-grey outline-none focus:border-green transition-all font-light placeholder:text-grey" />
         </div>
       </div>
       <div>

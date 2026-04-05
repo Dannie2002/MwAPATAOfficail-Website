@@ -96,6 +96,10 @@ const LandingPage= () => {
   };
 
   const quickLinksData = [
+      {
+      title: "Home",
+     
+    },
     {
       title: "About MwAPATA",
       links: ["Our Team", "Strategic Plan", "Governance", "Partners"],
@@ -143,11 +147,11 @@ const navLinks = [
 ];
 const topLinks = [
   {
-    title: "Events",
+    title: "Job Listings",
     link: "/"
   },
   {
-    title: "Job Listings",
+    title: "Events",
     children: [
       { title: "About Us", link: "/about" },
       { title: "Governance", link: "/governance" },
@@ -210,14 +214,14 @@ const topLinks = [
           height="88" 
         />
       </div>
-      <div className="bg-green flex items-center justify-center  py-4">
-       <ul className="hidden  barlow uppercase md:flex items-center gap-8 white font-medium">
+      <div className="bg-green hidden lg:flex items-center justify-center  py-2">
+       <ul className="hidden barlow uppercase md:flex items-center gap-8 white font-medium">
         {topLinks.map((item, index) => (
-          <li key={index} className="relative links group cursor-pointer">
+          <li key={index} className="relative group cursor-pointer">
             <a className="block py-2" href={item.link || "#"}>{item.title}</a>
 
              {item.children && (
-              <div className="absolute top-full left-0 hidden group-hover:flex flex-col pt-4 z-90">
+              <div className="absolute top-full left-0 hidden group-hover:flex flex-col pt-2 z-90">
                 <div className="bg-[#eef7e3] min-w-[300px] shadow-2xl">
                  <ul className="flex lowercase archivo flex-col">
                   {item.children.map((child, i) => (
@@ -284,50 +288,87 @@ const topLinks = [
       
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden bg-[#ff8000] rounded-[4px] px-4 py-2 white text-2xl"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          ☰
-        </button>
+            <button
+      onClick={() => setIsOpen(!isOpen)}
+      className="flex md:hidden bg-[#ff8000] rounded-[4px] p-4 flex-col justify-center items-center gap-1.5 "
+    >
+      {/* Top line */}
+      <motion.span
+        className="w-8 h-[3px] bg-[#fffced]"
+        animate={{
+          rotate: isOpen ? 45 : 0,
+          y: isOpen ? 10 : 0
+        }}
+        transition={{ duration: 0.3 }}
+      />
+
+      {/* Middle line */}
+      <motion.span
+        className="w-8 h-[3px] bg-[#fffced]"
+        animate={{
+          opacity: isOpen ? 0 : 1
+        }}
+        transition={{ duration: 0.2 }}
+      />
+
+      {/* Bottom line */}
+      <motion.span
+        className="w-8 h-[3px] bg-[#fffced]"
+        animate={{
+          rotate: isOpen ? -45 : 0,
+          y: isOpen ? -8 : 0
+        }}
+        transition={{ duration: 0.3 }}
+      />
+           </button>
+
 
       </nav>
 
       {isOpen && (
-        <div className="md:hidden flex rounded-[4px] flex-col w-[90%] mx-auto gap-6 absolute inset-0  top-full p-6
-         bg-[#eef7e3] z-40 
-        transform transition-all duration-300 ease-out
-        animate-[dropdown_0.6s_ease-out] min-h-[calc(100vh-122px)] overflow-y-auto"
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 100 }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
+          className="md:hidden flex rounded-[4px] flex-col w-[90%]  absolute top-full  gap-6  p-6
+         bg-[#eef7e3] z-40 min-h-[calc(100vh-92px)] overflow-y-auto"
         >
           <div className="w-full mb-4">
             <input
               type="text"
               placeholder="Search ..."
-              className="w-full bg-transparent border-b border-[#4a4a4a] outline-none py-2 text-[18px] placeholder-[#4a4a4a] text-grey focus:border-green transition-all duration-300"
+              className="text_field"
             />
           </div>
           {quickLinksData.map((section, index) => (
             <nav key={index} className="flex flex-col gap-2">
               <div className="flex items-center justify-between">
-                <h6
-                  className={`Card_heading agdasima mb-0 font-semibold text-[22px] text-[var(--primary-color)] ${section.links ? 'cursor-pointer' : ''}`}
+                <button
+                  className={`Card_heading barlow mb-0 font-semibold text-[22px] text-[var(--primary-color)] ${section.links ? 'cursor-pointer' : ''}`}
                   onClick={() => section.links && handleQuickLinkToggle(index)}
                 >
                   {section.title}
-                </h6>
+                </button>
                 {section.links && (
                   <ChevronRight
-                    className={`flex transition-transform duration-450 ease-in-out transform ${openQuickLinkIndex === index ? "-rotate-90" : ""}`}
+                    className={`flex transition-transform duration-400 ease-in-out transform ${openQuickLinkIndex === index ? "-rotate-90" : ""}`}
                     color="#3A9B3D"
                     onClick={() => handleQuickLinkToggle(index)}
                   />
                 )}
               </div>
-              <motion.div className="w-full hidden relative h-[1.5px] mb-2 mt-2 bg-green"></motion.div>
+                    <motion.div
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: 0.4 }}
+                      className="w-full origin-left h-[1.5px] mb-2 mt-2 bg-green"
+                    />
               {section.links && (
                 <AnimatePresence>
                   {openQuickLinkIndex === index && (
                     <motion.div
+                      layout
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -345,43 +386,15 @@ const topLinks = [
               )}
             </nav>
           ))}
-        </div>
+        </motion.div>
       )}
 
-      {/* Desktop Quick Links Dropdown */}
-      {isDesktopQuickLinksOpen && (
-        <div className="hidden md:flex flex-col gap-6 absolute right-0 top-full mt-0 w-full h-[400px] p-8
-        backdrop-blur-4xl bg-[#eee] z-40
-        transform transition-all duration-300 ease-out
-        animate-[dropdown_0.6s_ease-out]"
-        >
-          <div className="w-1/4 mb-4">
-            <input
-              type="text"
-              placeholder="Search ..."
-              className="w-full bg-transparent border-b border-[#4a4a4a] outline-none py-2 text-[18px] placeholder-[#4a4a4a] text-grey focus:border-green transition-all duration-300"
-            />
-          </div>
-
-          <div className="Grid_4">
-            {quickLinksData.filter(section => !section.isMain).map((section, index) => (
-              <div key={index}>
-                <h4 className="text-green bebas text-[24px] mb-3">{section.title}</h4>
-                <ul className="space-y-2 text-gray-700">
-                  {section.links.map((link, i) => (
-                    <li key={i}>{link}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+  
           </header>
           
 
           <img src={noise} alt="noise" className="absolute inset-0 w-full mix-blend-overlay opacity-40  clip h-full object-cover"/>
-          <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/50 via-[#3A9B3D]/90 to-[#3A9B3D]/90 opacity-80"></div>
+          <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/50 via-[#3A9B3D]/90 to-[#3A9B3D]/90 opacity-75"></div>
           <div className="absolute flex lg:hidden z-0 inset-0 bg-gradient-to-b from-[var(--primary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>
           
 
@@ -417,14 +430,14 @@ const topLinks = [
             {/* Carousel Navigation Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2  Glassy_btn p-2 rounded-full z-20"
+              className="absolute left-4 top-[80%] lg:top-1/2  Glassy_btn p-2 rounded-full z-20"
               aria-label="Previous slide"
             >
               <ChevronLeft className="white size-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2  Glassy_btn p-2 rounded-full z-20"
+              className="absolute right-4 top-[80%] lg:top-1/2  Glassy_btn p-2 rounded-full z-20"
               aria-label="Next slide"
             >
               <ChevronRight className="white size-6" />
