@@ -88,7 +88,7 @@ const papers = [
 
         {/* text */}
           <div className="flex flex-col gap-6 ">
-              <h3 className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[38px] lg:leading-[38px]  font-semibold">{paper.title}</h3>
+              <h3 className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[28px] lg:leading-[28px]  font-semibold">{paper.title}</h3>
               <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
               <p className="text_para w-full">
                 {paper.description}

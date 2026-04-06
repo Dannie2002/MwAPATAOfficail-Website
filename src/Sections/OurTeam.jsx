@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import ceo from "../assets/Images/CEO.jpg";
@@ -32,11 +32,11 @@ const OurTeam = () => {
       transition: { duration: 0.69, ease: "easeInOut" }
     },
   };
-
-
-
+   const teamRef = useRef(null);
     const [selectedEmployee, setSelectedEmployee] = useState(null);
 
+    const [visibleCount, setVisibleCount] = useState(4); // Number of employees to show initially
+    
     const Employees = [
   {
     id: 1,
@@ -70,9 +70,105 @@ const OurTeam = () => {
       "Joyce holds MSc in Agricultural and Applied Economics from Lilongwe University of Agriculture and Natural Resources (LUANAR)  and University of Pretoria. She successfully completed some research studies whose results were published and presented to different conferences. Joyce's interests are in agricultural policy, natural resource economics and rural development. Previously, Joyce worked with several individuals and organizations in research and program management. Before joining MwAPATA, Joyce worked as a Research Associate (Adoption, Impact and Markets) at International Institute of Tropical Agriculture (IITA).",
    image: unknown,
   },
+
+  {
+    id: 5,
+    name: "Mrs. Dinah Salonga",
+    title: "Research Analyst",
+    description:
+      "Dinah is an agriculture economist holding of Masters Degree in Agriculture and Applied Economics majoring in Agricultural Policy Analysis from Lilongwe University of Agriculture and Natural Resources (LUANAR) and the University of Pretoria. Dinah has worked with Opportunity International Bank of Malawi (OIBM) and GIZ before joining the MwAPATA Institute. In addition, she also worked as a freelance research assistant on various consultancies. She has experience in research, project management and banking.",
+   image: unknown,
+  },
+
+  {
+    id: 6,
+    name: "Dr. Anderson Gondwe",
+    title: "Research Fellow",
+    description:
+      "Anderson holds a PhD in Economics from Stellenbosch University, and an MA in Economics and Bachelor’s degree in Social Sciences (Economics), both from the University of Malawi. He is experienced conducting empirical analysis on agriculture, labor markets, poverty and inequality using Malawian household data sets. He previously worked for the International Food Policy Research Institute, contributing evidence-based policy solutions to sustainably reduce poverty and end hunger and malnutrition in Malawi. He also has experience in Malawian financial markets, the most recent being arranging debt and equity funding for transactions.",
+   image: unknown,
+  },
+
+  {
+    id: 7,
+    name: "Dr. Christone Nyondo",
+    title: "Research Fellow",
+    description:
+      "Christone holds a PhD in Economics and an MSc. in Agricultural Economics from the University of Kent (UK). He has a first degree in Agricultural Economics from the University of Malawi.  Prior to joining MwAPATA, Christone worked as a Policy Analyst in the New Alliance Policy Acceleration Support (NAPAS) project in the Ministry of Agriculture, Irrigation and Water Development (MoAIWD). He joined the NAPAS project, from the MoAIWD where he worked as a Chief Economist. ",
+   image: unknown,
+  },
+
+  {
+    id: 8,
+    name: "Mr. Lemekezani Chilora",
+    title: "Research Analyst",
+    description:
+      "Lemekezani holds a Master’s degree in Agricultural and Applied Economics from Lilongwe University of Agriculture and Natural Resources and the University of Pretoria. Prior to Joining MwAPATA, Lemekezani worked as a Monitoring and Evaluation intern for the Civil Society Agriculture Network and as a graduate trainee at Japanese Tobacco International. He has experience developing data collection tools, data collection, data management, analysis, and reporting. His research focuses on land transactions (sales and rental), climate change, agricultural and food policy, nutrition, and environment and natural resource valuation.",
+   image: unknown,
+  },
+
+  {
+    id: 9,
+    name: "Mr. Andrew Lisuntha",
+    title: "Finance and  Administration Officer (Intern)",
+    description:
+      "Andrew is an an experienced Audit, Finance and Administrative Officer with over five years of working experience. He holds a Bachelor's Degree in Business Administration, with a Major in Accounting from University of Eastern Africa, Kenya. Before joining the MwAPATA Institute, Andrew worked with EMJ Advisory and Anchor Property Mw Limited.",
+   image: unknown,
+  },
+  {
+    id: 10,
+    name: "Mr. Boniface Nankwenya",
+    title: "Research Analyst",
+    description:
+      "Boniface holds an MSc in Agricultural and applied Economics from Lilongwe University of Agriculture and Natural Resources (LUANAR) and the University of Pretoria. Prior to joining MwAPATA, he worked as a Research Analyst for WorldFish and as a Research Analyst for the NEPAD Regional Fish Node/SanBio at LUANAR. He has led in implementation of research and development projects on inclusive business models and value chains, impact analysis, climate smart agriculture and policy analysis.",
+   image: unknown,
+  },
+
+  {
+    id: 11,
+    name: "Prof.  Levison Chiwaula",
+    title: "Research Director",
+    description:
+      "Levison is a Professor of Economics at the University of Malawi (UNIMA).  He holds a PhD in Economics from Leibniz University of Hannover in Germany and has over 15 years of experience in higher education teaching and research.  Prof. Chiwaula is a seasoned researcher with a track record of winning competitive research grants and publishing in renowned peer-reviewed journals. He has led and participated in several projects funded by IDRC, DFID, AERC, PEP, and the EU and has also provided consultancy services to several governmental and non-governmental organizations.",
+   image: unknown,
+  },
+
+  {
+    id: 12,
+    name: "Dr. Maggie Munthali ",
+    title: "Research Fellow",
+    description:
+      "Maggie holds a PhD in Geography from University of Pretoria, South Africa. She has vast experience in natural resource management, forest management, agroforestry and integrated soil fertility management (ISFM). Prior to joining MwAPATA Institute, she worked with the Ministry of Natural Resources, Energy and Mining as Principal Forestry Officer. She is a member of the African Forest Forum (AFF), African Association of Remote Sensing of the Environment (AARSE), International Union of Forest Research Organizations (IUFRO) and American Society of Agronomy(ASA), among others.",
+   image: unknown,
+  },
+
+  {
+    id: 13,
+    name: "Mrs. Joyce Minofu",
+    title: "Research Analyst",
+    description:
+      "Joyce holds MSc in Agricultural and Applied Economics from Lilongwe University of Agriculture and Natural Resources (LUANAR)  and University of Pretoria. She successfully completed some research studies whose results were published and presented to different conferences. Joyce's interests are in agricultural policy, natural resource economics and rural development. Previously, Joyce worked with several individuals and organizations in research and program management. Before joining MwAPATA, Joyce worked as a Research Associate (Adoption, Impact and Markets) at International Institute of Tropical Agriculture (IITA).",
+   image: unknown,
+  },
+  {
+    id: 14,
+    name: "Mr. Garnet Sibu",
+    title: "Driver/Office Assistant",
+    description:
+      "Garnet provides support to all staff in the area of transportation and general duties in the office.  He is responsible for driving the Institute vehicles on official business and ensuring that Institute vehicles are always in good running condition. He is responsible for providing administrative support for the smooth operation of the office among other duties.",
+   image: unknown,
+  },
+  
+
+
+
+
 ];
 
   return (
+
+  
+
     <section className=" min-h-screen bg-[#f8ffef]">
       <Section_header
   title="Our Team"
@@ -104,49 +200,63 @@ const OurTeam = () => {
               </div>
       </div>
              {/* This is a grid for empployees card */} 
-        <div className="Grid_4">
-          {Employees.map((employee) => (
-            <div 
-              key={employee.id} 
-              className="relative lg:bg-[#eef7e3] group  cursor-pointer"
-              onClick={() => setSelectedEmployee(employee)}
-            >
-              <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 shadow-3xl">
-                <img src={employee.image} alt={employee.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full object-cover"/>
-                   {/* overlay to apply blend mode */}
-                <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-450 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 "></div>
+        <motion.div ref={teamRef} className="Grid_4">
+               {Employees.slice(0, visibleCount).map((employee) => (
+              <motion.div
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+                transition={{ duration: 0.6, ease: "easeInOut" }} 
+                key={employee.id} 
+                className="relative lg:bg-[#eef7e3] group  cursor-pointer"
+                onClick={() => setSelectedEmployee(employee)}
+              >
+                <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 shadow-3xl">
+                  <img src={employee.image} alt={employee.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full object-cover"/>
+                     {/* overlay to apply blend mode */}
+                  <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-450 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 "></div>
 
-              </div>
-                <motion.div variants={containerVariants}
-                initial="hidden"
-                whileInView="show"
-                viewport={{once:true}}
-                className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-10"> 
-                  <motion.h4 variants={itemVariants} className="Card_heading lg:mt-4">{employee.name}</motion.h4>
-                  <motion.p variants={itemVariants} className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[18px] font-light">{employee.title}</motion.p>
-                  <motion.div variants={itemVariants} className="flex-center mt-2 gap-2">
-                  <h6 className=" lg:text-(--secondary-color) z-50 text-[#fffced] text-[14px] uppercase font-semibold">Learn More</h6>
-                  <ChevronRight className="lg:text-(--secondary-color) z-50 text-[#fffced] size-6 " />
+                </div>
+                  <motion.div variants={containerVariants}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{once:true}}
+                  className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-10"> 
+                    <motion.h4 variants={itemVariants} className="Card_heading lg:mt-4">{employee.name}</motion.h4>
+                    <motion.p variants={itemVariants} className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[18px] font-light">{employee.title}</motion.p>
+                    <motion.div variants={itemVariants} className="flex-center mt-2 gap-2">
+                    <h6 className=" lg:text-(--secondary-color) z-50 text-[#fffced] text-[14px] uppercase font-semibold">Learn More</h6>
+                    <ChevronRight className="lg:text-(--secondary-color) z-50 text-[#fffced] size-6 " />
+                    </motion.div>
                   </motion.div>
-                </motion.div>
-              
-            </div> 
-             ))}
-        </div>
+                
+              </motion.div> 
+            ))}
+         
+        </motion.div>
 
 
            {/* NEXT & PREV BUTTONS */}
-            <div className="flex items-start flex-wrap  mt-6 gap-4 lg:mt-12  transition ">
-                         <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--secondary-color)]/60 duration-470">
-                           <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
-                         </div>
-                        
-                         <div className="p-2 size-12 flex-center group bg-green hover:bg-[var(--secondary-color)]/80 duration-500">
-                           <ChevronRight className="text-[#fffced] size-6 group-hover:text-white" />
-                         </div>
-                         
-               
-            </div>
+            <motion.div  className="flex items-start mt-6 gap-4 lg:mt-12  transition ">
+                <button
+                  onClick={() => {
+    setVisibleCount((prev) => Math.max(prev - 4, 4));
+    teamRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }}
+                  className="p-2 rounded-full bg-green/10 hover:bg-green/20 disabled:bg-green/5 disabled:cursor-not-allowed transition"
+                >
+                  <ChevronLeft className="size-6 text-green" />
+                </button>
+
+                <button
+                  onClick={() => setVisibleCount((prev) => Math.min(prev + 4, Employees.length))}
+                  disabled={visibleCount >= Employees.length}
+                  className="p-2 rounded-full bg-green/10 hover:bg-green/20 disabled:bg-green/5 disabled:cursor-not-allowed transition"
+                >
+                  <ChevronRight className="size-6 text-green" />
+                </button>      
+            </motion.div>
 
          {/* Professional Detail Modal */}
          <AnimatePresence>

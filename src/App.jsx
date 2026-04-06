@@ -1,27 +1,14 @@
-import { useState } from 'react'
-import About_Us from './Sections/About_Us'
-import Programmes from './Sections/Programmes'
-import OurTeam from './Sections/OurTeam'
-import Governance from './Sections/Governance'
-import Events from './Sections/Events'
-import Newsletter from './Sections/Newsletter'
-import EventDetailed from './Sections/SubSections/EventDetailed'
-import News from './Sections/News'
-import YouTube from './Sections/YouTube'
-import Publications from './Sections/Publications'
-import LandingPage from './Sections/LandingPage'
-import NewsDetailed from './Sections/SubSections/NewsDetailed'
-import EminentSpeaker from './Sections/EminentSpeaker'
-import JobListing from './Sections/JobListing'
-import Footer from './Sections/Footer'
-import EminentSpeakerDetailed from './Sections/SubSections/EminentSpeakerDetailed'
-import WorkingPapers from './Sections/SubSections/WorkingPapers'
+import { Routes, Route } from "react-router";
+import CoverPages from "./Sections/CoverPages";
 import PolicyBrief from './Sections/SubSections/PolicyBrief'
+import Peer_Reviewed_Research from './Sections/Peer_Reviewed_Research'
+import Publications from './Sections/Publications'
+import Policy_Perspective from './Sections/Policy_Perspective'
 import Capacity_Building_Seminars from './Sections/Capacity_Building_Seminars'
-import Highlights from './Sections/Highlights'
-import Contact_Us from './Sections/Contact_Us'
-import ExtraEvent from './Sections/SubSections/ExtraEvent.jsx'
-import Partners from './Sections/Partners.jsx'
+import Footer from "./Sections/Footer";
+
+import WorkingPapers from "./Sections/WorkingPapers";
+
 
 
 
@@ -31,13 +18,19 @@ function App() {
 
 
   return (
-    <>
-      <LandingPage />
-      <About_Us />
-      <Contact_Us  />
-      <OurTeam />
-      <Footer />
-    </>
+<>
+    <Routes>
+      <Route path="/" element={<CoverPages />} />
+      <Route path="/working-papers" element={<WorkingPapers />} />
+      <Route path="/policy-brief" element={<PolicyBrief />} />
+      <Route path="/perspectives" element={<Policy_Perspective />} />
+      <Route path="/peer-review" element={<Peer_Reviewed_Research />} />
+      <Route path="/seminars" element={<Capacity_Building_Seminars />} />
+    </Routes>
+
+<Footer />   
+</>
+      
   )
 }
 

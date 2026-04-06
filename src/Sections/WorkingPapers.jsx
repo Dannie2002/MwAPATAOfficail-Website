@@ -1,8 +1,8 @@
 import React from "react";
 import {motion} from "framer-motion";
-import capacity from "../../assets/Images/Capacity_building.jpg";
-import noise from "../../assets/Images/Noise.png";
-import Section_header from "../Section_header";
+import capacity from "../assets/Images/Capacity_building.jpg";
+import noise from "../assets/Images/Noise.png";
+import Section_header from "./Section_header";
 import {  CalendarDays  } from "lucide-react";
 
 const WorkingPapers= () => {

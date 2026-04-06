@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
@@ -14,6 +15,7 @@ import logo from "../assets/Images/MwAPATA logo.pdf";
 const LandingPage= () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   // New states for desktop Quick Links dropdown and mobile accordion
   const [isDesktopQuickLinksOpen, setDesktopQuickLinksOpen] = useState(false);
@@ -199,7 +201,7 @@ const topLinks = [
 
 
   return (
-    <section className="relative ">
+    <section className="relative">
       {/* Top Utility Bar - Reduced height and anchored */}
       <div className="w-full  z-0 bg-[#eef7e3] py-4 flex items-center justify-center">
         
@@ -218,7 +220,9 @@ const topLinks = [
        <ul className="hidden barlow uppercase md:flex items-center gap-8 white font-medium">
         {topLinks.map((item, index) => (
           <li key={index} className="relative group cursor-pointer">
-            <a className="block py-2" href={item.link || "#"}>{item.title}</a>
+             <Link className="block py-2" to={item.link ? item.link : "#"}>
+                   {item.title}
+             </Link>
 
              {item.children && (
               <div className="absolute top-full left-0 hidden group-hover:flex flex-col pt-2 z-90">
@@ -226,7 +230,7 @@ const topLinks = [
                  <ul className="flex lowercase archivo flex-col">
                   {item.children.map((child, i) => (
                    <li key={i} className="text-grey p-4 border-b border-b-[#ff0000]/5 hover:bg-(--text-color)/30 hover:text-green transition-colors">
-                    <a href={child.link}>{child.title}</a>
+                    <Link to={child.link}>{child.title}</Link>
                   </li>
                   ))}
                  </ul>
@@ -421,8 +425,24 @@ const topLinks = [
                   {activeSlide.description}
                 </p>
 
-                <div className="white flex cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)] items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[var(--primary-color)] w-fit px-6 py-3 gap-4">
-                  <h2 className="white uppercase text-[16px] font-semibold">Learn More</h2>
+                <div className="white flex cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)] items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[var(--primary-color)] w-fit px-6 py-3 gap-4" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                  <h2 className="white relative uppercase text-[16px] font-semibold">Learn More</h2>
+                  <div className="flex flex-col gap-1">
+                  <motion.span className="bg-white h-[1.2px] w-3 block" 
+                  animate={{
+                    opacity: isHovered ? 1 : 0,
+                    rotate: isHovered ? 35 : 0
+                  }}
+                  transition={{ duration: 0.13 }}
+                  />
+                    <motion.span className="bg-white h-[1.2px] w-3 block" 
+                  animate={{
+                    opacity: isHovered ? 1 : 0,
+                    rotate: isHovered ? -38 : 0
+                  }}
+                  transition={{ duration: 0.2, ease:"easeInOut"}}
+                  />
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>
