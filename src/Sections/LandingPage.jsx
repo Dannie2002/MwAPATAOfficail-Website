@@ -136,7 +136,6 @@ const navLinks = [
   {
     title: "What we do",
     children: [
-      { title: "Events", link: "/events" },
       { title: "Research", link: "/research" },
       { title: "Programmes", link: "/programmes" }
     ]
@@ -150,24 +149,24 @@ const navLinks = [
 const topLinks = [
   {
     title: "Job Listings",
-    link: "/"
+    link: "/job-listings"
   },
   {
     title: "Events",
     children: [
-      { title: "About Us", link: "/about" },
-      { title: "Governance", link: "/governance" },
-      { title: "Our Team", link: "/team" },
-      { title: "Strategic Plan", link: "/strategic-plan" },
-      { title: "Partners", link: "/partners" }
+      { title: "Recent Events", link: "/maapc" },
+      { title: "MAAPC 2021", link: "/governance" },
+      { title: "MAAPC 2022", link: "/our-team" },
+      { title: "MAAPC 2023", link: "/strategic-plan" },
+      { title: "MAAPC 2024", link: "/partners" }
     ]
   },
   {
     title: "Get Involved",
     children: [
-      { title: "Events", link: "/events" },
-      { title: "Research", link: "/research" },
-      { title: "Programmes", link: "/programmes" }
+      { title: "YouTube Channel", link: "/events" },
+      { title: "Feedback on publications", link: "/research" },
+      { title: "Inquiries", link: "/programmes" }
     ]
   },
   {
@@ -187,7 +186,7 @@ const topLinks = [
   },
   {
     title: "Eminent Speaker Series",
-    link: "/speaker-series"
+    link: "/eminent-speaker"
   }
 ];
 
