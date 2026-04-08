@@ -71,6 +71,87 @@ const EminentSpeaker = () => {
    image: speaker1, 
   },
 
+      {
+    id: 5,
+    name:"Prof. Thom Jayne",
+    title: "Building 21st Century Agricultural Research and Extension Capacity in Africa",
+    description:
+      "Improving market systems and access for farmers and agribusiness stakeholders.",
+   image: speaker1, 
+  },
+
+      {
+    id: 6,
+    name:"Prof Sosten Chiotha",
+    title: "From Envisioning to Action: Practical Interventions Catalyzing Agricultural Productivity for Transformation and Wealth Creation",
+    description:
+      "Improving market systems and access for farmers and agribusiness stakeholders.",
+   image: speaker1, 
+  },
+
+      {
+    id: 7,
+    name:"Prof. Pedro Sanchez",
+    title: "Surmounting Soil Health Challenges:  Practical Solutions for Enhancing Agricultural Productivity in line with MW2063 Aspirations",
+    description:
+      "Improving market systems and access for farmers and agribusiness stakeholders.",
+   image: speaker1, 
+  },
+        {
+    id: 8,
+    name:"Dr. Kevin Urama",
+    title: "The Importance of Human and Institutional Capacity Enhancement in Building Resilient Agri-Food Systems in Africa ",
+    description:
+      "Improving market systems and access for farmers and agribusiness stakeholders.",
+   image: speaker1, 
+  },
+ 
+         {
+    id: 9,
+    name:"Dr. Louise Fox",
+    title: "A Call to Action for Youth Participation in Agricultural Transformation ",
+    description:
+      "Improving market systems and access for farmers and agribusiness stakeholders.",
+   image: speaker1, 
+  },
+
+         {
+    id: 10,
+    name:"Prof. Paul Tiyambe Zeleza",
+    title: "The Role of Science and Technology in Economic Transformation: How can Malawi's Academic and Research Institutions Contribute?",
+    description:
+      "Improving market systems and access for farmers and agribusiness stakeholders.",
+   image: speaker1, 
+  },
+
+         {
+    id: 11,
+    name:"Mr. Khalid Bomba",
+    title: "Lessons from Ethiopia's Agricultural Transformation Agenda",
+    description:
+      "Improving market systems and access for farmers and agribusiness stakeholders.",
+   image: speaker1, 
+  },
+
+         {
+    id: 12,
+    name:"Hon. Dr. Felix Jumbe",
+    title: "In the Self-Reliance Agenda, What is the Future of the Malawian Smallholder Farmer 40 Years from Now? ",
+    description:
+      "Improving market systems and access for farmers and agribusiness stakeholders.",
+   image: speaker1, 
+  },
+
+           {
+    id: 13,
+    name:"Dr. Dalitso Kabambe",
+    title: "Achieving the Wealth Creation for All Agenda in Malawi: Defining the Quick Wins ",
+    description:
+      "Improving market systems and access for farmers and agribusiness stakeholders.",
+   image: speaker1, 
+  },
+
+
 ];
 
    
@@ -132,7 +213,7 @@ const EminentSpeaker = () => {
                           viewport={{once:true}}
                           className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-10"> 
                             <motion.h4 variants={itemVariants} className="Card_heading lg:mt-4">{speaker.name}</motion.h4>
-                            <motion.p variants={itemVariants} className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[18px] font-light">{speaker.title}</motion.p>
+                            <motion.p variants={itemVariants} className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[16px] font-light">{speaker.title}</motion.p>
                             <motion.div variants={itemVariants} className="flex-center mt-2 gap-2">
                             <h6 className=" lg:text-(--secondary-color) z-50 text-[#fffced] text-[14px] uppercase font-semibold">Learn More</h6>
                             <ChevronRight className="lg:text-(--secondary-color) z-50 text-[#fffced] size-6 " />
@@ -151,17 +232,17 @@ const EminentSpeaker = () => {
           setVisibleCount((prev) => Math.max(prev - 4, 4));
           teamRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
         }}
-                        className="p-2 rounded-full bg-green/10 hover:bg-green/20 disabled:bg-green/5 disabled:cursor-not-allowed transition"
+                        className="p-2 rounded-[4px] bg-green bg-green/10 hover:bg-green/20 disabled:bg-green/5 disabled:cursor-not-allowed transition"
                       >
-                        <ChevronLeft className="size-6 text-green" />
+                        <ChevronLeft className="size-6 white" />
                       </button>
       
                       <button
                         onClick={() => setVisibleCount((prev) => Math.min(prev + 4, Speakers.length))}
                         disabled={visibleCount >= Speakers.length}
-                        className="p-2 rounded-full bg-green/10 hover:bg-green/20 disabled:bg-green/5 disabled:cursor-not-allowed transition"
+                        className="p-2 rounded-[4px] bg-green bg-green/10 hover:bg-green/20 disabled:bg-green/5 disabled:cursor-not-allowed transition"
                       >
-                        <ChevronRight className="size-6 text-green" />
+                        <ChevronRight className="size-6 white" />
                       </button>      
                   </motion.div>
       
