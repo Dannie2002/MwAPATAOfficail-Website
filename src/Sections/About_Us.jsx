@@ -101,7 +101,7 @@ const clipPath = useTransform(
       
       <div className="flex flex-col  px-0 lg:items-start lg:justify-between mt-10 lg:mt-10">
           
-        <h1 className="Section_title tracking-wide">WHO ARE WE</h1>
+        <h1 className="Section_title text-[24px] tracking-wide">WHO ARE WE</h1>
          
 
 
@@ -110,7 +110,7 @@ const clipPath = useTransform(
           
           
               <div className="flex flex-col  gap-6">
-                <h4 className="Counter_title agdasima ">
+                <h4 className="Counter_title agdasima  text-[36px] lg:leading-[36px]">
                   <span className="font-bold">We are An</span> independent   agricultural policy <span className="font-bold">think tank in Malawi.</span>
                 </h4>
                  
@@ -132,7 +132,7 @@ const clipPath = useTransform(
                          building, and policy coordination.
                       </p>
                       
-                        <h6 className="text-green stack uppercase mt-6 font-semibold">ABOUT US</h6>
+                        <h6 className="text-green  uppercase mt-6 font-semibold">ABOUT US</h6>
      
                       
                 </div> 
@@ -144,7 +144,7 @@ const clipPath = useTransform(
 
        </div>   
       
-        <div className="flex flex-col-reverse  lg:flex-row lg:-mx-18 lg:mt-28 bg-[#eef7e3] mt-10">
+        <div className="flex flex-col-reverse hidden lg:flex-row lg:-mx-18 lg:mt-28 bg-[#eef7e3] mt-10">
             <div className="relative mt-10 lg:mt-0 flex lg:w-1/2" style={{backgroundImage: `url(${strategy2})`, backgroundSize: "cover", backgroundPosition: "center"}}>
             <motion.div 
                variants={scontainerVariants}
