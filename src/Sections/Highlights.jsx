@@ -60,9 +60,9 @@ const filteredPrograms = selectedCategories.length > 0
   : programs;
 
   return (
-    <section className=" min-h-screen bg-[#f8ffef]">
+    <section className="Section_bg">
 
-      <div className="Section_wrapper ">
+      <div className="Section_wrapper">
       
      
      
@@ -109,13 +109,14 @@ const filteredPrograms = selectedCategories.length > 0
                   )}
                 </AnimatePresence>
               </div>
-     </div>
+        </div>
 
 
-        <div className="lg:w-[75%] grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-8">
-          {filteredPrograms.map((program) => (
-            <div key={program.id} className="relative">
-              <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
+        <div className="lg:w-[75%] grid grid-cols-1 lg:grid-cols-3 lg:gap-12 gap-8">
+          {filteredPrograms.map((program, index) => (
+            <div key={program.id} className={`relative cursor-pointer z-0 shadow-3xl ${(index === 1 || index === 2) ? "lg:col-span-2" : ""}`}>
+
+              <div className="relative h-[330px] lg:h-[430px] rounded-[4px] overflow-hidden z-0 group shadow-3xl">
                 <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full object-cover"/>
                    {/* overlay to apply blend mode */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 "></div>

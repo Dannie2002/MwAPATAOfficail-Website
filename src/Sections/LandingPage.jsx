@@ -231,8 +231,13 @@ const topLinks = [
                 <div className="bg-[#eef7e3] min-w-[300px] shadow-2xl">
                  <ul className="flex archivo flex-col">
                   {item.children.map((child, i) => (
-                   <li key={i} className="text-grey p-4 border-b border-b-[#ff0000]/5 hover:bg-(--text-color)/30 hover:text-green transition-colors">
-                    <Link to={child.link}>{child.title}</Link>
+                  <li key={i} className="border-b border-b-[#4a4a4a]/10">
+                    <Link
+                      to={child.link}
+                      className="block text-grey p-4 hover:bg-(--text-color)/30 hover:text-green transition-colors"
+                    >
+                      {child.title}
+                    </Link>
                   </li>
                   ))}
                  </ul>

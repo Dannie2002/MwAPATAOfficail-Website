@@ -128,7 +128,7 @@ const Publications = () => {
                       whileInView="show"
                       viewport={{ once: true }}>
                       {programs.map((program, index) => (
-            <motion.div key={program.id} variants={itemVariants} className={`relative cursor-pointer z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`} >
+            <motion.div key={program.id} variants={itemVariants} className={`relative cursor-pointer z-0 shadow-3xl ${index === 1 ? "lg:col-span-2" : ""}`} >
                <div className="relative h-full rounded-[4px] overflow-hidden z-0 group shadow-3xl">
                  <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                  <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>

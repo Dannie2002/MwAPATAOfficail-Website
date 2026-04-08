@@ -20,7 +20,7 @@ import MAAPC2022Event from "./Sections/SubSections/MAAPC2022Event";
 import MAAPC2023Event from "./Sections/SubSections/MAAPC2023Event";
 import MAAPC2024Event from "./Sections/SubSections/MAAPC2024Event";
 import Publications from "./Sections/Publications";
-import SeminalSeries from "./Sections/SubSections/SeminalSeries";
+import SeminalSeries from "./Sections/SubSections/SeminalSeries"
 
 
 
@@ -53,6 +53,7 @@ function App() {
       <Route path="/seminal-series" element={<SeminalSeries />} />
       <Route path="/programmes" element={<Programmes />} />
       <Route path="/publications" element={<Publications />} />
+      <Route path="/partners" element={<Partners />} />
     </Routes>
     
 

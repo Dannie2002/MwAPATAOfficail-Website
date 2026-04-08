@@ -10,7 +10,7 @@ const WorkingPapers= () => {
 const papers = [
   {
     id: 1,
-    image: capacity,
+    image: workingpapers,
     title: "Agricultural Diversification Strategies and Rural Household Food Security and Income in Malawi",
     date: "12 March 2024",
     description:
@@ -70,7 +70,7 @@ const papers = [
        
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-12">
               <h4 
-                className="Section_title tracking-wide">
+                className="Section_title  tracking-wide">
                 WORKING PAPERS
               </h4>
 
@@ -94,7 +94,7 @@ const papers = [
     {papers.map((paper, index) => (
         <div
                key={index}
-               className="flex flex-col rounded-[4px] md:flex-row border-b pb-6 border-(--text-color)/40 gap-6  lg:gap-12 items-start group cursor-pointer"
+               className="flex flex-col  md:flex-row border-b pb-6 border-(--text-color)/40 gap-6  lg:gap-12 items-start group cursor-pointer"
              >
                {/* image */}
                <div className="lg:w-[25%] lg:h-[215px]   w-full h-[215px] flex-shrink-0 overflow-hidden ">
@@ -107,7 +107,7 @@ const papers = [
        
                {/* text */}
                  <div className="flex flex-col gap-4 ">
-                     <h3 className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[34px] lg:leading-[34px]  font-semibold">{paper.title}</h3>
+                     <h3 className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[32px] lg:leading-[32px]  font-semibold">{paper.title}</h3>
                      <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
                      <p className="text_para mt-2 w-full">
                        {paper.description}
