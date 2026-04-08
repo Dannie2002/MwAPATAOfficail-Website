@@ -10,7 +10,6 @@ const CoverPages = () => {
   return (
     <>
       <LandingPage />
-      <Partners />
       <About_Us />
       <Highlights />
     </>

@@ -158,7 +158,9 @@ const topLinks = [
       { title: "MAAPC 2021", link: "/maapc-2021" },
       { title: "MAAPC 2022", link: "/maapc-2022" },
       { title: "MAAPC 2023", link: "/maapc-2023" },
-      { title: "MAAPC 2024", link: "/maapc-2024" }
+      { title: "MAAPC 2024", link: "/maapc-2024" },
+      { title: "IFPRI-MWAPATA Seminal Series", link: "seminal-series" },
+      
     ]
   },
   {

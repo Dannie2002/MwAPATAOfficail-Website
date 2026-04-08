@@ -7,6 +7,7 @@ import event_header from "../../assets/Images/Event_header.jpg";
 import noise from "../../assets/Images/Noise.png";
 import { MapPinned, Clock, CalendarDays} from "lucide-react";
 import Section_header from "../Section_header";
+import { ScrollVelocityContainer, ScrollVelocityRow } from "../../Componets/ScrollVelocity.jsx";
 
 
 const MAAPC2024Event = () => {
@@ -14,13 +15,18 @@ const MAAPC2024Event = () => {
 
 
 const images = [
+
+  capacity,
+  capacity,
+  event_header,
+  capacity,
+  capacity,
+  event_header,
   capacity,
   capacity,
   capacity,
-  capacity,
-  capacity,
-  capacity,
-  capacity,
+  event_header,
+
 
 ];
 
@@ -31,7 +37,7 @@ const eventDetails = [
 ];
 
   return (
-    <section className="min-h-screen bg-[#f7f9f6]">
+    <section className="Section_bg">
          
       <Section_header
   title="Events"
@@ -81,23 +87,27 @@ const eventDetails = [
                                     transition={{ duration: 1.99, ease: "easeInOut" }}
                                     className=" w-full relative h-[0.5px] mt-8 bg-green"></motion.div>
         
-        <div className="flex flex-row gap-12 items-center justify-start">
-                 <div className="flex items-center mt-6 lg:mt-10 gap-6">
-          <h5 className="text-[var(--primary-color)] uppercase text-[22px] lg:text-[24px] agdasima">Guest of honor:</h5>
-                               <img src={speaker4} alt="research" className="rounded-full size-[50px] object-cover"/>
+        <div className="flex lg:flex-row flex-col gap-6 lg:gap-12 items-start justify-start">
+                 <div className="flex lg:flex-row flex-col items-start justify-between mt-6 lg:mt-10 gap-6">
+          <h5 className="text-[var(--primary-color)] uppercase text-[22px] lg:text-[24px] agdasima">Guest of honor:</h5> 
+                              <div className="flex lg:flex-row gap-4 flex-col">
+                               <img src={speaker4} alt="research" className="rounded-full lg:size-[50px] size-[80px] object-cover"/>
                                <div className="flex flex-col ">
                                  <h6 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[18px]">Hon. Sam Dalitso Kawale, MP</h6>
                                  <p className="text-grey">Former Minister of Agriculture</p>
                                </div>
+                               </div>
                              </div> 
                              
 
-         <div className="flex items-center mt-6 lg:mt-10 gap-6">
+         <div className="flex lg:flex-row flex-col items-start justify-between mt-6 lg:mt-10 gap-6">
           <h5 className="text-[var(--primary-color)] uppercase text-[22px] lg:text-[24px] agdasima">Keynote Speaker:</h5>
-                               <img src={keynote_speaker} alt="keynote speaker" className="rounded-full size-[50px] object-cover"/>
+                           <div className="flex lg:flex-row gap-4 flex-col">
+                               <img src={keynote_speaker} alt="keynote speaker" className="rounded-full lg:size-[50px] size-[80px] object-cover"/>
                                <div className="flex flex-col ">
                                  <h6 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[18px]">Dr. Agnes Kalibata</h6>
                                  <p className="text-grey">President, Alliance for a Green Revolution in Africa</p>
+                               </div>
                                </div>
                              </div> 
         </div>
@@ -153,9 +163,9 @@ const eventDetails = [
             <h4 className="Counter_title barlow font-semibold">Event in pictures</h4>
 
             {/* pictures gallery*/}
-            <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-6 mt-12 space-y-6">
+            <div className="Grid_4 grid-cols-6 grid-rows-2">
               {images.map((img, index) => (
-              <div key={index} className="overflow-hidden h-[130px] rounded-[4px] shadow-md group cursor-pointer">
+              <div key={index} className={`overflow-hidden h-[215px] rounded-[4px]  group cursor-pointer ${index === 3   ? "lg:col-span-3" : ""}`}>
                 <img
                   src={img}
                   alt="Event"
@@ -165,6 +175,40 @@ const eventDetails = [
               ))}
             </div>
           </div>
+
+   <div className="mt-12 lg:mt-22">
+     <h4 className="Counter_title barlow font-semibold">Partners and Sponsors</h4>
+         <ScrollVelocityContainer>
+                         <ScrollVelocityRow baseVelocity={4} className='lg:p-0'>
+                           <div className=' flex  gap-16 w-[300px]'>
+                               
+                            <img className="cursor-pointer"
+          srcSet="https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_147,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png 1x, https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_294,h_176,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png 2x" 
+          id="img_comp-kc5loj2e" 
+          src="https://static.wixstatic.com/media/dd6c2f_331a408a7e044da4af19d95daa264c9f~mv2.png/v1/fill/w_147,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNGmwapata_logo_version-1_three-color_lo.png" 
+          alt="PNGmwapata_logo_version-1_three-color_lo" 
+          style={{ objectFit: 'contain', objectPosition: 'unset' }} 
+          className="BI8PVQ Tj01hh" 
+          width="150" 
+          height="88" 
+        /> 
+                             </div>
+                         </ScrollVelocityRow>
+                     </ScrollVelocityContainer>
+           
+          </div>
+
+             <div className="mt-12 lg:mt-22">
+            <h4 className="Counter_title barlow font-semibold">Partners and Sponsors</h4>
+            <div className="flex flex-col gap-4 mt-6">
+              <p className="text_para font-semibold">Event Recording available <span className="text-green">here</span></p>
+              <p className="text_para font-semibold">Event Report available <span className="text-green">here</span></p>
+              <p className="text_para font-semibold">Presentation Slides available <span className="text-green">here</span></p>
+            </div>
+           
+          </div>
+
+
     </div>       
     </section>
   );

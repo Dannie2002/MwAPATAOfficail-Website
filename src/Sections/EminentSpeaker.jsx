@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import {motion} from "framer-motion";
 import RightArrow from "./Icons/RightArrow";
 import research from "../assets/Images/Research.jpg";
@@ -7,7 +7,6 @@ import speaker1 from "../assets/Images/EminentSpeaker1.jpg";
 import speaker2 from "../assets/Images/EminentSpeaker2.jpg";
 import speaker3 from "../assets/Images/EminentSpeaker3.jpg";
 import speaker4 from "../assets/Images/EminentSpeaker4.jpg";
-
 import Data from "./Icons/Data";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Section_header from '../Sections/Section_header'
@@ -15,8 +14,30 @@ import Section_header from '../Sections/Section_header'
 
 
 const EminentSpeaker = () => {
+  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  };
 
-    const programs = [
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.69, ease: "easeInOut" }
+    },
+  };
+
+   const [visibleCount, setVisibleCount] = useState(4); 
+   const teamRef = useRef(null);
+    const Speakers = [
   {
     id: 1,
     name:"Prof. Moses Maliro",
@@ -87,38 +108,62 @@ const EminentSpeaker = () => {
         </div>
 
           {/* Grid for EminentSpeaker card */}
-        <div className="Grid_4">
-          {programs.map((program) => (
-             <div key={program.id} className="relative cursor-pointer bg-[#eaeee5] " >
-                            <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 group shadow-3xl">
-                            <img src={program.image} alt={program.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
-                            <div className="absolute lg:hidden inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 mix-blend-multiply"></div>
-                             </div>
-                            {/* Description div */}
-                            <div className="flex flex-col gap-4 mt-2 p-4 justify-end items-start inset-0 z-50">
-                                <h4 className="Card_heading text-grey">{program.name}</h4>
-                                <p className="text-[var(--text-color)] line-clamp-3 text-[18px] font-light">{program.title}</p>
-                                <div className="flex-center gap-4">
-                                  <h6 className="text-green text-[14px] uppercase font-semibold">Learn More</h6>
-                                  <ChevronRight className="text-green size-6 group-hover:text-white" />
-                                </div>
-                            </div>
-              </div> 
-           ))} 
-        </div>
+          <motion.div ref={teamRef} className="Grid_4">
+                       {Speakers.slice(0, visibleCount).map((speaker) => (
+                      <motion.div
+                        layout
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+                        transition={{ duration: 0.6, ease: "easeInOut" }} 
+                        key={speaker.id} 
+                        className="relative lg:bg-[#eef7e3] group  cursor-pointer"
+                        
+                      >
+                        <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 shadow-3xl">
+                          <img src={speaker.image} alt={speaker.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full object-cover"/>
+                             {/* overlay to apply blend mode */}
+                          <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-450 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 "></div>
+        
+                        </div>
+                          <motion.div variants={containerVariants}
+                          initial="hidden"
+                          whileInView="show"
+                          viewport={{once:true}}
+                          className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-10"> 
+                            <motion.h4 variants={itemVariants} className="Card_heading lg:mt-4">{speaker.name}</motion.h4>
+                            <motion.p variants={itemVariants} className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[18px] font-light">{speaker.title}</motion.p>
+                            <motion.div variants={itemVariants} className="flex-center mt-2 gap-2">
+                            <h6 className=" lg:text-(--secondary-color) z-50 text-[#fffced] text-[14px] uppercase font-semibold">Learn More</h6>
+                            <ChevronRight className="lg:text-(--secondary-color) z-50 text-[#fffced] size-6 " />
+                            </motion.div>
+                          </motion.div>
+                        
+                      </motion.div> 
+                    ))}
+                 
+                </motion.div>
 
           {/* next buttons */}
-        <div className="flex items-start flex-wrap overflow-hidden mt-6  gap-4 lg:mt-12  transition ">
-                                                 <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--secondary-color)]/60 duration-470">
-                                                   <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
-                                                 </div>
-                                                
-                                                 <div className="p-2 size-12 flex-center group bg-green hover:bg-[var(--secondary-color)]/80 duration-500">
-                                                   <ChevronRight className="text-[#fffced] size-6 group-hover:text-white" />
-                                                 </div>
-                                                 
-                                       
-        </div>
+       <motion.div  className="flex items-start mt-6 gap-4 lg:mt-12  transition ">
+                      <button
+                        onClick={() => {
+          setVisibleCount((prev) => Math.max(prev - 4, 4));
+          teamRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }}
+                        className="p-2 rounded-full bg-green/10 hover:bg-green/20 disabled:bg-green/5 disabled:cursor-not-allowed transition"
+                      >
+                        <ChevronLeft className="size-6 text-green" />
+                      </button>
+      
+                      <button
+                        onClick={() => setVisibleCount((prev) => Math.min(prev + 4, Speakers.length))}
+                        disabled={visibleCount >= Speakers.length}
+                        className="p-2 rounded-full bg-green/10 hover:bg-green/20 disabled:bg-green/5 disabled:cursor-not-allowed transition"
+                      >
+                        <ChevronRight className="size-6 text-green" />
+                      </button>      
+                  </motion.div>
       
     </div> 
          
