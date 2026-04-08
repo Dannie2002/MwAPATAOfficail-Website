@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import partners from "../assets/Images/Partners.jpg";
-import oxfam from "../assets/Images/OXFAM_logo.png";
-import giz from "../assets/Images/GIZ_logo.png";
-import un from "../assets/Images/UNDP_logo.png";
-import nycm from "../assets/Images/NYCM_logo.png";
+import oxfam from "../assets/Images/Logo_pngs/OXFAM_logo.png";
+import giz from "../assets/Images/Logo_pngs/GIZ_logo.png";
+import un from "../assets/Images/Logo_pngs/UNDP_logo.png";
+import nycm from "../assets/Images/Logo_pngs/NYCM_logo.png";
 import Section_header from "./Section_header";
 import { ScrollVelocityContainer, ScrollVelocityRow } from "../Componets/ScrollVelocity.jsx";
 

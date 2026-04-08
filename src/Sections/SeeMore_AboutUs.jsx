@@ -1,0 +1,296 @@
+import RightArrow from "./Icons/RightArrow";
+import capacity from "../assets/Images/Capacity_building.jpg";
+import noise from "../assets/Images/Noise.png";
+import Landing_photo from "../assets/Images/LandingPhoto.jpg";
+import speaker_series from "../assets/Images/Speaker_series.jpg";
+import outreach from "../assets/Images/Outreach.jpg";
+import policy from "../assets/Images/Policy_advocacy.jpg";
+import strategy1 from "../assets/Images/Strategy1.jpg";
+import strategy2 from "../assets/Images/Strategy2.jpg";
+import team from "../assets/Images/Team_Mwapata.jpg";
+import strategy3 from "../assets/Images/Strategy3.jpg";
+import React, { Children, useRef } from 'react';
+import {motion, useTransform, useScroll} from "framer-motion"
+import Mission from "./Icons/Mission";
+import Vision from "./Icons/Vision";
+import { Download, Gem } from "lucide-react";
+import LandingPage from "./LandingPage";
+import Section_header from "./Section_header";
+
+const SeeMore_AboutUs = () => {
+
+  const ref = useRef(null)
+const { scrollYProgress } = useScroll({
+  target: ref,
+  offset: ["start end", "center center"]
+})
+
+const clipPath = useTransform(
+  scrollYProgress,
+  [0, 1],
+  ["inset(0% 50% 0% 50%)", "inset(0% 0% 0% 0%)"]
+)
+
+    const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.49, ease: "easeInOut" }
+    },
+  };
+
+    const scontainerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 1.5,
+      },
+    },
+  };
+
+  const sitemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    show: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.49, ease: "easeInOut" }
+    },
+  };
+
+ const mission_vision = [
+  {
+    id: 1,
+    displayTitle: "Our Mission",
+     icon: <Mission className="lg:size-10 size-10 "  color="#fffced" />,
+    description:"We conduct independent, objective and empirical high-quality research aimed at generating innovative agricultural policy recommendations that improve decision-making and livelihoods in Malawi.",
+   
+  },
+  {
+    id: 2,
+    displayTitle: "Our Vision",
+     icon: <Vision className="size-10"   color="#fffced" />,
+    description:"To be a sustainable, world-class, Malawian agriculture policy research think-tank."
+  },
+  {
+    id: 3,
+    displayTitle: "Core Values",
+    icon: <Gem className="size-10 white"/>,
+    valueslist:["Professionalism", "Relevance", "Independence", "Mutual Respect", "Excellence", "Sustainability"],
+    
+  }
+
+];
+
+  return (
+    <section className="Section_bg ">
+
+                         <Section_header
+  title="About Us"
+  bgImage={Landing_photo}
+  breadcrumbs={[
+    { label: "Home", link: "/" },
+    { label: "/ About Us" }
+  ]}
+/>
+
+    <div className="Section_wrapper">
+       
+      
+      <div className="flex flex-col  px-0 lg:items-start lg:justify-between mt-10 lg:mt-10">
+          
+        <h1 className="Section_title text-[24px] tracking-wide">ABOUT MWAPATA</h1>
+         
+
+
+            <div className="Grid_4  lg:grid-cols-3">
+
+          
+          
+              <div className="flex flex-col  gap-6">
+                <h4 className="Counter_title agdasima  text-[36px] lg:leading-[36px]">
+                  <span className="font-bold">Please take 5 minutes to learn about us in this video</span>
+                </h4>
+                 
+              </div>
+             
+              <motion.div  className="relative flex mt-0 items-end justify-end ">
+              
+                <img src={speaker_series} alt="research" className="w-full clip h-[430px]  object-cover"/>
+                 <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+               
+              </motion.div>
+
+              <div className="flex flex-col items-end justify-end">
+                  <div className="flex flex-col  gap-4">
+                      <p className="text_para w-full lg:w-[90%]">
+                        The Institute is engaging the Government of Malawi, private sector, and
+                         civil society stakeholders in a program of 
+                         applied policy analysis, policy outreach, capacity
+                         building, and policy coordination.
+                      </p>
+                      
+                        <h6 className="text-green  uppercase mt-6 font-semibold">ABOUT US</h6>
+     
+                      
+                </div> 
+              </div>
+      
+            
+            </div>
+               
+
+       </div>   
+      
+        <div className="flex flex-col-reverse  lg:flex-row lg:-mx-18 lg:mt-28 bg-[#eef7e3] mt-10">
+            <div className="relative mt-10 lg:mt-0 flex lg:w-1/2" style={{backgroundImage: `url(${strategy2})`, backgroundSize: "cover", backgroundPosition: "center"}}>
+            <motion.div 
+               variants={scontainerVariants}
+               initial="hidden"
+               whileInView="show"
+               viewport={{once:true}}
+               className="flex Section_wrapper flex-col gap-4 z-20">
+                 <motion.h4 variants={sitemVariants} className="Section_title white">
+                   STRATEGIC PLAN
+                </motion.h4>
+                <motion.p variants={sitemVariants} className="white font-light lg:mt-8 text-[16px] lg:text-[18px]">In our 2026 - 2030 Strategic Plan, we are committing ourselves to 
+                  conducting policy research with a view to guide agriculture productivity and 
+                  commercialization now and in the future, and support the development of the National 
+                  Transformation 2063 document.</motion.p>
+
+                  <motion.p variants={sitemVariants} className="white font-light text-[16px] lg:text-[18px]">The Strategic Plan defines the direction to be taken in the short, medium and long 
+                    terms and it provides direction on the Institutional and Research Development Agendas of MwAPATA.
+                     Download the full document 
+                    to learn more about our mission and how we go about making the changes we want to see.</motion.p>
+
+               
+                  <motion.div variants={sitemVariants} className="Glassy_btn">
+                    <h5 className="white font-semibold">Download Our Strategic Plan</h5> 
+                    <div className="">
+                      <Download className="white size-5"/>
+                    </div>
+               </motion.div>
+            </motion.div>
+
+            
+            
+                
+                <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+                 <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--primary-color)]/70  via-[#3A9B3D]/70 to-[#3A9B3D]/90 opacity-100">
+                 </div>
+            </div>
+
+          <div className="Grid_4 mt-0 px-6 py-4 lg:px-18 lg:py-12 grid-cols-1 lg:w-1/2">
+          {mission_vision.map((item) => (
+            <motion.div key={item.id} variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true }} className="flex items-start flex-col gap-4">
+                <motion.div variants={itemVariants} className="bg-[var(--secondary-color)] p-2 border backdrop-blur-2xl  border-[#fffced]/40 rounded-[4px] flex-center">
+                  {item.icon}
+                </motion.div>
+              <motion.h4 variants={itemVariants} className="text-green mt-2 lg:mt-3 Card_heading ">
+                {item.displayTitle}
+              </motion.h4>
+                     <motion.div
+                                    initial={{ opacity: 0, x: 80 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 1.69, ease: "easeInOut" }}
+                                    className=" w-full relative h-[1.6px] bg-green">
+                      </motion.div>
+              {item.description &&(
+                  <motion.p variants={itemVariants} className="text_para w-full lg:w-[90%]">
+                    {item.description}
+                  </motion.p>
+              )}
+              {item.valueslist && (
+                  <motion.ul variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true }} className="list-disc grid grid-cols-2 text_para w-full lg:w-[90%] pl-6">
+                    {item.valueslist.map((value, index) => (
+                      <motion.li key={index} variants={itemVariants} className="mb-2">{value}</motion.li>
+                    ))}
+                  </motion.ul>
+              )}
+
+
+
+
+
+          
+            </motion.div>
+              ))}
+            </div>
+
+           
+
+            
+        </div>
+
+         <div className="flex flex-col-reverse  lg:flex-row lg:-mx-18 bg-[#eef7e3] ">
+
+        
+        <div className="flex mt-0  lg:w-1/2">
+
+             <motion.div 
+               variants={scontainerVariants}
+               initial="hidden"
+               whileInView="show"
+               viewport={{once:true}}
+               className="flex Section_wrapper flex-col gap-4 z-20">
+                 <motion.h4 variants={sitemVariants} className="Section_title text-green">
+                   OUR BACKGROUND
+                </motion.h4>
+                <motion.p variants={sitemVariants} className="text-grey font-light lg:mt-8 text-[16px] lg:text-[18px]">
+                    Rural poverty, malnutrition, inequality and social exclusion remain major challenges in Malawi. It is widely understood 
+                    that sustained agricultural productivity growth will be necessary to address these challenges, transform the economy, and raise 
+                    living standards because of extensive forward
+                    and backward linkages between agriculture and the rest of Malawi’s economy.
+                    We have a plan to attain the level of agricultural growth that
+                    can transform the country’s economy.</motion.p>
+
+                 
+
+               
+                  <motion.div variants={sitemVariants} className="Glassy_btn">
+                    <h5 className="font-semibold text-(--primary-color)">Learn More </h5> 
+                  
+               </motion.div>
+            </motion.div>
+
+        </div>
+        
+
+
+            <div className="relative mt-10 lg:mt-0 flex lg:w-1/2">
+             <img src={strategy1} className="size-full grayscale" />
+
+        
+                <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+                 <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--text-color)]/70  via-[#4a4a4a]/70 to-[#0b0b0d]/90 opacity-100">
+                 </div>
+            </div>
+
+
+           
+
+            
+        </div>
+
+
+
+
+</div> 
+    </section>
+  );
+};
+
+export default SeeMore_AboutUs;

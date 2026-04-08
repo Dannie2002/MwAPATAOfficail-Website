@@ -21,6 +21,8 @@ import MAAPC2023Event from "./Sections/SubSections/MAAPC2023Event";
 import MAAPC2024Event from "./Sections/SubSections/MAAPC2024Event";
 import Publications from "./Sections/Publications";
 import SeminalSeries from "./Sections/SubSections/SeminalSeries"
+import SeeMore_AboutUs from "./Sections/SeeMore_AboutUs";
+import OurBackground from "./Sections/OurBackground";
 
 
 
@@ -41,7 +43,6 @@ function App() {
       <Route path="/perspectives" element={<Policy_Perspective />} />
       <Route path="/peer-review" element={<Peer_Reviewed_Research />} />
       <Route path="/seminars" element={<Capacity_Building_Seminars />} />
-      <Route path="/about-us" element={<About_Us />} />
       <Route path="/our-team" element={<OurTeam />} />
       <Route path="/job-listings" element={<JobListings />} />
       <Route path="/eminent-speaker" element={<EminentSpeaker />} />
@@ -54,6 +55,8 @@ function App() {
       <Route path="/programmes" element={<Programmes />} />
       <Route path="/publications" element={<Publications />} />
       <Route path="/partners" element={<Partners />} />
+      <Route path="/about-us" element={<SeeMore_AboutUs />} />
+      <Route path="/background" element={<OurBackground />} />
     </Routes>
     
 

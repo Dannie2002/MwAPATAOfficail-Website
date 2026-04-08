@@ -12,6 +12,7 @@ import noise from "../assets/Images/Noise.png";
 import logo from "../assets/Images/MwAPATA logo.pdf";
 
 
+
 const LandingPage= () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -129,7 +130,7 @@ const navLinks = [
       { title: "About Us", link: "/about-us" },
       { title: "Governance", link: "/governance" },
       { title: "Our Team", link: "/our-team" },
-      { title: "Strategic Plan", link: "/strategic-plan" },
+      { title: "Background", link: "/background" },
       { title: "Partners", link: "/partners" }
     ]
   },
