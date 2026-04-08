@@ -1,6 +1,7 @@
 import React from "react";
 import {motion} from "framer-motion";
 import capacity from "../assets/Images/Capacity_building.jpg";
+import workingpapers from "../assets/Images/Working_papers.jpg";
 import noise from "../assets/Images/Noise.png";
 import Section_header from "./Section_header";
 import {  CalendarDays  } from "lucide-react";
@@ -57,7 +58,7 @@ const papers = [
     <section className="Section_bg">
                  <Section_header
   title="Working Papers"
-  bgImage={capacity}
+  bgImage={workingpapers}
   breadcrumbs={[
     { label: "Home", link: "/" },
     { label: "/ Publication" },
@@ -65,11 +66,11 @@ const papers = [
   ]}
 />
 
-    <div className="Section_wrapper">
+    <div className="Section_wrapper lg:px-22">
        
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-12">
               <h4 
-                className="Section_title">
+                className="Section_title tracking-wide">
                 WORKING PAPERS
               </h4>
 
@@ -93,10 +94,10 @@ const papers = [
     {papers.map((paper, index) => (
         <div
                key={index}
-               className="flex flex-col md:flex-row border-b pb-6 border-(--text-color)/40  gap-12 items-start group cursor-pointer"
+               className="flex flex-col rounded-[4px] md:flex-row border-b pb-6 border-(--text-color)/40 gap-6  lg:gap-12 items-start group cursor-pointer"
              >
                {/* image */}
-               <div className="lg:w-[25%] lg:h-[250px] flex-shrink-0 overflow-hidden ">
+               <div className="lg:w-[25%] lg:h-[215px]   w-full h-[215px] flex-shrink-0 overflow-hidden ">
                  <img
                    src={paper.image}
                    alt={paper.title}
@@ -105,10 +106,10 @@ const papers = [
                </div>
        
                {/* text */}
-                 <div className="flex flex-col gap-6 ">
-                     <h3 className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[38px] lg:leading-[38px]  font-semibold">{paper.title}</h3>
+                 <div className="flex flex-col gap-4 ">
+                     <h3 className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[34px] lg:leading-[34px]  font-semibold">{paper.title}</h3>
                      <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
-                     <p className="text_para w-full">
+                     <p className="text_para mt-2 w-full">
                        {paper.description}
                      </p>
                   </div>

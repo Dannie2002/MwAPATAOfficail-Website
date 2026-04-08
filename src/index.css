@@ -14,7 +14,7 @@
   --primary-color: #dd730a;
   --secondary-color: #3A9B3D;
   --background-color: #F7FFF7;
-  --text-color: #373636;
+  --text-color: #4a4a4a;
   --text-colour: #fffced;
   --font-dmsans: 'DM Sans', sans-serif;
   --font-barlow: 'Barlow Semi Condensed', sans-serif;
@@ -59,20 +59,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
   width: 100%;
 }
 
-.Chevron::after{
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 2px;
-  background-color: #fffced;
-  left: 0;
-  bottom: -6px;
-  transition: width 0.49s ease;
-}
 
-.Chevron:hover::after{
-  width: 100%;
-}
 
 
 .card{
@@ -105,6 +92,16 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
   font-family: var(--font-agdasima);
 }
   
+.container{
+  clear: both;
+}
+ .container::before, .container::after{
+  content: "";
+  display: table;
+  clear: both;
+ }
+
+
 @keyframes dropdown {
   from {
     opacity: 0;
@@ -148,7 +145,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 
 .Section_title {
   font-family: var(--font-agdasima);
-  @apply lg:text-[48px] text-[32px] leading-[32px] max-w-[740px] lg:leading-[48px] uppercase font-semibold text-[var(--primary-color)];
+  @apply lg:text-[42px] text-[22px] leading-[32px] max-w-[740px] lg:leading-[42px] uppercase font-semibold text-[var(--primary-color)];
 }
 .overlay{
   @apply absolute rounded-[14px] inset-0 bg-[var(--secondary-color)] opacity-20 mix-blend-multiply;
@@ -165,7 +162,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 
 .Counter_title{
   font-family: var(--font-barlow);
-  @apply leading-[28px] text-[28px] lg:leading-[38px] lg:text-[38px] uppercase font-semibold  text-[var(--text-color)] ;
+  @apply leading-[28px] text-[28px] lg:leading-[32px] lg:text-[32px] uppercase font-semibold  text-[var(--text-color)] ;
 }
 
 .Page_title{
@@ -174,7 +171,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 }
 .Card_heading{
   font-family: var(--font-barlow);
-  @apply hover:text-[var(--secondary-color)] duration-490 cursor-pointer font-semibold text-[#fffced] lg:text-[var(--text-color)] lg:leading-[24px]  leading-[26px] text-[24px] uppercase lg:text-[24px];
+  @apply hover:text-[var(--secondary-color)] uppercase duration-490 cursor-pointer font-semibold text-[#fffced] lg:text-[var(--text-color)] lg:leading-[24px]  leading-[26px] text-[24px]  lg:text-[24px];
 }
 
 .text_para{

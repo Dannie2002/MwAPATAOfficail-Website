@@ -126,9 +126,9 @@ const navLinks = [
   {
     title: "Who are we",
     children: [
-      { title: "About Us", link: "/about" },
+      { title: "About Us", link: "/about-us" },
       { title: "Governance", link: "/governance" },
-      { title: "Our Team", link: "/team" },
+      { title: "Our Team", link: "/our-team" },
       { title: "Strategic Plan", link: "/strategic-plan" },
       { title: "Partners", link: "/partners" }
     ]
@@ -142,7 +142,7 @@ const navLinks = [
   },
   {
     title: "Contact Us",
-
+     link: "/contact-us"
   }
 
 ];
@@ -154,34 +154,35 @@ const topLinks = [
   {
     title: "Events",
     children: [
-      { title: "Recent Events", link: "/maapc" },
-      { title: "MAAPC 2021", link: "/governance" },
-      { title: "MAAPC 2022", link: "/our-team" },
-      { title: "MAAPC 2023", link: "/strategic-plan" },
-      { title: "MAAPC 2024", link: "/partners" }
+      { title: "Recent Events", link: "/recent-events" },
+      { title: "MAAPC 2021", link: "/maapc-2021" },
+      { title: "MAAPC 2022", link: "/maapc-2022" },
+      { title: "MAAPC 2023", link: "/maapc-2023" },
+      { title: "MAAPC 2024", link: "/maapc-2024" }
     ]
   },
   {
     title: "Get Involved",
     children: [
+      { title: "Publication Feedback", link: "/research" },
+      { title: "General Inquiry/Comment", link: "/programmes" },
       { title: "YouTube Channel", link: "/events" },
-      { title: "Feedback on publications", link: "/research" },
-      { title: "Inquiries", link: "/programmes" }
     ]
   },
   {
     title: "Publications & Resources",
+    link:"/publications",
     children: [
-      { title: "Working Papers", link: "/working-papers" },
-      { title: "Policy Brief", link: "/policy-brief" },
-      { title: "Perspectives", link: "/perspectives" },
-      { title: "Peer Review Research", link: "/peer-review" },
-      { title: "Reports", link: "/reports" },
-      { title: "Presentations", link: "/presentations" },
-      { title: "Data Portal", link: "/data-portal" },
-      { title: "Data Policy", link: "/data-policy" },
-      { title: "Request Data", link: "/request-data" },
-      { title: "Capacity Building Seminars", link: "/seminars" }
+      { title: "Working Papers", link: "/Publications/working-papers" },
+      { title: "Policy Brief", link: "/Publications/policy-brief" },
+      { title: "Perspectives", link: "/Publications/perspectives" },
+      { title: "Peer Review Research", link: "/Publications/peer-review" },
+      { title: "Reports", link: "/Publications/reports" },
+      { title: "Presentations", link: "/Publications/presentations" },
+      { title: "Data Portal", link: "/Publications/data-portal" },
+      { title: "Data Policy", link: "/Publications/data-policy" },
+      { title: "Request Data", link: "/Publications/request-data" },
+      { title: "Capacity Building Seminars", link: "/Publications/seminars" }
     ]
   },
   {
@@ -216,17 +217,17 @@ const topLinks = [
         />
       </div>
       <div className="bg-green hidden lg:flex items-center justify-center  py-2">
-       <ul className="hidden barlow uppercase md:flex items-center gap-8 white font-medium">
+       <ul className="hidden  barlow md:flex items-center gap-8 white font-medium">
         {topLinks.map((item, index) => (
-          <li key={index} className="relative group cursor-pointer">
-             <Link className="block py-2" to={item.link ? item.link : "#"}>
+          <li key={index} className="relative  group cursor-pointer">
+             <Link className="block uppercase py-2" to={item.link}>
                    {item.title}
              </Link>
 
              {item.children && (
               <div className="absolute top-full left-0 hidden group-hover:flex flex-col pt-2 z-90">
                 <div className="bg-[#eef7e3] min-w-[300px] shadow-2xl">
-                 <ul className="flex lowercase archivo flex-col">
+                 <ul className="flex archivo flex-col">
                   {item.children.map((child, i) => (
                    <li key={i} className="text-grey p-4 border-b border-b-[#ff0000]/5 hover:bg-(--text-color)/30 hover:text-green transition-colors">
                     <Link to={child.link}>{child.title}</Link>
@@ -246,10 +247,10 @@ const topLinks = [
         style={{ backgroundImage: `url(${activeSlide.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
           <header className={`
-            ${isScrolled ? "fixed bg-orange  py-0" : "absolute bg-transparent py-2"} 
+            ${isScrolled ? "fixed bg-orange  py-2" : "absolute mt-0  py-4"} 
             w-full top-0 left-0  px-6 lg:px-18 z-50 transition-all duration-490 ease-in-out
           `}>
-      <nav className="relative  flex items-center justify-between  py-4">
+      <nav className="  relative  flex items-center justify-between">
 
         {/* Logo */}
         <div className="flex items-center gap-4"> {/* Container for logo and social icons */}
@@ -432,7 +433,7 @@ const topLinks = [
                     opacity: isHovered ? 1 : 0,
                     rotate: isHovered ? 35 : 0
                   }}
-                  transition={{ duration: 0.13 }}
+                  transition={{ duration: 0.45 }}
                   />
                     <motion.span className="bg-white h-[1.2px] w-3 block" 
                   animate={{

@@ -1,6 +1,7 @@
 import React from "react";
 import {motion} from "framer-motion";
 import capacity from "../../assets/Images/Capacity_building.jpg";
+import policy_brief from "../../assets/Images/Policy_brief.jpg";
 import noise from "../../assets/Images/Noise.png";
 import newsletter from "../../assets/Images/Newsletter.jpg"
 import Section_header from "../Section_header";
@@ -38,7 +39,7 @@ const papers = [
     <section className="min-h-screen bg-[#f8ffef]">
                  <Section_header
   title="Policy Brief"
-  bgImage={capacity}
+  bgImage={policy_brief}
   breadcrumbs={[
     { label: "Home", link: "/" },
     { label: "/ Publication" },

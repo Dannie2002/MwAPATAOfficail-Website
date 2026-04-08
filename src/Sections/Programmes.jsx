@@ -4,8 +4,10 @@ import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.jpg";
 import noise from "../assets/Images/Noise.png";
 import research from "../assets/Images/Research.jpg";
+import publications from "../assets/Images/Research.jpg";
 import outreach from "../assets/Images/Outreach.jpg";
 import policy from "../assets/Images/Policy_advocacy.jpg";
+import Section_header from "./Section_header";
 
 
 const Programmes = () => {
@@ -44,7 +46,18 @@ const Programmes = () => {
 ];
 
   return (
-    <section className="py-22 mt-12 min-h-screen px-6 lg:px-22">
+    <section className="Section_bg">
+
+            <Section_header
+  title=""
+  bgImage={publications}
+  breadcrumbs={[
+    { label: "Home", link: "/" },
+    { label: "/Publications" }
+  ]}
+/>
+
+      <div className="Section_wrapper">
       <h1 className="Page_title">Programmes</h1>
       <div className="mt-2 w-[50px] h-[4px] bg-green "></div>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
@@ -85,6 +98,8 @@ const Programmes = () => {
               </div>
             </div>
         ))}
+       </div>
+
        </div>
           
     </section>

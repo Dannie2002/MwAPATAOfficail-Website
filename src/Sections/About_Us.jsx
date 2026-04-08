@@ -101,7 +101,7 @@ const clipPath = useTransform(
       
       <div className="flex flex-col  px-0 lg:items-start lg:justify-between mt-10 lg:mt-10">
           
-        <h1 className="Page_title barlow font-semibold ">WHO ARE WE</h1>
+        <h1 className="Section_title tracking-wide">WHO ARE WE</h1>
          
 
 
@@ -132,7 +132,7 @@ const clipPath = useTransform(
                          building, and policy coordination.
                       </p>
                       
-                        <h6 className="text-green uppercase mt-6 font-semibold">ABOUT US</h6>
+                        <h6 className="text-green stack uppercase mt-6 font-semibold">ABOUT US</h6>
      
                       
                 </div> 
