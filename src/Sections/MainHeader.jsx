@@ -12,7 +12,17 @@ const topLinks = [
 
   {
     title: "News & Updates",
-    link: "/"
+    children: [
+      { title: "RecentNews", link: "/news",
+          grandchildren: [
+            { title: "News1", link: "/news/news1" },
+            { title: "News2", link: "/news/news2" },
+            { title: "News3", link: "/news/news3" },
+          ]
+       },
+      { title: "Blog", link: "/blog" },
+      { title: "Announcements", link: "/announcements" },
+    ]
   },
 
 
@@ -89,9 +99,9 @@ const topLinks = [
              </Link>
 
              {item.children && (
-              <div className="absolute top-full left-0 hidden group-hover:flex flex-col pt-2 z-90">
-                <div className="bg-[#eef7e3] min-w-[300px] shadow-2xl">
-                 <ul className="flex archivo flex-col">
+              <div className="absolute top-full left-0 min-w-[340px]  hidden group-hover:flex  pt-2 z-90">
+                <div className="bg-[#eef7e3] left-0  shadow-2xl">
+                 <ul className="flex archivo flex-col w-full">
                   {item.children.map((child, i) => (
                   <li key={i} className="border-b border-b-[#4a4a4a]/10">
                     <Link
@@ -106,6 +116,9 @@ const topLinks = [
                 </div>
               </div>
              )}
+
+           
+
           </li>
          ))}
       </ul>

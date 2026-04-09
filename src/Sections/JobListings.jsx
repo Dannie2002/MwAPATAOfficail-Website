@@ -126,8 +126,8 @@ const JobListing = () => {
                 <h4 className="Card_heading text-grey">
                   {job.title}
                 </h4>
-
-                <div className="bg-green flex items-center justify-center px-4 py-2">
+                 
+                <div className="bg-green opacity-80 flex items-center justify-center px-4 py-2">
                   <h4 className="white ">Open</h4>
                 </div>
               </motion.div>
@@ -136,7 +136,7 @@ const JobListing = () => {
                 initial={{ opacity: 0, x: 80 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.99, ease: "easeInOut" }}
-                className="w-full relative h-[1.5px] mt-4 bg-green"
+                className="w-full relative h-[0.5px] mt-4 bg-green"
               ></motion.div>
 
               <motion.p variants={itemVariants} className="lg:text-[18px] font-light mt-4 text-grey text-[16px] lg:w-full leading-relaxed">
@@ -144,7 +144,7 @@ const JobListing = () => {
               </motion.p>
 
               <p variants className="lg:text-[18px] font-light mt-4 text-grey text-[16px] lg:w-full leading-relaxed"> Find the detailed terms of reference <span className="underline text-green"> here</span>.</p>
-
+                 <h4 className="text-text">Deadline: 20-09-2026</h4>
             </motion.div>
           ))}
         </div>

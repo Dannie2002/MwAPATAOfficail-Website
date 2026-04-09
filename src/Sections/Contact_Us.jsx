@@ -123,8 +123,8 @@ const contact_details = [
                   >
                     {contact_details.map(({ id, title, description, icon }) => (
                       <motion.div key={id} variants={itemVariants} className="flex gap-4 z-20">
-                        <div className="flex-shrink-0">{icon}</div>
-                        <div>
+                        <div className=" ">{icon}</div>
+                        <div className="flex flex-col">
                           <h6 className="text-green Card_heading text-[18px] mb-3 font-bold">{title}</h6>
                           {description.map((line, index) => (
                             <p key={index} className="text-grey">{line}</p>
@@ -140,7 +140,7 @@ const contact_details = [
           
           <div className="flex mt-18 flex-col lg:flex-row items-start justify-between">
             <div className="lg:w-1/2">
-                <motion.h4 initial={{opacity:0,y:60}} whileInView={{opacity:1,y:0}} transition={{duration:0.79,ease:easeInOut}} className="Counter_title lowercase font-light text-[24px] leading-[24px] archivo lg:w-3/5"><span className="font-semibold">Please complete </span>the following form and we will contact you as soon as possible</motion.h4>
+                <motion.h4 initial={{opacity:0,y:60}} whileInView={{opacity:1,y:0}} transition={{duration:0.79,ease:easeInOut}} className="text-grey font-light text-[24px] leading-[24px] archivo lg:w-4/5"><span className="font-semibold">Please complete </span>the following form and we will contact you as soon as possible</motion.h4>
             </div>
             
 
@@ -163,12 +163,7 @@ const contact_details = [
           <input id="last-name" type="text" name="last-name" autoComplete="family-name" className="block w-full bg-transparent border-b border-b-green/20 px-3.5 text-base text-grey outline-none focus:border-green transition-all placeholder:text-gray-400" />
         </div>
       </div>
-      <div className="sm:col-span-2">
-        <label htmlFor="company" className="text-grey text-[16px] lg:text-[18px] mb-2 archivo font-semibold">Company</label>
-        <div className="mt-2.5">
-          <input id="company" type="text" name="company" autoComplete="organization" className="block w-full bg-transparent border-b border-b-green/20 px-3.5 text-base text-grey outline-none focus:border-green transition-all placeholder:text-gray-400" />
-        </div>
-      </div>
+     
       <div className="sm:col-span-2">
         <label htmlFor="email" className="text-grey text-[16px] lg:text-[18px] mb-2 archivo font-semibold">Email</label>
         <div className="mt-2.5">
@@ -197,18 +192,7 @@ const contact_details = [
           <textarea id="message" name="message" rows="4" className="block w-full bg-transparent border-b border-b-[var(--text-color)] px-3.5 outline-none focus:border-green transition-all placeholder:text-[var(--text-color)]"></textarea>
         </div>
       </div>
-      <div className="flex gap-x-4 sm:col-span-2">
-        <div className="flex h-6 items-center">
-          <div className="group relative inline-flex w-8 shrink-0 rounded-full bg-white border border-green/20 p-px transition-colors duration-200 ease-in-out has-checked:bg-green">
-            <span className="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5"></span>
-            <input id="agree-to-policies" type="checkbox" name="agree-to-policies" aria-label="Agree to policies" className="absolute inset-0 size-full appearance-none focus:outline-hidden" />
-          </div>
-        </div>
-        <label htmlFor="agree-to-policies" className="text-sm/6 text-gray-400">
-          By selecting this, you agree to our
-          <a href="#" className="font-semibold whitespace-nowrap text-green ml-1">privacy policy</a>.
-        </label>
-      </div>
+      
     </div>
     <div className="mt-10">
       <button type="submit" className="block  w-full rounded-[4px] bg-green px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green/90 transition-all uppercase barlow tracking-wide">Submit</button>
