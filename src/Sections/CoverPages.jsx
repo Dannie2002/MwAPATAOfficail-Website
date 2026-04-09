@@ -4,11 +4,13 @@ import Contact_Us from "./Contact_Us";
 import LandingPage from "./LandingPage";
 import Partners from "./Partners";
 import  Highlights  from "./Highlights";
+import MainHeader from "./MainHeader";
 
 
 const CoverPages = () => {
   return (
     <>
+      <MainHeader />
       <LandingPage />
       <About_Us />
       <Highlights />

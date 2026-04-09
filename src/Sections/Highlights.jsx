@@ -68,7 +68,9 @@ const filteredPrograms = selectedCategories.length > 0
      
      
       <div className="flex gap-4 lg:gap-12 flex-col lg:flex-row  mt-5 lg:mt-18 relative">
-        <div className="lg:w-[25%]">
+
+        <div className="lg:w-[25%] lg:sticky top-0">
+          <div></div>
               <h4 className="Section_title">HIGHLIGHTS</h4>
 
               <div className="flex flex-col mt-4 border-[0.6px] border-[var(--primary-color)] lg:min-w-[250px] overflow-hidden">

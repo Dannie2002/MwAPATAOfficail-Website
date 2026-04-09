@@ -157,7 +157,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 }
  
 .Section_bg{
-  @apply bg-[#f8ffef] min-h-screen overflow-hidden;
+  @apply bg-[#f8ffef] min-h-screen;
 }
 
 .Counter_title{
