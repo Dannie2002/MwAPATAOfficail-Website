@@ -83,11 +83,11 @@ const News = () => {
                 
                 </div>
 
-              <div className="bg-transparent z-10 flex flex-col items-start gap-3 justify-between mt-4 w-full">
+              <div className="bg-transparent z-10 flex flex-col items-start gap-4 justify-between mt-4 w-full">
                 <div className="mt-0  py-1 rounded-full">
                   <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]">{news.date}</h4>
                 </div>
-                <h4 className="Card_heading font-semibold text-grey ">
+                <h4 className="Card_heading text-grey ">
                   {news.title}
                 </h4>
                 <p className="text_para w-full line-clamp-2">The MwAPATA Institute wishes to recruit highly motivated, proactive

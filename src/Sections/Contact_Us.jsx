@@ -60,7 +60,7 @@ const contact_details = [
       "Capital City",
       "Lilongwe",
     ],
-    icon: <MapPinned className="size-6 text-green" />,
+    icon: <MapPinned className="size-6 block text-green" />,
   },
   {
     id: 2,
@@ -96,7 +96,7 @@ const contact_details = [
         <div className="flex flex-col mt-12 ">
             
            
-                      <motion.h4 className="Counter_title lg:w-1/2"
+                      <motion.h4 className="Counter_title text-(--primary-color) lg:w-1/2"
                       
                       initial={{ opacity: 0, y: 40 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ const contact_details = [
                                       initial={{ opacity: 0, x: 80 }}
                                       whileInView={{ opacity: 1, x: 0 }}
                                       transition={{ duration: 1.99, ease: "easeInOut" }}
-                                      className="w-full h-[1.1px] mt-8 bg-green"
+                                      className="w-full h-[0.6px] mt-8 bg-[#4a4a4a]"
                                     ></motion.div>
                 
                 
@@ -115,20 +115,22 @@ const contact_details = [
                       
                 <div className="mt-12 lg:mt-10">
                   <motion.div 
-                    className="flex lg:flex-row flex-col gap-8 lg:gap-18 items-start "
+                    className="flex lg:flex-row lg:gap-12 flex-col gap-8 items-start "
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
                   >
                     {contact_details.map(({ id, title, description, icon }) => (
-                      <motion.div key={id} variants={itemVariants} className="flex gap-4 z-20">
-                        <div className=" ">{icon}</div>
-                        <div className="flex flex-col">
-                          <h6 className="text-green Card_heading text-[18px] mb-3 font-bold">{title}</h6>
-                          {description.map((line, index) => (
+                      <motion.div key={id} variants={itemVariants} className="gap-4 flex ">
+                         <div className=" cursor-pointer border border-[#fffced]/30 rounded-full transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] ">{icon}</div>
+                        <div className="flex gap-4 flex-col">
+                            <h6 className="text-green Card_heading text-[18px]  font-bold">{title}</h6>
+                            <div className="flex flex-col">
+                           {description.map((line, index) => (
                             <p key={index} className="text-grey">{line}</p>
                           ))}
+                          </div>
                         </div>
                       </motion.div>
                     ))}

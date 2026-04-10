@@ -5,14 +5,10 @@ import capacity from "../assets/Images/Capacity_building.jpg";
 import research from "../assets/Images/Research.jpg";
 import outreach from "../assets/Images/Outreach.jpg";
 import publications from "../assets/Images/Publications.jpg";
-import workingpapers from "../assets/Images/Working_papers.jpg";
 import noise from "../assets/Images/Noise.png";
-import policy_brief from "../assets/Images/Policy_brief.jpg";
-import policy_perspective from "../assets/Images/Policy_perspective.jpg";
 import policy from "../assets/Images/Policy_advocacy.jpg";
-import Data from "./Icons/Data";
 import Section_header from "./Section_header";
-
+import { publications_types, Resources } from "../Constants/data";
 
 const Publications = () => {
 
@@ -37,67 +33,18 @@ const Publications = () => {
   };
 
 
-
-    const programs = [
-  {
-    id: 1,
-    title: "Working Papers",
-    description:
-      "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
-    image: workingpapers,
-  },
-  {
-    id: 2,
-    title: "Policy Briefs",
-    description:
-      "Conducting evidence-based research to influence agricultural and development policies.",
-    image: policy_brief,
-  },
-  {
-    id: 3,
-    title: "Policy Perspective",
-    description:
-      "Improving market systems and access for farmers and agribusiness stakeholders.",
-   image: policy_perspective, 
-  },
-
-];
-
-    const extraprograms = [
-  {
-    id: 1,
-    title: "Peer Reviewed",
-    description:
-      "Our goal is to produce world-class, rigorous research.",
-   
-  },
-  {
-    id: 2,
-    title: "Presentations",
-    description:
-      "Circulating our findings to stakeholders to provoke informed discussions.",
-    
-  },
-  {
-    id: 3,
-    title: "Data",
-    description:
-      " We will work to collect and share data for key indicators like agricultural production, welfare, food security and more.",
-    
-  },
-
-];
-
   return (
     <section className=" bg-[#eef7e3]">
       <Section_header
-  title="Publications"
-  bgImage={publications}
-  breadcrumbs={[
-    { label: "Home", link: "/" },
-    { label: "/Publications" }
-  ]}
-/>
+        title="Publications"
+        bgImage={publications}
+        breadcrumbs={[
+        { label: "Home", link: "/" },
+        { label: "/Publications" }
+       ]}
+      />
+
+      
       <div className="Section_wrapper">
       
       <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between mt-10 lg:mt-6">
@@ -127,23 +74,23 @@ const Publications = () => {
                       initial="hidden"
                       whileInView="show"
                       viewport={{ once: true }}>
-                      {programs.map((program, index) => (
-            <motion.div key={program.id} variants={itemVariants} className={`relative cursor-pointer z-0 shadow-3xl ${index === 1 ? "lg:col-span-2" : ""}`} >
+                      {publications_types.map((publication, index) => (
+            <motion.div key={publication.id} variants={itemVariants} className={`relative cursor-pointer z-0 shadow-3xl ${index === 1 ? "lg:col-span-2" : ""}`} >
                <div className="relative h-full rounded-[4px] overflow-hidden z-0 group shadow-3xl">
-                 <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
+                 <img src={publication.image} alt={publication.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                  <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
                  <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--primary-color)]/40  via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-100"></div>
                </div>
 
               <div className="absolute  z-10 flex flex-row items-center gap-3 justify-start bottom-0 p-4 w-full">
-                <h4 className="Card_heading white">{program.title}</h4>
+                <h4 className="Card_heading white">{publication.title}</h4>
                 <RightArrow size={28} color="#fffced" />
               </div>
            </motion.div>
         ))}
        </motion.div>
 
-       <h4 className=" text-[18px] lg:text-[38px] lg:leading-[38px] barlow uppercase font-semibold lg:w-[70%] mt-18 font-light archivo text-grey ">
+       <h4 className="Counter_title mt-12">
               <span className="font-semibold">In addition</span> to our own publications, we offer the following resources
               </h4>
 
@@ -154,10 +101,10 @@ const Publications = () => {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}>
-          {extraprograms.map((extraprogram,index) => (
-              <motion.div key={index} variants={itemVariants} className={`bg-transparent hover:bg-[var(--secondary-color)] group transition-all duration-490 border hover:border-transparent border-[var(--text-color)]/60 p-6 flex flex-col items-start justify-between ${index === 2 ? "lg:col-span-2" : ""}`}>
-                 <h4 className="Card_heading text-green group-hover:text-[#fffced] ">{extraprogram.title}</h4>
-                 <p className="text_para text-grey group-hover:text-[#fffced] w-full">{extraprogram.description}</p>
+                    {Resources.map((resource, index) => (
+              <motion.div key={index} variants={itemVariants} className={`bg-transparent hover:bg-[var(--secondary-color)] group transition-all duration-490 border hover:border-transparent border-[var(--text-color)]/60 p-6 rounded-[4px] flex flex-col items-start justify-between ${index === 2 ? "lg:col-span-2" : ""}`}>
+                 <h4 className="Card_heading text-green group-hover:text-[#fffced] ">{resource.title}</h4>
+                 <p className="text_para text-grey group-hover:text-[#fffced] w-full">{resource.description}</p>
               </motion.div>
                ))}
          

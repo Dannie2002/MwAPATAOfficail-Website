@@ -209,7 +209,7 @@ const OurTeam = () => {
                 exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
                 transition={{ duration: 0.6, ease: "easeInOut" }} 
                 key={employee.id} 
-                className="relative lg:bg-[#eef7e3] group  cursor-pointer"
+                className="relative lg:bg-[#eef7e3] group border-b-[2px]  border-b-[#4a4a4a] cursor-pointer"
                 onClick={() => setSelectedEmployee(employee)}
               >
                 <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 shadow-3xl">

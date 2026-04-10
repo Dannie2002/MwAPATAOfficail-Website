@@ -7,6 +7,8 @@ import Section_header from "./Section_header";
     {
       id: 1,
       title: "Research Director",
+       posted_date:"1 April 2026",
+      deadline:"18 May 2026",
       description: (
         <>
           The MwAPATA Institute seeks to recruit a highly motivated, proactive,
@@ -27,6 +29,8 @@ import Section_header from "./Section_header";
     {
       id: 2,
       title: "Terms of Reference for outsourced ICT Support Services",
+      posted_date:"18 April 2021",
+      deadline:"18 May 2021",
       description: (
         <>
           The MwAPATA Institute is seeking to engage a reputable ICT consulting
@@ -43,6 +47,8 @@ import Section_header from "./Section_header";
     {
       id: 3,
       title: "Communications Officer",
+       posted_date:"18 April 2021",
+      deadline:"18 May 2021",
       description: (
         <>
           The MwAPATA Institute wishes to recruit highly motivated, proactive
@@ -58,6 +64,8 @@ import Section_header from "./Section_header";
     {
       id: 4,
       title: "Research Fellow",
+       posted_date:"18 February 2021",
+      deadline:"18 May 2021",
       description: (
         <>
           The MwAPATA Institute wishes to recruit highly motivated, proactive
@@ -122,7 +130,7 @@ const JobListing = () => {
             whileInView="show"
             viewport={{once:true}} className="bg-transparent relative flex flex-col">
               
-              <motion.div variants={itemVariants} className="flex items-center justify-between gap-6">
+              <motion.div variants={itemVariants} className="flex lg:bg-[#eef7e3] lg:p-4 items-center justify-between gap-6">
                 <h4 className="Card_heading text-grey">
                   {job.title}
                 </h4>
@@ -132,22 +140,41 @@ const JobListing = () => {
                 </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 80 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1.99, ease: "easeInOut" }}
-                className="w-full relative h-[0.5px] mt-4 bg-green"
-              ></motion.div>
+         
 
               <motion.p variants={itemVariants} className="lg:text-[18px] font-light mt-4 text-grey text-[16px] lg:w-full leading-relaxed">
                 {job.description}
               </motion.p>
 
               <p variants className="lg:text-[18px] font-light mt-4 text-grey text-[16px] lg:w-full leading-relaxed"> Find the detailed terms of reference <span className="underline text-green"> here</span>.</p>
-                 <h4 className="text-text">Deadline: 20-09-2026</h4>
+                            <div className="flex flex-wrap  mt-6 lg:flex-row items-center justify-between lg:justify-start gap-3 lg:gap-14 ">
+                              <motion.h4  variants={itemVariants} className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]">
+                                   <motion.span variants={itemVariants} className="text-green font-bold">
+                                     Posted on:
+                                   </motion.span>
+                                  {job.posted_date}
+                                 </motion.h4>
+
+                                <motion.h4  variants={itemVariants} className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]">
+                                   <motion.span variants={itemVariants} className="text-(--primary-color) font-bold">
+                                     Deadline:
+                                   </motion.span>
+                                  {job.deadline}
+                                 </motion.h4>
+
+                          </div>   
+
+                               <motion.div
+                initial={{ opacity: 0, x: 80 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.99, ease: "easeInOut" }}
+                className="w-full relative h-[0.5px] mt-4 bg-[#4a4a4a]"
+              ></motion.div>    
             </motion.div>
           ))}
         </div>
+
+        
 
       </div>
     </section>
