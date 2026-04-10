@@ -44,7 +44,7 @@ const Publications = () => {
        ]}
       />
 
-      
+
       <div className="Section_wrapper">
       
       <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between mt-10 lg:mt-6">
@@ -77,10 +77,10 @@ const Publications = () => {
                       {publications_types.map((publication, index) => (
             <motion.div key={publication.id} variants={itemVariants} className={`relative cursor-pointer z-0 shadow-3xl ${index === 1 ? "lg:col-span-2" : ""}`} >
                <div className="relative h-full rounded-[4px] overflow-hidden z-0 group shadow-3xl">
-                 <img src={publication.image} alt={publication.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
+                 <img src={publication.image} alt={publication.title} className="w-full group-hover:scale-110 transition-all duration-700 ease-in-out h-full rounded-[4px] object-cover"/>
                  <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
                  <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--primary-color)]/40  via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-100"></div>
-               </div>
+                </div>
 
               <div className="absolute  z-10 flex flex-row items-center gap-3 justify-start bottom-0 p-4 w-full">
                 <h4 className="Card_heading white">{publication.title}</h4>

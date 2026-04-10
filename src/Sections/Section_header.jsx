@@ -57,8 +57,8 @@ const Section_header = ({ title,link ,breadcrumbs = [],bgImage }) => {
         className="absolute mx-auto bottom-0 z-20 pb-6 ">
           <ul className="flex items-center gap-2">
             {breadcrumbs.map((item, index) => (
-              <li className="white text-[14px] cursor-pointer archivo uppercase" key={index}>
-                <Link to={item.link}>{item.label}</Link>
+              <li className={`white text-[14px] archivo uppercase ${item.link ? 'cursor-pointer' : 'cursor-default'}`} key={index}>
+                {item.link ? <Link to={item.link}>{item.label}</Link> : item.label}
                 
                 </li>
             ))}
