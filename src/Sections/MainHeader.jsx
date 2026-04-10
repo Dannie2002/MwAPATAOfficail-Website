@@ -14,7 +14,7 @@ const topLinks = [
     title: "News & Updates",
     children: [
       { title: "RecentNews", link: "/news",
-          grandchildren: [
+          children: [
             { title: "News1", link: "/news/news1" },
             { title: "News2", link: "/news/news2" },
             { title: "News3", link: "/news/news3" },
@@ -73,7 +73,9 @@ const topLinks = [
 ];
 
 
+
   return (
+    
     <section className="relative">
 
       {/* Top Utility Bar - Reduced height and anchored */}
@@ -92,27 +94,61 @@ const topLinks = [
       </div>
       <div className="bg-green hidden lg:flex items-center justify-center  py-2">
        <ul className="hidden  barlow md:flex items-center gap-8 white font-medium">
-        {topLinks.map((item, index) => (
-          <li key={index} className="relative  group cursor-pointer">
+        {topLinks.map((item, index) => {
+ 
+        const hasGrandChildren = item.children?.some(child => child.children);
+          return(
+            <li key={index} className="relative  group cursor-pointer">
              <Link className="block uppercase py-2" to={item.link}>
                    {item.title}
              </Link>
 
+
+
+
+
              {item.children && (
-              <div className="absolute top-full left-0 min-w-[340px]  hidden group-hover:flex  pt-2 z-90">
-                <div className="bg-[#eef7e3] left-0  shadow-2xl">
-                 <ul className="flex archivo flex-col w-full">
-                  {item.children.map((child, i) => (
-                  <li key={i} className="border-b border-b-[#4a4a4a]/10">
-                    <Link
-                      to={child.link}
-                      className="block text-grey p-4 hover:bg-(--text-color)/30 hover:text-green transition-colors"
-                    >
-                      {child.title}
-                    </Link>
-                  </li>
-                  ))}
-                 </ul>
+              <div className="absolute top-full left-0   hidden group-hover:flex  pt-2 z-90">
+                <div className={`bg-[#eef7e3] shadow-2xl
+                      ${hasGrandChildren? "grid grid-cols-3 gap-8 min-w-[550px]": "min-w-[340px]"}`}>
+                  
+                  {!hasGrandChildren &&(
+                    <ul className="flex flex-col  ">
+                      {item.children.map((child, idx) => (
+                      <li key={idx} className="border-b border-b-[#4a4a4a]/10"> <Link to={child.link} className="block text-grey p-4 archivo text-[14px] hover:bg-(--text-color)/30 hover:text-green transition-colors" > {child.title} </Link> </li>
+                      ))}
+                    </ul>
+                  )}
+               
+                                      {hasGrandChildren &&
+                    item.children.map((section, i) => (
+
+                      <div key={i} className="p-4">
+
+                      <h4 className="font-semibold pointer-default  text-green mb-2">
+                        {section.title}
+                      </h4>
+
+                      <ul>
+
+                        {section.children && section.children.map((child, j) => (
+                        <li key={j}>
+                          <Link
+                          to={child.link}
+                          className="block py-1 text-grey hover:text-green"
+                          >
+                          {child.title}
+                          </Link>
+                        </li>
+                        ))}
+
+                      </ul>
+
+                      </div>
+                    ))}
+
+
+
                 </div>
               </div>
              )}
@@ -120,7 +156,7 @@ const topLinks = [
            
 
           </li>
-         ))}
+         )})}
       </ul>
       </div>
 
