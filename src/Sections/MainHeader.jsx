@@ -53,24 +53,43 @@ const topLinks = [
   {
     title: "Publications & Resources",
     link:"/publications",
-    children: [
-      { title: "Working Papers", link: "/Publications/working-papers" },
-      { title: "Policy Brief", link: "/Publications/policy-brief" },
-      { title: "Perspectives", link: "/Publications/perspectives" },
-      { title: "Peer Review Research", link: "/Publications/peer-review" },
-      { title: "Reports", link: "/Publications/reports" },
-      { title: "Presentations", link: "/Publications/presentations" },
-      { title: "Data Portal", link: "/Publications/data-portal" },
-      { title: "Data Policy", link: "/Publications/data-policy" },
-      { title: "Request Data", link: "/Publications/request-data" },
-      { title: "Capacity Building Seminars", link: "/Publications/seminars" }
+     children: [
+      { title: "Publications", link: "/publications", 
+            children: [
+              { title: "Working Papers", link: "/Publications/working-papers" },
+              { title: "Policy Brief", link: "/Publications/policy-brief" },
+              { title: "Perspectives", link: "/Publications/perspectives" },
+              { title: "Peer Review Research", link: "/Publications/peer-review" },
+           
+              ]
+
+
+      },
+      { title: "Resources", link: "/resources",
+            children: [
+                { title: "Reports", link: "/Publications/reports" },
+              { title: "Presentations", link: "/Publications/presentations" },
+              { title: "Data Portal", link: "/Publications/data-portal" },
+              { title: "Data Policy", link: "/Publications/data-policy" },
+              { title: "Request Data", link: "/Publications/request-data" },
+              { title: "Capacity Building Seminars", link: "/Publications/seminars" }
+            
+            ]
+      },  
+    
     ]
+     
+    
   },
+
   {
     title: "Eminent Speaker Series",
     link: "/eminent-speaker"
   }
 ];
+    
+ 
+ 
 
 
 
@@ -110,12 +129,14 @@ const topLinks = [
              {item.children && (
               <div className="absolute top-full left-0   hidden group-hover:flex  pt-2 z-90">
                 <div className={`bg-[#eef7e3] shadow-2xl
-                      ${hasGrandChildren? "grid grid-cols-3 gap-8 min-w-[550px]": "min-w-[340px]"}`}>
+                      ${hasGrandChildren? "grid grid-cols-2 gap-8 min-w-[550px]": "min-w-[340px]"}`}>
                   
                   {!hasGrandChildren &&(
                     <ul className="flex flex-col  ">
                       {item.children.map((child, idx) => (
-                      <li key={idx} className="border-b border-b-[#4a4a4a]/10"> <Link to={child.link} className="block text-grey p-4 archivo text-[14px] hover:bg-(--text-color)/30 hover:text-green transition-colors" > {child.title} </Link> </li>
+                      <li key={idx} className="border-b border-b-[#4a4a4a]/10">
+                        <Link to={child.link} className="block text-grey p-4 archivo text-[14px] hover:bg-(--text-color)/30 hover:text-green transition-colors" >{child.title}</Link> 
+                      </li>
                       ))}
                     </ul>
                   )}
@@ -132,14 +153,9 @@ const topLinks = [
                       <ul>
 
                         {section.children && section.children.map((child, j) => (
-                        <li key={j}>
-                          <Link
-                          to={child.link}
-                          className="block py-1 text-grey hover:text-green"
-                          >
-                          {child.title}
-                          </Link>
-                        </li>
+                       <li key={j} className="border-b border-b-[#4a4a4a]/10">
+                        <Link to={child.link} className="block text-grey p-4 archivo text-[14px] hover:translate-x-2  transition-all duration-490   hover:text-green " >{child.title}</Link> 
+                      </li>
                         ))}
 
                       </ul>

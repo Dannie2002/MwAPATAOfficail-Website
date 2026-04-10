@@ -156,7 +156,7 @@ const EminentSpeaker = () => {
 
    
   return (
-    <section className="Section_bg">
+    <section className="Section_bg ">
 
         <Section_header
          title="Emminent"
@@ -189,7 +189,7 @@ const EminentSpeaker = () => {
         </div>
 
           {/* Grid for EminentSpeaker card */}
-          <motion.div ref={teamRef} className="Grid_4">
+          <motion.div ref={teamRef} className="Grid_4 lg:gap-12">
                        {Speakers.slice(0, visibleCount).map((speaker) => (
                       <motion.div
                         layout
@@ -198,11 +198,11 @@ const EminentSpeaker = () => {
                         exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
                         transition={{ duration: 0.6, ease: "easeInOut" }} 
                         key={speaker.id} 
-                        className="relative lg:bg-[#eef7e3] group  cursor-pointer"
+                        className="relative lg:bg-[#eef7e3] group border-b border-b-[#4a4a4a]/40   cursor-pointer"
                         
                       >
                         <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 shadow-3xl">
-                          <img src={speaker.image} alt={speaker.title} className="w-full  group-hover:scale-110 transition-all duration-900 ease-in-out h-full object-cover"/>
+                          <img src={speaker.image} alt={speaker.title} className="w-full  group-hover:scale-110 transition-all duration-3200 ease-in-out h-full object-cover"/>
                              {/* overlay to apply blend mode */}
                           <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-450 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 "></div>
         
