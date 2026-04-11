@@ -55,7 +55,7 @@ const newsletterData = [
 ];
 
   return (
-    <section className=" bg-[#eef7e3] pb-12">
+    <section className=" Section_bg">
 
             <Section_header
   title="Newsletter"
@@ -73,7 +73,7 @@ const newsletterData = [
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.99, ease: "easeInOut" }}
                 className="Section_title">
-                <span className="text-orange">Stay Current</span> Our latest research and publications.
+                Get the best of MwAPATA’s research insights and updates delivered directly to your inbox.
               </motion.h4>
                
 

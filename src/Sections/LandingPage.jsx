@@ -390,7 +390,7 @@ const navLinks = [
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`rounded-full transition-all ${
-                    currentSlide === index ? "bg-white h-2 w-6 scale-125" : "bg-white/50 size-2"
+                    currentSlide === index ? "bg-[#fffced]/80 rounded-sm backdrop-blur-2xl h-2 w-6 scale-125" : "rounded-sm backdrop-blur-2xl bg-[#fffced]/40 size-2"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 ></button>

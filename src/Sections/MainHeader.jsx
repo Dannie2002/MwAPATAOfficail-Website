@@ -135,7 +135,7 @@ const topLinks = [
                     <ul className="flex flex-col  ">
                       {item.children.map((child, idx) => (
                       <li key={idx} className="border-b border-b-[#4a4a4a]/10">
-                        <Link to={child.link} className="block text-grey p-4 archivo text-[14px] hover:bg-(--text-color)/30 hover:text-green transition-colors" >{child.title}</Link> 
+                        <Link to={child.link} className="block text-grey p-4 archivo text-[14px]  hover:text-(--primary-color) hover:translate-x-2 transition-all duration-490 ease-in-out" >{child.title}</Link> 
                       </li>
                       ))}
                     </ul>
@@ -146,15 +146,15 @@ const topLinks = [
 
                       <div key={i} className="p-4">
 
-                      <h4 className="font-semibold pointer-default  text-green mb-2">
+                      <h4 className="font-semibold uppercase pointer-default  text-green mb-2">
                         {section.title}
                       </h4>
 
                       <ul>
 
                         {section.children && section.children.map((child, j) => (
-                       <li key={j} className="border-b border-b-[#4a4a4a]/10">
-                        <Link to={child.link} className="block text-grey p-4 archivo text-[14px] hover:translate-x-2  transition-all duration-490   hover:text-green " >{child.title}</Link> 
+                       <li key={j} className="border-b  border-b-[#4a4a4a]/10">
+                        <Link to={child.link} className="block text-grey hover:text-(--primary-color) p-4 archivo text-[14px] hover:translate-x-2  transition-all duration-490 " >{child.title}</Link> 
                       </li>
                         ))}
 
