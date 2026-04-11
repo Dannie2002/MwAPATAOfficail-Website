@@ -13,7 +13,7 @@ const topLinks = [
   {
     title: "News & Updates",
     children: [
-      { title: "RecentNews", link: "/news",
+      { title: "Recent News", link: "/news",
           children: [
             { title: "News1", link: "/news/news1" },
             { title: "News2", link: "/news/news2" },
@@ -97,7 +97,7 @@ const topLinks = [
     
     <section className="relative">
 
-      {/* Top Utility Bar - Reduced height and anchored */}
+      {/* TopMost part where the logo is placed */}
       <div className="w-full  z-0 bg-[#eef7e3] py-4 flex items-center justify-center">
         
         <img 
@@ -111,8 +111,10 @@ const topLinks = [
           height="88" 
         />
       </div>
+
+        {/* The green Navbar just below the logo */}
       <div className="bg-green hidden lg:flex items-center justify-center  py-2">
-       <ul className="hidden  barlow md:flex items-center gap-8 white font-medium">
+        <ul className="hidden  barlow md:flex items-center gap-8 white font-medium">
         {topLinks.map((item, index) => {
  
         const hasGrandChildren = item.children?.some(child => child.children);
@@ -122,17 +124,13 @@ const topLinks = [
                    {item.title}
              </Link>
 
-
-
-
-
              {item.children && (
               <div className="absolute top-full left-0   hidden group-hover:flex  pt-2 z-90">
-                <div className={`bg-[#eef7e3] shadow-2xl
-                      ${hasGrandChildren? "grid grid-cols-2 gap-8 min-w-[550px]": "min-w-[340px]"}`}>
-                  
+                <div className={`bg-[#eef7e3] shadow-2xl ${hasGrandChildren? "grid grid-cols-2 gap-8 min-w-[550px]": "min-w-[340px]"}`}>
+
+                   {/* Absolute div that appears on hover with child links */}
                   {!hasGrandChildren &&(
-                    <ul className="flex flex-col  ">
+                    <ul className="flex flex-col">
                       {item.children.map((child, idx) => (
                       <li key={idx} className="border-b border-b-[#4a4a4a]/10">
                         <Link to={child.link} className="block text-grey p-4 archivo text-[14px]  hover:text-(--primary-color) hover:translate-x-2 transition-all duration-490 ease-in-out" >{child.title}</Link> 
@@ -141,26 +139,22 @@ const topLinks = [
                     </ul>
                   )}
                
-                                      {hasGrandChildren &&
+                  {/* Absolute div that appears on hover with Grandchildren links,, The mega Menu */}   
+                  {hasGrandChildren &&
                     item.children.map((section, i) => (
-
-                      <div key={i} className="p-4">
-
+                   <div key={i} className="p-4">
                       <h4 className="font-semibold uppercase pointer-default  text-green mb-2">
                         {section.title}
                       </h4>
 
                       <ul>
-
-                        {section.children && section.children.map((child, j) => (
-                       <li key={j} className="border-b  border-b-[#4a4a4a]/10">
-                        <Link to={child.link} className="block text-grey hover:text-(--primary-color) p-4 archivo text-[14px] hover:translate-x-2  transition-all duration-490 " >{child.title}</Link> 
-                      </li>
-                        ))}
-
+                          {section.children && section.children.map((child, j) => (
+                        <li key={j} className="border-b  border-b-[#4a4a4a]/10">
+                          <Link to={child.link} className="block text-grey hover:text-(--primary-color) p-4 archivo text-[14px] hover:translate-x-2  transition-all duration-490 " >{child.title}</Link> 
+                        </li>
+                          ))}
                       </ul>
-
-                      </div>
+                   </div>
                     ))}
 
 
@@ -169,11 +163,9 @@ const topLinks = [
               </div>
              )}
 
-           
-
           </li>
          )})}
-      </ul>
+        </ul>
       </div>
 
 
