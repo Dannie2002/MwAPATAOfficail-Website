@@ -101,7 +101,7 @@ const clipPath = useTransform(
       
       <div className="flex flex-col  px-0 lg:items-start lg:justify-between mt-10 lg:mt-10">
           
-        <h1 className="Section_title text-[24px] tracking-wide">WHO ARE WE</h1>
+        <h1 className="Section_title text-[34px] tracking-wide">WHO ARE WE</h1>
          
 
 

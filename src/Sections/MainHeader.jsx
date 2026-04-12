@@ -13,11 +13,11 @@ const topLinks = [
   {
     title: "News & Events",
     children: [
-      { title: "Recent News", link: "/news",
+      { title: "News", link: "/news",
           children: [
-            { title: "News1", link: "/news/news1" },
-            { title: "News2", link: "/news/news2" },
-            { title: "News3", link: "/news/news3" },
+            { title: "Recent News", link: "/news/news1" },
+            { title: "News2", link: "/news/news2" }
+            
           ]
        },
       { title: "Events", link: "/events" ,
@@ -52,7 +52,6 @@ const topLinks = [
   },
   {
     title: "Publications & Resources",
-    link:"/publications",
      children: [
       { title: "Publications", link: "/publications", 
             children: [

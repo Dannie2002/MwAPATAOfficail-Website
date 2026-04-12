@@ -159,7 +159,7 @@ const navLinks = [
   
 
       {/* These are hero_contents */}
-      <div className="min-h-[90vh] Section_wrapper items-center flex start relative" style={{ backgroundImage: `url(${activeSlide.image})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+      <div className="min-h-[80vh] Section_wrapper items-center flex start relative" style={{ backgroundImage: `url(${activeSlide.image})`, backgroundSize: "cover", backgroundPosition: "center" }}>
                   <img src={noise} alt="noise" className="absolute inset-0 w-full mix-blend-overlay opacity-40  clip h-full object-cover"/>
                   <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/50 via-[#3A9B3D]/90 to-[#3A9B3D]/90 opacity-75"></div>
                   <div className="absolute flex lg:hidden z-0 inset-0 bg-gradient-to-b from-[var(--primary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>
@@ -207,11 +207,11 @@ const navLinks = [
              )}
           </li>
          ))}
-     <div class="relative">
+     <div className="relative">
     <input
       type="text"
       placeholder="Search..."
-      class="glass border flex items-center archivo text-[14px] bg-[#f8ffef]/40 backdrop-blur-2xl px-6 py-2 border-[#fffced]/60 outline-offset-0 focus:outline-[#fffced]/10 focus:border-[#fffcedwhite rounded-full  placeholder:text-[#fffced] w-40 hover:w-64 transition-width duration-350 ease-in-out"
+      className="glass border flex items-center archivo text-[14px] bg-[#f8ffef]/40 backdrop-blur-2xl px-6 py-2 border-[#fffced]/60 outline-offset-0 focus:outline-[#fffced]/10 focus:border-[#fffcedwhite rounded-full  placeholder:text-[#fffced] w-40 hover:w-64 transition-width duration-350 ease-in-out"
     />
     <Search className="white absolute right-3 top-3 size-4" />
   </div>
@@ -350,7 +350,7 @@ const navLinks = [
                 </motion.div>
 
                 <motion.div variants={itemVariants}>
-                  <h4 className="Section_title white lg:text-[56px] lg:leading-[56px]">
+                  <h4 className="Section_title white lg:text-[46px] lg:leading-[46px]">
                     {activeSlide.title}
                   </h4>
                 </motion.div>
@@ -412,7 +412,7 @@ const navLinks = [
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`rounded-full  h-[2.9px] w-18 transition-all ${currentSlide === index ? "bg-[#fffced]/80 rounded-sm backdrop-blur-2xl scale-125" : "rounded-sm backdrop-blur-2xl bg-[#fffced]/40 size-2" }`}
+                  className={`rounded-full  h-[2.8px] w-2 transition-all ${currentSlide === index ? "bg-[#fffced]/80 rounded-sm backdrop-blur-2xl scale-125" : "rounded-sm backdrop-blur-2xl bg-[#fffced]/40 size-2" }`}
                   aria-label={`Go to slide ${index + 1}`}
                 >
                 </button>

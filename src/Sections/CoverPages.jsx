@@ -15,7 +15,6 @@ const CoverPages = () => {
       <LandingPage />
       <MainQuickLinks />
       <About_Us />
-      <Highlights />
     </>
   );
 };

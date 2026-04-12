@@ -36,6 +36,7 @@ import policy_perspective from "../assets/Images/Policy_perspective.jpg";
     title: "Peer Reviewed",
     description:
       "Our goal is to produce world-class, rigorous research.",
+        image: policy_perspective, 
    
   },
   {
@@ -43,6 +44,7 @@ import policy_perspective from "../assets/Images/Policy_perspective.jpg";
     title: "Presentations",
     description:
       "Circulating our findings to stakeholders to provoke informed discussions.",
+        image: policy_perspective, 
     
   },
   {
@@ -50,6 +52,7 @@ import policy_perspective from "../assets/Images/Policy_perspective.jpg";
     title: "Data",
     description:
       " We will work to collect and share data for key indicators like agricultural production, welfare, food security and more.",
+        image: policy_perspective, 
     
   },
 

@@ -70,42 +70,7 @@ const newsletterData = [
 
 
 
-        <div className="flex relative  flex-col items-start justify-center h-full lg:h-[430px] lg:mt-10  mt-10" style={{backgroundImage: `url(${capacity})`,backgroundAttachment:"fixed", backgroundSize: "cover", backgroundPosition: "center"}}>
-            
-               
-                  <img src={noise} alt="research" className="absolute z-5 inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-                                   <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]  via-[#3A9B3D]/90 to-[#3A9B3D]/20 "></div>
-                    <div className="flex z-10  px-6 py-4 lg:px-18 lg:py-12 barlow gap-0 lg:gap-6 flex-col items-start">
-                      <h4 className="uppercase font-semibold archivo text-[14px] white tracking-wide">Sign up for Mwapata's newsletter</h4>
-              
-                      <motion.h4
-                initial={{ opacity: 0, y: 80 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.99, ease: "easeInOut" }}
-                className="Section_title barlow w-[70%] white">
-                Get MwAPATA’s research stories from your inbox.
-                      </motion.h4>
-
-                       <p className="text_para white w-full lg:w-[480px]">Subscribe to our newsletter to receive valuable resources,
-                         event announcements, and expert perspectives 
-                        delivered straight to your inbox.</p>
-     
-                             
-                      <div className=" flex w-full flex-row  lg:gap-4">
-                     <h4 className="white font-semibold text-[22px]">Sign up</h4>
-                       <div className="white flex border cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-full backdrop-blur-2xl bg-[#fffced]/40  p-2 size-8  gap-4 ">
-                                        
-                                        <div className="">
-                                          <ChevronRight className="white size-5"/>
-                                        </div>
-                                   </div>
-                    </div>
-                    </div>
-            
-
-
-            
-        </div>
+      
 
 
 
@@ -150,7 +115,44 @@ const newsletterData = [
             </div>
                
 
-       </div>   
+       </div>  
+
+         <div className="flex relative  flex-col items-start justify-center h-full lg:h-[430px] lg:mt-10  mt-10" style={{backgroundImage: `url(${capacity})`,backgroundAttachment:"fixed", backgroundSize: "cover", backgroundPosition: "center"}}>
+            
+               
+                  <img src={noise} alt="research" className="absolute z-5 inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+                                   <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]  via-[#3A9B3D]/90 to-[#3A9B3D]/20 "></div>
+                    <div className="flex z-10  px-6 py-4 lg:px-18 lg:py-12 barlow gap-0 lg:gap-6 flex-col items-start">
+                      <h4 className="uppercase font-semibold archivo text-[14px] white tracking-wide">Sign up for Mwapata's newsletter</h4>
+              
+                      <motion.h4
+                initial={{ opacity: 0, y: 80 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.99, ease: "easeInOut" }}
+                className="Section_title barlow w-[70%] white">
+                Get MwAPATA’s research stories from your inbox.
+                      </motion.h4>
+
+                       <p className="text_para white w-full lg:w-[480px]">Subscribe to our newsletter to receive valuable resources,
+                         event announcements, and expert perspectives 
+                        delivered straight to your inbox.</p>
+     
+                             
+                      <div className=" flex w-full flex-row  lg:gap-4">
+                     <h4 className="white font-semibold text-[22px]">Sign up</h4>
+                       <div className="white flex border cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-full backdrop-blur-2xl bg-[#fffced]/40  p-2 size-8  gap-4 ">
+                                        
+                                        <div className="">
+                                          <ChevronRight className="white size-5"/>
+                                        </div>
+                                   </div>
+                    </div>
+                    </div>
+            
+
+
+            
+        </div> 
 
 
 
