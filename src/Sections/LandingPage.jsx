@@ -383,27 +383,7 @@ const navLinks = [
                   </div>
 
                   
-                  <div className="Grid_4 hidden">
-                    <div>
-                      <h4>
-                        Newsletter
-                      </h4>
-
-                    </div>
-                     <div>
-                      <h4>
-                        Newsletter
-                      </h4>
-
-                    </div>
-                     <div>
-                      <h4>
-                        Newsletter
-                      </h4>
-
-                    </div>
-
-                  </div>
+               
 
 
                 </motion.div>
@@ -432,7 +412,7 @@ const navLinks = [
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`rounded-full transition-all ${currentSlide === index ? "bg-[#fffced]/80 rounded-sm backdrop-blur-2xl h-2 w-6 scale-125" : "rounded-sm backdrop-blur-2xl bg-[#fffced]/40 size-2" }`}
+                  className={`rounded-full  h-[2.9px] w-18 transition-all ${currentSlide === index ? "bg-[#fffced]/80 rounded-sm backdrop-blur-2xl scale-125" : "rounded-sm backdrop-blur-2xl bg-[#fffced]/40 size-2" }`}
                   aria-label={`Go to slide ${index + 1}`}
                 >
                 </button>

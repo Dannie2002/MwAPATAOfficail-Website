@@ -5,6 +5,7 @@ import LandingPage from "./LandingPage";
 import Partners from "./Partners";
 import  Highlights  from "./Highlights";
 import MainHeader from "./MainHeader";
+import MainQuickLinks from "./MainQuickLinks";
 
 
 const CoverPages = () => {
@@ -12,6 +13,7 @@ const CoverPages = () => {
     <>
       <MainHeader />
       <LandingPage />
+      <MainQuickLinks />
       <About_Us />
       <Highlights />
     </>

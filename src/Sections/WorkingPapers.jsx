@@ -121,7 +121,7 @@ const papers = [
                                 </motion.div>
                               <motion.p variants={itemVariants} className="text_para mt-2 w-full">{paper.description}</motion.p>
 
-                              <motion.h4 variants={itemVariants} className="text_link text-grey p-0">Download {paper.file}</motion.h4>
+                              <motion.h4 variants={itemVariants} className="text_link  p-0">Download {paper.file}</motion.h4>
 
                             </div>
                             

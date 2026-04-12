@@ -112,7 +112,7 @@ const clipPath = useTransform(
       
       <div className="flex flex-col  px-0 lg:items-start lg:justify-between mt-10 lg:mt-10">
           
-        <h1 className="Section_title text-[24px] tracking-wide">ABOUT MWAPATA INSTITUTE</h1>
+        <h1 className="Section_title text-[32px] tracking-wide">ABOUT MWAPATA INSTITUTE</h1>
          
 
 
@@ -121,7 +121,7 @@ const clipPath = useTransform(
           
           
               <div className="flex flex-col  gap-6">
-                <h4 className="uppercase font-semibold archivo text-[14px] text-green tracking-wide">Evidence for Transformation</h4>
+                <h4 className="uppercase font-semibold archivo text-[14px] text-grey tracking-wide">Evidence for Transformation</h4>
                 <h4 className="Counter_title barlow  text-[36px] lg:leading-[36px]">
                   <span className="font-bold">Learn about us in this video</span>
                 </h4>
