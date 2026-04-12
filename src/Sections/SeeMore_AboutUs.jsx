@@ -112,30 +112,20 @@ const clipPath = useTransform(
       
       <div className="flex flex-col  px-0 lg:items-start lg:justify-between mt-10 lg:mt-10">
           
-        <h1 className="Section_title text-[24px] tracking-wide">ABOUT MWAPATA</h1>
+        <h1 className="Section_title text-[24px] tracking-wide">ABOUT MWAPATA INSTITUTE</h1>
          
 
 
-            <div className="Grid_4  lg:grid-cols-3">
+            <div className="Grid_4  lg:grid-cols-2">
 
           
           
               <div className="flex flex-col  gap-6">
-                <h4 className="Counter_title agdasima  text-[36px] lg:leading-[36px]">
-                  <span className="font-bold">Please take 5 minutes to learn about us in this video</span>
+                <h4 className="uppercase font-semibold archivo text-[14px] text-green tracking-wide">Evidence for Transformation</h4>
+                <h4 className="Counter_title barlow  text-[36px] lg:leading-[36px]">
+                  <span className="font-bold">Learn about us in this video</span>
                 </h4>
-                 
-              </div>
-             
-              <motion.div  className="relative flex mt-0 items-end justify-end ">
-              
-                <img src={speaker_series} alt="research" className="w-full clip h-[430px]  object-cover"/>
-                 <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-               
-              </motion.div>
-
-              <div className="flex flex-col items-end justify-end">
-                  <div className="flex flex-col  gap-4">
+                   <div className="flex flex-col  gap-4">
                       <p className="text_para w-full lg:w-[90%]">
                         The Institute is engaging the Government of Malawi, private sector, and
                          civil society stakeholders in a program of 
@@ -143,11 +133,19 @@ const clipPath = useTransform(
                          building, and policy coordination.
                       </p>
                       
-                        <h6 className="text-green  uppercase mt-6 font-semibold">ABOUT US</h6>
-     
-                      
-                </div> 
               </div>
+             
+             
+
+           
+              </div>
+
+               <motion.div  className="relative flex mt-0 items-end justify-end ">
+              
+                <img src={speaker_series} alt="research" className="w-full clip h-[430px]  object-cover"/>
+                 <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
+               
+              </motion.div>
       
             
             </div>
