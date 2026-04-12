@@ -93,7 +93,7 @@ const Footer = () => {
                  viewport={{ once: true }}
                 >
                   {section.links.map((link, i) => (
-                    <motion.a key={i} variants={itemVariants} className="link cursor-pointer text-[17.5px] text-grey link-hover">
+                    <motion.a key={i} variants={itemVariants} className="text_link p-0">
                       {link}
                     </motion.a>
                   ))}

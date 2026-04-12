@@ -4,7 +4,7 @@ import capacity from "../assets/Images/Capacity_building.jpg";
 import workingpapers from "../assets/Images/Working_papers.jpg";
 import noise from "../assets/Images/Noise.png";
 import Section_header from "./Section_header";
-import {  CalendarDays  } from "lucide-react";
+import {  CalendarDays, File } from "lucide-react";
 
 const WorkingPapers= () => {
 const papers = [
@@ -13,6 +13,7 @@ const papers = [
     image: workingpapers,
     title: "Agricultural Diversification Strategies and Rural Household Food Security and Income in Malawi",
     date: "12 March 2024",
+    file: "PDF",
     description:
       "The study identifies the agricultural diversification strategies adopted by farming households in Malawi; assesses how household welfare varies with the identified diversification strategies; and identifies factors associated with household participation in the various agricultural diversification strategies.",
   },
@@ -21,6 +22,7 @@ const papers = [
     image: capacity,
     title: "Agricultural Diversification and Commercialization of Smallholder Farming in Malawi: Extent, Drivers, Impacts and Policy Options",
     date: "02 February 2024",
+    file: "PDF",
     description:
       "The study present findings from an in-depth study on diversification and commercialization of smallholder agriculture in Malawi, focusing on various aspects such as, levels, drivers, barriers, and impacts. The findings of this study are significant for policymakers and other stakeholders involved in the agricultural sector and can help shape policies that promote sustainable agriculture and rural development in Malawi.",
   },
@@ -28,6 +30,7 @@ const papers = [
     id: 3,
     image: capacity,
     title: "Climate Smart Agriculture",
+    file: "PDF",
     date: "17 January 2024",
     description:
       "This paper examines the adoption of climate-smart agricultural practices and their benefits to farmers.",
@@ -87,39 +90,47 @@ const papers = [
                   className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
               </div>
       </div>
-                {/* event gallery section*/}
+               
+         
          <div className="mt-12 lg:mt-22">
 
-  <div className="flex flex-col gap-10 mt-12">
-    {papers.map((paper, index) => (
-        <div
-               key={index}
-               className="flex flex-col  md:flex-row border-b pb-6 border-(--text-color)/40 gap-6  lg:gap-12 items-start group cursor-pointer"
-             >
-               {/* image */}
-               <div className="lg:w-[25%] lg:h-[215px]   w-full h-[215px] flex-shrink-0 overflow-hidden ">
-                 <img
-                   src={paper.image}
-                   alt={paper.title}
-                   className="w-full h-full object-cover rounded-[4px] group-hover:scale-105 transition duration-500"
-                 />
-               </div>
-       
-               {/* text */}
-                 <div className="flex flex-col gap-4 ">
-                     <h3 className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[32px] lg:leading-[32px]  font-semibold">{paper.title}</h3>
-                     <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
-                     <p className="text_para mt-2 w-full">
-                       {paper.description}
-                     </p>
-                  </div>
-                   
-             </div>
-      
-    ))}
-  </div>
+          <div>
+            <h4>Filter by Year</h4>
+          </div>
 
-</div>
+            <div className="flex flex-col gap-10 mt-12">
+              {papers.map((paper, index) => (
+                  <motion.div
+                      variants={containerVariants}
+                      initial="hidden"
+                      whileInView="show"
+                      viewport={{ once: true }}
+                  
+                  key={index} className="flex flex-col  md:flex-row border-b pb-6 border-(--text-color)/40 gap-6  lg:gap-12 items-start group cursor-pointer">
+                        {/* image */}
+                        <div className="lg:w-[25%] lg:h-[215px]   w-full h-[210px] flex-shrink-0 overflow-hidden ">
+                          <img src={paper.image} alt={paper.title}  className="w-full h-full object-cover rounded-[4px] group-hover:scale-105 transition duration-500" />
+                        </div>
+                
+                        {/* text */}
+                          <div className="flex flex-col gap-4 ">
+                                <motion.h3 variants={itemVariants} className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[32px] lg:leading-[32px]  font-semibold">{paper.title}</motion.h3> 
+                                <motion.div variants={itemVariants} className="flex flex-wrap w-full lg:flex-row items-center justify-start gap-3 lg:gap-14 ">
+                                  <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
+                                  <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]" > <span className="text-green font-bold "><File className="size-5" /></span>{paper.file}</h4>
+                                </motion.div>
+                              <motion.p variants={itemVariants} className="text_para mt-2 w-full">{paper.description}</motion.p>
+
+                              <motion.h4 variants={itemVariants} className="text_link text-grey p-0">Download {paper.file}</motion.h4>
+
+                            </div>
+                            
+                  </motion.div>
+                
+              ))}
+            </div>
+
+       </div>
     </div>       
     </section>
   );

@@ -163,10 +163,13 @@ const navLinks = [
   
 
       {/* These are hero_contents */}
-      <div className="min-h-[90vh] Section_wrapper items-center flex relative"
-        style={{ backgroundImage: `url(${activeSlide.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
-      >
-          <header className={`
+      <div className="min-h-[90vh] Section_wrapper items-center flex start relative" style={{ backgroundImage: `url(${activeSlide.image})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+                  <img src={noise} alt="noise" className="absolute inset-0 w-full mix-blend-overlay opacity-40  clip h-full object-cover"/>
+                  <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/50 via-[#3A9B3D]/90 to-[#3A9B3D]/90 opacity-75"></div>
+                  <div className="absolute flex lg:hidden z-0 inset-0 bg-gradient-to-b from-[var(--primary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>
+              
+              
+              <header className={`
             ${isScrolled ? "fixed bg-orange  py-2" : "absolute mt-0  py-4"} 
             w-full top-0 left-0  px-6 lg:px-18 z-50 transition-all duration-490 ease-in-out
           `}>
@@ -314,12 +317,10 @@ const navLinks = [
       )}
 
   
-          </header>
+              </header>
           
 
-          <img src={noise} alt="noise" className="absolute inset-0 w-full mix-blend-overlay opacity-40  clip h-full object-cover"/>
-          <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/50 via-[#3A9B3D]/90 to-[#3A9B3D]/90 opacity-75"></div>
-          <div className="absolute flex lg:hidden z-0 inset-0 bg-gradient-to-b from-[var(--primary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>
+         
           
 
 
@@ -327,43 +328,77 @@ const navLinks = [
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide} // Unique key for AnimatePresence to detect slide change
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
+                variants={containerVariants}
+                initial="hidden"
+                animate="show"
                 exit={{ opacity: 0, y: -50 }}
-                transition={{ duration: 0.7, ease: "easeInOut" }}
-                className="flex flex-col gap-4"
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="flex flex-col gap-4"   
               >
-                <div className="flex">
-                  <div className="h-[2.5px] w-[121.6px] z-10 bg-[#fffced]"></div>
-                </div>
-
-                <h4 className="Section_title white lg:text-[56px] lg:leading-[56px]">
-                  {activeSlide.title}
-                </h4>
-                
-                <p className="white text_para font-light">
-                  {activeSlide.description}
-                </p>
-
-                <div className="white flex cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)] items-center justify-center rounded-[4px] backdrop-blur-2xl bg-[var(--primary-color)] w-fit px-6 py-3 gap-4" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                  <h2 className="white relative uppercase text-[16px] font-semibold">Learn More</h2>
-                  <div className="flex flex-col gap-1">
-                  <motion.span className="bg-white h-[1.2px] w-3 block" 
-                  animate={{
-                    opacity: isHovered ? 1 : 0,
-                    rotate: isHovered ? 35 : 0
-                  }}
-                  transition={{ duration: 0.45 }}
-                  />
-                    <motion.span className="bg-white h-[1.2px] w-3 block" 
-                  animate={{
-                    opacity: isHovered ? 1 : 0,
-                    rotate: isHovered ? -38 : 0
-                  }}
-                  transition={{ duration: 0.2, ease:"easeInOut"}}
-                  />
+                <motion.div variants={itemVariants}>
+                  <div className="flex">
+                    <div className="h-[2.5px] w-[121.6px] z-10 bg-[#fffced]"></div>
                   </div>
-                </div>
+                </motion.div>
+
+                <motion.div variants={itemVariants}>
+                  <h4 className="Section_title white lg:text-[56px] lg:leading-[56px]">
+                    {activeSlide.title}
+                  </h4>
+                </motion.div>
+                
+                <motion.div variants={itemVariants}>
+                  <p className="white text_para lg:w-150">
+                    {activeSlide.description}
+                  </p>
+                </motion.div>
+
+                <motion.div variants={itemVariants}>
+                  <div className="Glassy_btn m-0 bg-orange" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                    <h2 className="white relative uppercase text-[16px] font-semibold">Learn More</h2>
+                    <div className="flex flex-col gap-1">
+                    <motion.span className="bg-white h-[1.2px] w-3 block" 
+                    animate={{
+                      opacity: isHovered ? 1 : 0,
+                      rotate: isHovered ? 35 : 0
+                    }}
+                    transition={{ duration: 0.45 }}
+                    />
+                      <motion.span className="bg-white h-[1.2px] w-3 block" 
+                    animate={{
+                      opacity: isHovered ? 1 : 0,
+                      rotate: isHovered ? -38 : 0
+                    }}
+                    transition={{ duration: 0.2, ease:"easeInOut"}}
+                    />
+                    </div>
+                  </div>
+
+                  
+                  <div className="Grid_4">
+                    <div>
+                      <h4>
+                        Newsletter
+                      </h4>
+
+                    </div>
+                     <div>
+                      <h4>
+                        Newsletter
+                      </h4>
+
+                    </div>
+                     <div>
+                      <h4>
+                        Newsletter
+                      </h4>
+
+                    </div>
+
+                  </div>
+
+
+                </motion.div>
               </motion.div>
             </AnimatePresence>
 
@@ -389,11 +424,10 @@ const navLinks = [
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`rounded-full transition-all ${
-                    currentSlide === index ? "bg-[#fffced]/80 rounded-sm backdrop-blur-2xl h-2 w-6 scale-125" : "rounded-sm backdrop-blur-2xl bg-[#fffced]/40 size-2"
-                  }`}
+                  className={`rounded-full transition-all ${currentSlide === index ? "bg-[#fffced]/80 rounded-sm backdrop-blur-2xl h-2 w-6 scale-125" : "rounded-sm backdrop-blur-2xl bg-[#fffced]/40 size-2" }`}
                   aria-label={`Go to slide ${index + 1}`}
-                ></button>
+                >
+                </button>
               ))}
             </div>
           </div>

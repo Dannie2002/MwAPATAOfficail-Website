@@ -11,7 +11,7 @@ const MainHeader= () => {
 const topLinks = [
 
   {
-    title: "News & Updates",
+    title: "News & Events",
     children: [
       { title: "Recent News", link: "/news",
           children: [
@@ -20,8 +20,20 @@ const topLinks = [
             { title: "News3", link: "/news/news3" },
           ]
        },
-      { title: "Blog", link: "/blog" },
-      { title: "Announcements", link: "/announcements" },
+      { title: "Events", link: "/events" ,
+               children: [
+            { title: "Recent Events", link: "/recent-events" },
+      { title: "MAAPC 2021", link: "/maapc-2021" },
+      { title: "MAAPC 2022", link: "/maapc-2022" },
+      { title: "MAAPC 2023", link: "/maapc-2023" },
+      { title: "MAAPC 2024", link: "/maapc-2024" },
+      { title: "IFPRI-MWAPATA Seminal Series", link: "seminal-series" },
+          ]        
+
+      },
+      { title: "5 New Announcements", link: "/announcements",
+      
+       },
     ]
   },
 
@@ -30,18 +42,7 @@ const topLinks = [
     title: "Job Listings",
     link: "/job-listings"
   },
-  {
-    title: "Events",
-    children: [
-      { title: "Recent Events", link: "/recent-events" },
-      { title: "MAAPC 2021", link: "/maapc-2021" },
-      { title: "MAAPC 2022", link: "/maapc-2022" },
-      { title: "MAAPC 2023", link: "/maapc-2023" },
-      { title: "MAAPC 2024", link: "/maapc-2024" },
-      { title: "IFPRI-MWAPATA Seminal Series", link: "seminal-series" },
-      
-    ]
-  },
+
   {
     title: "Get Involved",
     children: [
@@ -133,7 +134,7 @@ const topLinks = [
                     <ul className="flex flex-col">
                       {item.children.map((child, idx) => (
                       <li key={idx} className="border-b border-b-[#4a4a4a]/10">
-                        <Link to={child.link} className="block text-grey p-4 archivo text-[14px]  hover:text-(--primary-color) hover:translate-x-2 transition-all duration-490 ease-in-out" >{child.title}</Link> 
+                        <Link to={child.link} className="text_link" >{child.title}</Link> 
                       </li>
                       ))}
                     </ul>

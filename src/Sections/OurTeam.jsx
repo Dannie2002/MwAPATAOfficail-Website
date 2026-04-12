@@ -273,7 +273,7 @@ const OurTeam = () => {
                  onClick={(e) => e.stopPropagation()}
                >
                  {/* Header Section with Close Button */}
-                 <div className="flex items-center justify-end p-2 lg:p-4 bg-[#f8ffef] sticky top-0 z-50">
+                 <div className="flex items-center  justify-end p-2 lg:p-4 bg-transparent sticky top-0 z-50">
                    <button 
                      onClick={() => setSelectedEmployee(null)}
                      className="p-2 hover:bg-green/10 rounded-full transition-all"
@@ -283,22 +283,33 @@ const OurTeam = () => {
                  </div>
 
                  {/* Scrollable Content Section */}
-                 <div className="overflow-y-auto  Section_wrapper ">
-                   <div className="flex flex-col gap-6">
-                     <div className="flex flex-col gap-4 mt-2 lg:mt-4 items-start">
-                       <h4 className="Card_heading text-grey">{selectedEmployee.name}</h4>
-                       <p className="text-[var(--text-color)] text-[18px] font-light">{selectedEmployee.title}</p>
-                          <motion.div
-                                       initial={{ opacity: 0, x: 80 }}
-                                       whileInView={{ opacity: 1, x: 0 }}
-                                       transition={{ duration: 1.99, ease: "easeInOut" }}
-                                       className="w-full relative h-[1.5px]  bg-green"
-                                     ></motion.div>
-                     </div>
-                     <p className="text-grey leading-relaxed whitespace-pre-line">
-                       {selectedEmployee.description}
-                     </p>
-                   </div>
+                 <div className="overflow-y-auto h-full ">
+                   
+
+                    <div className="flex flex-col lg:flex-row gap-6">
+                    <div className="fixed hidden lg:flex right-0 top-0 w-full lg:w-1/2 h-[45vh] lg:h-full z-0 lg:z-10 pointer-events-none overflow-hidden">
+                      <img src={selectedEmployee.image} alt={selectedEmployee.title} className="w-full h-full z-50 object-cover"/>
+                      {/* Optional subtle overlay from your CSS background-color: rgba(0, 0, 0, .1) */}
+                      <div className="absolute inset-0 bg-black/10"></div>
+                    </div>
+
+                      <div className="flex flex-col lg:w-1/2 gap-4 p-8 mt-2 lg:mt-4 items-start ">
+                        <h4 className="Card_heading text-grey">{selectedEmployee.name}</h4>
+                        <p className="text-[var(--text-color)] text-[18px] font-light">{selectedEmployee.title}</p>
+                            <motion.div
+                                        initial={{ opacity: 0, x: 80 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 1.99, ease: "easeInOut" }}
+                                        className="w-full relative h-[1.5px]  bg-green"
+                                      ></motion.div>
+
+                                          <p className="text-grey leading-relaxed whitespace-pre-line">
+                        {selectedEmployee.description}
+                      </p>
+                      </div>
+                  
+                    </div>
+
                  </div>
                </motion.div>
              </div>

@@ -175,15 +175,27 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 }
 
 .text_para{
-  @apply lg:text-[18px] font-light text-[var(--text-color)] text-[16px] lg:w-[600px] leading-relaxed;
+  color: #4a4a4a;
+  font-family: var(--font-archivo);
+  @apply lg:text-[18px] font-light my-4 text-[16px] leading-relaxed;
 }
 
 .Section_wrapper{
   @apply lg:py-12 py-6 mx-auto px-6 lg:px-18;
 }
 
+.flex_col{ 
+  @apply flex flex-col gap-2 mb-4 p-4 items-center justify-center;
+}
+
 .Grid_4{
   @apply lg:mt-16 mt-12 grid grid-cols-1 lg:grid-cols-4 gap-8;
+}
+
+.text_link{
+  font-family: var(--font-archivo);
+  color: #4a4a4a;
+  @apply block p-4 text-[14px]  hover:text-(--primary-color) hover:translate-x-2 transition-all duration-490 ease-in-out;
 }
 
 .Glassy_btn{
