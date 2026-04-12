@@ -7,7 +7,7 @@ import capacity from "../assets/Images/LandingPhoto.jpg"; // Assuming this is th
 import slider1 from "../assets/Images/Speaker_series.jpg";
 import slider2 from "../assets/Images/Strategy2.jpg";
 import DottedArrow from "./Icons/DottedArrow";
-import { ChevronRight,ChevronLeft, ChevronDown,Facebook, Twitter, MessageCircle, Phone } from "lucide-react"; // Added Twitter and MessageCircle
+import { ChevronRight,ChevronLeft, ChevronDown,Facebook, Twitter, MessageCircle, Phone ,Search} from "lucide-react"; // Added Twitter and MessageCircle
 import noise from "../assets/Images/Noise.png";
 import logo from "../assets/Images/MwAPATA logo.pdf";
 
@@ -140,10 +140,6 @@ const navLinks = [
       { title: "Research", link: "/research" },
       { title: "Programmes", link: "/programmes" }
     ]
-  },
-  {
-    title: "Contact Us",
-     link: "/contact-us"
   }
 
 ];
@@ -192,16 +188,18 @@ const navLinks = [
        <ul className="hidden  barlow uppercase md:flex items-center gap-8 white font-medium">
         {navLinks.map((item, index) => (
           <li key={index} className="relative links group cursor-pointer">
-            <a className="block py-2" href={item.link || "#"}>{item.title}</a>
+               <Link className="block uppercase py-2" to={item.link}>
+                               {item.title}
+                         </Link>
 
              {item.children && (
               <div className="absolute top-full left-0 hidden group-hover:flex flex-col pt-4 z-40">
                 <div className="bg-[#eef7e3] min-w-[300px] shadow-2xl">
                  <ul className="flex lowercase archivo flex-col">
                   {item.children.map((child, i) => (
-                   <li key={i} className="text-grey p-4 border-b border-b-[#ff0000]/5 hover:bg-(--text-color)/30 hover:text-green transition-colors">
-                    <a href={child.link}>{child.title}</a>
-                  </li>
+                     <li key={i} className="border-b border-b-[#4a4a4a]/10">
+                                        <Link to={child.link} className="text_link" >{child.title}</Link> 
+                                      </li>
                   ))}
                  </ul>
                 </div>
@@ -209,7 +207,17 @@ const navLinks = [
              )}
           </li>
          ))}
+     <div class="relative">
+    <input
+      type="text"
+      placeholder="Search..."
+      class="glass bg-[#fffced]/10 border border-white/20 white placeholder-[#fffced] px-4 py-2 rounded-full w-40 focus:w-64 transition-width duration-500 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/30"
+    />
+    <Search className="white absolute right-3 top-2.5 w-5 h-5" />
+  </div>
+      
       </ul>
+      
 
         {/* CTA */}
       
@@ -375,7 +383,7 @@ const navLinks = [
                   </div>
 
                   
-                  <div className="Grid_4">
+                  <div className="Grid_4 hidden">
                     <div>
                       <h4>
                         Newsletter

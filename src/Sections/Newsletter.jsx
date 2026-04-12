@@ -92,7 +92,7 @@ const newsletterData = [
      
                              
                       <div className=" flex w-full flex-row  lg:gap-4">
-                     <h4 className="white font-semibold text-[20px]">Sign up</h4>
+                     <h4 className="white font-semibold text-[22px]">Sign up</h4>
                        <div className="white flex border cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(221,115,10,0.4)]  border-[#fffced]/30 items-center justify-center rounded-full backdrop-blur-2xl bg-[#fffced]/40  p-2 size-8  gap-4 ">
                                         
                                         <div className="">

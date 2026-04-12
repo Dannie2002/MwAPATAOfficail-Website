@@ -46,6 +46,7 @@ const topLinks = [
   {
     title: "Get Involved",
     children: [
+        { title: "Contact Us", link: "/contact-us"},
       { title: "Publication Feedback", link: "/research" },
       { title: "General Inquiry/Comment", link: "/programmes" },
       { title: "YouTube Channel", link: "/events" },
