@@ -31,9 +31,7 @@ const topLinks = [
           ]        
 
       },
-      { title: "5 New Announcements", link: "/announcements",
-      
-       },
+    
     ]
   },
 

@@ -211,7 +211,7 @@ const navLinks = [
     <input
       type="text"
       placeholder="Search..."
-      class="glass border flex items-center archivo text-[14px] bg-[#f8ffef]/40 backdrop-blur-2xl px-6 py-2 border-[#fffced]/60 outline-offset-0 focus:outline-[#fffced]/10 focus:border-[#fffcedwhite rounded-full  placeholder:text-[#fffced] w-40 focus:w-64 transition-width duration-500 ease-in-out"
+      class="glass border flex items-center archivo text-[14px] bg-[#f8ffef]/40 backdrop-blur-2xl px-6 py-2 border-[#fffced]/60 outline-offset-0 focus:outline-[#fffced]/10 focus:border-[#fffcedwhite rounded-full  placeholder:text-[#fffced] w-40 hover:w-64 transition-width duration-350 ease-in-out"
     />
     <Search className="white absolute right-3 top-3 size-4" />
   </div>

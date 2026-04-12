@@ -59,7 +59,23 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
   width: 100%;
 }
 
+.border_div::after{
+    position: absolute;
+  content: "";
+  width: 90%;
+  height: 2px;
+  background-color: var(--primary-color);
+  left: 0;
+  bottom: -6px;
+  transition: width 0.49s ease;
+}
 
+.border_div:hover::after{
+  width: 100%;
+  
+
+     
+}
 
 
 .card{
@@ -184,8 +200,8 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
   @apply lg:py-12 py-6 mx-auto px-6 lg:px-18;
 }
 
-.flex_col{ 
-  @apply flex flex-col gap-2 mb-4 p-4 items-center justify-center;
+.flex_cols{ 
+  @apply flex flex-col gap-2 mb-4 items-start justify-center;
 }
 
 .Grid_4{
