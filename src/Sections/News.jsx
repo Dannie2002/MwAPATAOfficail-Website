@@ -83,11 +83,11 @@ const News = () => {
               </div>
       </div>
 
-
+<h4 className="barlow gap-4 uppercase flex items-center tracking-widest text-grey mt-12 font-bold text-[18px]">Latest News</h4>
         {/* This is a grid for news card */} 
-      <div className="Grid_4 lg:grid-cols-3">
-          {News.map(news => (
-            <div key={news.id} className="relative border_div pb-6 rounded-[14px] z-0 shadow-3xl">
+      <div className="Grid_4 mt-6 lg:gap-12">
+          {News.slice(0, 3).map((news, index) => (
+            <div key={news.id} className={`relative border_div pb-6 rounded-[14px] z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`}>
                <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
                 <img src={news.image} alt={news.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                  {/* overlay to apply blend mode */}
@@ -112,17 +112,22 @@ const News = () => {
        </div>
         
 
-
+   <motion.div
+                                      initial={{ opacity: 0, x: 80 }}
+                                      whileInView={{ opacity: 1, x: 0 }}
+                                      transition={{ duration: 1.99, ease: "easeInOut" }}
+                                      className=" w-full  relative h-[0.9px] mt-8 bg-(--text-color)"></motion.div>
 
 <div className="mt-6 lg:mt-18">
-<h4 className="barlow gap-4 uppercase flex items-center text-grey font-bold text-[22px]">Explore more News</h4>
+<h4 className="barlow gap-4 uppercase flex items-center tracking-widest text-grey font-bold text-[18px]">Explore more News</h4>
 
-  <div className="Grid_4  lg:gap-12">
+  <div className="Grid_4 mt-6  lg:gap-12">
           {News.map(news => (
-            <div key={news.id} className="relative rounded-[14px] pb-4 border_div z-0 shadow-3xl">
+            <div key={news.id} className="relative group rounded-[14px] pb-4 border_div z-0 shadow-3xl">
                <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
-                <img src={news.image} alt={news.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
+                <img src={news.image} alt={news.title} className="w-full group-hover:scale-110 transition-all duration-2200 ease-in-out h-full rounded-[4px] object-cover"/>
                  {/* overlay to apply blend mode */}
+                 <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-1250 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 "></div>
                 
                 </div>
 
@@ -130,13 +135,13 @@ const News = () => {
                 <div className="mt-0  py-1 rounded-full">
                   <h4 className="text_date">{news.date}</h4>
                 </div>
-                <h4 className="Card_heading text-grey mb-4">
+                <h4 className="Card_heading text-grey mb-5">
                   {news.title}
                 </h4>
                 <p className="text_para w-full line-clamp-1 hidden">The MwAPATA Institute wishes to recruit highly motivated, proactive
           service-oriented, and energetic individuals to fill the position of
           Communications Officer.</p>
-          <h4 className="uppercase font-semibold archivo text-[14px] text-grey tracking-wide">Learn More</h4>
+          <h4 className="uppercase font-semibold stack  archivo text-[14px] text-grey tracking-widest">Learn More</h4>
                 
               </div>
             </div>
