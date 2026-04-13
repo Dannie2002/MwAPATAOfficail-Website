@@ -159,8 +159,8 @@ const navLinks = [
   
 
       {/* These are hero_contents */}
-      <div className="min-h-[80vh] Section_wrapper items-center flex start relative" style={{ backgroundImage: `url(${activeSlide.image})`, backgroundSize: "cover", backgroundPosition: "center" }}>
-                  <img src={noise} alt="noise" className="absolute inset-0 w-full mix-blend-overlay opacity-40  clip h-full object-cover"/>
+      <div className="min-h-[80vh] Section_wrapper items-center flex relative" style={{ backgroundImage: `url(${activeSlide.image})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+                  <img src={noise} alt="noise" className="absolute hidden inset-0 w-full mix-blend-overlay opacity-40  clip h-full object-cover"/>
                   <div className="absolute hidden lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/50 via-[#3A9B3D]/90 to-[#3A9B3D]/90 opacity-75"></div>
                   <div className="absolute flex lg:hidden z-0 inset-0 bg-gradient-to-b from-[var(--primary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-75"></div>
               
@@ -329,9 +329,6 @@ const navLinks = [
           
 
          
-          
-
-
           <div className="flex flex-col gap-4  z-10">
             <AnimatePresence mode="wait">
               <motion.div

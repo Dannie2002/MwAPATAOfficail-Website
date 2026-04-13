@@ -21,7 +21,7 @@ const papers = [
   },
   {
     id: 2,
-    image: capacity,
+    image: workingpapers,
     title: "Agricultural Diversification and Commercialization of Smallholder Farming in Malawi: Extent, Drivers, Impacts and Policy Options",
     date: "02 February 2025",
     year:"2025",
@@ -38,6 +38,15 @@ const papers = [
     date: "17 January 2026",
     description:
       "This paper examines the adoption of climate-smart agricultural practices and their benefits to farmers.",
+  },
+{
+      id: 4,
+    image: workingpapers,
+    title: "The Potential for Mega-Farms to Transform Malawian Agriculture",
+    file: "PDF",
+    year:"2022",
+    date: "August 30, 2022",
+    description:"The government has committed to transforming Malawian agriculture through mega-farms. Other countries in Sub-Saharan Africa offer lessons on the performance of large farms and their impacts on surrounding smaller farms. Key players in Malawi also offer insights on the role of mega-farms.",
   },
 ];
 
@@ -61,7 +70,7 @@ const papers = [
     },
   };
 
-   const [selectedYear, setSelectedYear] = useState("all");
+   const [selectedYear, setSelectedYear] = useState("2026");
    const [searchTerm, setSearchTerm] = useState("");
 
   const years = [...new Set(papers.map(paper => paper.year))].sort((a,b)=>b-a);
@@ -119,17 +128,18 @@ const filteredPapers = papers.filter((paper) => {
          
          <div className="mt-12">
 
-          <div className="flex gap-6 items-center justify-start">
-            <h4 className="uppercase font-semibold archivo text-[14px] text-grey tracking-wide">Filter By Year:</h4>
-              <div className="flex gap-3">
+          <div className="flex gap-2 flex-col lg:flex-row lg:gap-6 items-start lg:items-center justify-start">
+            <h4 className="uppercase font-semibold barlow text-[14px] text-grey tracking-wide">Filter By Year:</h4>
+              <div className="flex gap-4">
 
              <button
       onClick={() => setSelectedYear("all")}
-      className={`px-3 py-[3px] border rounded-sm text-[13px] archivo transition-all duration-200
-      ${selectedYear === "all"
-        ? "bg-green text-white border-green"
-        : "text-green border-green hover:bg-green hover:text-white"}
-      `}
+      className={`px-6 py-2 border font-semibold border-[#4a4a4a]/40 rounded-sm text-[12px] archivo transition-all duration-200
+        
+        ${selectedYear === "All"
+          ? "bg-green font-semibold white border-none"
+          : "text-grey hover:border-none not-[]: hover:bg-(--text-color)/40 hover:text-white"}
+        `}
     >
             All
           </button>
@@ -138,11 +148,11 @@ const filteredPapers = papers.filter((paper) => {
               <button
         key={year}
         onClick={() => setSelectedYear(year)}
-        className={`px-3 py-[3px] border rounded-sm text-[13px] archivo transition-all duration-200
+        className={`px-6 py-2 border stack font-normal border-[#4a4a4a]/40 rounded-sm text-[12px] archivo transition-all duration-200
         
         ${selectedYear === year
-          ? "bg-green text-white border-green"
-          : "text-green border-green hover:bg-green hover:text-white"}
+          ? "bg-green font-semibold white border-none"
+          : "text-grey hover:border-none not-[]: hover:bg-(--text-color)/40 hover:text-white"}
         `}
       >
               {year}
@@ -161,7 +171,7 @@ const filteredPapers = papers.filter((paper) => {
      onChange={(e) => setSearchTerm(e.target.value)}
       type="text"
       placeholder="Search by file name or date..."
-      className="glass border flex items-center archivo text-[14px] bg-[#4a4a4a]/45 backdrop-blur-2xl pl-10 pr-6 py-2 border-[#4a4a4a]/20 outline-offset-0 focus:outline-[#4a4a4a]/10 focus:border-[#fffced] rounded-full placeholder:text-[#fffced] w-64 hover:w-full transition-width duration-350 ease-in-out"
+      className="glass border flex items-center archivo white text-[14px] bg-[#4a4a4a]/45 backdrop-blur-2xl pl-10 pr-6 py-2 border-[#4a4a4a]/20 outline-offset-0 focus:outline-[#4a4a4a]/10 focus:border-[#fffced] rounded-full placeholder:text-[#fffced] w-64 hover:w-full transition-width duration-350 ease-in-out"
     />
     <Search className="white absolute left-3 top-3 size-4" />
             </div>
@@ -181,7 +191,7 @@ const filteredPapers = papers.filter((paper) => {
                       whileInView="show"
                       viewport={{ once: true }}
                   
-                  key={index} className="flex flex-col  md:flex-row border-b pb-6 border-(--text-color)/40 gap-6  lg:gap-12 items-start group cursor-pointer">
+                  key={index.id} className="flex flex-col  md:flex-row border-b pb-6 border-(--text-color)/40 gap-6  lg:gap-12 items-start group cursor-pointer">
                         {/* image */}
                         <div className="lg:w-[25%] lg:h-[215px]   w-full h-[210px] flex-shrink-0 overflow-hidden ">
                           <img src={paper.image} alt={paper.title}  className="w-full h-full object-cover rounded-[4px] group-hover:scale-105 transition duration-500" />
@@ -191,7 +201,7 @@ const filteredPapers = papers.filter((paper) => {
                           <div className="flex flex-col gap-4 ">
                                 <motion.h3 variants={itemVariants} className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[32px] lg:leading-[32px]  font-semibold">{paper.title}</motion.h3> 
                                 <motion.div variants={itemVariants} className="flex flex-wrap w-full lg:flex-row items-center justify-start gap-3 lg:gap-14 ">
-                                  <h4 className="barlow gap-4 flex items-center text-grey font-normal text-[14px]" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
+                                  <h4 className="gap-4 flex items-center text_date" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
                                   <h4 className="barlow gap-4 flex items-center text-grey font-normal text-[14px]" > <span className="text-green font-bold "><File className="size-5" /></span>{paper.file}</h4>
                                 </motion.div>
                               <motion.p variants={itemVariants} className="text_para mt-2 w-full">{paper.description}</motion.p>

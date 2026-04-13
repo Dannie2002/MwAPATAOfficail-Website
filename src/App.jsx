@@ -24,6 +24,7 @@ import SeminalSeries from "./Sections/SubSections/SeminalSeries"
 import SeeMore_AboutUs from "./Sections/SeeMore_AboutUs";
 import OurBackground from "./Sections/OurBackground";
 import News from "./Sections/News";
+import NewsDetailed from "./Sections/SubSections/NewsDetailed"
 
 
 
@@ -60,6 +61,7 @@ function App() {
     </Routes>
     
 <News />
+<NewsDetailed />
 <Footer />   
 </>
       

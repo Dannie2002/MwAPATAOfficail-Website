@@ -167,7 +167,10 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
   @apply absolute rounded-[14px] inset-0 bg-[var(--secondary-color)] opacity-20 mix-blend-multiply;
 }
 
-
+.text_date{
+  font-family: var(--font-stack);
+  @apply text-(--text-color) tracking-wider font-light capitalize text-[14px];
+}
 .noise{
   @apply absolute rounded-[14px] z-0 inset-0 mix-blend-overlay opacity-30  size-full object-cover;
 }
@@ -187,13 +190,13 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 }
 .Card_heading{
   font-family: var(--font-barlow);
-  @apply hover:text-[var(--secondary-color)] uppercase duration-490 cursor-pointer font-semibold text-[#fffced] lg:text-[var(--text-color)] lg:leading-[24px]  leading-[22px] text-[22px]  lg:text-[24px];
+  @apply hover:text-[var(--secondary-color)] uppercase duration-490 cursor-pointer font-semibold text-[#fffced] lg:text-[var(--text-color)] lg:leading-[26px]  leading-[22px] text-[22px]  lg:text-[24px];
 }
 
 .text_para{
   color: #4a4a4a;
   font-family: var(--font-archivo);
-  @apply lg:text-[18px] font-light my-2 text-[16px] leading-relaxed;
+  @apply lg:text-[18px] font-light lg:leading-[24.7px] my-2 text-[16px] leading-relaxed;
 }
 
 .Section_wrapper{

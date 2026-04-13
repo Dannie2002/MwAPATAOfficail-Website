@@ -2,6 +2,7 @@ import React from "react";
 import {motion} from "framer-motion";
 import capacity from "../../assets/Images/Capacity_building.jpg";
 import newsletter from "../../assets/Images/Newsletter.jpg"
+import news from "../../assets/Images/News&Updates.jpg"
 import Section_header from "../Section_header";
 import noise from "../../assets/Images/Noise.png";
 import { Share2,ThumbsUp,ThumbsDown,MapPinned, Clock, CalendarDays  } from "lucide-react";
@@ -31,7 +32,7 @@ const NewsDetailed = () => {
 
 const NewsDetails = [
   { icon: CalendarDays, text: "17 JAN 2026" },
-  { icon: Clock, text: "17 JAN 2026" },
+  { icon: Clock, text: "10:30pm" },
   { label: "Reported by:", text: "John Kondowe" },
 ];
 
@@ -39,7 +40,7 @@ const NewsDetails = [
   <section className="Section_bg">
           <Section_header
   title="News"
-  bgImage={newsletter}
+  bgImage={news}
   breadcrumbs={[
     { label: "Home", link: "/" },
     { label: "/ News Updates" }
@@ -77,13 +78,13 @@ const NewsDetails = [
                     whileInView="show"
                     viewport={{ once: true }} className="flex flex-wrap w-full lg:flex-row items-center justify-start gap-3 lg:gap-14 mt-10">
          {NewsDetails.map((detail, index) => (
-           <motion.h4 key={index} variants={itemVariants} className="uppercase gap-4 flex items-center text-grey barlow font-semibold text-[14px]">
+           <motion.h4 key={index} variants={itemVariants} className="gap-4 uppercase flex items-center text-grey font-semibold barlow  text-[14px]">
              {detail.icon ? (
                <motion.span variants={itemVariants} className="text-green font-bold">
                  <detail.icon className="size-5" />
                </motion.span>
              ) : (
-               <span className="text-green font-bold">{detail.label}</span>
+               <span className="text-grey font-light stack  text-[14px]">{detail.label}</span>
              )}
              {detail.text}
            </motion.h4>
@@ -94,7 +95,7 @@ const NewsDetails = [
                                       initial={{ opacity: 0, x: 80 }}
                                       whileInView={{ opacity: 1, x: 0 }}
                                       transition={{ duration: 1.99, ease: "easeInOut" }}
-                                      className=" w-full  relative h-[1.3px] mt-8 bg-green"></motion.div>
+                                      className=" w-full  relative h-[0.9px] mt-8 bg-(--text-color)"></motion.div>
 
 
                 <div className="lg:mt-22 mt-12 flex flex-col gap-12">
@@ -115,7 +116,7 @@ const NewsDetails = [
                  Agri-Skills Lab was held at Zomba Community Stadium Hall from 6th to 7th February 2026.
               </p>
               
-                <h4 className="Card_heading text-green">BY EDWIN BANDA</h4>
+                <h4 className="text-grey font-bold stack capitalize text-[14px]">BY EDWIN BANDA</h4>
                 
                   </div>
 
@@ -127,7 +128,7 @@ const NewsDetails = [
                         <div><ThumbsDown className="text-green"/></div>
                     </div>
               <div className="flex items-center gap-6">
-  <div className="font-semibold text-green">Share:</div>
+  <div className="font-semibold text-grey">Share:</div>
 
   <div className="cursor-pointer bg-green p-2 rounded-full flex items-center justify-center text-green hover:opacity-70">
     <Facebook className="size-5 white" />
