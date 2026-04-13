@@ -1,5 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router";
+import { ChevronRight } from "lucide-react";  
 import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.jpg";
 import research from "../assets/Images/Research.jpg";
@@ -93,7 +95,7 @@ const Publications = () => {
               <motion.div
   variants={{
     rest: { y: 0 },
-    hover: { y: -120 }
+    hover: { y: -220 }
   }}
   transition={{ duration: 0.5, ease: "easeOut" }}
   className="absolute z-10 flex flex-row items-center gap-3 bottom-0 p-4 w-full"
@@ -111,9 +113,16 @@ const Publications = () => {
                       transition={{ duration: 0.5, ease: "easeOut" }}
                       className="absolute bottom-0 left-0 p-4 z-10 max-w-[370px]"
                     >
-                      <p className="text-[#fffced] pt-2 text-[16px] pb-2 leading-relaxed zalando">
+                      <p className="text_para white">
                         {publication.description}
                       </p>
+                        <div className="mt-4 hover:bg-(--primary-color) Glassy_btn p-1 rounded-full z-20">
+                        <Link to={publication.link}>
+                          <ChevronRight className="white size-5" />
+                        </Link>   
+                    </div>
+                    
+
                     </motion.div>
                 </AnimatePresence>
 
@@ -167,7 +176,7 @@ const Publications = () => {
 <motion.div
   variants={{
     rest: { y: 0 },
-    hover: { y: -120 }
+    hover: { y: -200 }
   }}
   transition={{ duration: 0.5, ease: "easeOut" }}
   className="absolute z-10 flex flex-row items-center gap-3 bottom-0 p-4 w-full"
@@ -189,6 +198,11 @@ const Publications = () => {
   <p className="text-[#fffced] pt-2 text-[16px] pb-2 leading-relaxed zalando">
     {resource.description}
   </p>
+    <div className="mt-4 hover:bg-(--primary-color) Glassy_btn p-1 rounded-full z-20">
+                        <Link to={resource.link}>
+                          <ChevronRight className="white size-5" />
+                        </Link>   
+                    </div>
 </motion.div>
 </AnimatePresence>
 

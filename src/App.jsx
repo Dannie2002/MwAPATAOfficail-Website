@@ -40,7 +40,7 @@ function App() {
       <Route path="/" element={<CoverPages />} />
       <Route path="/Publications/working-papers" element={<WorkingPapers />} />
       <Route path="/policy-brief" element={<PolicyBrief />} />
-      <Route path="/perspectives" element={<Policy_Perspective />} />
+      <Route path="/policy-perspective" element={<Policy_Perspective />} />
       <Route path="/peer-review" element={<Peer_Reviewed_Research />} />
       <Route path="/seminars" element={<Capacity_Building_Seminars />} />
       <Route path="/our-team" element={<OurTeam />} />

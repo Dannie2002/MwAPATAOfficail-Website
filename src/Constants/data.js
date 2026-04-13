@@ -8,23 +8,25 @@ import policy_perspective from "../assets/Images/Policy_perspective.jpg";
   {
     id: 1,
     title: "Working Papers",
-    description:
-      "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
+    description:"Working Papers offeroriginal, internally reviewed papers in a longer format for readers interested in taking a deep dive into an issue and how it was researched. ",
     image: workingpapers,
+    link:"/Publications/working-papers",
   },
   {
     id: 2,
     title: "Policy Briefs",
-    description:
-      "Conducting evidence-based research to influence agricultural and development policies.",
+    description:"Policy Briefs offer quickly accessible highlights and key messages on important policy topics, with the essential background information. These are often linked to a Working Paper",
     image: policy_brief,
+    link:"/policy-brief",
   },
   {
     id: 3,
     title: "Policy Perspective",
     description:
-      "Improving market systems and access for farmers and agribusiness stakeholders.",
+      "Policy Perspectives are commentaries submitted by experts in their fields to discuss salient policy issues. These can be by invitation and submissions will also be considered",
    image: policy_perspective, 
+   link:"/policy-perspective",
+
   },
 
 ];
@@ -34,25 +36,25 @@ import policy_perspective from "../assets/Images/Policy_perspective.jpg";
   {
     id: 1,
     title: "Peer Reviewed",
-    description:
-      "Our goal is to produce world-class, rigorous research.",
+    description:"Our goal is to produce world-class, rigorous research. This is best demonstrated by  publishing articles and chapters in top rated peer-reviewed journals and books.",
         image: policy_perspective, 
+        link:"/peer-reviewed",
    
   },
   {
     id: 2,
     title: "Presentations",
-    description:
-      "Circulating our findings to stakeholders to provoke informed discussions.",
+    description:"We know research sitting on a shelf never makes a difference. Circulating our findings to stakeholders to provoke informed discussions is one of our biggest priorities.",
         image: policy_perspective, 
+        link:"/presentations",
     
   },
   {
     id: 3,
     title: "Data",
-    description:
-      " We will work to collect and share data for key indicators like agricultural production, welfare, food security and more.",
+    description:" Improving the quality of agricultural data is a priority for MwAPATA. We will work to collect and share data for key indicators like agricultural production, welfare, food security and more.",
         image: policy_perspective, 
+        link:"/data",
     
   },
 
