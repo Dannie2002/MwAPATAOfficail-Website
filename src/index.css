@@ -62,7 +62,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 .border_div::after{
     position: absolute;
   content: "";
-  width: 90%;
+  width: 10%;
   height: 2px;
   background-color: var(--primary-color);
   left: 0;
@@ -193,7 +193,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 .text_para{
   color: #4a4a4a;
   font-family: var(--font-archivo);
-  @apply lg:text-[18px] font-light my-4 text-[16px] leading-relaxed;
+  @apply lg:text-[18px] font-light my-2 text-[16px] leading-relaxed;
 }
 
 .Section_wrapper{

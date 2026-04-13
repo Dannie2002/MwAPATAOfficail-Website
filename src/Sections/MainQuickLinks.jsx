@@ -78,7 +78,7 @@ const QuickLinks=[
         <div className='flex gap-8 lg:flex-row flex-col items-start justify-start w-full z-50'>
 
 <div className='lg:w-[40%] z-10'>
- <h4 className=' white z-10 text-4xl Section_title'>Looking for something in particular?</h4>
+ <h4 className='font-light white z-10 text-4xl lg:w-[70%] Section_title'>Looking for something in particular?</h4>
 </div>
   
 
@@ -97,12 +97,12 @@ const QuickLinks=[
           
           >
             <div>
-               <motion.h4 variants={itemVariants} className="uppercase barlow pb-1 font-extrabold archivo text-[16px] lg:text-[14px] white tracking-[1.9px]">{quick_link.Quick_link}</motion.h4>
+               <motion.h4 variants={itemVariants} className="uppercase agdasima pb-1 font-bold archivo text-[16px] lg:text-[16px] white tracking-[1.9px]">{quick_link.Quick_link}</motion.h4>
                 <motion.p className='white font-seminormal text-[18.5px]' variants={itemVariants}>{quick_link.Call_to_action}</motion.p>
 
             </div>
                      
-                      <div className="mt-2 bg-orange Glassy_btn p-1 rounded-full z-20">
+                      <div className="mt-2 hover:bg-(--primary-color) Glassy_btn p-1 rounded-full z-20">
                         <Link to={quick_link.link}>
                           <ChevronRight className="white size-5" />
                         </Link>

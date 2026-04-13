@@ -4,8 +4,11 @@ import { useState } from "react";
 import RightArrow from "./Icons/RightArrow";
 import capacity from "../assets/Images/Capacity_building.jpg";
 import research from "../assets/Images/Research.jpg";
+import Partners from "../assets/Images/Partners.jpg";
 import outreach from "../assets/Images/Outreach.jpg";
 import news from "../assets/Images/News&Updates.jpg"
+import event2 from"../assets/Images/Policy_advocacy.jpg";
+import event3 from"../assets/Images/Event_header.jpg";
 import Section_header from "./Section_header";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -17,23 +20,23 @@ const News = () => {
     description:
       "Strengthening institutions and individuals through training, mentorship, and knowledge sharing.",
       date: "17 Jan 2026",
-    image: capacity,
+    image: Partners,
   },
   {
     id: 2,
     title: "Stakeholders Strategize on Future of Smallholder Farming in Malawi",
     description:
       "Conducting evidence-based research to influence agricultural and development policies.",
-      date: "21 FEB 2021",
-    image: research,
+      date: "17 Jan 2026",
+    image: event2,
   },
   {
     id: 3,
     title: "Minister Calls for Homegrown Agricultural Policy Research",
     description:
       "Improving market systems and access for farmers and agribusiness stakeholders.",
-      date: "17 OCT 2020",
-   image: outreach, 
+      date: "17 Jan 2026",
+   image: event3, 
   }
 
 ];
@@ -74,9 +77,9 @@ const News = () => {
 
 
         {/* This is a grid for news card */} 
-          <div className="Grid_4 lg:grid-cols-3">
+      <div className="Grid_4 lg:grid-cols-3">
           {News.map(news => (
-            <div key={news.id} className="relative rounded-[14px] z-0 shadow-3xl">
+            <div key={news.id} className="relative border_div pb-6 rounded-[14px] z-0 shadow-3xl">
                <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
                 <img src={news.image} alt={news.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                  {/* overlay to apply blend mode */}
@@ -85,7 +88,7 @@ const News = () => {
 
               <div className="bg-transparent z-10 flex flex-col items-start gap-4 justify-between mt-4 w-full">
                 <div className="mt-0  py-1 rounded-full">
-                  <h4 className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]">{news.date}</h4>
+                  <h4 className="barlow gap-4 flex items-center text-grey font-light text-[14px]">{news.date}</h4>
                 </div>
                 <h4 className="Card_heading text-grey ">
                   {news.title}
@@ -93,12 +96,53 @@ const News = () => {
                 <p className="text_para w-full line-clamp-2">The MwAPATA Institute wishes to recruit highly motivated, proactive
           service-oriented, and energetic individuals to fill the position of
           Communications Officer.</p>
+          <h4 className="uppercase font-semibold archivo text-[14px] text-grey tracking-wide">Learn More</h4>
                 
               </div>
             </div>
           ))}
        </div>
         
+
+
+
+<div className="mt-6 lg:mt-18">
+<h4 className="barlow gap-4 uppercase flex items-center text-grey font-bold text-[18px]">Explore more News</h4>
+
+  <div className="Grid_4 lg:grid-cols-4">
+          {News.map(news => (
+            <div key={news.id} className="relative rounded-[14px]  z-0 shadow-3xl">
+               <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
+                <img src={news.image} alt={news.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
+                 {/* overlay to apply blend mode */}
+                
+                </div>
+
+              <div className="bg-transparent z-10 flex flex-col items-start gap-4 justify-between mt-4 w-full">
+                <div className="mt-0  py-1 rounded-full">
+                  <h4 className="barlow gap-4 flex items-center text-grey font-light text-[14px]">{news.date}</h4>
+                </div>
+                <h4 className="Card_heading text-grey ">
+                  {news.title}
+                </h4>
+                <p className="text_para w-full line-clamp-2">The MwAPATA Institute wishes to recruit highly motivated, proactive
+          service-oriented, and energetic individuals to fill the position of
+          Communications Officer.</p>
+          <h4 className="uppercase font-semibold archivo text-[14px] text-grey tracking-wide">Learn More</h4>
+                
+              </div>
+            </div>
+          ))}
+       </div>
+
+
+
+</div>
+
+
+
+
+
                 <div className="flex items-start flex-wrap overflow-hidden mt-6  gap-4 lg:mt-12  transition ">
                                          <div className="p-2 size-12 group flex-center bg-green hover:bg-[var(--secondary-color)]/60 duration-470">
                                            <ChevronLeft className="text-[#fffced] size-6 group-hover:text-white" />
