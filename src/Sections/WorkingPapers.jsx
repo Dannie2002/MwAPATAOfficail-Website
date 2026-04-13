@@ -23,7 +23,7 @@ const papers = [
     id: 2,
     image: capacity,
     title: "Agricultural Diversification and Commercialization of Smallholder Farming in Malawi: Extent, Drivers, Impacts and Policy Options",
-    date: "02 February 2024",
+    date: "02 February 2025",
     year:"2025",
     file: "PDF",
     description:
@@ -35,7 +35,7 @@ const papers = [
     title: "Climate Smart Agriculture",
     file: "PDF",
     year:"2026",
-    date: "17 January 2024",
+    date: "17 January 2026",
     description:
       "This paper examines the adoption of climate-smart agricultural practices and their benefits to farmers.",
   },
@@ -62,13 +62,25 @@ const papers = [
   };
 
    const [selectedYear, setSelectedYear] = useState("all");
+   const [searchTerm, setSearchTerm] = useState("");
 
   const years = [...new Set(papers.map(paper => paper.year))].sort((a,b)=>b-a);
 
-  const filteredPapers =
-    selectedYear === "all"
-      ? papers
-      : papers.filter(paper => paper.year === selectedYear);
+const filteredPapers = papers.filter((paper) => {
+
+  const matchesYear =
+    selectedYear === "all" || paper.year === selectedYear;
+
+    const search = searchTerm.trim().toLowerCase();
+
+  const matchesSearch =
+    paper.title.toLowerCase().includes(search) ||
+    paper.date.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    paper.description.toLowerCase().includes(searchTerm.toLowerCase());
+
+  return matchesYear && matchesSearch;
+
+});
 
   return (
     <section className="Section_bg">
@@ -145,12 +157,20 @@ const papers = [
 
             <div className="relative mt-6">
     <input
+     value={searchTerm}
+     onChange={(e) => setSearchTerm(e.target.value)}
       type="text"
       placeholder="Search by file name or date..."
       className="glass border flex items-center archivo text-[14px] bg-[#4a4a4a]/45 backdrop-blur-2xl pl-10 pr-6 py-2 border-[#4a4a4a]/20 outline-offset-0 focus:outline-[#4a4a4a]/10 focus:border-[#fffced] rounded-full placeholder:text-[#fffced] w-64 hover:w-full transition-width duration-350 ease-in-out"
     />
     <Search className="white absolute left-3 top-3 size-4" />
             </div>
+
+          {searchTerm.trim() !== "" && (
+  <p className="text_para text-[16px] mt-4 ">
+    {filteredPapers.length} Working Papers Found
+  </p>
+)}  
 
 
             <div className="flex flex-col gap-10 mt-12">
