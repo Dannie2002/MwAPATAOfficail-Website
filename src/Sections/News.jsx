@@ -28,7 +28,7 @@ const News = () => {
     description:
       "Conducting evidence-based research to influence agricultural and development policies.",
       date: "17 Jan 2026",
-    image: event2,
+    image: event3,
   },
   {
     id: 3,
@@ -83,7 +83,7 @@ const News = () => {
               </div>
       </div>
 
-<h4 className="barlow gap-4 uppercase flex items-center tracking-widest text-grey mt-12 font-bold text-[18px]">Latest News</h4>
+<h4 className="barlow gap-4 uppercase flex items-center tracking-[4px] text-grey mt-12 font-bold text-[18px]">Latest News</h4>
         {/* This is a grid for news card */} 
       <div className="Grid_4 mt-6 lg:gap-12">
           {News.slice(0, 3).map((news, index) => (
@@ -124,7 +124,7 @@ const News = () => {
   <div className="Grid_4 mt-6  lg:gap-12">
           {News.map(news => (
             <div key={news.id} className="relative group rounded-[14px] pb-4 border_div z-0 shadow-3xl">
-               <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
+               <div className="relative h-[420px] overflow-hidden z-0 group shadow-3xl">
                 <img src={news.image} alt={news.title} className="w-full group-hover:scale-110 transition-all duration-2200 ease-in-out h-full rounded-[4px] object-cover"/>
                  {/* overlay to apply blend mode */}
                  <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-1250 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 "></div>
@@ -132,8 +132,9 @@ const News = () => {
                 </div>
 
               <div className="bg-transparent z-10 flex flex-col items-start gap-4 justify-between mt-4 w-full">
-                <div className="mt-0  py-1 rounded-full">
+                <div className="mt-0 flex items-start flex-row justify-between  py-1 ">
                   <h4 className="text_date">{news.date}</h4>
+                  <h4 className="text_date text-grey lowercase">2 hrs ago</h4>
                 </div>
                 <h4 className="Card_heading text-grey mb-5">
                   {news.title}

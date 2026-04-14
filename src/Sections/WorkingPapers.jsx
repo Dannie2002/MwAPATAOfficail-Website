@@ -159,7 +159,7 @@ const filteredPapers = papers.filter((paper) => {
             </button>
           ))}
 
-        </div>
+             </div>
 
           </div>
 
@@ -192,23 +192,23 @@ const filteredPapers = papers.filter((paper) => {
                       viewport={{ once: true }}
                   
                   key={index.id} className="flex flex-col  md:flex-row border-b pb-6 border-(--text-color)/40 gap-6  lg:gap-12 items-start group cursor-pointer">
-                        {/* image */}
+                        {/*working paper image */}
                         <div className="lg:w-[25%] lg:h-[215px]   w-full h-[210px] flex-shrink-0 overflow-hidden ">
                           <img src={paper.image} alt={paper.title}  className="w-full h-full object-cover rounded-[4px] group-hover:scale-105 transition duration-500" />
                         </div>
                 
-                        {/* text */}
+                        {/* Working papers details */}
                           <div className="flex flex-col gap-4 ">
-                                <motion.h3 variants={itemVariants} className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[32px] lg:leading-[32px]  font-semibold">{paper.title}</motion.h3> 
+                                <motion.h3 variants={itemVariants} className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[26px] lg:leading-[26px]  font-semibold">{paper.title}</motion.h3> 
                                 <motion.div variants={itemVariants} className="flex flex-wrap w-full lg:flex-row items-center justify-start gap-3 lg:gap-14 ">
-                                  <h4 className="gap-4 flex items-center text_date" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
-                                  <h4 className="barlow gap-4 flex items-center text-grey font-normal text-[14px]" > <span className="text-green font-bold "><File className="size-5" /></span>{paper.file}</h4>
+                                  <h4 className="gap-4 flex text-grey items-center text_date" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
+                                  <h4 className="gap-4 flex text-grey items-center text_date" > <span className="text-green font-bold "><File className="size-5" /></span>{paper.file}</h4>
                                 </motion.div>
                               <motion.p variants={itemVariants} className="text_para mt-2 w-full">{paper.description}</motion.p>
 
-                              <motion.h4 variants={itemVariants} className="text_link  p-0">Download {paper.file}</motion.h4>
+                              <motion.h4 variants={itemVariants} className="text_link uppercase  stack  tracking-widest  p-0">Download {paper.file}</motion.h4>
 
-                            </div>
+                          </div>
                             
                   </motion.div>
                 

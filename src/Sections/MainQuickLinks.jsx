@@ -105,9 +105,7 @@ const QuickLinks=[
                       <div className="mt-4 hover:bg-(--primary-color) Glassy_btn p-1 rounded-full z-20">
                         <Link to={quick_link.link}>
                           <ChevronRight className="white size-5" />
-                        </Link>
-                      
-                           
+                        </Link>   
                     </div>
           </motion.div>
 

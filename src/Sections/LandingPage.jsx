@@ -225,7 +225,7 @@ const navLinks = [
         {/* Mobile Menu Button */}
             <button
       onClick={() => setIsOpen(!isOpen)}
-      className="flex md:hidden bg-[#ff8000] rounded-[4px] p-4 flex-col justify-center items-center gap-1.5 "
+      className="flex md:hidden  rounded-full p-4 flex-col justify-center items-center gap-1.5 "
     >
       {/* Top line */}
       <motion.span

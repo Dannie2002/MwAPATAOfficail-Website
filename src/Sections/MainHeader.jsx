@@ -56,7 +56,7 @@ const topLinks = [
       { title: "Publications", link: "/publications", 
             children: [
               { title: "Working Papers", link: "/Publications/working-papers" },
-              { title: "Policy Brief", link: "/Publications/policy-brief" },
+              { title: "Policy Brief", link: "/policy-brief" },
               { title: "Perspectives", link: "/Publications/perspectives" },
               { title: "Peer Review Research", link: "/Publications/peer-review" },
            

@@ -13,25 +13,6 @@ import Section_header from "./Section_header";
 
 const Contact_Us = () => {
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.5,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
-    show: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.49, ease: "easeInOut" }
-    },
-  };
 
  const mission_vision = [
   {
@@ -116,10 +97,10 @@ const contact_details = [
                 <div className="mt-12 lg:mt-10">
                   <motion.div 
                     className="flex lg:flex-row lg:gap-12 flex-col gap-8 items-start "
-                    variants={containerVariants}
+                   variants={containerVariants}
                     initial="hidden"
                     whileInView="show"
-                    viewport={{ once: true }}
+                    viewport={{ once: true }} 
                   >
                     {contact_details.map(({ id, title, description, icon }) => (
                       <motion.div key={id} variants={itemVariants} className="gap-4 flex ">

@@ -133,7 +133,7 @@ const clipPath = useTransform(
                          building, and policy coordination.
                       </p>
                       
-                        <h6 className="text-green  uppercase mt-6 font-semibold">ABOUT US</h6>
+                          <h4 className="uppercase font-semibold stack  archivo text-[14px] text-grey tracking-widest">About Us</h4>
      
                       
                 </div> 
