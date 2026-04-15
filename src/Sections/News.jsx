@@ -118,7 +118,8 @@ const News = () => {
                                       transition={{ duration: 1.99, ease: "easeInOut" }}
                                       className=" w-full  relative h-[0.9px] mt-8 bg-(--text-color)"></motion.div>
 
-<div className="mt-6 lg:mt-18">
+
+   <div className="mt-6 lg:mt-18">
 <h4 className="barlow gap-4 uppercase flex items-center tracking-widest text-grey font-bold text-[18px]">Explore more News</h4>
 
   <div className="Grid_4 mt-6  lg:gap-12">
@@ -151,7 +152,7 @@ const News = () => {
 
 
 
-</div>
+   </div>
 
 
 

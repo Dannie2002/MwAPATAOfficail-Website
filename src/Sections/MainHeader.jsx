@@ -131,8 +131,8 @@ const topLinks = [
                   {!hasGrandChildren &&(
                     <ul className="flex flex-col">
                       {item.children.map((child, idx) => (
-                      <li key={idx} className="border-b border-b-[#4a4a4a]/10">
-                        <Link to={child.link} className="text_link" >{child.title}</Link> 
+                      <li key={idx} className="border-b last_link border-b-[#4a4a4a]/10">
+                        <Link to={child.link} className="text_link " >{child.title}</Link> 
                       </li>
                       ))}
                     </ul>

@@ -75,7 +75,7 @@ const papers = [
 
   const years = [...new Set(papers.map(paper => paper.year))].sort((a,b)=>b-a);
 
-const filteredPapers = papers.filter((paper) => {
+  const filteredPapers = papers.filter((paper) => {
 
   const matchesYear =
     selectedYear === "all" || paper.year === selectedYear;
@@ -105,30 +105,14 @@ const filteredPapers = papers.filter((paper) => {
 
     <div className="Section_wrapper lg:px-22">
        
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-12">
-              <h4 
-                className="Section_title  tracking-wide">
-                WORKING PAPERS
-              </h4>
-
-              <div className="flex flex-col items-start lg:hidden mt-4 lg:items-end">
-                  <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.3, ease: "easeInOut" }}
-                  className="mt-2 w-[90px] h-[4px] bg-green "></motion.div>
-                  <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.99, ease: "easeInOut" }}
-                  className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
-              </div>
-      </div>
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-12">
+              <h4  className="Section_title  tracking-wide">WORKING PAPERS</h4>
+            </div>
                
          
-         <div className="mt-12">
+         
 
-          <div className="flex gap-2 flex-col lg:flex-row lg:gap-6 items-start lg:items-center justify-start">
+          <div className="flex gap-2 flex-col mt-6 lg:mt-12 lg:flex-row lg:gap-6 items-start lg:items-center justify-start">
             <h4 className="uppercase font-semibold barlow text-[14px] text-grey tracking-wide">Filter By Year:</h4>
               <div className="flex gap-4">
 
@@ -165,40 +149,34 @@ const filteredPapers = papers.filter((paper) => {
 
 
 
-            <div className="relative mt-6">
-    <input
-     value={searchTerm}
-     onChange={(e) => setSearchTerm(e.target.value)}
-      type="text"
-      placeholder="Search by file name or date..."
-      className="glass border flex items-center archivo white text-[14px] bg-[#4a4a4a]/45 backdrop-blur-2xl pl-10 pr-6 py-2 border-[#4a4a4a]/20 outline-offset-0 focus:outline-[#4a4a4a]/10 focus:border-[#fffced] rounded-full placeholder:text-[#fffced] w-64 hover:w-full transition-width duration-350 ease-in-out"
-    />
-    <Search className="white absolute left-3 top-3 size-4" />
+          <div className="relative mt-12">
+          <input
+           value={searchTerm}
+           onChange={(e) => setSearchTerm(e.target.value)}
+           type="text"
+           placeholder="Search by file name or date..."
+           className="glass border flex items-center archivo white text-[14px] bg-[#4a4a4a]/40 backdrop-blur-2xl pl-10 pr-6 py-2 border-[#4a4a4a]/15 outline-offset-0 focus:outline-[#4a4a4a]/10 focus:border-[#fffced] rounded-full placeholder:text-[#fffced] w-64 hover:w-full transition-width duration-350 ease-in-out"/>
+          <Search className="white absolute left-3 top-3 size-4" />
             </div>
 
           {searchTerm.trim() !== "" && (
-  <p className="text_para text-[16px] mt-4 ">
-    {filteredPapers.length} Working Papers Found
-  </p>
-)}  
+          <p className="text_para text-[16px] mt-4 ">{filteredPapers.length} Working Papers Found</p>)}  
 
 
-            <div className="flex flex-col gap-10 mt-12">
+            <div className="flex flex-col gap-10 mt-6 lg:mt-12">
               {filteredPapers.map((paper, index) => (
                   <motion.div
                       variants={containerVariants}
                       initial="hidden"
                       whileInView="show"
                       viewport={{ once: true }}
-                  
-                  key={index.id} className="flex flex-col  md:flex-row border-b pb-6 border-(--text-color)/40 gap-6  lg:gap-12 items-start group cursor-pointer">
+                      key={index.id} className="flex flex-col  md:flex-row border-b pb-6 border-(--text-color)/40 gap-6  lg:gap-12 items-start group cursor-pointer">
                         {/*working paper image */}
-                        <div className="lg:w-[25%] lg:h-[215px]   w-full h-[210px] flex-shrink-0 overflow-hidden ">
-                          <img src={paper.image} alt={paper.title}  className="w-full h-full object-cover rounded-[4px] group-hover:scale-105 transition duration-500" />
-                        </div>
-                
-                        {/* Working papers details */}
-                          <div className="flex flex-col gap-4 ">
+                  <div className="lg:w-[25%] lg:h-[215px]   w-full h-[210px] flex-shrink-0 overflow-hidden ">
+                    <img src={paper.image} alt={paper.title}  className="w-full h-full object-cover rounded-[4px] group-hover:scale-105 transition duration-500" />
+                  </div>
+                    {/* Working papers details */}
+                  <div className="flex flex-col gap-4 ">
                                 <motion.h3 variants={itemVariants} className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[26px] lg:leading-[26px]  font-semibold">{paper.title}</motion.h3> 
                                 <motion.div variants={itemVariants} className="flex flex-wrap w-full lg:flex-row items-center justify-start gap-3 lg:gap-14 ">
                                   <h4 className="gap-4 flex text-grey items-center text_date" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{paper.date}</h4>
@@ -208,14 +186,12 @@ const filteredPapers = papers.filter((paper) => {
 
                               <motion.h4 variants={itemVariants} className="text_link uppercase  stack  tracking-widest  p-0">Download {paper.file}</motion.h4>
 
-                          </div>
-                            
-                  </motion.div>
-                
-              ))}
+                  </div>
+                </motion.div>
+                 ))}
             </div>
 
-       </div>
+         
     </div>       
     </section>
   );

@@ -6,7 +6,7 @@ import policy_brief from "../../assets/Images/Policy_brief.jpg";
 import noise from "../../assets/Images/Noise.png";
 import newsletter from "../../assets/Images/Newsletter.jpg"
 import Section_header from "../Section_header";
-import {  CalendarDays,File, Search  } from "lucide-react";
+import {  CalendarDays,File, Search,ChevronRight  } from "lucide-react";
 
 const PolicyBrief= () => {
 
@@ -177,21 +177,10 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-10">
               <h4  className="Section_title">Policy Brief</h4>
 
-              <div className="flex lg:hidden mt-4 flex-col items-start lg:items-end">
-                  <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.3, ease: "easeInOut" }}
-                  className="mt-2 w-[90px] h-[4px] bg-green "></motion.div>
-                  <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.99, ease: "easeInOut" }}
-                  className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
-              </div>
+           
       </div>
       
-         <div className="flex gap-2 flex-col lg:flex-row lg:gap-6 items-start lg:items-center justify-start">
+         <div className="flex gap-2 flex-col mt-12 lg:flex-row lg:gap-6 items-start lg:items-center justify-start">
             <h4 className="uppercase font-semibold barlow text-[14px] text-grey tracking-wide">Filter By Year:</h4>
               <div className="flex gap-4">
 
@@ -226,7 +215,7 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
 
           </div>
 
-                      <div className="relative mt-6">
+                      <div className="relative mt-10">
     <input
      value={searchTerm}
      onChange={(e) => setSearchTerm(e.target.value)}
@@ -248,29 +237,55 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
           <div className="Grid_4 grid-cols-1">
 
         {filteredPolicy_brief.map((policy, index) => (
-          <div variants={containerVariants}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                key={index.id} className="flex flex-col md:flex-row border-b pb-6 border-(--text-color)/40  gap-12 items-start group cursor-pointer">
-            {/*policy brief image */}
-            <div className="lg:w-[25%] lg:h-[250px] flex-shrink-0 overflow-hidden ">
-              <img src={policy.image}alt={policy.title} className="w-full h-full object-cover rounded-[4px] group-hover:scale-105 transition duration-500" />
-            </div>
+          <div
+  className="flex flex-col md:flex-row gap-12 items-start  border-b pb-8 border-(--text-color)/40 group cursor-pointer"
+>
 
-            {/* Policy briefs details*/}
-                  <div className="flex flex-col gap-4 ">
-                                                <motion.h3 variants={itemVariants} className="Card_heading text-grey group-hover:text-(--secondary-color) lg:text-[26px] lg:leading-[26px]  font-semibold">{policy.title}</motion.h3> 
-                                                <motion.div variants={itemVariants} className="flex flex-wrap w-full lg:flex-row items-center justify-start gap-3 lg:gap-14 ">
-                                                  <h4 className="gap-4 flex text-grey items-center text_date" > <span className="text-green font-bold "><CalendarDays className="size-5"/></span>{policy.date}</h4>
-                                                  <h4 className="gap-4 flex text-grey items-center text_date" > <span className="text-green font-bold "><File className="size-5" /></span>{policy.file}</h4>
-                                                </motion.div>
-                                              <motion.p variants={itemVariants} className="text_para mt-2 w-full">{policy.description}</motion.p>
-                
-                                              <motion.h4 variants={itemVariants} className="text_link uppercase  stack  tracking-widest  p-0">Download {policy.file}</motion.h4>
-                
-                  </div>
-                
+  {/* IMAGE */}
+  <div className="lg:w-[25%] lg:h-[230px] flex-shrink-0 overflow-hidden">
+    <img
+      src={policy.image}
+      alt={policy.title}
+      className="w-full h-full object-cover rounded-[4px] group-hover:scale-105 transition duration-500"
+    />
+  </div>
+
+
+  {/* TITLE COLUMN */}
+  <div className="lg:w-[35%] lg:h-[230px] flex flex-col items-start justify-between gap-6">
+    <div>
+    <h3 className="Card_heading capitalize text-[24px] archivo text-grey mb-4">
+      {policy.title}
+    </h3>
+
+    <div className="flex items-center mt-4 gap-6">
+      <h4 className="flex items-center gap-2 text_date text-[#6f6969]">
+        <CalendarDays className="size-5 text-green" />
+        {policy.date}
+      </h4>
+
+      <h4 className="flex items-center gap-2 text_date text-grey">
+        <File className="size-5 text-green" />
+        {policy.file}
+      </h4>
+    </div>
+</div>
+    <motion.h4 variants={itemVariants} className="text_link uppercase stack  tracking-wide  p-0">Download {policy.file}</motion.h4>
+
+  </div>
+
+
+  {/* DESCRIPTION COLUMN */}
+  <div className="lg:w-[40%] flex items-start justify-between gap-6">
+
+    <p className="text_para text-grey">
+      {policy.description}
+    </p>
+
+  
+
+  </div>
+
           </div>
           
         ))}

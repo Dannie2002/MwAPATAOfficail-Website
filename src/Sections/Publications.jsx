@@ -85,7 +85,7 @@ const Publications = () => {
   animate="rest"
             
             
-            className={`relative cursor-pointer z-0 shadow-3xl ${index === 1 ? "lg:col-span-2" : ""}`} >
+            className={`relative cursor-pointer z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`} >
                <div className="relative h-full rounded-[4px] overflow-hidden z-0 group shadow-3xl">
                  <img src={publication.image} alt={publication.title} className="w-full group-hover:scale-110 transition-all duration-700 ease-in-out h-full rounded-[4px] object-cover"/>
                  <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
@@ -95,36 +95,33 @@ const Publications = () => {
               <motion.div
   variants={{
     rest: { y: 0 },
-    hover: { y: -220 }
+    hover: { y: -60 }
   }}
-  transition={{ duration: 0.5, ease: "easeOut" }}
-  className="absolute z-10 flex flex-row items-center gap-3 bottom-0 p-4 w-full"
+  transition={{ duration: 0.4, ease: "easeOut" }}
+  className="absolute bottom-0 z-10 flex items-center gap-3 p-4 w-full"
 >
-                <h4 className="Card_heading white">{publication.title}</h4>
-                <RightArrow size={28} color="#fffced" />
-              </motion.div>
+  <h4 className="Card_heading white">{publication.title}</h4>
+  <RightArrow size={28} color="#fffced" />
+</motion.div>
 
-                <AnimatePresence>
-                    <motion.div
-                      variants={{
-                        rest: { opacity: 0, y: 40 },
-                        hover: { opacity: 1, y: 0 }
-                      }}
-                      transition={{ duration: 0.5, ease: "easeOut" }}
-                      className="absolute bottom-0 left-0 p-4 z-10 max-w-[370px]"
-                    >
-                      <p className="text_para white">
-                        {publication.description}
-                      </p>
-                        <div className="mt-4 hover:bg-(--primary-color) Glassy_btn p-1 rounded-full z-20">
-                        <Link to={publication.link}>
-                          <ChevronRight className="white size-5" />
-                        </Link>   
-                    </div>
-                    
+              <motion.div
+  variants={{
+    rest: { y: 120, opacity: 0 },
+    hover: { y: 130, opacity: 1 }
+  }}
+  transition={{ duration: 0.45, ease: "easeOut" }}
+  className="absolute bottom-0 left-0 p-4 z-10 max-w-[370px]"
+>
+  <p className="text_para white">
+    {publication.description}
+  </p>
 
-                    </motion.div>
-                </AnimatePresence>
+  <div className="mt-4 hover:bg-(--primary-color) Glassy_btn p-1 rounded-full">
+    <Link to={publication.link}>
+      <ChevronRight className="white size-5" />
+    </Link>
+  </div>
+</motion.div>
 
            </motion.div>
         ))}

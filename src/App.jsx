@@ -23,10 +23,6 @@ import Publications from "./Sections/Publications";
 import SeminalSeries from "./Sections/SubSections/SeminalSeries"
 import SeeMore_AboutUs from "./Sections/SeeMore_AboutUs";
 import OurBackground from "./Sections/OurBackground";
-import News from "./Sections/News";
-import NewsDetailed from "./Sections/SubSections/NewsDetailed"
-
-
 
 
 
@@ -59,10 +55,10 @@ function App() {
       <Route path="/about-us" element={<SeeMore_AboutUs />} />
       <Route path="/background" element={<OurBackground />} />
     </Routes>
-    
-<News />
-<NewsDetailed />
-<Footer />   
+<Events />
+<Programmes /> 
+<Footer />  
+
 </>
       
   )

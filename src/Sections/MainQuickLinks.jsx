@@ -31,20 +31,19 @@ const MainQuickLinks = () => {
   };
 
 const QuickLinks=[
-    {
-      id:1,
-      Quick_link:"What's Coming Next?",
-      Call_to_action:"See our next events",
-      link:"/events"
-        
-    },
-
-
          {
-      id:2,
+      id:1,
       Quick_link:"Explore Publications",
       Call_to_action:"Take me to your publications",
       link:"/publications"
+        
+    },
+
+        {
+      id:2,
+      Quick_link:"What's Coming Next?",
+      Call_to_action:"See our next events",
+      link:"/events"
         
     },
 
@@ -78,17 +77,17 @@ const QuickLinks=[
         <div className='flex gap-8 lg:flex-row flex-col items-start justify-start w-full z-50'>
 
 <div className='lg:w-[40%] z-10'>
- <h4 className='font-semibold white archivo capitalize z-10 text-[36px] lg:w-[80%] Section_title'>Looking for something in particular?</h4>
+ <h4 className='font-semibold white archivo capitalize z-10 text-[36px] lg:w-[80%] Section_title'>You may be Interested in</h4>
 </div>
   
 
            
                 
 
-      <div className='flex lg:w-[60%] lg:flex-row w-full flex-col gap-6 lg:gap-18 '>
-{QuickLinks.map((quick_link,id)=>(
+      <div className='flex lg:w-[60%] lg:flex-row w-full flex-col gap-6 lg:gap-6 '>
+{QuickLinks.map((quick_link,index)=>(
         
-          <motion.div key={quick_link.id} className='flex relative  lg:flex-col border_div pb-6 gap-2 mb-4 items-start justify-between lg:justify-start z-10' 
+          <motion.div key={quick_link.id} className={`flex relative border border-[#fffced]/30 px-6 py-4 rounded-sm lg:flex-col pb-6 gap-2 mb-4 items-start justify-between lg:justify-start z-10 ${index === 0 ? "bg-[#fffced]/30 p-4 border-none hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(255,255,25,0.2)]  backdrop-blur-2xl":""}`} 
            variants={containerVariants}
                     initial="hidden"
                     whileInView="show"
