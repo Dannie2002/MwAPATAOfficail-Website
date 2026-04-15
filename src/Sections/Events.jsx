@@ -89,9 +89,13 @@ const Events = () => {
             <span className="text-orange">AND </span>INSPIRATION.
           </h4>
         </div>
-
+  
+  <div className="mt-12">
+ <h4  className="uppercase barlow  pb-1 font-bold archivo text-[16px] lg:text-[18px] text-[#6f6969] tracking-[1.9px]">Recent Events</h4> 
+  </div>
+       
         {/* Featured Recent Events */}
-        <div className="Grid_4 mt-12 lg:gap-12">
+        <div className="Grid_4 mt-6 lg:gap-12">
           {events.slice(0, 3).map((event, index) => (
             <div
               key={event.id}

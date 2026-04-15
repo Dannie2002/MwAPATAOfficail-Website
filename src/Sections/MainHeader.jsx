@@ -22,7 +22,8 @@ const topLinks = [
        },
       { title: "Events", link: "/events" ,
                children: [
-            { title: "Recent Events", link: "/recent-events" },
+      { title: "Recent Events", link: "/recent-events" },
+      { title: "Upcoming Events", link: "/upcoming-events" },
       { title: "MAAPC 2021", link: "/maapc-2021" },
       { title: "MAAPC 2022", link: "/maapc-2022" },
       { title: "MAAPC 2023", link: "/maapc-2023" },
