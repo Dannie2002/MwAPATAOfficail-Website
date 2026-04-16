@@ -450,11 +450,11 @@ useEffect(() => {
           {events.slice(0, 3).map((event, index) => (
             <div
               key={event.id}
-              className={`relative border_div pointer-cursor pb-6 rounded-[14px] z-0 shadow-3xl ${
+              className={`relative border_div group pointer-cursor pb-6 rounded-[14px] z-0  ${
                 index === 0 ? "lg:col-span-2" : ""
               }`}
             >
-              <div className="relative h-[240px] lg:h-[420px] overflow-hidden z-0 group shadow-[0_6px_12px_rgba(121,115,10,0.2)]">
+              <div className="relative h-[240px] lg:h-[360px] overflow-hidden z-0 group shadow-[0_6px_12px_rgba(121,115,10,0.2)]">
                 <img
                   src={event.image}
                   alt={event.title}
@@ -548,7 +548,7 @@ useEffect(() => {
                    onChange={(e) => setSearchTerm(e.target.value)}
                    type="text"
                    placeholder="Search by file name or date..."
-                   className="glass border flex items-center archivo white text-[14px] bg-(--secondary-color) backdrop-blur-2xl pl-12 pr-6 py-3 border-[#ffced]/20 outline-offset-0 focus:outline-(--secondary-color)/60 focus:border-[#fffced] rounded-sm placeholder:text-[15px] placeholder:text-[#fffced] w-full hover:w-full transition-width duration-350 ease-in-out"
+                   className="glass div_clip border flex items-center archivo white text-[14px] bg-(--secondary-color) backdrop-blur-2xl pl-12 pr-6 py-3 border-[#ffced]/20 outline-offset-0 focus:outline-(--secondary-color)/60 focus:border-[#fffced] rounded-sm placeholder:text-[15px] placeholder:text-[#fffced] w-full hover:w-full transition-width duration-350 ease-in-out"
                  />
                  <Search className="white absolute left-3 top-[14.5px] size-5" />
                </div>
@@ -566,9 +566,9 @@ useEffect(() => {
               <div
                  key={event.id}
                 ref={index === visibleCount - 1 ? lastVisibleRef : null}
-                className="relative group border_div pb-6 rounded-[14px] z-0 shadow-3xl"
+                className="relative border_div   group pb-6 rounded-[14px] z-0 shadow-3xl"
               >
-                <div className="relative grouup-hover:shadow-2xl lg:h-[380px] h-[220px] overflow-hidden z-0 group shadow-3xl">
+                <div className="image_div">
                   <img
                     src={event.image}
                     alt={event.title}

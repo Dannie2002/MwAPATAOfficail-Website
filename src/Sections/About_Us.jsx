@@ -117,7 +117,7 @@ const clipPath = useTransform(
                  
               </div>
              
-              <motion.div ref={ref} style={{ clipPath }} className="relative flex mt-0 items-end justify-end ">
+              <motion.div ref={ref} style={{ clipPath }} className="relative  flex mt-0 items-end justify-end ">
               
                 <img src={speaker_series} alt="research" className="w-full clip h-[430px]  object-cover"/>
                  <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 import partners from "../assets/Images/Partners.jpg";
-import { ChevronRight } from 'lucide-react';
+import { ChevronsRight } from 'lucide-react';
 import policy_brief from "../assets/Images/Policy_brief.jpg"
 import noise from "../assets/Images/Noise.png"
 
@@ -87,7 +87,7 @@ const QuickLinks=[
       <div className='flex lg:w-[60%] lg:flex-row w-full flex-col gap-6 lg:gap-6 '>
 {QuickLinks.map((quick_link,index)=>(
         
-          <motion.div key={quick_link.id} className={`flex relative border border-[#fffced]/30 px-6 py-4 rounded-sm lg:flex-col pb-6 gap-2 mb-4 items-start justify-between lg:justify-start z-10 ${index === 0 ? "bg-[#fffced]/30 p-4 border-none hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)] shadow-[0_6px_12px_rgba(255,255,25,0.2)]  backdrop-blur-2xl":""}`} 
+          <motion.div key={quick_link.id} className={`flex  relative border border-[#fffced]/40 px-6 py-4 rounded-sm lg:flex-col pb-6 gap-2 mb-4 items-start justify-between lg:justify-start z-10 ${index === 0 ? "bg-[#fffced]/10 p-4  hover:shadow-[4px_8px_12px_rgba(221,115,10,0.6)]  ":""}`} 
            variants={containerVariants}
                     initial="hidden"
                     whileInView="show"
@@ -96,14 +96,15 @@ const QuickLinks=[
           
           >
             <div>
-               <motion.h4 variants={itemVariants} className="uppercase agdasima pb-1 font-bold archivo text-[16px] lg:text-[18px] white tracking-[1.9px]">{quick_link.Quick_link}</motion.h4>
-                <motion.p className='white font-light text-[17.5px]' variants={itemVariants}>{quick_link.Call_to_action}</motion.p>
+              <h3 className='white uppercase barlow text-2xl mb-2 font-bold'>{quick_link.id}</h3>
+               <h4 className="uppercase agdasima pb-1 font-bold archivo text-[16px] lg:text-[18px] white tracking-[1.9px]">{quick_link.Quick_link}</h4>
+                <p className='white font-light text-[17.5px]' variants={itemVariants}>{quick_link.Call_to_action}</p>
 
             </div>
                      
                       <div className="mt-4 hover:bg-(--primary-color) Glassy_btn p-1 rounded-full z-20">
                         <Link to={quick_link.link}>
-                          <ChevronRight className="white size-5" />
+                          <ChevronsRight className="white size-5" />
                         </Link>   
                     </div>
           </motion.div>

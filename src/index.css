@@ -44,6 +44,11 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
   position: relative;
 }
 
+.div_clip{
+clip-path: polygon(30% 0%, 87% 0, 100% 13%, 100% 70%, 100% 100%, 30% 100%, 0 100%, 0 0);
+}
+
+
 .links::after{
   position: absolute;
   content: "";
@@ -197,6 +202,11 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 .Section_bg{
   @apply bg-[#f8ffef] min-h-screen;
 }
+
+.image_div{
+  @apply relative group-hover:shadow-2xl lg:h-[290px] h-[220px]  w-full overflow-hidden z-0 ;
+}
+
 
 .Counter_title{
   font-family: var(--font-barlow);

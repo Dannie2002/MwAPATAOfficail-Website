@@ -125,14 +125,14 @@ const topLinks = [
              </Link>
 
              {item.children && (
-              <div className="absolute top-full left-0   hidden group-hover:flex  pt-2 z-90">
-                <div className={`bg-[#eef7e3] shadow-2xl ${hasGrandChildren? "grid grid-cols-2 gap-8 min-w-[550px]": "min-w-[340px]"}`}>
+              <div className="absolute div_clip top-full left-0   hidden group-hover:flex  pt-2 z-90">
+                <div className={`bg-[#e1e6da] shadow-2xl ${hasGrandChildren? "grid grid-cols-2 gap-8 min-w-[550px]": "min-w-[340px]"}`}>
 
                    {/* Absolute div that appears on hover with child links */}
                   {!hasGrandChildren &&(
                     <ul className="flex flex-col">
                       {item.children.map((child, idx) => (
-                      <li key={idx} className="border-b last_link border-b-[#4a4a4a]/10">
+                      <li key={idx} className="border-b  border-b-[#4a4a4a]/10">
                         <Link to={child.link} className="text_link " >{child.title}</Link> 
                       </li>
                       ))}
@@ -150,7 +150,7 @@ const topLinks = [
                       <ul>
                           {section.children && section.children.map((child, j) => (
                         <li key={j} className="border-b  border-b-[#4a4a4a]/10">
-                          <Link to={child.link} className="block text-grey hover:text-(--primary-color) p-4 archivo text-[14px] hover:translate-x-2  transition-all duration-490 " >{child.title}</Link> 
+                          <Link to={child.link} className="block text-grey hover:text-(--primary-color) p-4 archivo capitalize text-[15px] hover:translate-x-2  transition-all duration-490 " >{child.title}</Link> 
                         </li>
                           ))}
                       </ul>

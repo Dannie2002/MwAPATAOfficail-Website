@@ -84,15 +84,15 @@ const News = () => {
               </div>
       </div>
 
-<h4 className="barlow gap-4 uppercase flex items-center tracking-[4px] text-grey mt-12 font-bold text-[18px]">Latest News</h4>
+<h4 className="barlow gap-4 uppercase flex items-center tracking-[4px] text-(--primary-color) mt-12 font-bold text-[18px]">Latest News</h4>
         {/* This is a grid for news card */} 
       <div className="Grid_4 mt-6 lg:gap-12">
           {News.slice(0, 3).map((news, index) => (
             <div key={news.id} className={`relative border_div pb-6 rounded-[14px] z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`}>
-               <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
+               <div className="relative group h-[240px] lg:h-[360px] overflow-hidden z-0  shadow-3xl">
                 <img src={news.image} alt={news.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                  {/* overlay to apply blend mode */}
-                   <div className="absolute hidden transition-all duration-600  ease-in-out group-hover:flex  z-20 inset-0 bg-gradient-to-r from-[var(--primary-color)]/70 via-(--primary-color)/60 to-var(--primary-color)/50 opacity-95"></div>
+                    <div className="absolute hidden transition-all duration-600  ease-in-out group-hover:flex  z-20 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95"></div>
                   <div className="absolute flex-col hidden inset-0 size-full group-hover:flex items-center justify-center z-50">
                     <h4 className="white agdasima animate-bounce duration-300 text-[24px] tracking-wider uppercase font-bold ">Explore Event</h4>
                     <DottedArrow  color="#fffced" size={24} className="  size-18" />
@@ -127,7 +127,7 @@ const News = () => {
   <div className="Grid_4 mt-6  lg:gap-12">
           {News.map(news => (
             <div key={news.id} className="relative group rounded-[14px] pb-4 border_div z-0 shadow-3xl">
-               <div className="relative h-[420px] group overflow-hidden z-0 group shadow-3xl">
+               <div className="relative h-[240px] lg:h-[360px] group overflow-hidden z-0 group shadow-3xl">
                 <img src={news.image} alt={news.title} className="w-full group-hover:scale-110 transition-all duration-2200 ease-in-out h-full rounded-[4px] object-cover"/>
                  {/* overlay to apply blend mode */}
                      <div className="absolute hidden transition-all duration-600  ease-in-out group-hover:flex  z-20 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95"></div>

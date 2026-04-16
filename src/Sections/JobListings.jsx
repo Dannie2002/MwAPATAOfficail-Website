@@ -146,18 +146,18 @@ const JobListing = () => {
                 {job.description}
               </motion.p>
 
-              <p variants className="lg:text-[18px] font-light mt-4 text-grey text-[16px] lg:w-full leading-relaxed"> Find the detailed terms of reference <span className="underline text-green"> here</span>.</p>
+              <p variants className="lg:text-[18px] font-semibold mt-4 text-grey text-[16px] lg:w-full leading-relaxed"> Find the detailed terms of reference <span className="underline text-green"> here</span>.</p>
                             <div className="flex flex-wrap  mt-6 lg:flex-row items-center justify-between lg:justify-start gap-3 lg:gap-14 ">
-                              <motion.h4  variants={itemVariants} className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]">
-                                   <motion.span variants={itemVariants} className="text-green font-bold">
+                              <motion.h4  variants={itemVariants} className="uppercase  gap-4 flex items-center text_date">
+                                   <motion.span variants={itemVariants} className="text-green barlow font-bold">
                                      Posted on:
                                    </motion.span>
                                   {job.posted_date}
                                  </motion.h4>
 
-                                <motion.h4  variants={itemVariants} className="uppercase  gap-4 flex items-center text-grey barlow font-semibold text-[14px]">
-                                   <motion.span variants={itemVariants} className="text-(--primary-color) font-bold">
-                                     Deadline:
+                             <motion.h4  variants={itemVariants} className="uppercase  gap-4 flex items-center text_date">
+                                   <motion.span variants={itemVariants} className="text-green barlow font-bold">
+                                     Posted on:
                                    </motion.span>
                                   {job.deadline}
                                  </motion.h4>
