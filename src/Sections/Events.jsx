@@ -124,9 +124,13 @@ const Events = () => {
               </div>
 
               <div className="bg-transparent z-10 flex flex-col items-start gap-4 justify-between mt-4 w-full">
-                <div className="mt-0 py-1 rounded-full">
-                  <h4 className="text_date group-hover:text-(--primary-color) font-semibold text-[#6f6969]">{event.date}</h4>
-                </div>
+                <div className="flex items-center mt-0 lg:mt-4 gap-6">
+                     <h4 className="flex font-semibold items-center  gap-4 text_date ">
+                       <CalendarDays className="size-5 text-(--primary-color)" />
+                       {event.date}
+                     </h4>
+               
+                   </div>
 
                 <h4 className="Card_heading capitalize text-[20px] archivo text-grey line-clamp-2 mb-2">
                   {event.title}
@@ -153,7 +157,7 @@ const Events = () => {
 
           {/* Year Filter */}
           <div className="flex gap-6 flex-col mt-12 lg:flex-row lg:gap-12 items-start lg:items-center justify-start">
-            <h4 className="uppercase font-semibold barlow text-[22px] text-grey tracking-wide">
+              <h4 className="uppercase font-semibold archivo  text-[18px] lg:text-[20px] text-grey tracking-wider">
               Filter<span className="font-bold"> By Year:</span>
             </h4>
 
@@ -165,8 +169,7 @@ const Events = () => {
                 ${
                   selectedYear === "All"
                     ? "bg-green  white border-none"
-                    : "text-grey not-[]: hover:bg-(--secondary-color) hover:text-white"
-                }`}
+                    : "text-grey not-[]: hover:bg-(--secondary-color) hover:text-white" }`}
               >
                 All
               </button>
@@ -190,16 +193,16 @@ const Events = () => {
           </div>
 
           {/* Search */}
-          <div className="relative mt-12">
-            <input
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              type="text"
-              placeholder="Search by file name or date..."
-              className="glass border flex items-center archivo white text-[14px] bg-(--secondary-color) backdrop-blur-2xl pl-10 pr-6 py-2 border-[#ffced]/20 outline-offset-0 focus:outline-(--secondary-color)/60 focus:border-[#fffced] rounded-full placeholder:text-[#fffced] w-[55%] lg:w-[32%] hover:w-full transition-width duration-350 ease-in-out"
-            />
-            <Search className="white absolute left-3 top-3 size-4" />
-          </div>
+     <div className="relative mt-12">
+                 <input
+                   value={searchTerm}
+                   onChange={(e) => setSearchTerm(e.target.value)}
+                   type="text"
+                   placeholder="Search by file name or date..."
+                   className="glass border flex items-center archivo white text-[14px] bg-(--secondary-color) backdrop-blur-2xl pl-12 pr-6 py-3 border-[#ffced]/20 outline-offset-0 focus:outline-(--secondary-color)/60 focus:border-[#fffced] rounded-sm placeholder:text-[15px] placeholder:text-[#fffced] w-full hover:w-full transition-width duration-350 ease-in-out"
+                 />
+                 <Search className="white absolute left-3 top-[14.5px] size-5" />
+               </div>
 
           {/* Results */}
           {searchTerm.trim() !== "" && (
@@ -222,9 +225,7 @@ const Events = () => {
                     className="w-full group-hover:scale-110 transition-all duration-1200 ease-in-out h-full rounded-[4px] object-cover"
                   />
 
-                  <div className="absolute inset-0 group-hover:bg-(--primary-color)/60 transition-all duration-400 ease-in-outsize-full z-20">
-
-                  </div>
+                  <div className="absolute hidden transition-all duration-600  ease-in-out group-hover:flex  z-20 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95"></div>
                   <div className="absolute flex-col hidden inset-0 size-full group-hover:flex items-center justify-center z-50">
                     <h4 className="white agdasima  text-[24px] tracking-wider uppercase font-bold ">Explore Event</h4>
                     <DottedArrow  color="#fffced" size={24} className="  size-18" />
@@ -233,11 +234,15 @@ const Events = () => {
                 </div>
 
                 <div className="bg-transparent z-10 flex flex-col items-start gap-4 justify-between mt-4 w-full">
-                  <div className="mt-0  rounded-full">
-                     <h4 className="text_date font-semibold text-[#6f6969]">{event.date}</h4>
-                  </div>
+                 <div className="flex items-center mt-0 lg:mt-4 gap-6">
+                      <h4 className="flex font-semibold items-center  gap-4 text_date ">
+                        <CalendarDays className="size-5 text-(--primary-color)" />
+                        {event.date}
+                      </h4>
+                
+                    </div>
 
-                  <h4 className="Card_heading capitalize text-[20px] archivo text-grey line-clamp-2">
+                  <h4 className="Card_heading capitalize text-[20px] archivo mt-2 text-grey line-clamp-2">
                     {event.title}
                   </h4>
 

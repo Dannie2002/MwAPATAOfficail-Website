@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Partners from "../../assets/Images/Partners.jpg";
 import {motion} from "framer-motion";
 import capacity from "../../assets/Images/Capacity_building.jpg";
 import policy_brief from "../../assets/Images/Policy_brief.jpg";
@@ -13,7 +14,7 @@ const PolicyBrief= () => {
 const Policy_brief = [
   {
     id: 1,
-    image: newsletter,
+    image: Partners,
     title: "Does accessing multiple social support programmes improve household resilience and food security?",
     year: "2026",
     date: "27 January 2026",
@@ -176,24 +177,23 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
        
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between top_margin">
               
-        <h4  className="Section_title text-[36px]">Policy Brief</h4>
+        <h4  className="Section_title text-[32px]">Policy Brief</h4>
    
       </div>
       
          <div className="flex  flex-col top_margin lg:flex-row lg:gap-6 items-start lg:items-center justify-start">
-              <h4 className="uppercase font-semibold archivo  text-[18px] lg:text-[22px] text-grey tracking-widest">
+              <h4 className="uppercase font-semibold archivo  text-[18px] lg:text-[20px] text-grey tracking-wider">
               Filter<span className="font-bold"> By Year:</span>
             </h4>
               <div className="flex mt-6 lg:mt-0 lg:gap-6 gap-4 ">
 
               <button
-                onClick={() => setSelectedYear("All")}
+                onClick={() => setSelectedYear("all")}
                 className={`px-6  border font-semibold border-(--secondary-color)/40 rounded-full text-[14px] barlow transition-all duration-200
                 ${
-                  selectedYear === "All"
+                  selectedYear === "all"
                     ? "bg-green  white border-none"
-                    : "text-grey not-[]: hover:bg-(--secondary-color) hover:text-white" }`}
-              >
+                    : "text-grey not-[]: hover:bg-(--secondary-color) hover:text-white" }`}>
                 All
               </button>
 
@@ -222,7 +222,7 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
               onChange={(e) => setSearchTerm(e.target.value)}
               type="text"
               placeholder="Search by file name or date..."
-              className="glass border flex items-center archivo white text-[14px] bg-(--secondary-color) backdrop-blur-2xl pl-12 pr-6 py-3 border-[#ffced]/20 outline-offset-0 focus:outline-(--secondary-color)/60 focus:border-[#fffced] rounded-sm placeholder:text-[#fffced] w-full hover:w-full transition-width duration-350 ease-in-out"
+              className="glass border flex items-center archivo white text-[14px] bg-(--secondary-color) backdrop-blur-2xl pl-12 pr-6 py-3 border-[#ffced]/20 outline-offset-0 focus:outline-(--secondary-color)/60 focus:border-[#fffced] rounded-sm placeholder:text-[15px] placeholder:text-[#fffced] w-full hover:w-full transition-width duration-350 ease-in-out"
             />
             <Search className="white absolute left-3 top-[14.5px] size-5" />
           </div>
@@ -239,7 +239,7 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
 
         {filteredPolicy_brief.map((policy, index) => (
           <div
-  className="flex flex-col  md:flex-row gap-6 lg:gap-12 items-start  border-b pb-8 border-(--text-color)/40 group cursor-pointer"
+  className="flex flex-col  md:flex-row gap-6 lg:gap-12 items-start  border-b pb-8 lg:pb-12 border-(--text-color)/60 group cursor-pointer"
 >
 
   {/* IMAGE */}
@@ -253,17 +253,17 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
 
 
   {/* TITLE COLUMN */}
-  <div className="lg:w-[35%] w-full lg:h-[230px] flex flex-col items-start justify-between gap-6">
+  <div className="lg:w-[35%] w-full lg:h-[230px] flex flex-col items-start justify-between gap-4 lg:gap-6">
     <div>
-    <h3 className="Card_heading capitalize leading-[26px] text-[22px] lg:text-[24px] archivo text-grey mb-4">
+    <h3 className="Card_heading capitalize  leading-[26px] text-[22px] lg:text-[24px] archivo text-grey mb-2 lg:mb-4">
       {policy.title}
     </h3>
 
    
 </div>
-    <div className="flex items-center mt-4 gap-6">
-      <h4 className="flex font-semibold items-center gap-2 text_date text-[#6f6969]">
-        <CalendarDays className="size-5 text-green" />
+    <div className="flex items-center mt-0 lg:mt-4 gap-6">
+      <h4 className="flex font-semibold items-center  gap-4 text_date ">
+        <CalendarDays className="size-5 text-(--primary-color)" />
         {policy.date}
       </h4>
 
@@ -273,7 +273,7 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
 
 
   {/* DESCRIPTION COLUMN */}
-  <div className="lg:w-[40%] flex items-start justify-between gap-6">
+  <div className="lg:w-[40%] flex flex-col lg:flex-row items-start justify-between gap-6">
 
     <p className="text_para text-grey">
       {policy.description}
