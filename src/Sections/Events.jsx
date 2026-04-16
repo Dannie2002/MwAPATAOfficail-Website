@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useState,useRef  } from "react";
+import { useState, useEffect, useRef } from "react";
 import Section_header from "../Sections/Section_header";
 import RightArrow from "./Icons/RightArrow";
 import Partners from "../assets/Images/Partners.jpg";
@@ -38,7 +38,7 @@ image:Partners
 id:3,
 title:"LEAP4YOUTH Project Conducts District Youth Engagement Meetings",
 description:"Official MwAPATA institutional event.",
-date:"2-3, 6-7 & 19 February 2026",
+date:"2-3,  6-7 & 19 February 2026",
 year:2026,
 venue:"Mchinji, Zomba & Dedza, Malawi",
 image:Partners
@@ -412,7 +412,13 @@ image:Partners
     return matchesYear && matchesSearch;
   });
   const [visibleCount, setVisibleCount] = useState(4);
-  const eventRef = useRef(null);
+  const lastVisibleRef = useRef(null);
+useEffect(() => {
+  lastVisibleRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest",
+  });
+}, [visibleCount]);
 
   return (
     <section className="Section_bg">
@@ -555,10 +561,11 @@ image:Partners
           )}
 
           {/* Past Events Grid */}
-          <div ref={eventRef} className="Grid_4 lg:mt-18 mt-12 lg:gap-12">
-            {filteredPastEvents.slice(0, visibleCount).map((event) => (
+          <div  className="Grid_4 lg:mt-18 mt-12 lg:gap-12">
+            {filteredPastEvents.slice(0, visibleCount).map((event,index) => (
               <div
-                key={event.id}
+                 key={event.id}
+                ref={index === visibleCount - 1 ? lastVisibleRef : null}
                 className="relative group border_div pb-6 rounded-[14px] z-0 shadow-3xl"
               >
                 <div className="relative grouup-hover:shadow-2xl lg:h-[380px] h-[220px] overflow-hidden z-0 group shadow-3xl">
@@ -599,18 +606,15 @@ image:Partners
         {/* Pagination Buttons */}
             <motion.div  className="flex items-start mt-6 gap-4 lg:mt-12  transition ">
                        <button
-                         onClick={() => {
-           setVisibleCount((prev) => Math.max(prev - 4, 4));
-           teamRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-         }}
+     onClick={() => setVisibleCount((prev) => Math.max(prev - 4, 4))}
                          className="p-2 rounded-full bg-green/10 hover:bg-green/20 disabled:bg-green/5 disabled:cursor-not-allowed transition"
                        >
                          <ChevronsLeft className="size-6 text-green" />
                        </button>
        
                        <button
-                         onClick={() => setVisibleCount((prev) => Math.min(prev + 4, events.length))}
-                         disabled={visibleCount >= events.length}
+                          onClick={() => setVisibleCount((prev) => prev + 4)}
+                
                          className="p-2 rounded-full bg-green/10 hover:bg-green/20 disabled:bg-green/5 disabled:cursor-not-allowed transition"
                        >
                          <ChevronsRight className="size-6 text-green" />
