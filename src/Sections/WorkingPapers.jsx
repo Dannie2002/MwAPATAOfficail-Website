@@ -113,7 +113,9 @@ const papers = [
          
 
           <div className="flex gap-2 flex-col mt-6 lg:mt-12 lg:flex-row lg:gap-6 items-start lg:items-center justify-start">
-            <h4 className="uppercase font-semibold barlow text-[14px] text-grey tracking-wide">Filter By Year:</h4>
+              <h4 className="uppercase font-semibold barlow text-[22px] text-grey tracking-wide">
+              Filter<span className="font-bold"> By Year:</span>
+            </h4>
               <div className="flex gap-4">
 
              <button
@@ -149,15 +151,16 @@ const papers = [
 
 
 
-          <div className="relative mt-12">
-          <input
-           value={searchTerm}
-           onChange={(e) => setSearchTerm(e.target.value)}
-           type="text"
-           placeholder="Search by file name or date..."
-           className="glass border flex items-center archivo white text-[14px] bg-[#4a4a4a]/40 backdrop-blur-2xl pl-10 pr-6 py-2 border-[#4a4a4a]/15 outline-offset-0 focus:outline-[#4a4a4a]/10 focus:border-[#fffced] rounded-full placeholder:text-[#fffced] w-64 hover:w-full transition-width duration-350 ease-in-out"/>
-          <Search className="white absolute left-3 top-3 size-4" />
-            </div>
+           <div className="relative mt-12">
+                    <input
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      type="text"
+                      placeholder="Search by file name or date..."
+                      className="glass border flex items-center archivo white text-[14px] bg-(--secondary-color) backdrop-blur-2xl pl-10 pr-6 py-2 border-[#ffced]/20 outline-offset-0 focus:outline-(--secondary-color)/60 focus:border-[#fffced] rounded-full placeholder:text-[#fffced] w-[55%] lg:w-[32%] hover:w-full transition-width duration-350 ease-in-out"
+                    />
+                    <Search className="white absolute left-3 top-3 size-4" />
+                  </div>
 
           {searchTerm.trim() !== "" && (
           <p className="text_para text-[16px] mt-4 ">{filteredPapers.length} Working Papers Found</p>)}  

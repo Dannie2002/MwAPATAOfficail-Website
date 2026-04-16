@@ -6,7 +6,7 @@ import policy_brief from "../../assets/Images/Policy_brief.jpg";
 import noise from "../../assets/Images/Noise.png";
 import newsletter from "../../assets/Images/Newsletter.jpg"
 import Section_header from "../Section_header";
-import {  CalendarDays,File, Search,ChevronRight  } from "lucide-react";
+import {  CalendarDays,File, Search,ChevronsRight, ChevronsLeftRight  } from "lucide-react";
 
 const PolicyBrief= () => {
 
@@ -121,8 +121,8 @@ const Policy_brief = [
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.5,
+      staggerChildren: 0.2,
+      delayChildren: 0.5,
       },
     },
   };
@@ -174,57 +174,58 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
 
     <div className="Section_wrapper">
        
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-10">
-              <h4  className="Section_title">Policy Brief</h4>
-
-           
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between top_margin">
+              
+        <h4  className="Section_title text-[36px]">Policy Brief</h4>
+   
       </div>
       
-         <div className="flex gap-2 flex-col mt-12 lg:flex-row lg:gap-6 items-start lg:items-center justify-start">
-            <h4 className="uppercase font-semibold barlow text-[14px] text-grey tracking-wide">Filter By Year:</h4>
-              <div className="flex gap-4">
+         <div className="flex  flex-col top_margin lg:flex-row lg:gap-6 items-start lg:items-center justify-start">
+              <h4 className="uppercase font-semibold archivo  text-[18px] lg:text-[22px] text-grey tracking-widest">
+              Filter<span className="font-bold"> By Year:</span>
+            </h4>
+              <div className="flex mt-6 lg:mt-0 lg:gap-6 gap-4 ">
 
-             <button
-      onClick={() => setSelectedYear("all")}
-      className={`px-6 py-2 border font-semibold border-[#4a4a4a]/40 rounded-sm text-[12px] archivo transition-all duration-200
-        
-        ${selectedYear === "All"
-          ? "bg-green font-semibold white border-none"
-          : "text-grey hover:border-none not-[]: hover:bg-(--text-color)/40 hover:text-white"}
-        `}
-    >
-            All
-          </button>
-
-          {years.map((year) => (
               <button
-        key={year}
-        onClick={() => setSelectedYear(year)}
-        className={`px-6 py-2 border stack font-normal border-[#4a4a4a]/40 rounded-sm text-[12px] archivo transition-all duration-200
-        
-        ${selectedYear === year
-          ? "bg-green font-semibold white border-none"
-          : "text-grey hover:border-none not-[]: hover:bg-(--text-color)/40 hover:text-white"}
-        `}
-      >
-              {year}
-            </button>
-          ))}
+                onClick={() => setSelectedYear("All")}
+                className={`px-6  border font-semibold border-(--secondary-color)/40 rounded-full text-[14px] barlow transition-all duration-200
+                ${
+                  selectedYear === "All"
+                    ? "bg-green  white border-none"
+                    : "text-grey not-[]: hover:bg-(--secondary-color) hover:text-white" }`}
+              >
+                All
+              </button>
 
-             </div>
+              {years.map((year) => (
+                <button
+                  key={year}
+                  onClick={() => setSelectedYear(year)}
+                  className={`px-6 py-2 border barlow  border-[1.59px] border-(--secondary-color)/75 font-semibold rounded-full hover:text-white text-[15px]  transition-all duration-200
+                  ${
+                    selectedYear === year
+                      ? "bg-green font-semibold white border-none"
+                      : "text-grey  not-[]: hover:bg-(--secondary-color) hover:text-white"
+                  }`}
+                >
+                  {year}
+                </button>
+              ))}
+
+            </div>
 
           </div>
 
-                      <div className="relative mt-10">
-    <input
-     value={searchTerm}
-     onChange={(e) => setSearchTerm(e.target.value)}
-      type="text"
-      placeholder="Search by file name or date..."
-      className="glass border flex items-center archivo white text-[14px] bg-[#4a4a4a]/45 backdrop-blur-2xl pl-10 pr-6 py-2 border-[#4a4a4a]/20 outline-offset-0 focus:outline-[#4a4a4a]/10 focus:border-[#fffced] rounded-full placeholder:text-[#fffced] w-64 hover:w-full transition-width duration-350 ease-in-out"
-    />
-    <Search className="white absolute left-3 top-3 size-4" />
-            </div>
+   <div className="relative mt-12">
+            <input
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              type="text"
+              placeholder="Search by file name or date..."
+              className="glass border flex items-center archivo white text-[14px] bg-(--secondary-color) backdrop-blur-2xl pl-12 pr-6 py-3 border-[#ffced]/20 outline-offset-0 focus:outline-(--secondary-color)/60 focus:border-[#fffced] rounded-sm placeholder:text-[#fffced] w-full hover:w-full transition-width duration-350 ease-in-out"
+            />
+            <Search className="white absolute left-3 top-[14.5px] size-5" />
+          </div>
 
           {searchTerm.trim() !== "" && (
   <p className="text_para text-[16px] mt-4 ">
@@ -238,11 +239,11 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
 
         {filteredPolicy_brief.map((policy, index) => (
           <div
-  className="flex flex-col md:flex-row gap-12 items-start  border-b pb-8 border-(--text-color)/40 group cursor-pointer"
+  className="flex flex-col  md:flex-row gap-6 lg:gap-12 items-start  border-b pb-8 border-(--text-color)/40 group cursor-pointer"
 >
 
   {/* IMAGE */}
-  <div className="lg:w-[25%] lg:h-[230px] flex-shrink-0 overflow-hidden">
+  <div className="lg:w-[25%]  w-full lg:h-[230px] h-[200px] flex-shrink-0 overflow-hidden">
     <img
       src={policy.image}
       alt={policy.title}
@@ -252,25 +253,21 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
 
 
   {/* TITLE COLUMN */}
-  <div className="lg:w-[35%] lg:h-[230px] flex flex-col items-start justify-between gap-6">
+  <div className="lg:w-[35%] w-full lg:h-[230px] flex flex-col items-start justify-between gap-6">
     <div>
-    <h3 className="Card_heading capitalize text-[24px] archivo text-grey mb-4">
+    <h3 className="Card_heading capitalize leading-[26px] text-[22px] lg:text-[24px] archivo text-grey mb-4">
       {policy.title}
     </h3>
 
+   
+</div>
     <div className="flex items-center mt-4 gap-6">
-      <h4 className="flex items-center gap-2 text_date text-[#6f6969]">
+      <h4 className="flex font-semibold items-center gap-2 text_date text-[#6f6969]">
         <CalendarDays className="size-5 text-green" />
         {policy.date}
       </h4>
 
-      <h4 className="flex items-center gap-2 text_date text-grey">
-        <File className="size-5 text-green" />
-        {policy.file}
-      </h4>
     </div>
-</div>
-    <motion.h4 variants={itemVariants} className="text_link uppercase stack  tracking-wide  p-0">Download {policy.file}</motion.h4>
 
   </div>
 
@@ -281,6 +278,11 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
     <p className="text_para text-grey">
       {policy.description}
     </p>
+
+     <div className="flex hover:bg-(--secondary-color) transition-colors duration-400 ease-in-out rounded-sm items-center p-2 text_date bg-[#0f753b]">
+        <ChevronsRight className="size-6 white" />
+       
+      </div>
 
   
 

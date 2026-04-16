@@ -11,6 +11,7 @@ import event2 from"../assets/Images/Policy_advocacy.jpg";
 import event3 from"../assets/Images/Event_header.jpg";
 import Section_header from "./Section_header";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import DottedArrow from "./Icons/DottedArrow";
 
 const News = () => {
     const News = [
@@ -91,20 +92,21 @@ const News = () => {
                <div className="relative h-[430px] overflow-hidden z-0 group shadow-3xl">
                 <img src={news.image} alt={news.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                  {/* overlay to apply blend mode */}
-                
+                   <div className="absolute hidden transition-all duration-600  ease-in-out group-hover:flex  z-20 inset-0 bg-gradient-to-r from-[var(--primary-color)]/70 via-(--primary-color)/60 to-var(--primary-color)/50 opacity-95"></div>
+                  <div className="absolute flex-col hidden inset-0 size-full group-hover:flex items-center justify-center z-50">
+                    <h4 className="white agdasima animate-bounce duration-300 text-[24px] tracking-wider uppercase font-bold ">Explore Event</h4>
+                    <DottedArrow  color="#fffced" size={24} className="  size-18" />
+                    
+                    </div>
                 </div>
 
               <div className="bg-transparent z-10 flex flex-col items-start gap-4 justify-between mt-4 w-full">
                 <div className="mt-0  py-1 rounded-full">
                   <h4 className="text_date">{news.date}</h4>
                 </div>
-                <h4 className="Card_heading text-grey mb-4">
+              <h4 className="Card_heading capitalize text-[20px] archivo text-grey line-clamp-2 mb-2">
                   {news.title}
                 </h4>
-                <p className="text_para w-full line-clamp-2 hidden">The MwAPATA Institute wishes to recruit highly motivated, proactive
-          service-oriented, and energetic individuals to fill the position of
-          Communications Officer.</p>
-          <h4 className="uppercase font-semibold archivo text-[14px] text-grey tracking-wide">Learn More</h4>
                 
               </div>
             </div>
@@ -125,10 +127,15 @@ const News = () => {
   <div className="Grid_4 mt-6  lg:gap-12">
           {News.map(news => (
             <div key={news.id} className="relative group rounded-[14px] pb-4 border_div z-0 shadow-3xl">
-               <div className="relative h-[420px] overflow-hidden z-0 group shadow-3xl">
+               <div className="relative h-[420px] group overflow-hidden z-0 group shadow-3xl">
                 <img src={news.image} alt={news.title} className="w-full group-hover:scale-110 transition-all duration-2200 ease-in-out h-full rounded-[4px] object-cover"/>
                  {/* overlay to apply blend mode */}
-                 <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-1250 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 "></div>
+                     <div className="absolute hidden transition-all duration-600  ease-in-out group-hover:flex  z-20 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95"></div>
+                  <div className="absolute flex-col hidden inset-0 size-full group-hover:flex items-center justify-center z-50">
+                    <h4 className="white agdasima animate-bounce duration-300 text-[24px] tracking-wider uppercase font-bold ">Explore Event</h4>
+                    <DottedArrow  color="#fffced" size={24} className="  size-18" />
+                    
+                    </div>
                 
                 </div>
 
@@ -137,13 +144,10 @@ const News = () => {
                   <h4 className="text_date">{news.date}</h4>
                   <h4 className="text_date text-grey lowercase">2 hrs ago</h4>
                 </div>
-                <h4 className="Card_heading text-grey mb-5">
+               
+                <h4 className="Card_heading capitalize text-[20px] archivo text-grey line-clamp-2 mb-2">
                   {news.title}
                 </h4>
-                <p className="text_para w-full line-clamp-1 hidden">The MwAPATA Institute wishes to recruit highly motivated, proactive
-          service-oriented, and energetic individuals to fill the position of
-          Communications Officer.</p>
-          <h4 className="uppercase font-semibold stack  archivo text-[14px] text-grey tracking-widest">Learn More</h4>
                 
               </div>
             </div>
