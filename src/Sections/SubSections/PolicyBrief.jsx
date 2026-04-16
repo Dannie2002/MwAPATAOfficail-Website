@@ -238,9 +238,7 @@ const filteredPolicy_brief = Policy_brief.filter((policy) => {
           <div className="Grid_4 grid-cols-1">
 
         {filteredPolicy_brief.map((policy, index) => (
-          <div
-  className="flex flex-col  md:flex-row gap-6 lg:gap-12 items-start  border-b pb-8 lg:pb-12 border-(--text-color)/60 group cursor-pointer"
->
+          <div className="flex flex-col  md:flex-row gap-6 lg:gap-12 items-start  border-b pb-8 lg:pb-12 border-(--text-color)/60 group cursor-pointer">
 
   {/* IMAGE */}
   <div className="lg:w-[25%]  w-full lg:h-[230px] h-[200px] flex-shrink-0 overflow-hidden">

@@ -188,7 +188,7 @@ p, h1, h2, h3, h4, h5, h6, li, div, span {
 
 .text_date{
   font-family: var(--font-stack);
-  @apply text-[#6f6969] tracking-widest  font-light capitalize text-[14px];
+  @apply text-[#6f6969] tracking-wider  font-light capitalize text-[14px];
 }
 .noise{
   @apply absolute rounded-[14px] z-0 inset-0 mix-blend-overlay opacity-30  size-full object-cover;
