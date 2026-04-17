@@ -75,7 +75,7 @@ const WorkingPapers= () => {
          
 
       <div className="flex  flex-col top_margin lg:flex-row lg:gap-6 items-start lg:items-center justify-start">
-            <h4 className="uppercase font-semibold archivo  text-[18px] lg:text-[20px] text-grey tracking-wider">
+            <h4 className="uppercase font-semibold zalando  text-[18px] lg:text-[18px] text-grey tracking-wide">
               Filter<span className="font-bold"> By Year:</span>
             </h4>
             <div className="flex mt-6 lg:mt-0 lg:gap-6 gap-4 ">
@@ -112,7 +112,7 @@ const WorkingPapers= () => {
 
    <SearchBar searchTerm={searchTerm}
   setSearchTerm={setSearchTerm}
-  placeholder="Search events..."/>
+  placeholder="Search by file date..."/>
 
   
 

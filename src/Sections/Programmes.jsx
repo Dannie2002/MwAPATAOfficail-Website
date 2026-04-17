@@ -49,11 +49,11 @@ const Programmes = () => {
     <section className="Section_bg">
 
             <Section_header
-  title=""
+  title="Programmes"
   bgImage={publications}
   breadcrumbs={[
     { label: "Home", link: "/" },
-    { label: "/Publications" }
+    { label: "/Programmes" }
   ]}
 />
 
@@ -67,18 +67,7 @@ const Programmes = () => {
                 RECOGNIZING THE ENORMITY OF THE CHALLENGES OUR SOCIETY FACES.
               </h4>
 
-              <div className="flex lg:hidden mt-4 flex-col items-start lg:items-end">
-                  <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.3, ease: "easeInOut" }}
-                  className="mt-2 w-[90px] h-[4px] bg-green "></motion.div>
-                  <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.99, ease: "easeInOut" }}
-                  className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
-              </div>
+         
       </div>
 
       {/* Grid for programmes */}
@@ -88,7 +77,7 @@ const Programmes = () => {
                <div className="relative h-full overflow-hidden z-0 group shadow-3xl">
                 <img src={program.image} alt={program.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
               <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-              <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--primary-color)]/40  via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-100"></div>
+              <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-t from-[var(--secondary-color)]  via-[#3A9B3D]/50 to-transparent opacity-100"></div>
 
                </div>
 

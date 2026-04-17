@@ -10,7 +10,7 @@ import policy_perspective from "../assets/Images/Policy_perspective.jpg";
     title: "Working Papers",
     description:"Working Papers offeroriginal, internally reviewed papers in a longer format for readers interested in taking a deep dive into an issue and how it was researched. ",
     image: workingpapers,
-    link:"/Publications/working-papers",
+    link:"/working-papers",
   },
   {
     id: 2,

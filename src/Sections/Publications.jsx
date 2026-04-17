@@ -1,5 +1,6 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, } from "framer-motion";
+import { useState } from "react";
 import { Link } from "react-router";
 import { ChevronRight } from "lucide-react";  
 import RightArrow from "./Icons/RightArrow";
@@ -35,6 +36,7 @@ const Publications = () => {
       transition: { duration: 0.79, ease: "easeInOut" }
     },
   };
+const [activeCard, setActiveCard] = useState(0);
 
 
   return (
@@ -58,74 +60,113 @@ const Publications = () => {
                 MwAPATA's three main publication lines offer distinct options to meet the reader's needs
               </h4>
 
-              <div className="flex lg:hidden ga flex-col items-start lg:items-end">
-                  <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.3, ease: "easeInOut" }}
-                  className="mt-2 w-[90px] h-[4px] bg-green "></motion.div>
-                  <motion.div
-                   initial={{ opacity: 0, x: 80 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ duration: 1.99, ease: "easeInOut" }}
-                  className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
-              </div>
+              
       </div>
 
           {/* Grid for publications card */}
-        <motion.div className="Grid_4 auto-rows-[230px] lg:auto-rows-[430px]" 
-                      variants={containerVariants}  
-                      initial="hidden"
-                      whileInView="show"
-                      viewport={{ once: true }}>
-                      {publications_types.map((publication, index) => (
-            <motion.div key={publication.id} variants={itemVariants}
-  initial="rest"
-  whileHover="hover"
-  animate="rest"
-            
-            
-            className={`relative cursor-pointer z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`} >
-               <div className="relative h-full rounded-[4px] overflow-hidden z-0 group shadow-3xl">
-                 <img src={publication.image} alt={publication.title} className="w-full group-hover:scale-110 transition-all duration-700 ease-in-out h-full rounded-[4px] object-cover"/>
-                 <img src={noise} alt="research" className="absolute inset-0 w-full mix-blend-overlay opacity-30  clip h-full object-cover"/>
-                 <div className="absolute  lg:flex z-0 inset-0 bg-gradient-to-r from-[var(--primary-color)]/40  via-[#3A9B3D]/60 to-[#3A9B3D]/90 opacity-100"></div>
-                </div>
-
-              <motion.div
-  variants={{
-    rest: { y: 0 },
-    hover: { y: -60 }
-  }}
-  transition={{ duration: 0.4, ease: "easeOut" }}
-  className="absolute bottom-0 z-10 flex items-center gap-3 p-4 w-full"
+ <motion.div
+  className="flex flex-col lg:flex-row top_margin gap-4 h-[640px] lg:h-[420px]"
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
 >
-  <h4 className="Card_heading white">{publication.title}</h4>
-  <RightArrow size={28} color="#fffced" />
-</motion.div>
+  {publications_types.map((publication,index) => {
+   const isActive =
+    activeCard === index || (activeCard === null && index === 0);
 
-              <motion.div
-  variants={{
-    rest: { y: 120, opacity: 0 },
-    hover: { y: 130, opacity: 1 }
+  const anyActive = activeCard !== null;
+
+    return (
+      <motion.div
+        key={publication.id}
+
+        style={{
+          flex: isActive ? 2 : anyActive ? 0.8 : 1,
+          minWidth: "90px",
+          transition: "flex 380ms ease",
+        }}
+        className="relative  shadow-3xl rounded-[4px] overflow-hidden"
+      >
+        <div className="relative h-full rounded-[4px] overflow-hidden z-0 group shadow-3xl">
+          <img
+            src={publication.image}
+            alt={publication.title}
+            className="w-full group-hover:scale-110 transition-all duration-700 ease-in-out h-full rounded-[4px] object-cover"
+          />
+
+          <img
+            src={noise}
+            alt="research"
+            className="absolute inset-0 w-full mix-blend-overlay opacity-30 clip h-full object-cover"
+          />
+
+          
+           <div className="absolute inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[#3A9B3D]/70 to-transparent opacity-100"></div>
+        </div>
+
+        <motion.div
+          animate={{
+            y: isActive ? -160 : 0,
+          }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="absolute bottom-0 z-10 flex items-center gap-3 p-4 w-full"
+        >
+   <motion.h4
+  animate={{
+    opacity: isActive ? 0 : 1,
   }}
-  transition={{ duration: 0.45, ease: "easeOut" }}
-  className="absolute bottom-0 left-0 p-4 z-10 max-w-[370px]"
+  transition={{ duration: 0.25 }}
+  className="Card_heading white"
 >
-  <p className="text_para white">
-    {publication.description}
-  </p>
+    {publication.title}</motion.h4>
+    <AnimatePresence>
+  {!isActive && (
+    <motion.div
+      initial={{ opacity: 0, x: -10 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -10 }}
+      transition={{ duration: 0.25 }}
+      onClick={(e) => {
+        e.stopPropagation();
+        setActiveCard(index);
+      }}
+      className="cursor-pointer"
+    >
+      <RightArrow size={28} color="#fffced" />
+    </motion.div>
+  )}
+</AnimatePresence>
+          
+        </motion.div>
 
-  <div className="mt-4 hover:bg-(--primary-color) Glassy_btn p-1 rounded-full">
-    <Link to={publication.link}>
-      <ChevronRight className="white size-5" />
-    </Link>
-  </div>
+        <AnimatePresence>
+  {isActive && (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 30 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="absolute bottom-0 left-0 p-6 z-10 max-w-full"
+    >
+             <h4 className="text-5xl Card_heading white mb-4">{publication.title}</h4>
+
+      <p className="text_para  white">
+        {publication.description}
+      </p>
+
+      <div className="mt-4 white font-semibold">
+        <Link to={publication.link}>
+          Learn More
+        </Link>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+      </motion.div>
+    );
+  })}
 </motion.div>
-
-           </motion.div>
-        ))}
-       </motion.div>
 
        <h4 className="Counter_title mt-12">
               <span className="font-semibold">In addition</span> to our own publications, we offer the following resources
@@ -166,7 +207,7 @@ const Publications = () => {
     className="absolute inset-0 w-full mix-blend-overlay opacity-30 h-full object-cover"
   />
 
-  <div className="absolute inset-0 bg-gradient-to-r from-[var(--primary-color)]/40 via-[#3A9B3D]/60 to-[#3A9B3D]/90"></div>
+  <div className="absolute inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[#3A9B3D]/70 to-transparent opacity-100"></div>
 </div>
 
 {/* Title + Arrow */}
@@ -182,26 +223,26 @@ const Publications = () => {
   <RightArrow size={28} color="#fffced" />
   </motion.div>
 
-{/* Description */}
-<AnimatePresence>
-<motion.div
-  variants={{
-    rest: { opacity: 0, y: 40 },
-    hover: { opacity: 1, y: 0 }
-  }}
-  transition={{ duration: 0.5, ease: "easeOut" }}
-  className="absolute bottom-0 left-0 p-4 z-10 max-w-[370px]"
->
-  <p className="text-[#fffced] pt-2 text-[16px] pb-2 leading-relaxed zalando">
-    {resource.description}
-  </p>
-    <div className="mt-4 hover:bg-(--primary-color) Glassy_btn p-1 rounded-full z-20">
-                        <Link to={resource.link}>
-                          <ChevronRight className="white size-5" />
-                        </Link>   
-                    </div>
-</motion.div>
-</AnimatePresence>
+      {/* Description */}
+      <AnimatePresence>
+      <motion.div
+        variants={{
+          rest: { opacity: 0, y: 40 },
+          hover: { opacity: 1, y: 0 }
+        }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="absolute bottom-0 left-0 p-4 z-10 max-w-[370px]"
+      >
+        <p className="text-[#fffced] pt-2 text-[16px] pb-2 leading-relaxed zalando">
+          {resource.description}
+        </p>
+          <div className="mt-4 hover:bg-(--primary-color) Glassy_btn p-1 rounded-full z-20">
+                              <Link to={resource.link}>
+                                <ChevronRight className="white size-5" />
+                              </Link>   
+                          </div>
+      </motion.div>
+      </AnimatePresence>
 
 </motion.div>
 ))}
