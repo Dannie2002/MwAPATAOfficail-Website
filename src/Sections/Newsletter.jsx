@@ -10,28 +10,11 @@ import Section_header from "./Section_header";
 import noise from "../assets/Images/Noise.png"
 import Mission from "./Icons/Mission";
 import Vision from "./Icons/Vision";
-import { ChevronRight, Download } from "lucide-react";
+import { ChevronsRight,  ChevronRight, Download } from "lucide-react";
 import DottedArrow from "./Icons/DottedArrow";
 
 const Newsletter = () => {
 
- const mission_vision = [
-  {
-    id: 1,
-    title: "Mission",
-    description:
-      "We conduct independent, objective and empirical high-quality research aimed at generating innovative agricultural policy recommendations that improve decision-making and livelihoods in Malawi.",
-    icon: <Mission size={40} color="#fffced" />,
-  },
-  {
-    id: 2,
-    title: "Vision",
-    description:
-      "A Malawi with evidence-based agricultural policies that drive sustainable development, food security, and improved livelihoods.",
-    icon: <Vision size={40} color="#fffced" />,
-  }
-
-];
 
 const newsletterData = [
   {
@@ -84,19 +67,21 @@ const newsletterData = [
 
             <div className="Grid_4  lg:grid-cols-1">
 
-               {newsletterData.map((news) => (
-                <div key={news.id} className="bg-transparent transition-all rounded-[4px] group flex border  border-[var(--text-color)]/40 relative flex-col lg:flex-row items-center justify-between p-6 gap-4 lg:p-12">
+               {newsletterData.map((news,index) => (
+                <div key={news.id} className="bg-transparent transition-all  group flex border-b  border-b-[var(--text-color)]/60 relative flex-col lg:flex-row items-center justify-between p-6 gap-4 lg:p-12">
                 
-                
-                <h2 className="Card_heading text-grey lg:leading-[36px] lg:text-[36px]  barlow uppercase font-semibold group-hover:text-(--secondary-color) ">{news.title}</h2>
-
+                <div className="flex flex-row gap-6">
+                  <h4 className="text-2xl Card_heading">{news.id}</h4>
+                <h2 className="Card_heading text-grey lg:leading-[30px] lg:text-[30px]  barlow uppercase font-semibold group-hover:text-(--secondary-color) ">{news.title}</h2>
+                </div>
                 <p className="text_para">Read the latest edition of the weekly MwAPATA Newsletter</p>
                 
-                                     <div className="white flex border cursor-pointer transition-transform duration-460 ease-in-out hover:-translate-y-2 hover:shadow-[4px_8px_12px_rgba(58,155,61,0.6)]  border-[#fffced]/30 items-center justify-center rounded-[4px] backdrop-blur-2xl bg-green  w-fit px-6 py-3  gap-4 ">
-                                                      <div className="">
-                                                        <Download className="text-[#fffced] size-5"/>
-                                                      </div>
-                                                 </div>
+                                  
+           
+        <div className="flex hover:bg-(--secondary-color) transition-colors duration-400 ease-in-out rounded-sm items-center p-2 text_date bg-[#0f753b]">
+        <ChevronsRight className="size-6 white" />
+       </div>
+                                               
                  
 
 
@@ -129,7 +114,7 @@ const newsletterData = [
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.99, ease: "easeInOut" }}
-                className="Section_title barlow w-[70%] white">
+                className="Section_title barlow w-[90%] white">
                 Get MwAPATA’s research stories from your inbox.
                       </motion.h4>
 

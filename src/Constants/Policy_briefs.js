@@ -1,8 +1,17 @@
+import React from "react";
+import Partners from "../assets/Images/Partners.jpg";
+import capacity from "../assets/Images/Capacity_building.jpg";
+import policy_brief from "../assets/Images/Policy_brief.jpg";
+import noise from "../assets/Images/Noise.png";
+import newsletter from "../assets/Images/Newsletter.jpg"
+
+
+
 
 const Policy_brief = [
   {
     id: 1,
-    image: newsletter,
+    image: Partners,
     title: "Does accessing multiple social support programmes improve household resilience and food security?",
     year: "2026",
     date: "27 January 2026",

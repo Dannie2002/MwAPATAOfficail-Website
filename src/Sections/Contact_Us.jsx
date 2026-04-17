@@ -13,6 +13,27 @@ import Section_header from "./Section_header";
 
 const Contact_Us = () => {
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.49, ease: "easeInOut" }
+    },
+  };
+
+
 
  const mission_vision = [
   {
@@ -77,17 +98,9 @@ const contact_details = [
         <div className="flex flex-col mt-12 ">
             
            
-                      <motion.h4 className="Counter_title text-(--primary-color) lg:w-1/2"
-                      
-                      initial={{ opacity: 0, y: 40 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.49, ease: "easeInOut" }}><span className="font-bold">For inquires</span> regarding our research, publications, or events, <span className="font-bold">Here are contact details.</span></motion.h4>
-                        <motion.div
-                                      initial={{ opacity: 0, x: 80 }}
-                                      whileInView={{ opacity: 1, x: 0 }}
-                                      transition={{ duration: 1.99, ease: "easeInOut" }}
-                                      className="w-full h-[0.6px] mt-8 bg-[#4a4a4a]"
-                                    ></motion.div>
+                <h4 className="barlow gap-4 uppercase flex items-center tracking-wider text-(--primary-color) font-bold text-[18px]">
+            Mwapata Institute Contact Details
+          </h4>
                 
                 
            </div>

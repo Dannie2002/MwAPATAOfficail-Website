@@ -3,6 +3,7 @@ import {motion} from "framer-motion";
 import { Link } from "react-router";
 import header from "../assets/Images/Capacity_building.jpg";
 import noise from "../assets/Images/Noise.png"
+import { House } from "lucide-react";
 
 const Section_header = ({ title,link ,breadcrumbs = [],bgImage }) => {
 
@@ -57,7 +58,9 @@ const Section_header = ({ title,link ,breadcrumbs = [],bgImage }) => {
         className="absolute mx-auto bottom-0 z-20 pb-6 ">
           <ul className="flex items-center gap-2">
             {breadcrumbs.map((item, index) => (
+              
               <li className={`white text-[14px] archivo uppercase ${item.link ? 'cursor-pointer' : 'cursor-default'}`} key={index}>
+                
                 {item.link ? <Link to={item.link}>{item.label}</Link> : item.label}
                 
                 </li>

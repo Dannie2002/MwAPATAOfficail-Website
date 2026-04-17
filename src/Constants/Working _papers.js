@@ -1,4 +1,5 @@
-
+import workingpapers from "../assets/Images/Working_papers.jpg";
+import capacity from "../assets/Images/Capacity_building.jpg";
 
 
 
@@ -43,5 +44,6 @@ const papers = [
     description:"The government has committed to transforming Malawian agriculture through mega-farms. Other countries in Sub-Saharan Africa offer lessons on the performance of large farms and their impacts on surrounding smaller farms. Key players in Malawi also offer insights on the role of mega-farms.",
   },
 ];
+
 
 export default papers;

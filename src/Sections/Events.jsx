@@ -11,6 +11,7 @@ import events_mwapata from "../assets/Images/Event_Mwapata.jpg";
 import noise from "../assets/Images/Noise.png";
 import { ChevronsLeft, ChevronsRight, CalendarDays , Search } from "lucide-react";
 import DottedArrow from "./Icons/DottedArrow";
+import SearchBar from "../Componets/SearchBar";
 
 
 const Events = () => {
@@ -542,16 +543,9 @@ useEffect(() => {
           </div>
 
           {/* Search */}
-     <div className="relative mt-12">
-                 <input
-                   value={searchTerm}
-                   onChange={(e) => setSearchTerm(e.target.value)}
-                   type="text"
-                   placeholder="Search by file name or date..."
-                   className="glass div_clip border flex items-center archivo white text-[14px] bg-(--secondary-color) backdrop-blur-2xl pl-12 pr-6 py-3 border-[#ffced]/20 outline-offset-0 focus:outline-(--secondary-color)/60 focus:border-[#fffced] rounded-sm placeholder:text-[15px] placeholder:text-[#fffced] w-full hover:w-full transition-width duration-350 ease-in-out"
-                 />
-                 <Search className="white absolute left-3 top-[14.5px] size-5" />
-               </div>
+         <SearchBar searchTerm={searchTerm}
+  setSearchTerm={setSearchTerm}
+  placeholder="Search Events..."/>
 
           {/* Results */}
           {searchTerm.trim() !== "" && (
@@ -585,7 +579,7 @@ useEffect(() => {
 
                 <div className="bg-transparent z-10 flex flex-col items-start gap-4 justify-between mt-4 w-full">
                  <div className="flex items-center mt-0 lg:mt-4 gap-6">
-                      <h4 className="flex font-normal items-center  gap-4 text_date ">
+                      <h4 className="flex font-semibold items-center  gap-4 text_date ">
                         <CalendarDays className="size-4 text-(--primary-color)" />
                         {event.date}
                       </h4>
