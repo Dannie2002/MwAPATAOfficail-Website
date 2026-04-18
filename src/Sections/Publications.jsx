@@ -37,6 +37,8 @@ const Publications = () => {
     },
   };
 const [activeCard, setActiveCard] = useState(0);
+const [activePublication, setActivePublication] = useState(null)
+const [activeResource, setActiveResource] = useState(null)
 
 
   return (
@@ -72,10 +74,10 @@ const [activeCard, setActiveCard] = useState(0);
   viewport={{ once: true }}
 >
   {publications_types.map((publication,index) => {
-   const isActive =
-    activeCard === index || (activeCard === null && index === 0);
+ const isActive =
+  activePublication === index || (activePublication === null && index === 0)
 
-  const anyActive = activeCard !== null;
+const anyActive = activePublication !== null
 
     return (
       <motion.div
@@ -130,7 +132,7 @@ const [activeCard, setActiveCard] = useState(0);
       transition={{ duration: 0.25 }}
       onClick={(e) => {
         e.stopPropagation();
-        setActiveCard(index);
+        setActivePublication(index);
       }}
       className="cursor-pointer p-2 bg-(--primary-color)"
     >
@@ -176,26 +178,35 @@ const [activeCard, setActiveCard] = useState(0);
   
 
 <motion.div
-  className="Grid_4 auto-rows-[230px] lg:auto-rows-[430px]"
+  className="flex top_margin flex-col lg:flex-row gap-4 h-[640px] lg:h-[420px]"
   variants={containerVariants}
   initial="hidden"
   whileInView="show"
   viewport={{ once: true }}
 >
-{Resources.map((resource, index) => (
+{Resources.map((resource, index) => {
+
+const isActive =
+  activeResource === index || (activeResource === null && index === 2)
+
+const anyActive = activeResource !== null
+
+return (
+
 <motion.div
   key={resource.id}
-  variants={itemVariants}
-  initial="rest"
-  whileHover="hover"
-  animate="rest"
-  className={`relative cursor-pointer z-0 shadow-3xl ${
+  style={{
+    flex: isActive ? 2 : anyActive ? 0.8 : 1,
+    minWidth: "90px",
+    transition: "flex 380ms ease",
+  }}
+  className={`relative shadow-3xl rounded-[4px] overflow-hidden ${
     index === 2 ? "lg:col-span-2" : ""
   }`}
 >
 
 {/* Image Layer */}
-<div className="relative h-full rounded-[4px] overflow-hidden group shadow-3xl">
+<div className="relative h-full rounded-[4px] overflow-hidden z-0 group shadow-3xl">
   <img
     src={resource.image}
     alt={resource.title}
@@ -211,42 +222,81 @@ const [activeCard, setActiveCard] = useState(0);
   <div className="absolute inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[#3A9B3D]/70 to-transparent opacity-100"></div>
 </div>
 
+
 {/* Title + Arrow */}
 <motion.div
-  variants={{
-    rest: { y: 0 },
-    hover: { y: -200 }
+  animate={{
+    y: isActive ? -160 : 0,
   }}
-  transition={{ duration: 0.5, ease: "easeOut" }}
-  className="absolute z-10 flex flex-row items-center gap-3 bottom-0 p-4 w-full"
+  transition={{ duration: 0.4, ease: "easeOut" }}
+  className="absolute bottom-0 z-10 flex items-center gap-3 p-4 w-full"
 >
-  <h4 className="Card_heading white">{resource.title}</h4>
-  <RightArrow size={28} color="#fffced" />
-  </motion.div>
 
-      {/* Description */}
-      <AnimatePresence>
-      <motion.div
-        variants={{
-          rest: { opacity: 0, y: 40 },
-          hover: { opacity: 1, y: 0 }
-        }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="absolute bottom-0 left-0 p-4 z-10 max-w-[370px]"
-      >
-        <p className="text-[#fffced] pt-2 text-[16px] pb-2 leading-relaxed zalando">
-          {resource.description}
-        </p>
-          <div className="mt-4 hover:bg-(--primary-color) Glassy_btn p-1 rounded-full z-20">
-                              <Link to={resource.link}>
-                                <ChevronRight className="white size-5" />
-                              </Link>   
-                          </div>
-      </motion.div>
-      </AnimatePresence>
+<motion.h4
+  animate={{
+    opacity: isActive ? 0 : 1,
+  }}
+  transition={{ duration: 0.25 }}
+  className="Card_heading white"
+>
+{resource.title}
+</motion.h4>
+
+
+<AnimatePresence>
+{!isActive && (
+<motion.div
+  initial={{ opacity: 0, x: -10 }}
+  animate={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: -10 }}
+  transition={{ duration: 0.25 }}
+  onClick={(e) => {
+    e.stopPropagation();
+    setActiveResource(index);
+  }}
+  className="cursor-pointer p-2 bg-(--primary-color)"
+>
+<RightArrow size={28} color="#fffced" />
+</motion.div>
+)}
+</AnimatePresence>
 
 </motion.div>
-))}
+
+
+{/* Expanded Content */}
+<AnimatePresence>
+{isActive && (
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  exit={{ opacity: 0, y: 30 }}
+  transition={{ duration: 0.4, ease: "easeOut" }}
+  className="absolute bottom-0 left-0 p-6 z-10 max-w-full"
+>
+
+<h4 className="text-5xl Card_heading white mb-4">
+{resource.title}
+</h4>
+
+<p className="text_para white">
+{resource.description}
+</p>
+
+<div className="mt-4 white font-semibold">
+<Link to={resource.link}>
+Learn More
+</Link>
+</div>
+
+</motion.div>
+)}
+</AnimatePresence>
+
+</motion.div>
+
+);
+})}
 </motion.div>
 
       

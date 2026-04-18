@@ -204,7 +204,7 @@ clip-path: polygon(30% 0%, 87% 0, 100% 13%, 100% 70%, 100% 100%, 30% 100%, 0 100
 }
 
 .image_div{
-  @apply relative group-hover:shadow-2xl lg:h-[290px] h-[220px]  w-full overflow-hidden z-0 ;
+  @apply relative group-hover:shadow-2xl lg:h-[310px] h-[220px]  w-full overflow-hidden z-0 ;
 }
 
 
