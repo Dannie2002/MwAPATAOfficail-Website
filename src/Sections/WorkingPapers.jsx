@@ -7,6 +7,7 @@ import noise from "../assets/Images/Noise.png";
 import Section_header from "./Section_header";
 import {  CalendarDays,ChevronsRight, File, Search} from "lucide-react";
 import SearchBar from "../Componets/SearchBar";
+import FilterByYear from "../Componets/FilterByYear";
 import papers from "../Constants/Working _papers";
 
 const WorkingPapers= () => {
@@ -74,40 +75,12 @@ const WorkingPapers= () => {
          
          
 
-      <div className="flex  flex-col top_margin lg:flex-row lg:gap-6 items-start lg:items-center justify-start">
-            <h4 className="uppercase font-semibold zalando  text-[18px] lg:text-[18px] text-grey tracking-wide">
-              Filter<span className="font-bold"> By Year:</span>
-            </h4>
-            <div className="flex mt-6 lg:mt-0 lg:gap-6 gap-4 ">
-
-              <button
-                onClick={() => setSelectedYear("all")}
-                className={`px-6 uppercase  border font-semibold border-(--secondary-color)/40 rounded-full text-[14px] barlow transition-all duration-200
-                ${
-                  selectedYear === "all"
-                    ? "bg-green  white border-none"
-                    : "text-grey not-[]: hover:bg-(--secondary-color) hover:text-white" }`}>
-                All
-              </button>
-
-              {years.map((year) => (
-                <button
-                  key={year}
-                  onClick={() => setSelectedYear(year)}
-                  className={`px-6 py-2 border barlow  border-[1.59px] border-(--secondary-color)/75 font-semibold rounded-full hover:text-white text-[15px]  transition-all duration-200
-                  ${
-                    selectedYear === year
-                      ? "bg-green font-semibold white border-none"
-                      : "text-grey  not-[]: hover:bg-(--secondary-color) hover:text-white"
-                  }`}
-                >
-                  {year}
-                </button>
-              ))}
-
-            </div>
-
-          </div>
+      {/* Year Filter */}
+              <FilterByYear
+                years={years}
+                selectedYear={selectedYear}
+                setSelectedYear={setSelectedYear}
+              />
 
 
    <SearchBar searchTerm={searchTerm}

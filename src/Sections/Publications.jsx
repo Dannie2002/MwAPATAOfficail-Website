@@ -112,17 +112,18 @@ const [activeCard, setActiveCard] = useState(0);
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="absolute bottom-0 z-10 flex items-center gap-3 p-4 w-full"
         >
-   <motion.h4
-  animate={{
-    opacity: isActive ? 0 : 1,
-  }}
-  transition={{ duration: 0.25 }}
-  className="Card_heading white"
->
-    {publication.title}</motion.h4>
+        <motion.h4
+            animate={{
+              opacity: isActive ? 0 : 1,
+            }}
+            transition={{ duration: 0.25 }}
+            className="Card_heading white"
+          >
+          {publication.title}
+        </motion.h4>
     <AnimatePresence>
-  {!isActive && (
-    <motion.div
+     {!isActive && (
+      <motion.div
       initial={{ opacity: 0, x: -10 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -10 }}
@@ -131,14 +132,14 @@ const [activeCard, setActiveCard] = useState(0);
         e.stopPropagation();
         setActiveCard(index);
       }}
-      className="cursor-pointer"
+      className="cursor-pointer p-2 bg-(--primary-color)"
     >
       <RightArrow size={28} color="#fffced" />
-    </motion.div>
-  )}
-</AnimatePresence>
+      </motion.div>
+       )}
+     </AnimatePresence>
           
-        </motion.div>
+  </motion.div>
 
         <AnimatePresence>
   {isActive && (

@@ -174,18 +174,6 @@ const EminentSpeaker = () => {
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-10 lg:mt-18">
                   <h4 className="Section_title ">Ndizotheka Eminent Speaker Series</h4>
 
-                  <div className="flex flex-col mt-4 items-start lg:mt-0 lg:items-end">
-                      <motion.div
-                      initial={{ opacity: 0, x: 80 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 1.3, ease: "easeInOut" }}
-                      className="mt-2 w-[90px] h-[4px] bg-green "></motion.div>
-                      <motion.div
-                      initial={{ opacity: 0, x: 80 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 1.99, ease: "easeInOut" }}
-                      className="mt-2 w-[50px] h-[4px] bg-orange"></motion.div>
-                  </div>
         </div>
 
           {/* Grid for EminentSpeaker card */}
@@ -198,10 +186,10 @@ const EminentSpeaker = () => {
                         exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
                         transition={{ duration: 0.6, ease: "easeInOut" }} 
                         key={speaker.id} 
-                        className="relative lg:bg-[#eef7e3] group border-b border-b-[#4a4a4a]/40   cursor-pointer"
+                        className="relative lg:bg-[#eef7e3] group group-hover:border_div   cursor-pointer"
                         
                       >
-                        <div className="relative h-[330px] lg:h-[430px] overflow-hidden z-0 shadow-3xl">
+                        <div className="image_div">
                           <img src={speaker.image} alt={speaker.title} className="w-full  group-hover:scale-110 transition-all duration-3200 ease-in-out h-full object-cover"/>
                              {/* overlay to apply blend mode */}
                           <div className="absolute lg:hidden lg:group-hover:flex transition-colors duration-450 ease-in-out inset-0 bg-gradient-to-t from-[var(--secondary-color)] via-[var(--secondary-color)]/30 to-transparent opacity-90 "></div>
@@ -212,9 +200,9 @@ const EminentSpeaker = () => {
                           whileInView="show"
                           viewport={{once:true}}
                           className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-10"> 
-                            <motion.h4 variants={itemVariants} className="Card_heading lg:mt-4">{speaker.name}</motion.h4>
-                            <motion.p variants={itemVariants} className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[16px] font-light">{speaker.title}</motion.p>
-                            <motion.div variants={itemVariants} className="flex-center mt-2 gap-2">
+                            <motion.h4 variants={itemVariants} className="Capitalize text-grey text-[18px] font-semibold">{speaker.name}</motion.h4>
+                            <motion.p variants={itemVariants} className="lg:text-[var(--text-color)] line-clamp-2 text-[#fffced] lg:mt-2 mt-1 text-[16px] font-light">{speaker.title}</motion.p>
+                            <motion.div variants={itemVariants} className="flex-center mt-3 gap-2">
                             <h6 className=" lg:text-(--secondary-color) z-50 text-[#fffced] text-[14px] uppercase font-semibold">Learn More</h6>
                             <ChevronRight className="lg:text-(--secondary-color) z-50 text-[#fffced] size-6 " />
                             </motion.div>

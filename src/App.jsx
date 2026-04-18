@@ -58,7 +58,7 @@ function App() {
       <Route path="/background" element={<OurBackground />} />
     </Routes>
 <Publications />
-<Programmes /> 
+<Events />
 <Footer />  
 
 </>
