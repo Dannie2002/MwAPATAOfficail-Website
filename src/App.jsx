@@ -2,6 +2,7 @@ import {Routes, Route } from "react-router";
 import CoverPages from "./Sections/CoverPages";
 import PolicyBrief from './Sections/SubSections/PolicyBrief'
 import Peer_Reviewed_Research from './Sections/Peer_Reviewed_Research'
+import Presentations from "./Sections/Presentations";
 import Policy_Perspective from './Sections/Policy_Perspective'
 import Capacity_Building_Seminars from './Sections/Capacity_Building_Seminars'
 import Footer from "./Sections/Footer";
@@ -35,17 +36,21 @@ function App() {
 
 <>
 
+
     <Routes>
       <Route path="/" element={<CoverPages />} />
       <Route path="/Publications/working-papers" element={<WorkingPapers />} />
       <Route path="/policy-brief" element={<PolicyBrief />} />
       <Route path="/policy-perspective" element={<Policy_Perspective />} />
-      <Route path="/peer-review" element={<Peer_Reviewed_Research />} />
+      <Route path="/presentations" element={<Presentations />} />
+      <Route path="/governance" element={<Governance />} />   
+      <Route path="/peer-review-research" element={<Peer_Reviewed_Research />} />
       <Route path="/seminars" element={<Capacity_Building_Seminars />} />
       <Route path="/our-team" element={<OurTeam />} />
       <Route path="/job-listings" element={<JobListings />} />
       <Route path="/eminent-speaker" element={<EminentSpeaker />} />
       <Route path="/contact-us" element={<Contact_Us />} />
+      <Route path="/recent-events" element={<Events />} />
       <Route path="/maapc-2021" element={<MAAPC2021Event />} />
       <Route path="/maapc-2022" element={<MAAPC2022Event />} />
       <Route path="/maapc-2023" element={<MAAPC2023Event />} />
@@ -57,8 +62,7 @@ function App() {
       <Route path="/about-us" element={<SeeMore_AboutUs />} />
       <Route path="/background" element={<OurBackground />} />
     </Routes>
-<Publications />
-<Events />
+
 <Footer />  
 
 </>

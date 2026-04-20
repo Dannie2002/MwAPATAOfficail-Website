@@ -10,6 +10,7 @@ import DottedArrow from "./Icons/DottedArrow";
 import SearchBar from "../Componets/SearchBar";
 import FilterByYear from "../Componets/FilterByYear";
 import events from "../Constants/Events";
+import CirclePlus from "./Icons/CirclePlus";
 
 
 const Events = () => {
@@ -74,7 +75,7 @@ useEffect(() => {
                 index === 0 ? "lg:col-span-2" : ""
               }`}
             >
-              <div className="relative h-[240px] lg:h-[360px] overflow-hidden z-0 group shadow-[0_6px_12px_rgba(121,115,10,0.2)]">
+              <div className="image_div">
                 <img
                   src={event.image}
                   alt={event.title}
@@ -85,7 +86,7 @@ useEffect(() => {
                   <div className="absolute hidden transition-all duration-600  ease-in-out group-hover:flex  z-20 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95"></div>
                   <div className="absolute flex-col hidden inset-0 size-full group-hover:flex items-center justify-center z-50">
                     <h4 className="white agdasima animate-bounce duration-300 text-[24px] tracking-wider uppercase font-bold ">Explore Event</h4>
-                    <DottedArrow  color="#fffced" size={24} className="  size-18" />
+                    <CirclePlus size={32} color="#fffced" />
                     
                     </div>
            
@@ -111,7 +112,7 @@ useEffect(() => {
         </div>
 
 
-    <motion.div
+        <motion.div
                                     initial={{ opacity: 0, x: 80 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 1.99, ease: "easeInOut" }}

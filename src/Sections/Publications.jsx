@@ -12,6 +12,7 @@ import noise from "../assets/Images/Noise.png";
 import policy from "../assets/Images/Policy_advocacy.jpg";
 import Section_header from "./Section_header";
 import { publications_types, Resources } from "../Constants/data";
+import CirclePlus from "./Icons/CirclePlus";
 
 const Publications = () => {
 
@@ -134,9 +135,9 @@ const anyActive = activePublication !== null
         e.stopPropagation();
         setActivePublication(index);
       }}
-      className="cursor-pointer p-2 bg-(--primary-color)"
+      className="cursor-pointer rounded-sm p-2 bg-(--primary-color)"
     >
-      <RightArrow size={28} color="#fffced" />
+      <CirclePlus size={28} color="#fffced" />
       </motion.div>
        )}
      </AnimatePresence>
@@ -152,7 +153,7 @@ const anyActive = activePublication !== null
       transition={{ duration: 0.4, ease: "easeOut" }}
       className="absolute bottom-0 left-0 p-6 z-10 max-w-full"
     >
-             <h4 className="text-5xl Card_heading white mb-4">{publication.title}</h4>
+             <h4 className="lg:text-[38px] text-[24px] Card_heading white mb-4">{publication.title}</h4>
 
       <p className="text_para  white">
         {publication.description}
@@ -254,9 +255,9 @@ return (
     e.stopPropagation();
     setActiveResource(index);
   }}
-  className="cursor-pointer p-2 bg-(--primary-color)"
+  className="cursor-pointer rounded-sm p-2 bg-(--primary-color)"
 >
-<RightArrow size={28} color="#fffced" />
+<CirclePlus size={28} color="#fffced" />
 </motion.div>
 )}
 </AnimatePresence>
@@ -272,10 +273,10 @@ return (
   animate={{ opacity: 1, y: 0 }}
   exit={{ opacity: 0, y: 30 }}
   transition={{ duration: 0.4, ease: "easeOut" }}
-  className="absolute bottom-0 left-0 p-6 z-10 max-w-full"
+  className="absolute bottom-0 left-0 flex flex-col  p-6 z-10 max-w-full"
 >
 
-<h4 className="text-5xl Card_heading white mb-4">
+<h4 className="lg:text-[38px] text-[24px] Card_heading white mb-4">
 {resource.title}
 </h4>
 

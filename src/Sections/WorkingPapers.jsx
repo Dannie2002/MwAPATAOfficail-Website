@@ -5,7 +5,7 @@ import capacity from "../assets/Images/Capacity_building.jpg";
 import workingpapers from "../assets/Images/Working_papers.jpg";
 import noise from "../assets/Images/Noise.png";
 import Section_header from "./Section_header";
-import {  CalendarDays,ChevronsRight, File, Search} from "lucide-react";
+import {  CalendarDays,ChevronsRight,ChevronRight,ArrowRight, File, Search} from "lucide-react";
 import SearchBar from "../Componets/SearchBar";
 import FilterByYear from "../Componets/FilterByYear";
 import papers from "../Constants/Working _papers";
@@ -19,7 +19,7 @@ const WorkingPapers= () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.5,
+        delayChildren: 0.4,
       },
     },
   };
@@ -29,7 +29,7 @@ const WorkingPapers= () => {
     show: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.49, ease: "easeInOut" }
+      transition: { duration: 0.39, ease: "easeInOut" }
     },
   };
 
@@ -110,7 +110,7 @@ const WorkingPapers= () => {
   {/* TITLE COLUMN */}
   <div className="lg:w-[35%] w-full lg:h-[230px] flex flex-col items-start justify-between gap-4 lg:gap-6">
     <div>
-    <h3 className="Card_heading capitalize  leading-[26px] text-[22px] lg:text-[24px] archivo text-grey mb-2 lg:mb-4">
+    <h3 className="Card_heading">
       {paper.title}
     </h3>
 
@@ -134,10 +134,10 @@ const WorkingPapers= () => {
       {paper.description}
     </p>
 
-     <div className="flex hover:bg-(--secondary-color) transition-colors duration-400 ease-in-out rounded-sm items-center p-2 text_date bg-[#0f753b]">
-        <ChevronsRight className="size-6 white" />
-       
-      </div>
+    <div className='flex relative group items-center overflow-hidden  justify-center bg-green p-4'>
+            <ChevronRight className='absolute  size-6 transform  transition-all duration-490  group-hover:translate-x-10 white' />
+            <ChevronsRight className='absolute  size-6 transform -translate-x-10 opacity-0  transition-all duration-600 group-hover:opacity-100  group-hover:translate-x-0 white' />
+          </div>
 
   
 

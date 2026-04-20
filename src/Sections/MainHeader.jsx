@@ -59,7 +59,7 @@ const topLinks = [
               { title: "Working Papers", link: "/Publications/working-papers" },
               { title: "Policy Brief", link: "/policy-brief" },
               { title: "Perspectives", link: "/Publications/perspectives" },
-              { title: "Peer Review Research", link: "/Publications/peer-review" },
+              { title: "Peer Review Research", link: "/peer-review-research" },
            
               ]
 
@@ -68,7 +68,7 @@ const topLinks = [
       { title: "Resources", link: "/resources",
             children: [
                 { title: "Reports", link: "/Publications/reports" },
-              { title: "Presentations", link: "/Publications/presentations" },
+              { title: "Presentations", link: "/presentations" },
               { title: "Data Portal", link: "/Publications/data-portal" },
               { title: "Data Policy", link: "/Publications/data-policy" },
               { title: "Request Data", link: "/Publications/request-data" },

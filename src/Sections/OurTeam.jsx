@@ -223,8 +223,8 @@ const OurTeam = () => {
                   whileInView="show"
                   viewport={{once:true}}
                   className="absolute lg:relative flex flex-col lg:py-4 gap-2 p-4 justify-end items-start inset-0 z-10"> 
-                    <motion.h4 variants={itemVariants} className="Card_heading lg:mt-4">{employee.name}</motion.h4>
-                    <motion.p variants={itemVariants} className="lg:text-[var(--text-color)] text-[#fffced] lg:mt-3 mt-1 text-[18px] font-light">{employee.title}</motion.p>
+                    <motion.h4 variants={itemVariants} className="Capitalize text-grey text-[18px] font-semibold">{employee.name}</motion.h4>
+                    <motion.p variants={itemVariants} className="lg:text-[var(--text-color)] line-clamp-2 text-[#fffced] lg:mt-2 mt-1 text-[16px] font-light">{employee.title}</motion.p>
                     <motion.div variants={itemVariants} className="flex-center mt-2 gap-2">
                     <h6 className=" lg:text-(--secondary-color) z-50 text-[#fffced] text-[14px] uppercase font-semibold">Learn More</h6>
                     <ChevronRight className="lg:text-(--secondary-color) z-50 text-[#fffced] size-6 " />
