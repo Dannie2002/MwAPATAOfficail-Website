@@ -67,7 +67,7 @@ const topLinks = [
       },
       { title: "Resources", link: "/resources",
             children: [
-                { title: "Reports", link: "/Publications/reports" },
+                { title: "Reports", link: "/reports" },
               { title: "Presentations", link: "/presentations" },
               { title: "Data Portal", link: "/Publications/data-portal" },
               { title: "Data Policy", link: "/Publications/data-policy" },

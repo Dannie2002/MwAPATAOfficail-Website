@@ -2,6 +2,7 @@ import {Routes, Route } from "react-router";
 import CoverPages from "./Sections/CoverPages";
 import PolicyBrief from './Sections/SubSections/PolicyBrief'
 import Peer_Reviewed_Research from './Sections/Peer_Reviewed_Research'
+import Reports from "./Sections/Reports";
 import Presentations from "./Sections/Presentations";
 import Policy_Perspective from './Sections/Policy_Perspective'
 import Capacity_Building_Seminars from './Sections/Capacity_Building_Seminars'
@@ -45,6 +46,7 @@ function App() {
       <Route path="/presentations" element={<Presentations />} />
       <Route path="/governance" element={<Governance />} />   
       <Route path="/peer-review-research" element={<Peer_Reviewed_Research />} />
+      <Route path="/reports" element={<Reports />} />
       <Route path="/seminars" element={<Capacity_Building_Seminars />} />
       <Route path="/our-team" element={<OurTeam />} />
       <Route path="/job-listings" element={<JobListings />} />
