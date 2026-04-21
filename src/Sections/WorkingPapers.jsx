@@ -110,14 +110,14 @@ const WorkingPapers= () => {
   {/* TITLE COLUMN */}
   <div className="lg:w-[35%] w-full lg:h-[230px] flex flex-col items-start justify-between gap-4 lg:gap-6">
     <div>
-    <h3 className="Card_heading">
+    <h3 className="Card_heading capitalize  leading-[26px] text-[22px] lg:text-[24px] archivo text-grey mb-2 lg:mb-4">
       {paper.title}
     </h3>
 
    
 </div>
     <div className="flex items-center mt-0 lg:mt-4 gap-6">
-      <h4 className="flex font-semibold items-center  gap-4 text_date ">
+      <h4 className="flex items-center  gap-4 text_date ">
         <CalendarDays className="size-5 text-(--primary-color)" />
         {paper.date}
       </h4>
@@ -134,9 +134,9 @@ const WorkingPapers= () => {
       {paper.description}
     </p>
 
-    <div className='flex relative group items-center overflow-hidden  justify-center bg-green p-4'>
-            <ChevronRight className='absolute  size-6 transform  transition-all duration-490  group-hover:translate-x-10 white' />
-            <ChevronsRight className='absolute  size-6 transform -translate-x-10 opacity-0  transition-all duration-600 group-hover:opacity-100  group-hover:translate-x-0 white' />
+    <div className='flex div_clip relative group items-center overflow-hidden  justify-center bg-green p-4'>
+            <ChevronRight className='absolute  size-7 transform  transition-all duration-490  group-hover:translate-x-10 white' />
+            <ChevronsRight className='absolute  size-7 transform -translate-x-10 opacity-0  transition-all duration-600 group-hover:opacity-100  group-hover:translate-x-0 white' />
           </div>
 
   

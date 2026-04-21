@@ -75,7 +75,7 @@ useEffect(() => {
                 index === 0 ? "lg:col-span-2" : ""
               }`}
             >
-              <div className="image_div">
+              <div className="image_div group ">
                 <img
                   src={event.image}
                   alt={event.title}
