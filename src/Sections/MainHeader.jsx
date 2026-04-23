@@ -15,8 +15,8 @@ const topLinks = [
     children: [
       { title: "News", link: "/news",
           children: [
-            { title: "Recent News", link: "/news/news1" },
-            { title: "News2", link: "/news/news2" }
+            { title: "Recent News", link: "/recent+past-news" },
+            { title: "Announcements", link: "/announcements" }
             
           ]
        },
@@ -46,8 +46,7 @@ const topLinks = [
     title: "Get Involved",
     children: [
         { title: "Contact Us", link: "/contact-us"},
-      { title: "Publication Feedback", link: "/research" },
-      { title: "General Inquiry/Comment", link: "/programmes" },
+      { title: "Publication Feedback", link: "/publications-feedback" },
       { title: "YouTube Channel", link: "/events" },
     ]
   },

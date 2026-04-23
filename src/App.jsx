@@ -12,6 +12,7 @@ import OurTeam from "./Sections/OurTeam";
 import About_Us from "./Sections/About_Us";
 import Contact_Us from "./Sections/Contact_Us";
 import Governance from "./Sections/Governance";
+import News from "./Sections/News";
 import Partners from "./Sections/Partners";
 import Events from "./Sections/Events";
 import Programmes from "./Sections/Programmes";
@@ -25,6 +26,7 @@ import Publications from "./Sections/Publications";
 import SeminalSeries from "./Sections/SubSections/SeminalSeries"
 import SeeMore_AboutUs from "./Sections/SeeMore_AboutUs";
 import OurBackground from "./Sections/OurBackground";
+import PublicationsFeedback from "./Sections/PublicationsFeedback";
 
 
 
@@ -52,12 +54,14 @@ function App() {
       <Route path="/job-listings" element={<JobListings />} />
       <Route path="/eminent-speaker" element={<EminentSpeaker />} />
       <Route path="/contact-us" element={<Contact_Us />} />
+      <Route path="/recent+past-news" element={<News />} />
       <Route path="/recent-events" element={<Events />} />
       <Route path="/maapc-2021" element={<MAAPC2021Event />} />
       <Route path="/maapc-2022" element={<MAAPC2022Event />} />
       <Route path="/maapc-2023" element={<MAAPC2023Event />} />
       <Route path="/maapc-2024" element={<MAAPC2024Event />} />
       <Route path="/seminal-series" element={<SeminalSeries />} />
+      <Route path="/publications-feedback" element={<PublicationsFeedback />} />
       <Route path="/programmes" element={<Programmes />} />
       <Route path="/publications" element={<Publications />} />
       <Route path="/partners" element={<Partners />} />

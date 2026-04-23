@@ -4,18 +4,19 @@ import capacity from "../assets/Images/Capacity_building.jpg";
 import research from "../assets/Images/Event_header.jpg";
 import outreach from "../assets/Images/Outreach.jpg";
 import events_mwapata from "../assets/Images/Event_Mwapata.jpg";
+import recent_event from "../assets/Images/Events/Recent_Event.jpg"
 
 
 
 const events = [
 {
 id:1,
-title:"Consultative Group on International Agricultural Research (CGIAR) Policy Innovations Hub Launch and Dialogue",
+title:"Rapid Evidence and Policy Dialogue on Agriculture Trade Restrictions in Malawi.",
 description:"Official MwAPATA institutional event.",
 date:"26 February 2026",
 year:2026,
 venue:"BICC, Lilongwe, Malawi",
-image:Partners
+image:recent_event
 },
 {
 id:2,

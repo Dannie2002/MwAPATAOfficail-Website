@@ -10,8 +10,9 @@ import news from "../assets/Images/News&Updates.jpg"
 import event2 from"../assets/Images/Policy_advocacy.jpg";
 import event3 from"../assets/Images/Event_header.jpg";
 import Section_header from "./Section_header";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, CalendarDays } from "lucide-react";
 import DottedArrow from "./Icons/DottedArrow";
+import CirclePlus from "./Icons/CirclePlus";
 
 const News = () => {
     const News = [
@@ -88,14 +89,14 @@ const News = () => {
         {/* This is a grid for news card */} 
       <div className="Grid_4 mt-6 lg:gap-12">
           {News.slice(0, 3).map((news, index) => (
-            <div key={news.id} className={`relative border_div pb-6 rounded-[14px] z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`}>
+            <div key={news.id} className={`relative border_div group pb-6 rounded-[14px] z-0 shadow-3xl ${index === 0 ? "lg:col-span-2" : ""}`}>
                <div className="relative group h-[240px] lg:h-[360px] overflow-hidden z-0  shadow-3xl">
                 <img src={news.image} alt={news.title} className="w-full group-hover:scale-110 transition-all duration-900 ease-in-out h-full rounded-[4px] object-cover"/>
                  {/* overlay to apply blend mode */}
                     <div className="absolute hidden transition-all duration-600  ease-in-out group-hover:flex  z-20 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95"></div>
                   <div className="absolute flex-col hidden inset-0 size-full group-hover:flex items-center justify-center z-50">
-                    <h4 className="white agdasima animate-bounce duration-300 text-[24px] tracking-wider uppercase font-bold ">Explore Event</h4>
-                    <DottedArrow  color="#fffced" size={24} className="  size-18" />
+                    <h4 className="white agdasima animate-bounce duration-300 text-[24px] tracking-wider uppercase font-bold ">News in Details</h4>
+                      <CirclePlus size={32} color="#fffced" />
                     
                     </div>
                 </div>
@@ -132,8 +133,8 @@ const News = () => {
                  {/* overlay to apply blend mode */}
                      <div className="absolute hidden transition-all duration-600  ease-in-out group-hover:flex  z-20 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/50 opacity-95"></div>
                   <div className="absolute flex-col hidden inset-0 size-full group-hover:flex items-center justify-center z-50">
-                    <h4 className="white agdasima animate-bounce duration-300 text-[24px] tracking-wider uppercase font-bold ">Explore Event</h4>
-                    <DottedArrow  color="#fffced" size={24} className="  size-18" />
+                    <h4 className="white agdasima animate-bounce duration-300 text-[24px] tracking-wider uppercase font-bold ">News in Details</h4>
+                      <CirclePlus size={32} color="#fffced" />
                     
                     </div>
                 
@@ -142,12 +143,13 @@ const News = () => {
               <div className="bg-transparent z-10 flex flex-col items-start gap-4 justify-between mt-4 w-full">
                 <div className="mt-0 flex items-start flex-row justify-between  py-1 ">
                   <h4 className="text_date">{news.date}</h4>
-                  <h4 className="text_date text-grey lowercase">2 hrs ago</h4>
+                  
                 </div>
                
-                <h4 className="Card_heading capitalize text-[20px] archivo text-grey line-clamp-2 mb-2">
-                  {news.title}
-                </h4>
+               <h4 className="flex font-semibold items-center  gap-4 text_date ">
+                        <CalendarDays className="size-4 text-(--primary-color)" />
+                        {news.date}
+                      </h4>
                 
               </div>
             </div>

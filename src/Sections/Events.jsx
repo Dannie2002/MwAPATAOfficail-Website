@@ -32,14 +32,24 @@ const Events = () => {
 
     return matchesYear && matchesSearch;
   });
+
   const [visibleCount, setVisibleCount] = useState(4);
   const lastVisibleRef = useRef(null);
+
+const previousCount = useRef(visibleCount);
+
 useEffect(() => {
-  lastVisibleRef.current?.scrollIntoView({
-    behavior: "smooth",
-    block: "nearest",
-  });
+  if (visibleCount > previousCount.current) {
+    lastVisibleRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
+  }
+
+  previousCount.current = visibleCount;
 }, [visibleCount]);
+
+const gridRef = useRef(null);
 
   return (
     <section className="Section_bg">
@@ -67,7 +77,7 @@ useEffect(() => {
   </div>
        
         {/* Featured Recent Events */}
-        <div className="Grid_4 mt-6 lg:mt-12 gap-12 lg:gap-12">
+        <div ref={gridRef} className="Grid_4 mt-6 lg:mt-12 gap-12 lg:gap-12">
           {events.slice(0, 3).map((event, index) => (
             <div
               key={event.id}
@@ -164,14 +174,14 @@ useEffect(() => {
                   <div className="absolute hidden transition-all duration-600  ease-in-out group-hover:flex  z-20 inset-0 bg-gradient-to-r from-[var(--secondary-color)]/70 via-[#3A9B3D]/60 to-[#3A9B3D]/50 "></div>
                   <div className="absolute flex-col hidden inset-0 size-full group-hover:flex items-center justify-center z-50">
                     <h4 className="white agdasima  text-[24px] tracking-wider uppercase font-bold ">Explore Event</h4>
-                    <DottedArrow  color="#fffced" size={24} className="  size-18" />
+                     <CirclePlus size={32} color="#fffced" />
                     </div>
 
                 </div>
 
                 <div className="bg-transparent z-10 flex flex-col items-start gap-4 justify-between mt-4 w-full">
                  <div className="flex items-center mt-0 lg:mt-4 gap-6">
-                      <h4 className="flex font-normal items-center  gap-4 text_date ">
+                      <h4 className="flex font-semibold items-center  gap-4 text_date ">
                         <CalendarDays className="size-4 text-(--primary-color)" />
                         {event.date}
                       </h4>
@@ -181,6 +191,7 @@ useEffect(() => {
                   <h4 className="Card_heading capitalize text-[20px] archivo mt-2 text-grey line-clamp-2">
                     {event.title}
                   </h4>
+                  <p className="text_date lg:hidden">Learn More</p>
 
                 </div>
               </div>
@@ -192,14 +203,32 @@ useEffect(() => {
         {/* Pagination Buttons */}
             <motion.div  className="flex items-start mt-6 gap-4 lg:mt-12  transition ">
                        <button
-     onClick={() => setVisibleCount((prev) => Math.max(prev - 4, 4))}
+     onClick={() => {
+  setVisibleCount((prev) => Math.max(prev - 4, 4));
+
+  setTimeout(() => {
+    gridRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, 100);
+}}
                          className="p-2 rounded-full bg-green/10 hover:bg-green/20 disabled:bg-green/5 disabled:cursor-not-allowed transition"
                        >
                          <ChevronsLeft className="size-6 text-green" />
                        </button>
        
                        <button
-                          onClick={() => setVisibleCount((prev) => prev + 4)}
+                          onClick={() => {
+  setVisibleCount((prev) => prev + 4);
+
+  setTimeout(() => {
+    lastVisibleRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
+  }, 100);
+}}
                 
                          className="p-2 rounded-full bg-green/10 hover:bg-green/20 disabled:bg-green/5 disabled:cursor-not-allowed transition"
                        >
